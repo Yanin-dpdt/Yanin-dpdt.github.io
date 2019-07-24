@@ -420,19 +420,21 @@
       
         
           
-            <p><strong>120V电压 400rpm的给定电流</strong></p>
-<p>应该加的补偿值</p>
-<p>​<br><code>ttt = 0.00105 \* \_IQmpy(pi_id.Fbk,pi_spd.Fbk) \* 4500 \* 9 /(volt1.DcBusVolt\*409.9) + 0.065 \* pi_spd.Fbk \* 4500 /(volt1.DcBusVolt\*409.9);</code></p>
-<p>下面是解耦后应该的公式.</p>
-<p>​<code>ipark1.Qs = pi_iq.Out + ttt;​</code></p>
-<p>在未解耦的时候，测得ipark1.Qs = 0.515 . 换算成真实的电压值为(乘当前的电流值) 0.515 * 120 V=61.8V</p>
-<p>测得ttt = 0.22 . 换算成真实的电压值为26.4V.</p>
-<p>ttt的主要成份是反电势 ​<code>flux\*we=0.1552\*400\*4\*3.14/30=26.0V​</code></p>
-<p>所以证明电流环解耦 程序是正确的.</p>
-<p><img src="https://s2.ax1x.com/2019/07/24/eAzypd.png" alt="解耦前后对比"></p>
-<p>实验结果 （右为解耦）</p>
-
+            <p>
+              120V电压 400rpm的给定电流
+应该加的补偿值
+​ttt = 0.00105 \* \_IQmpy(pi_id.Fbk,pi_spd.Fbk) \* 4500 \* 9 /(volt1.DcBusVolt\*409.9) + 0.065 \* pi_spd.Fbk \* 4500 /(volt
+              ...
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/23/关于DSP平台电流环解耦/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -600,9 +602,20 @@
       
         
           
-            <p>第一个博客 杠杠滴</p>
+            <p>
+              第一个博客 杠杠滴
 
+              
+            </p>
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/23/我的第一个博客/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
