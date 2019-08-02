@@ -94,18 +94,18 @@
   };
 </script>
 
-  <meta name="description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop.c为源程序。  5.文件夹中  01-07为电流环调试过程  08-11为速度环调试过程  12 给了">
+  <meta name="description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop190801.c为源程序。  5.文件夹中   01-07为电流环调试过程,  08-11为速度环调试过">
 <meta name="keywords" content="PMSM,DSP,UDE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于DSP平台双UDE 参数调试">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/关于DSP平台双UDE调试/index.html">
 <meta property="og:site_name" content="颜">
-<meta property="og:description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop.c为源程序。  5.文件夹中  01-07为电流环调试过程  08-11为速度环调试过程  12 给了">
+<meta property="og:description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop190801.c为源程序。  5.文件夹中   01-07为电流环调试过程,  08-11为速度环调试过">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T14:44:50.768Z">
+<meta property="og:updated_time" content="2019-08-02T14:50:08.029Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于DSP平台双UDE 参数调试">
-<meta name="twitter:description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop.c为源程序。  5.文件夹中  01-07为电流环调试过程  08-11为速度环调试过程  12 给了">
+<meta name="twitter:description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop190801.c为源程序。  5.文件夹中   01-07为电流环调试过程,  08-11为速度环调试过">
 
 
 
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="创建时间：2019-08-02 00:00:00 / 修改时间：22:44:50" itemprop="dateCreated datePublished" datetime="2019-08-02T00:00:00+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-02 00:00:00 / 修改时间：22:50:08" itemprop="dateCreated datePublished" datetime="2019-08-02T00:00:00+08:00">2019-08-02</time>
             </span>
           
 
@@ -432,7 +432,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2k</span>
+              <span title="本文字数">1.7k</span>
             </span>
           
 
@@ -472,84 +472,78 @@
 <ul>
 <li><p><strong>3.图中的时间 10000点 = 5s</strong></p>
 </li>
-<li><p><strong>4.Main_twoloop.c为源程序。</strong></p>
+<li><p><strong>4.Main_twoloop190801.c为源程序。</strong></p>
 </li>
 <li><p><strong>5.文件夹中</strong></p>
-<pre><code> 01-07为电流环调试过程
- 08-11为速度环调试过程
- 12 给了一个比较极端的速度环滤波器参数
+<p>  01-07为电流环调试过程,<br>  08-11为速度环调试过程,<br>  12 给了一个比较极端的速度环滤波器参数。参数信息如下所示：</p>
+</li>
+</ul>
+<blockquote>
+<p>01参数：</p>
+</blockquote>
+<pre><code>| spd             |   |
+|-----------------|---|
+| Factor = 0.1667 |   |
+| kp = 0.8        |   |
+| ki = 0.0015     |   |
 
-参数信息如下所示:
+| iq              |   |
+|-----------------|---|
+| Factor = 0.007  |   |
+| kp = 1.0        |   |
+| ki = 0.0025     |   |</code></pre><blockquote>
+<p>05参数    </p>
+</blockquote>
+<pre><code>| spd             |   |
+|-----------------|---|
+| Factor = 0.1667 |   |
+| kp =0.8         |   |
+| ki = 0.0015     |   |
 
-     01参数：
+| iq              |   |
+|-----------------|---|
+| Factor = 0.007  |   |
+| kp = 2.1        |   |
+| ki = 0.0025     |   |</code></pre><blockquote>
+<p>06参数</p>
+</blockquote>
+<pre><code>| spd             |   |
+|-----------------|---|
+| Factor = 0.1667 |   |
+| kp =0.8         |   |
+| ki = 0.0015     |   |
 
-     | spd             |   |
-     |-----------------|---|
-     | Factor = 0.1667 |   |
-     | kp = 0.8        |   |
-     | ki = 0.0015     |   |
+| iq              |   |
+|-----------------|---|
+| Factor = 0.007  |   |
+| kp = 2.5        |   |
+| ki = 0.0025     |   |</code></pre><blockquote>
+<p>10参数</p>
+</blockquote>
+<pre><code>| spd             |   |
+|-----------------|---|
+| Factor = 0.1667 |   |
+| kp = 3.0        |   |
+| ki = 0.0015     |   |
 
-     | iq              |   |
-     |-----------------|---|
-     | Factor = 0.007  |   |
-     | kp = 1.0        |   |
-     | ki = 0.0025     |   |
+| iq              |   |
+|-----------------|---|
+| Factor = 0.007  |   |
+| kp = 2.5        |   |
+| ki = 0.0025     |   |</code></pre><blockquote>
+<p>12参数</p>
+</blockquote>
+<pre><code>| spd            |   |
+|----------------|---|
+| Factor = 0.007 |   |
+| kp = 0.8       |   |
+| ki = 0.0015    |   |
 
-     05参数
-
-     | spd             |   |
-     |-----------------|---|
-     | Factor = 0.1667 |   |
-     | kp =0.8         |   |
-     | ki = 0.0015     |   |
-
-     | iq              |   |
-     |-----------------|---|
-     | Factor = 0.007  |   |
-     | kp = 2.1        |   |
-     | ki = 0.0025     |   |
-
-     06参数
-
-     | spd             |   |
-     |-----------------|---|
-     | Factor = 0.1667 |   |
-     | kp =0.8         |   |
-     | ki = 0.0015     |   |
-
-     | iq              |   |
-     |-----------------|---|
-     | Factor = 0.007  |   |
-     | kp = 2.5        |   |
-     | ki = 0.0025     |   |
-
-     10参数
-
-     | spd             |   |
-     |-----------------|---|
-     | Factor = 0.1667 |   |
-     | kp = 3.0        |   |
-     | ki = 0.0015     |   |
-
-     | iq              |   |
-     |-----------------|---|
-     | Factor = 0.007  |   |
-     | kp = 2.5        |   |
-     | ki = 0.0025     |   |
-
-     12参数
-
-     | spd            |   |
-     |----------------|---|
-     | Factor = 0.007 |   |
-     | kp = 0.8       |   |
-     | ki = 0.0015    |   |
-
-     | iq             |   |
-     |----------------|---|
-     | Factor = 0.007 |   |
-     | kp = 2.5       |   |
-     | ki = 0.0025    |   |</code></pre></li>
+| iq             |   |
+|----------------|---|
+| Factor = 0.007 |   |
+| kp = 2.5       |   |
+| ki = 0.0025    |   |</code></pre><ul>
 <li><p><strong>6.画图函数</strong></p>
   <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">figure(<span class="number">1</span>)</span><br><span class="line">plot(t,spd,'r','LineWidth',1)</span><br><span class="line">hold on</span><br><span class="line">plot(t,spdr-5,'g','LineWidth',1)</span><br><span class="line">hold on</span><br><span class="line">plot(t,spdc-5,'b','LineWidth',1)</span><br><span class="line">grid on</span><br><span class="line">figure(<span class="number">2</span>)</span><br><span class="line">plot(t,iq,'r','LineWidth',1)</span><br><span class="line">hold on</span><br><span class="line">plot(t,iqr,'g','LineWidth',1)</span><br><span class="line">hold on</span><br><span class="line">plot(t,iqc,'b','LineWidth',1)</span><br><span class="line">grid on</span><br></pre></td></tr></table></figure></li>
 </ul>
@@ -600,8 +594,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/01/不懂的知识点/" rel="next" title="不懂的知识点 查阅 汇总">
-                <i class="fa fa-chevron-left"></i> 不懂的知识点 查阅 汇总
+              <a href="/2019/08/02/关于加入站内搜索/" rel="next" title="关于加入站内搜索">
+                <i class="fa fa-chevron-left"></i> 关于加入站内搜索
               </a>
             
           </div>
@@ -609,10 +603,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/02/关于加入站内搜索/" rel="prev" title="关于加入站内搜索">
-                关于加入站内搜索 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -787,7 +777,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">6k</span>
+    <span title="站点总字数">5k</span>
   
 
   
