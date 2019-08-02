@@ -26,6 +26,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[my first generage blog]]></title>
+    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[关于dsp平台电流环解耦]]></title>
     <url>%2F2019%2F07%2F23%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E7%94%B5%E6%B5%81%E7%8E%AF%E8%A7%A3%E8%80%A6%2F</url>
     <content type="text"><![CDATA[120V电压 400rpm的给定电流 应该加的补偿值 ​ttt = 0.00105 \* \_IQmpy(pi_id.Fbk,pi_spd.Fbk) \* 4500 \* 9 /(volt1.DcBusVolt\*409.9) + 0.065 \* pi_spd.Fbk \* 4500 /(volt1.DcBusVolt\*409.9); 下面是解耦后应该的公式. ​ipark1.Qs = pi_iq.Out + ttt;​ 在未解耦的时候，测得ipark1.Qs = 0.515 . 换算成真实的电压值为(乘当前的电流值) 0.515 * 120 V=61.8V 测得ttt = 0.22 . 换算成真实的电压值为26.4V. ttt的主要成份是反电势 ​flux\*we=0.1552\*400\*4\*3.14/30=26.0V​ 所以证明电流环解耦 程序是正确的. 实验结果 （右为解耦）]]></content>
@@ -33,10 +38,5 @@
         <tag>PMSM</tag>
         <tag>DSP平台</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[my first generage blog]]></title>
-    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
   </entry>
 </search>
