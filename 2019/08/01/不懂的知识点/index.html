@@ -102,14 +102,16 @@
 <meta property="og:site_name" content="颜">
 <meta property="og:description" content="单工、半双工和全双工的区别 一、单工1、数据只在一个方向上传输，不能实现双方通信。  2、栗子：电视、广播。  二、半双工1、允许数据在两个方向上传输，但是同一时间数据只能在一个方向上传输，其实际上是切换的单工。  2、栗子：对讲机。  三、全双工1、允许数据在两个方向上同时传输。  2、栗子：手机通话。  TCP/IP （传输控制协议）Transmission Control Protocol">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eDkio6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/03/eDk8fS.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/02/e0sspV.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/02/e0sHXD.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/02/e0sqne.png">
-<meta property="og:updated_time" content="2019-08-02T14:18:00.315Z">
+<meta property="og:updated_time" content="2019-08-03T10:53:27.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不懂的知识点 查阅 汇总">
 <meta name="twitter:description" content="单工、半双工和全双工的区别 一、单工1、数据只在一个方向上传输，不能实现双方通信。  2、栗子：电视、广播。  二、半双工1、允许数据在两个方向上传输，但是同一时间数据只能在一个方向上传输，其实际上是切换的单工。  2、栗子：对讲机。  三、全双工1、允许数据在两个方向上同时传输。  2、栗子：手机通话。  TCP/IP （传输控制协议）Transmission Control Protocol">
-<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/02/e0sspV.png">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/03/eDkio6.png">
 
 
 
@@ -410,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-02 22:18:00" itemprop="dateModified" datetime="2019-08-02T22:18:00+08:00">2019-08-02</time>
+                <time title="修改时间：2019-08-03 18:53:27" itemprop="dateModified" datetime="2019-08-03T18:53:27+08:00">2019-08-03</time>
               </span>
             
           
@@ -446,7 +448,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.8k</span>
+              <span title="本文字数">3k</span>
             </span>
           
 
@@ -502,8 +504,12 @@
 <h1 id="api-（应用程序编程接口）"><a href="#api-（应用程序编程接口）" class="headerlink" title="api （应用程序编程接口）"></a>api （应用程序编程接口）</h1><p>API 是一套明确定义的各种软件组件之间的通信方法。</p>
 <hr>
 <h1 id="http、MQTT、CoAP"><a href="#http、MQTT、CoAP" class="headerlink" title="http、MQTT、CoAP"></a>http、MQTT、CoAP</h1><p>HTTP是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。</p>
-<p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议），是一种基于发布/订阅（publish/subscribe）模式的”轻量级”通讯协议，该协议构建于TCP/IP协议上，由IBM在1999年发布。MQTT最大优点在于，可以以极少的代码和有限的带宽，为连接远程设备提供实时可靠的消息服务。</p>
-<p>CoAP 由于物联网中的很多设备都是资源受限型的，即只有少量的内存空间和有限的计算能力，所以传统的HTTP协议应用在物联网上就显得过于庞大而不适用。 IETF的CoRE工作组提出了一种基于REST架构的CoAP协议;是一种在物联网世界的类web协议。</p>
+<p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议），是一种基于发布/订阅（publish/subscribe）模式的”轻量级”通讯协议，该协议构建于TCP/IP协议上，由IBM在1999年发布。MQTT最大优点在于，可以以极少的代码和有限的带宽，为连接远程设备提供实时可靠的消息服务。<strong>支持长连接！适用于抄表</strong></p>
+<blockquote>
+<p><img src="https://s2.ax1x.com/2019/08/03/eDkio6.png" alt="eDkio6.png"></p>
+</blockquote>
+<p>CoAP 由于物联网中的很多设备都是资源受限型的，即只有少量的内存空间和有限的计算能力，所以传统的HTTP协议应用在物联网上就显得过于庞大而不适用。 IETF的CoRE工作组提出了一种基于REST架构的CoAP协议;是一种在物联网世界的类web协议。<strong>不支持长连接 基于UDO 可靠性不高 适用于智能家居</strong></p>
+<p><img src="https://s2.ax1x.com/2019/08/03/eDk8fS.png" alt="eDk8fS.png"></p>
 <hr>
 <h1 id="OSI七层模型-TCP-IP五层模型："><a href="#OSI七层模型-TCP-IP五层模型：" class="headerlink" title="OSI七层模型/TCP/IP五层模型："></a>OSI七层模型/TCP/IP五层模型：</h1><h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><p>(整个过程以公司A和公司B的一次商业报价单发送为例子进行讲解。)</p>
 <ul>
@@ -536,9 +542,14 @@
 </blockquote>
 </li>
 </ul>
-<p><a href="https://imgchr.com/i/e0sspV" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/08/02/e0sspV.png" alt="e0sspV.png"></a></p>
+<p>[<img src="https://s2.ax1x.com/2019/08/02/e0sspV.png" alt="e0sspV.png"></p>
 <h2 id="TCP-IP五层模型"><a href="#TCP-IP五层模型" class="headerlink" title="TCP/IP五层模型"></a>TCP/IP五层模型</h2><p> TCP/IP五层协议和OSI的七层协议对应关系如下。 在每一层都工作着不同的设备，比如我们常用的交换机就工作在数据链路层的，一般的路由器是工作在网络层的。<br><img src="https://s2.ax1x.com/2019/08/02/e0sHXD.png" alt="e0sHXD.png"><br> 在每一层实现的协议也各不同，即每一层的服务也不同。下图列出了每层主要的协议。<br><img src="https://s2.ax1x.com/2019/08/02/e0sqne.png" alt="e0sqne.png"></p>
 <hr>
+<p>#鉴权</p>
+<p>  鉴权（authentication）是指验证用户是否拥有访问系统的权利。</p>
+<h1 id="CIG、IOCM、DM-Server、Mongo-DB"><a href="#CIG、IOCM、DM-Server、Mongo-DB" class="headerlink" title="CIG、IOCM、DM Server、Mongo DB"></a>CIG、IOCM、DM Server、Mongo DB</h1><p>CIG (Cell Interconnection Gateway) 信元互连网关</p>
+<p>？？？</p>
+<p># </p>
 <h1 id="color-red-未完待续"><a href="#color-red-未完待续" class="headerlink" title="$\color{red}{未完待续~~}$"></a><strong>$\color{red}{未完待续~~}$</strong></h1>
       
     </div>
@@ -760,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单工、半双工和全双工的区别"><span class="nav-number">1.</span> <span class="nav-text">单工、半双工和全双工的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-（传输控制协议）Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP （传输控制协议）Transmission Control Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-（应用程序编程接口）"><span class="nav-number">3.</span> <span class="nav-text">api （应用程序编程接口）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http、MQTT、CoAP"><span class="nav-number">4.</span> <span class="nav-text">http、MQTT、CoAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI七层模型-TCP-IP五层模型："><span class="nav-number">5.</span> <span class="nav-text">OSI七层模型/TCP/IP五层模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI七层模型"><span class="nav-number">5.1.</span> <span class="nav-text">OSI七层模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP五层模型"><span class="nav-number">5.2.</span> <span class="nav-text">TCP/IP五层模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#color-red-未完待续"><span class="nav-number">6.</span> <span class="nav-text">$\color{red}{未完待续~~}$</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单工、半双工和全双工的区别"><span class="nav-number">1.</span> <span class="nav-text">单工、半双工和全双工的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-（传输控制协议）Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP （传输控制协议）Transmission Control Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-（应用程序编程接口）"><span class="nav-number">3.</span> <span class="nav-text">api （应用程序编程接口）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http、MQTT、CoAP"><span class="nav-number">4.</span> <span class="nav-text">http、MQTT、CoAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI七层模型-TCP-IP五层模型："><span class="nav-number">5.</span> <span class="nav-text">OSI七层模型/TCP/IP五层模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI七层模型"><span class="nav-number">5.1.</span> <span class="nav-text">OSI七层模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP五层模型"><span class="nav-number">5.2.</span> <span class="nav-text">TCP/IP五层模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CIG、IOCM、DM-Server、Mongo-DB"><span class="nav-number">6.</span> <span class="nav-text">CIG、IOCM、DM Server、Mongo DB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#color-red-未完待续"><span class="nav-number">7.</span> <span class="nav-text">$\color{red}{未完待续~~}$</span></a></li></ol></div>
             
 
           </div>
@@ -795,7 +806,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">5k</span>
+    <span title="站点总字数">4k</span>
   
 
   
@@ -806,7 +817,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">4 分钟</span>
   
 </div>
 
