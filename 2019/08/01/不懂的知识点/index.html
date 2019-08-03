@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/02/e0sspV.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/02/e0sHXD.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/02/e0sqne.png">
-<meta property="og:updated_time" content="2019-08-03T10:53:27.059Z">
+<meta property="og:updated_time" content="2019-08-03T11:55:19.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不懂的知识点 查阅 汇总">
 <meta name="twitter:description" content="单工、半双工和全双工的区别 一、单工1、数据只在一个方向上传输，不能实现双方通信。  2、栗子：电视、广播。  二、半双工1、允许数据在两个方向上传输，但是同一时间数据只能在一个方向上传输，其实际上是切换的单工。  2、栗子：对讲机。  三、全双工1、允许数据在两个方向上同时传输。  2、栗子：手机通话。  TCP/IP （传输控制协议）Transmission Control Protocol">
@@ -412,7 +412,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-03 18:53:27" itemprop="dateModified" datetime="2019-08-03T18:53:27+08:00">2019-08-03</time>
+                <time title="修改时间：2019-08-03 19:55:19" itemprop="dateModified" datetime="2019-08-03T19:55:19+08:00">2019-08-03</time>
               </span>
             
           
@@ -479,7 +479,7 @@
       
 
       
-        <h1 id="单工、半双工和全双工的区别"><a href="#单工、半双工和全双工的区别" class="headerlink" title="单工、半双工和全双工的区别"></a>单工、半双工和全双工的区别</h1><ul>
+        <h2 id="单工、半双工和全双工的区别"><a href="#单工、半双工和全双工的区别" class="headerlink" title="单工、半双工和全双工的区别"></a>单工、半双工和全双工的区别</h2><ul>
 <li>一、单工<br>1、数据只在一个方向上传输，不能实现双方通信。</li>
 </ul>
 <p>2、栗子：电视、广播。</p>
@@ -492,7 +492,7 @@
 </ul>
 <p>2、栗子：手机通话。</p>
 <hr>
-<h1 id="TCP-IP-（传输控制协议）Transmission-Control-Protocol"><a href="#TCP-IP-（传输控制协议）Transmission-Control-Protocol" class="headerlink" title="TCP/IP （传输控制协议）Transmission Control Protocol"></a>TCP/IP （传输控制协议）Transmission Control Protocol</h1><ul>
+<h2 id="TCP-IP-（传输控制协议）Transmission-Control-Protocol"><a href="#TCP-IP-（传输控制协议）Transmission-Control-Protocol" class="headerlink" title="TCP/IP （传输控制协议）Transmission Control Protocol"></a>TCP/IP （传输控制协议）Transmission Control Protocol</h2><ul>
 <li><p>TCP 用于应用程序之间的通信。<br>当应用程序希望通过 TCP 与另一个应用程序通信时，它会发送一个通信请求。这个请求必须被送到一个确切的地址。在双方“握手”之后，TCP 将在两个应用程序之间建立一个全双工 (full-duplex) 的通信。</p>
 </li>
 <li><p>IP 用于计算机之间的通信。<br>IP 是无连接的通信协议。它不会占用两个正在通信的计算机之间的通信线路。这样，IP 就降低了对网络线路的需求。每条线可以同时满足许多不同的计算机之间的通信需要。</p>
@@ -501,9 +501,9 @@
 </li>
 </ul>
 <hr>
-<h1 id="api-（应用程序编程接口）"><a href="#api-（应用程序编程接口）" class="headerlink" title="api （应用程序编程接口）"></a>api （应用程序编程接口）</h1><p>API 是一套明确定义的各种软件组件之间的通信方法。</p>
+<h2 id="api-（应用程序编程接口）"><a href="#api-（应用程序编程接口）" class="headerlink" title="api （应用程序编程接口）"></a>api （应用程序编程接口）</h2><p>API 是一套明确定义的各种软件组件之间的通信方法。</p>
 <hr>
-<h1 id="http、MQTT、CoAP"><a href="#http、MQTT、CoAP" class="headerlink" title="http、MQTT、CoAP"></a>http、MQTT、CoAP</h1><p>HTTP是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。</p>
+<h3 id="http、MQTT、CoAP"><a href="#http、MQTT、CoAP" class="headerlink" title="http、MQTT、CoAP"></a>http、MQTT、CoAP</h3><p>HTTP是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。</p>
 <p>MQTT（Message Queuing Telemetry Transport，消息队列遥测传输协议），是一种基于发布/订阅（publish/subscribe）模式的”轻量级”通讯协议，该协议构建于TCP/IP协议上，由IBM在1999年发布。MQTT最大优点在于，可以以极少的代码和有限的带宽，为连接远程设备提供实时可靠的消息服务。<strong>支持长连接！适用于抄表</strong></p>
 <blockquote>
 <p><img src="https://s2.ax1x.com/2019/08/03/eDkio6.png" alt="eDkio6.png"></p>
@@ -511,46 +511,65 @@
 <p>CoAP 由于物联网中的很多设备都是资源受限型的，即只有少量的内存空间和有限的计算能力，所以传统的HTTP协议应用在物联网上就显得过于庞大而不适用。 IETF的CoRE工作组提出了一种基于REST架构的CoAP协议;是一种在物联网世界的类web协议。<strong>不支持长连接 基于UDO 可靠性不高 适用于智能家居</strong></p>
 <p><img src="https://s2.ax1x.com/2019/08/03/eDk8fS.png" alt="eDk8fS.png"></p>
 <hr>
-<h1 id="OSI七层模型-TCP-IP五层模型："><a href="#OSI七层模型-TCP-IP五层模型：" class="headerlink" title="OSI七层模型/TCP/IP五层模型："></a>OSI七层模型/TCP/IP五层模型：</h1><h2 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h2><p>(整个过程以公司A和公司B的一次商业报价单发送为例子进行讲解。)</p>
+<h2 id="OSI七层模型-TCP-IP五层模型："><a href="#OSI七层模型-TCP-IP五层模型：" class="headerlink" title="OSI七层模型/TCP/IP五层模型："></a>OSI七层模型/TCP/IP五层模型：</h2><h3 id="OSI七层模型"><a href="#OSI七层模型" class="headerlink" title="OSI七层模型"></a>OSI七层模型</h3><p>(整个过程以公司A和公司B的一次商业报价单发送为例子进行讲解。)</p>
 <ul>
-<li>&lt;1&gt;    应用层<pre><code>OSI参考模型中最靠近用户的一层，是为计算机用户提供应用接口，也为用户直接提供各种网络服务。我们常见应用层的网络服务协议有：HTTP，HTTPS，FTP，POP3、SMTP等。</code></pre><blockquote>
+<li>&lt;1&gt;    应用层</li>
+</ul>
+<p>OSI参考模型中最靠近用户的一层，是为计算机用户提供应用接口，也为用户直接提供各种网络服务。我们常见应用层的网络服务协议有：HTTP，HTTPS，FTP，POP3、SMTP等。</p>
+<blockquote>
 <p>实际公司A的老板就是我们所述的用户，而他要发送的商业报价单，就是应用层提供的一种网络服务，当然，老板也可以选择其他服务，比如说，发一份商业合同，发一份询&gt; 价单，等等。</p>
 </blockquote>
-</li>
-<li>&lt;2&gt;    表示层<pre><code>表示层提供各种用于应用层数据的编码和转换功能,确保一个系统的应用层发送的数据能被另一个系统的应用层识别。如果必要，该层可提供一种标准表示形式，用于将计算机内部的多种数据格式转换成通信中采用的标准表示形式。数据压缩和加密也是表示层可提供的转换功能之一。</code></pre><blockquote>
+<ul>
+<li>&lt;2&gt;表示层</li>
+</ul>
+<p>表示层提供各种用于应用层数据的编码和转换功能,确保一个系统的应用层发送的数据能被另一个系统的应用层识别。如果必要，该层可提供一种标准表示形式，用于将计算机内部的多种数据格式转换成通信中采用的标准表示形式。数据压缩和加密也是表示层可提供的转换功能之一。</p>
+<blockquote>
 <p>由于公司A和公司B是不同国家的公司，他们之间的商定统一用英语作为交流的语言，所以此时表示层（公司的文秘），就是将应用层的传递信息转翻译成英语。同时为了防止别的公司看到，公司A的人也会对这份报价单做一些加密的处理。这就是表示的作用，将应用层的数据转换翻译等。</p>
 </blockquote>
-</li>
-<li>&lt;3&gt;    会话层<pre><code>会话层就是负责建立、管理和终止表示层实体之间的通信会话。该层的通信由不同设备中的应用程序之间的服务请求和响应组成。      </code></pre><blockquote>
+<ul>
+<li>&lt;3&gt;会话</li>
+</ul>
+<p>会话层就是负责建立、管理和终止表示层实体之间的通信会话。该层的通信由不同设备中的应用程序之间的服务请求和响应组成。</p>
+<blockquote>
 <p>会话层的同事拿到表示层的同事转换后资料，（会话层的同事类似公司的外联部），会话层的同事那里可能会掌握本公司与其他好多公司的联系方式，这里公司就是实际传递过程中的实体。他们要管理本公司与外界好多公司的联系会话。当接收到表示层的数据后，会话层将会建立并记录本次会话，他首先要找到公司B的地址信息，然后将整份资料放进信封，并写上地址和联系方式。准备将资料寄出。等到确定公司B接收到此份报价单后，此次会话就算结束了，外联部的同事就会终止此次会话。</p>
 </blockquote>
-</li>
-<li>&lt;4&gt;   传输层<pre><code>传输层建立了主机端到端的链接，传输层的作用是为上层协议提供端到端的可靠和透明的数据传输服务，包括处理差错控制和流量控制等问题。该层向高层屏蔽了下层数据通信的细节，使高层用户看到的只是在两个传输实体间的一条主机到主机的、可由用户控制和设定的、可靠的数据通路。我们通常说的， **TCP UDP** 就是在这一层。端口号既是这里的“端”。</code></pre><blockquote>
+<ul>
+<li>&lt;4&gt;传输层</li>
+</ul>
+<p>传输层建立了主机端到端的链接，传输层的作用是为上层协议提供端到端的可靠和透明的数据传输服务，包括处理差错控制和流量控制等问题。该层向高层屏蔽了下层数据通信的细节，使高层用户看到的只是在两个传输实体间的一条主机到主机的、可由用户控制和设定的、可靠的数据通路。我们通常说的， <strong>TCP UDP</strong> 就是在这一层。端口号既是这里的“端”。</p>
+<blockquote>
 <p>传输层就相当于公司中的负责快递邮件收发的人，公司自己的投递员，他们负责将上一层的要寄出的资料投递到快递公司或邮局。</p>
 </blockquote>
-</li>
-<li>&lt;5&gt;   网络层<pre><code>本层通过IP寻址来建立两个节点之间的连接，为源端的运输层送来的分组，选择合适的路由和交换节点，正确无误地按照地址传送给目的端的运输层。就是通常说的IP层。这一层就是我们经常说的IP协议层。IP协议是Internet的基础。</code></pre><blockquote>
+<ul>
+<li>&lt;5&gt;网络层</li>
+</ul>
+<p>本层通过IP寻址来建立两个节点之间的连接，为源端的运输层送来的分组，选择合适的路由和交换节点，正确无误地按照地址传送给目的端的运输层。就是通常说的IP层。这一层就是我们经常说的IP协议层。IP协议是Internet的基础。</p>
+<blockquote>
 <p>网络层就相当于快递公司庞大的快递网络，全国不同的集散中心，比如说，从深圳发往北京的顺丰快递（陆运为例啊，空运好像直接就飞到北京了），首先要到顺丰的深圳集散中心，从深圳集散中心再送到武汉集散中心，从武汉集散中心再寄到北京顺义集散中心。这个每个集散中心，就相当于网络中的一个IP节点。</p>
 </blockquote>
-</li>
-<li>&lt;6&gt;   数据链路层 <pre><code>将比特组合成字节,再将字节组合成帧,使用链路层地址 (以太网使用MAC地址)来访问介质,并进行差错检测。</code></pre>   数据链路层又分为2个子层：逻辑链路控制子层（LLC）和媒体访问控制子层（MAC）。<pre><code>MAC子层处理CSMA/CD算法、数据出错校验、成帧等；LLC子层定义了一些字段使上次协议能共享数据链路层。 在实际使用中，LLC子层并非必需的。</code></pre><blockquote>
+<ul>
+<li>&lt;6&gt;数据链路层 </li>
+</ul>
+<p>将比特组合成字节,再将字节组合成帧,使用链路层地址 (以太网使用MAC地址)来访问介质,并进行差错检测。<br>数据链路层又分为2个子层：逻辑链路控制子层（LLC）和媒体访问控制子层（MAC）。<br>MAC子层处理CSMA/CD算法、数据出错校验、成帧等；LLC子层定义了一些字段使上次协议能共享数据链路层。 在实际使用中，LLC子层并非必需的。</p>
+<blockquote>
 <p>这个没找到合适的例子</p>
 </blockquote>
-</li>
-<li>&lt;7&gt;  物理层     <pre><code>实际最终信号的传输是通过物理层实现的。通过物理介质传输比特流。规定了电平、速度和电缆针脚。常用设备有（各种物理设备）集线器、中继器、调制解调器、网线、双绞线、同轴电缆。这些都是物理层的传输介质。</code></pre><blockquote>
+<ul>
+<li>&lt;7&gt; 物理层  </li>
+</ul>
+<p>实际最终信号的传输是通过物理层实现的。通过物理介质传输比特流。规定了电平、速度和电缆针脚。常用设备有（各种物理设备）集线器、中继器、调制解调器、网线、双绞线、同轴电缆。这些都是物理层的传输介质。</p>
+<blockquote>
 <p>快递寄送过程中的交通工具，就相当于我们的物理层，例如汽车，火车，飞机，船。</p>
 </blockquote>
-</li>
-</ul>
 <p>[<img src="https://s2.ax1x.com/2019/08/02/e0sspV.png" alt="e0sspV.png"></p>
-<h2 id="TCP-IP五层模型"><a href="#TCP-IP五层模型" class="headerlink" title="TCP/IP五层模型"></a>TCP/IP五层模型</h2><p> TCP/IP五层协议和OSI的七层协议对应关系如下。 在每一层都工作着不同的设备，比如我们常用的交换机就工作在数据链路层的，一般的路由器是工作在网络层的。<br><img src="https://s2.ax1x.com/2019/08/02/e0sHXD.png" alt="e0sHXD.png"><br> 在每一层实现的协议也各不同，即每一层的服务也不同。下图列出了每层主要的协议。<br><img src="https://s2.ax1x.com/2019/08/02/e0sqne.png" alt="e0sqne.png"></p>
 <hr>
-<p>#鉴权</p>
-<p>  鉴权（authentication）是指验证用户是否拥有访问系统的权利。</p>
-<h1 id="CIG、IOCM、DM-Server、Mongo-DB"><a href="#CIG、IOCM、DM-Server、Mongo-DB" class="headerlink" title="CIG、IOCM、DM Server、Mongo DB"></a>CIG、IOCM、DM Server、Mongo DB</h1><p>CIG (Cell Interconnection Gateway) 信元互连网关</p>
-<p>？？？</p>
-<p># </p>
-<h1 id="color-red-未完待续"><a href="#color-red-未完待续" class="headerlink" title="$\color{red}{未完待续~~}$"></a><strong>$\color{red}{未完待续~~}$</strong></h1>
+<h3 id="TCP-IP五层模型"><a href="#TCP-IP五层模型" class="headerlink" title="TCP/IP五层模型"></a>TCP/IP五层模型</h3><p> TCP/IP五层协议和OSI的七层协议对应关系如下。 在每一层都工作着不同的设备，比如我们常用的交换机就工作在数据链路层的，一般的路由器是工作在网络层的。<br><img src="https://s2.ax1x.com/2019/08/02/e0sHXD.png" alt="e0sHXD.png"><br> 在每一层实现的协议也各不同，即每一层的服务也不同。下图列出了每层主要的协议。<br><img src="https://s2.ax1x.com/2019/08/02/e0sqne.png" alt="e0sqne.png"></p>
+<hr>
+<h2 id="鉴权"><a href="#鉴权" class="headerlink" title="鉴权"></a>鉴权</h2><p>  鉴权（authentication）是指验证用户是否拥有访问系统的权利。</p>
+<hr>
+<h2 id="CIG、IOCM、DM-Server、Mongo-DB"><a href="#CIG、IOCM、DM-Server、Mongo-DB" class="headerlink" title="CIG、IOCM、DM Server、Mongo DB"></a>CIG、IOCM、DM Server、Mongo DB</h2><p>CIG (Cell Interconnection Gateway) 信元互连网关</p>
+<hr>
+<h2 id="color-red-未完待续"><a href="#color-red-未完待续" class="headerlink" title="$\color{red}{未完待续~~}$"></a><strong>$\color{red}{未完待续~~}$</strong></h2>
       
     </div>
 
@@ -771,7 +790,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#单工、半双工和全双工的区别"><span class="nav-number">1.</span> <span class="nav-text">单工、半双工和全双工的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP-IP-（传输控制协议）Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP （传输控制协议）Transmission Control Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#api-（应用程序编程接口）"><span class="nav-number">3.</span> <span class="nav-text">api （应用程序编程接口）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#http、MQTT、CoAP"><span class="nav-number">4.</span> <span class="nav-text">http、MQTT、CoAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSI七层模型-TCP-IP五层模型："><span class="nav-number">5.</span> <span class="nav-text">OSI七层模型/TCP/IP五层模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI七层模型"><span class="nav-number">5.1.</span> <span class="nav-text">OSI七层模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP五层模型"><span class="nav-number">5.2.</span> <span class="nav-text">TCP/IP五层模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CIG、IOCM、DM-Server、Mongo-DB"><span class="nav-number">6.</span> <span class="nav-text">CIG、IOCM、DM Server、Mongo DB</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#color-red-未完待续"><span class="nav-number">7.</span> <span class="nav-text">$\color{red}{未完待续~~}$</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#单工、半双工和全双工的区别"><span class="nav-number">1.</span> <span class="nav-text">单工、半双工和全双工的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-IP-（传输控制协议）Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP/IP （传输控制协议）Transmission Control Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api-（应用程序编程接口）"><span class="nav-number">3.</span> <span class="nav-text">api （应用程序编程接口）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#http、MQTT、CoAP"><span class="nav-number">3.1.</span> <span class="nav-text">http、MQTT、CoAP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSI七层模型-TCP-IP五层模型："><span class="nav-number">4.</span> <span class="nav-text">OSI七层模型/TCP/IP五层模型：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI七层模型"><span class="nav-number">4.1.</span> <span class="nav-text">OSI七层模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP五层模型"><span class="nav-number">4.2.</span> <span class="nav-text">TCP/IP五层模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#鉴权"><span class="nav-number">5.</span> <span class="nav-text">鉴权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CIG、IOCM、DM-Server、Mongo-DB"><span class="nav-number">6.</span> <span class="nav-text">CIG、IOCM、DM Server、Mongo DB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#color-red-未完待续"><span class="nav-number">7.</span> <span class="nav-text">$\color{red}{未完待续~~}$</span></a></li></ol></div>
             
 
           </div>
