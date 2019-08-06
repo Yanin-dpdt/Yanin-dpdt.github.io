@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[企业岗位要求]]></title>
-    <url>%2F2019%2F08%2F06%2F%E4%BC%81%E4%B8%9A%E5%B2%97%E4%BD%8D%E8%A6%81%E6%B1%82%2F</url>
-    <content type="text"><![CDATA[几家企业的岗位要求，激励自己不断前进！]]></content>
-      <tags>
-        <tag>岗位要求</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[DSP电机平台上位机编写(Python+pyqt)]]></title>
     <url>%2F2019%2F08%2F06%2FDSP%E5%B9%B3%E5%8F%B0%E4%B8%8A%E4%BD%8D%E6%9C%BA%2F</url>
     <content type="text"><![CDATA[准备给DSP电机平台增加一个电机转速调节的上位机。 目的： 1.学习python，并利用它做点东西 2.对串口通信有更加深刻的了解 计划步骤： 1.先把Python的基础知识有大体了解 2.学习pyqt并绘制上位机界面 3.做好串口通信的工作]]></content>
@@ -17,6 +9,14 @@
         <tag>上位机</tag>
         <tag>Python</tag>
         <tag>pyqt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[企业岗位要求]]></title>
+    <url>%2F2019%2F08%2F06%2F%E4%BC%81%E4%B8%9A%E5%B2%97%E4%BD%8D%E8%A6%81%E6%B1%82%2F</url>
+    <content type="text"><![CDATA[几家企业的岗位要求，激励自己不断前进！]]></content>
+      <tags>
+        <tag>岗位要求</tag>
       </tags>
   </entry>
   <entry>
@@ -29,14 +29,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[关于加入站内搜索]]></title>
-    <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
-    <content type="text"><![CDATA[今天按照网上的加入本站搜索功能 无论如何都加不进去，后来在查看 NEXT给的官方解读中看到解决方法网址如下，查看Local Search方法 https://theme-next.org/docs/third-party-services/search-services]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[关于DSP平台双UDE 参数调试]]></title>
     <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E5%8F%8CUDE%E8%B0%83%E8%AF%95%2F</url>
     <content type="text"><![CDATA[1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系） 2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。 3.图中的时间 10000点 = 5s 4.Main_twoloop190801.c为源程序。 5.文件夹中 01-07为电流环调试过程, 08-11为速度环调试过程, 12 给了一个比较极端的速度环滤波器参数。 数据对应参数： spd_Factor spd_kp spd_ki iq_Factor iq_kp iq_ki 01参数 0.1667 0.8 0.0015 0.007 1.0 0.0025 05参数 0.1667 0.8 0.0015 0.007 2.1 0.0025 06参数 0.1667 0.8 0.0015 0.007 2.5 0.0025 10参数 0.1667 3.0 0.0015 0.007 2.5 0.0025 12参数 0.0007 0.8 0.0015 0.007 2.5 0.0025 6.画图函数 1234567891011121314figure(1)plot(t,spd,'r','LineWidth',1)hold onplot(t,spdr-5,'g','LineWidth',1)hold onplot(t,spdc-5,'b','LineWidth',1)grid onfigure(2)plot(t,iq,'r','LineWidth',1)hold onplot(t,iqr,'g','LineWidth',1)hold onplot(t,iqc,'b','LineWidth',1)grid on]]></content>
@@ -44,6 +36,14 @@
         <tag>PMSM</tag>
         <tag>DSP</tag>
         <tag>UDE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于加入站内搜索]]></title>
+    <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[今天按照网上的加入本站搜索功能 无论如何都加不进去，后来在查看 NEXT给的官方解读中看到解决方法网址如下，查看Local Search方法 https://theme-next.org/docs/third-party-services/search-services]]></content>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
