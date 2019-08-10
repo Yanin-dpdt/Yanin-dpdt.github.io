@@ -94,20 +94,20 @@
   };
 </script>
 
-  <meta name="description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A. 用struct定义位域的作用：在DSP2833x_Sci.h中有一段: 1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
+  <meta name="description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A.用struct定义位域的作用：在DSP2833x_Sci.h中有一段:  1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
 <meta name="keywords" content="DSP28335">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DSP基础知识一览">
 <meta property="og:url" content="http://yoursite.com/2019/08/10/DSP基础知识一览/index.html">
 <meta property="og:site_name" content="颜">
-<meta property="og:description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A. 用struct定义位域的作用：在DSP2833x_Sci.h中有一段: 1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
+<meta property="og:description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A.用struct定义位域的作用：在DSP2833x_Sci.h中有一段:  1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/10/eXpGTJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/10/eXpr0e.png">
-<meta property="og:updated_time" content="2019-08-10T12:54:40.901Z">
+<meta property="og:updated_time" content="2019-08-10T12:59:27.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DSP基础知识一览">
-<meta name="twitter:description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A. 用struct定义位域的作用：在DSP2833x_Sci.h中有一段: 1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
+<meta name="twitter:description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A.用struct定义位域的作用：在DSP2833x_Sci.h中有一段:  1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/08/10/eXpGTJ.png">
 
 
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-08-10 00:00:00 / 修改时间：20:54:40" itemprop="dateCreated datePublished" datetime="2019-08-10T00:00:00+08:00">2019-08-10</time>
+              <time title="创建时间：2019-08-10 00:00:00 / 修改时间：20:59:27" itemprop="dateCreated datePublished" datetime="2019-08-10T00:00:00+08:00">2019-08-10</time>
             </span>
           
 
@@ -468,11 +468,11 @@
       
         <h2 id="CCS编程基础"><a href="#CCS编程基础" class="headerlink" title="CCS编程基础"></a>CCS编程基础</h2><p>CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？</p>
 <p>下面来一个典型的例子：</p>
-<h3 id="1-使用结构体和联合体"><a href="#1-使用结构体和联合体" class="headerlink" title="1.使用结构体和联合体"></a>1.使用结构体和联合体</h3><p><strong>A.</strong> 用struct定义位域的作用：在DSP2833x_Sci.h中有一段:</p>
+<h3 id="1-使用结构体和联合体"><a href="#1-使用结构体和联合体" class="headerlink" title="1.使用结构体和联合体"></a>1.使用结构体和联合体</h3><p><strong>A.用struct定义位域的作用：在DSP2833x_Sci.h中有一段:</strong> </p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span>  <span class="title">SCICCR_BITS</span> &#123;</span>        <span class="comment">// bit    description</span></span><br><span class="line">   Uint16 SCICHAR:<span class="number">3</span>;         <span class="comment">// 2:0    Character length control</span></span><br><span class="line">   Uint16 ADDRIDLE_MODE:<span class="number">1</span>;   <span class="comment">// 3      ADDR/IDLE Mode control</span></span><br><span class="line">   Uint16 LOOPBKENA:<span class="number">1</span>;       <span class="comment">// 4      Loop Back enable</span></span><br><span class="line">   Uint16 PARITYENA:<span class="number">1</span>;       <span class="comment">// 5      Parity enable</span></span><br><span class="line">   Uint16 PARITY:<span class="number">1</span>;          <span class="comment">// 6      Even or Odd Parity</span></span><br><span class="line">   Uint16 STOPBITS:<span class="number">1</span>;        <span class="comment">// 7      Number of Stop Bits</span></span><br><span class="line">   Uint16 rsvd1:<span class="number">8</span>;           <span class="comment">// 15:8   reserved 保留</span></span><br><span class="line">&#125;; </span><br><span class="line"> </span><br><span class="line"><span class="keyword">union</span> SCICCR_REG &#123;</span><br><span class="line">   Uint16              all;</span><br><span class="line">   <span class="class"><span class="keyword">struct</span> <span class="title">SCICCR_BITS</span>  <span class="title">bit</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>Uint16 SCICHAR:3 表示定义SCICHAR，它占一个字节中的3位；<strong>*注意：必须以4字节对齐！观察上面的SCICCR_BITS的定义也会发现前面定义了3+1+1+1+1+1=8位=1字节</strong></p>
-<p><strong>B.</strong>再来看union的作用</p>
+<p><strong>B.再来看union的作用</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">union</span> SCICCR_REG&#123;</span><br><span class="line">      Uint16     all;</span><br><span class="line">      <span class="class"><span class="keyword">struct</span> <span class="title">SCICCR_BITS</span> <span class="title">bit</span>;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>这样定义有什么效果？<br>当我想操作SCICCR_BITS中的每一位时，只需定义union SCICCR_REG reg即可</p>
@@ -508,13 +508,13 @@
 <hr>
 <h2 id="GPIO引脚"><a href="#GPIO引脚" class="headerlink" title="GPIO引脚"></a>GPIO引脚</h2><p><strong>GPIO（General-Purpose Input/Output）——通用输入/输出口</strong></p>
 <p>DSP28335 GPIO模块分为三类IO口：PORTA(0-31),PORTB(32-63),PORTC(64-87) 对GPIO模块的设置主要通过三类寄存器来完成，分别是：控制寄存器、数据寄存器、中断寄存器。</p>
-<p><strong>1、</strong>控制寄存器</p>
+<p><strong>1、控制寄存器</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  GPxCTRL;    <span class="comment">// GPIO x Control Register (GPIO0 to 31)</span></span><br><span class="line">              <span class="comment">//设置采样窗周期T=2*GPXCTRL*Tsysclk；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  GPxQSEL1;   <span class="comment">// GPIO x Qualifier Select 1 Register (GPIO0 to 15)(32-47)            </span></span><br><span class="line">  GPxQSEL2;   <span class="comment">// GPIO x Qualifier Select 2 Register (GPIO16 to 31)(48-63)</span></span><br><span class="line">              <span class="comment">//每两位控制一个引脚，确定是3周期采样还是6周期采样或者不用采样</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  GPxMUX1;    <span class="comment">// GPIO x Mux 1 Register (GPIO0 to 15)(32-47)(64-79)</span></span><br><span class="line"></span><br><span class="line">  GPxMUX2;    <span class="comment">// GPIO x Mux 2 Register (GPIO16 to 31)(48-63)(80-95)</span></span><br><span class="line">              <span class="comment">//配置各个引脚的功能，0：I/O功能，1：外设功能。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  GPxDIR;     <span class="comment">// GPIO x Direction Register (GPIO0 to 31)(32-63)(64-95)</span></span><br><span class="line">              <span class="comment">//配置每个引脚是输入还是输出，0：数字量输入；1：数字量输出。</span></span><br><span class="line">  GPxPUD;     <span class="comment">// GPIO x Pull Up Disable Register (GPIO0 to 31)(32-63)(64-95)</span></span><br><span class="line">              <span class="comment">//使能或禁止内部上拉 0：开启上拉，1：禁止上拉</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>2、</strong>数据寄存器</p>
+<p><strong>2、数据寄存器</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  GPxDAT;     <span class="comment">// GPIO Data Register (GPIO0 to 31)(32-63)(64-95)</span></span><br><span class="line">  GPxSET;     <span class="comment">// GPIO Data Set Register (GPIO0 to 31)(32-63)(64-95)——置位</span></span><br><span class="line"></span><br><span class="line">  GPxCLEAR;   <span class="comment">// GPIO Data Clear Register (GPIO0 to 31)(32-63)(64-95)</span></span><br><span class="line"></span><br><span class="line">  GPxTOGGLE;  <span class="comment">// GPIO Data Toggle Register (GPIO0 to 31)(32-63)(64-95)—反转</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>3、</strong>中断寄存器</p>
+<p><strong>3、中断寄存器</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">   GPIOXINT1SEL; <span class="comment">// XINT1 GPIO Input Selection</span></span><br><span class="line">   GPIOXINT2SEL; <span class="comment">// XINT2 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOXNMISEL;  <span class="comment">// XNMI_Xint13 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOXINT3SEL; <span class="comment">// XINT3 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOXINT4SEL; <span class="comment">// XINT4 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOXINT5SEL; <span class="comment">// XINT5 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOXINT6SEL; <span class="comment">// XINT6 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOXINT7SEL; <span class="comment">// XINT7 GPIO Input Selection</span></span><br><span class="line"></span><br><span class="line">   GPIOLPMSEL;   <span class="comment">// Low power modes GP I/O input select</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -524,37 +524,39 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">GPIO_CTRL_REGS</span> &#123;</span></span><br><span class="line">   <span class="keyword">union</span>  GPACTRL_REG  GPACTRL;   <span class="comment">// GPIO A Control Register (GPIO0 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPA1_REG     GPAQSEL1;  <span class="comment">// GPIO A Qualifier Select 1 Register (GPIO0 to 15)</span></span><br><span class="line">   <span class="keyword">union</span>  GPA2_REG     GPAQSEL2;  <span class="comment">// GPIO A Qualifier Select 2 Register (GPIO16 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPA1_REG     GPAMUX1;   <span class="comment">// GPIO A Mux 1 Register (GPIO0 to 15)</span></span><br><span class="line">   <span class="keyword">union</span>  GPA2_REG     GPAMUX2;   <span class="comment">// GPIO A Mux 2 Register (GPIO16 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG   GPADIR;    <span class="comment">// GPIO A Direction Register (GPIO0 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG   GPAPUD;    <span class="comment">// GPIO A Pull Up Disable Register (GPIO0 to 31)</span></span><br><span class="line">   Uint32              rsvd1;</span><br><span class="line">   <span class="keyword">union</span>  GPBCTRL_REG  GPBCTRL;   <span class="comment">// GPIO B Control Register (GPIO32 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPB1_REG     GPBQSEL1;  <span class="comment">// GPIO B Qualifier Select 1 Register (GPIO32 to 47)</span></span><br><span class="line">   <span class="keyword">union</span>  GPB2_REG     GPBQSEL2;  <span class="comment">// GPIO B Qualifier Select 2 Register (GPIO48 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPB1_REG     GPBMUX1;   <span class="comment">// GPIO B Mux 1 Register (GPIO32 to 47)</span></span><br><span class="line">   <span class="keyword">union</span>  GPB2_REG     GPBMUX2;   <span class="comment">// GPIO B Mux 2 Register (GPIO48 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPBDAT_REG   GPBDIR;    <span class="comment">// GPIO B Direction Register (GPIO32 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPBDAT_REG   GPBPUD;    <span class="comment">// GPIO B Pull Up Disable Register (GPIO32 to 63)</span></span><br><span class="line">   Uint16              rsvd2[<span class="number">8</span>];</span><br><span class="line">   <span class="keyword">union</span>  GPC1_REG     GPCMUX1;   <span class="comment">// GPIO C Mux 1 Register (GPIO64 to 79)</span></span><br><span class="line">   <span class="keyword">union</span>  GPC2_REG     GPCMUX2;   <span class="comment">// GPIO C Mux 2 Register (GPIO80 to 95)</span></span><br><span class="line">   <span class="keyword">union</span>  GPCDAT_REG   GPCDIR;    <span class="comment">// GPIO C Direction Register (GPIO64 to 95)</span></span><br><span class="line">   <span class="keyword">union</span>  GPCDAT_REG   GPCPUD;    <span class="comment">// GPIO C Pull Up Disable Register (GPIO64 to 95)</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">GPIO_DATA_REGS</span> &#123;</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG       GPADAT;       <span class="comment">// GPIO Data Register (GPIO0 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG       GPASET;       <span class="comment">// GPIO Data Set Register (GPIO0 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG       GPACLEAR;     <span class="comment">// GPIO Data Clear Register (GPIO0 to 31)</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG       GPATOGGLE;    <span class="comment">// GPIO Data Toggle Register (GPIO0 to 31) </span></span><br><span class="line">   <span class="keyword">union</span>  GPBDAT_REG       GPBDAT;       <span class="comment">// GPIO Data Register (GPIO32 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPBDAT_REG       GPBSET;       <span class="comment">// GPIO Data Set Register (GPIO32 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPBDAT_REG       GPBCLEAR;     <span class="comment">// GPIO Data Clear Register (GPIO32 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPBDAT_REG       GPBTOGGLE;    <span class="comment">// GPIO Data Toggle Register (GPIO32 to 63)</span></span><br><span class="line">   <span class="keyword">union</span>  GPCDAT_REG       GPCDAT;       <span class="comment">// GPIO Data Register (GPIO64 to 95)</span></span><br><span class="line">   <span class="keyword">union</span>  GPCDAT_REG       GPCSET;       <span class="comment">// GPIO Data Set Register (GPIO64 to 95)</span></span><br><span class="line">   <span class="keyword">union</span>  GPCDAT_REG       GPCCLEAR;     <span class="comment">// GPIO Data Clear Register (GPIO64 to 95)</span></span><br><span class="line">   <span class="keyword">union</span>  GPCDAT_REG       GPCTOGGLE;    <span class="comment">// GPIO Data Toggle Register (GPIO64 to 95)</span></span><br><span class="line">   Uint16                  rsvd1[<span class="number">8</span>];</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">GPIO_INT_REGS</span> &#123;</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT1SEL; <span class="comment">// XINT1 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT2SEL; <span class="comment">// XINT2 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXNMISEL;  <span class="comment">// XNMI_Xint13 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT3SEL; <span class="comment">// XINT3 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT4SEL; <span class="comment">// XINT4 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT5SEL; <span class="comment">// XINT5 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT6SEL; <span class="comment">// XINT6 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPIOXINT_REG     GPIOXINT7SEL; <span class="comment">// XINT7 GPIO Input Selection</span></span><br><span class="line">   <span class="keyword">union</span>  GPADAT_REG       GPIOLPMSEL;   <span class="comment">// Low power modes GP I/O input select</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意：GPIO相关寄存器介绍</strong></p>
-<p> 1、GPxMUX寄存器（功能选择寄存器）</p>
-<p> 每个I/O口都有一个功能选择寄存器，功能选择寄存器主要用于选择I/O工作在特殊功能还是通用数组I/O模式。在复位时，所有GPIO配置成通用数字模式。</p>
-<p> 1）如果GPxMUX.bit = 0，配置成通用数字I/O功能；</p>
-<p> 2）如果GPxMUX.bit = 1，配置成特殊外设功能口（如SCI、CAN）；</p>
-<p> I/O的输入功能和外设的输入通道总是被使能的，输出通道是通用数组I/O和特殊外设复用的。如果引脚配置成通用数组I/O功能，相应的外设功能将被禁止。</p>
-<p> 2、GPxDIR（方向控制寄存器）</p>
-<p> 每个I/O口都有数据方向控制寄存器，数据方向控制寄存器用于设置通用数字I/O为输入还是输出口，在复位时，引脚的默认状态为输入状态。</p>
-<p> 1）如果GPxDIR.bit = 0，引脚设置为通用数字量输入；</p>
-<p> 2）如果GPxDIR.bit = 1，引脚设置为通用数字量输出；</p>
-<p> 复位时，GPxMUX和GPxDIR默认值都为0，所以在复位时，引脚的默认状态为数字I/O输入。</p>
-<p> 3、GPxDAT寄存器（数据寄存器）</p>
-<p> 每个I/O口都有一个数据寄存器，数据寄存器是可读可写寄存器。</p>
-<p> 1）I/O设置为输出功能时，如果GPxDAT.bit = 0，那么操作将会使相应的引脚拉低；</p>
-<p> 2）I/O口设置为输入功能时，如果GPxDAT.bit = 0，反映相应的引脚状态为低电平；</p>
-<p> 3）I/O口设置为输出功能时，如果GPxDAT.bit = 1，那么操作将会使相应的引脚拉高；</p>
-<p> 4）I/O口设置为输入功能时，如果GPxDAT.bit = 1，反映相应的引脚状态为高电平。</p>
-<p> 需要说明的是，当用户试图改变一个数字I/O的状态时，不要改变另一个I/O的引脚状态。</p>
-<p> 4、GOxSET寄存器（置位寄存器）</p>
-<p> 每个I/O口都有一个置位寄存器，置位寄存器是只写寄存器，任何读操作都返回0，如果相应的引脚配置成数据量输出，写1后相应的引脚会置高，写0时没有反映。</p>
-<p>  1）如果GPxSET.bit = 0，没有影响；</p>
-<p> 2）引脚设置为输出时，如果GPxSET.bit = 1，那么操作将会使引脚置高。</p>
-<p> 5、GPxCLEAR寄存器（清除寄存器）</p>
-<p> 每个I/O口都有一个清除寄存器，清除寄存器是只写寄存器，任何读操作都返回0。</p>
-<p> 1）如果GPxCLEAR.bit = 0，没有影响；</p>
-<p> 2）引脚设置为输出时，如果GPxCLEAR.bit = 1，将相应的引脚置成低电平。</p>
-<p> 6、GPxTOGGLE寄存器（取反触发寄存器）</p>
-<p> 每个I/O口都有一个取反触发寄存器，该寄存器是只写寄存器，任何读操作都返回0。</p>
-<p> 1）如果GPxTOGGLE.bit = 0，没有影响；</p>
-<p> 2）引脚设置为输出时，如果GPxTOGGLE.bit = 1，那么操作将使相应的引脚取反。</p>
+<blockquote>
+<p>1、GPxMUX寄存器（功能选择寄存器）</p>
+<p>每个I/O口都有一个功能选择寄存器，功能选择寄存器主要用于选择I/O工作在特殊功能还是通用数组I/O模式。在复位时，所有GPIO配置成通用数字模式。</p>
+<p>1）如果GPxMUX.bit = 0，配置成通用数字I/O功能；</p>
+<p>2）如果GPxMUX.bit = 1，配置成特殊外设功能口（如SCI、CAN）；</p>
+<p>I/O的输入功能和外设的输入通道总是被使能的，输出通道是通用数组I/O和特殊外设复用的。如果引脚配置成通用数组I/O功能，相应的外设功能将被禁止。</p>
+<p>2、GPxDIR（方向控制寄存器）</p>
+<p>每个I/O口都有数据方向控制寄存器，数据方向控制寄存器用于设置通用数字I/O为输入还是输出口，在复位时，引脚的默认状态为输入状态。</p>
+<p>1）如果GPxDIR.bit = 0，引脚设置为通用数字量输入；</p>
+<p>2）如果GPxDIR.bit = 1，引脚设置为通用数字量输出；</p>
+<p>复位时，GPxMUX和GPxDIR默认值都为0，所以在复位时，引脚的默认状态为数字I/O输入。</p>
+<p>3、GPxDAT寄存器（数据寄存器）</p>
+<p>每个I/O口都有一个数据寄存器，数据寄存器是可读可写寄存器。</p>
+<p>1）I/O设置为输出功能时，如果GPxDAT.bit = 0，那么操作将会使相应的引脚拉低；</p>
+<p>2）I/O口设置为输入功能时，如果GPxDAT.bit = 0，反映相应的引脚状态为低电平；</p>
+<p>3）I/O口设置为输出功能时，如果GPxDAT.bit = 1，那么操作将会使相应的引脚拉高；</p>
+<p>4）I/O口设置为输入功能时，如果GPxDAT.bit = 1，反映相应的引脚状态为高电平。</p>
+<p>需要说明的是，当用户试图改变一个数字I/O的状态时，不要改变另一个I/O的引脚状态。</p>
+<p>4、GOxSET寄存器（置位寄存器）</p>
+<p>每个I/O口都有一个置位寄存器，置位寄存器是只写寄存器，任何读操作都返回0，如果相应的引脚配置成数据量输出，写1后相应的引脚会置高，写0时没有反映。</p>
+<p> 1）如果GPxSET.bit = 0，没有影响；</p>
+<p>2）引脚设置为输出时，如果GPxSET.bit = 1，那么操作将会使引脚置高。</p>
+<p>5、GPxCLEAR寄存器（清除寄存器）</p>
+<p>每个I/O口都有一个清除寄存器，清除寄存器是只写寄存器，任何读操作都返回0。</p>
+<p>1）如果GPxCLEAR.bit = 0，没有影响；</p>
+<p>2）引脚设置为输出时，如果GPxCLEAR.bit = 1，将相应的引脚置成低电平。</p>
+<p>6、GPxTOGGLE寄存器（取反触发寄存器）</p>
+<p>每个I/O口都有一个取反触发寄存器，该寄存器是只写寄存器，任何读操作都返回0。</p>
+<p>1）如果GPxTOGGLE.bit = 0，没有影响；</p>
+<p>2）引脚设置为输出时，如果GPxTOGGLE.bit = 1，那么操作将使相应的引脚取反。</p>
+</blockquote>
 <hr>
-<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p><strong>1.</strong>中断系统</p>
+<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p><strong>1.中断系统</strong></p>
 <p>   在这里我们要十分清楚DSP的中断系统。C28XX一共有16个中断源，其中有2个不可屏蔽的中断RESET和NMI、定时器1和定时器2分别使用中断13和14。这样还有12个中断都直接连接到外设中断扩展模块PIE上。说的简单一点就是PIE通过12根线与28335核的12个中断线相连。而PIE的另外一侧有12*8根线分别连接到外设，如AD、SPI、EXINT等等。</p>
 <p>   PIE共管理12*8=96个外部中断。这12组大中断由28335核的中断寄存器IER来控制，即IER确定每个中断到底属于哪一组大中断（如IER |= M_INT12; 说明我们要用第12组的中断，但是第12组里面的什么中断CPU并不知道需要再由PIEIER确定）。</p>
 <p>   接下来再由PIE模块中的寄存器PIEIER中的低8确定该中断是这一组的第几个中断，这些配置都要告诉CPU（我们不难想象到PIEIER共有12总即从PIEIER1-PIEIER12）。另外，PIE模块还有中断标志寄存器PIEIFR，同样它的低8位是来自外部中断的8个标志位，同样CPU的IFR寄存器是中断组的标志寄存器。由此看来，CPU的所有中断寄存器控制12组的中断，PIE的所有中断寄存器控制每组内8个的中断。除此之外，我们用到哪一个外部中断，相应的还有外部中断的寄存器，需要注意的就是<strong>外部中断的标志要自己通过软件来清零</strong>。而<strong>PIE和CPU的中断标志寄存器由硬件来清零。</strong></p>
@@ -565,9 +567,9 @@
 
 <p>注意一点就是外部中断1和2只能对GPIO0—GPIO31配置；外部中断3和4、5、6、7只对GPIO32—GPIO63配置。</p>
 <p>GPIO分为A(0-31)、B(32-63)、C(64-87);C组的不能配置为外部中断；</p>
-<p><strong>2.</strong>如何开启某个中断？</p>
+<p><strong>2.如何开启某个中断？</strong></p>
 <p>设置中断向量。例如：<code>PieVectTable.ADCINT = &amp;adc_isr;</code>等<br>打开PIE控制器。<code>PieCtrlRegs.PIECTRL.bit.ENPIE = 1;</code><br>使能PIE中对应外设的中断（相应group的相应pin）。例如：<code>PieCtrlRegs.PIEIER1.bit.INTx8 = 1; PieCtrlRegs.PIEIER1.bit.INTx6 = 1;</code>等<br>使能CPU的相应中断<code>（INT1~INT12）IER |= M_INT1;</code><br>使能CPU响应中断EINT、ERTM;;</p>
-<p><strong>3.</strong>中断标志有几级？作用是什么？</p>
+<p><strong>3.中断标志有几级？作用是什么？</strong></p>
 <p>中断标志主要有三级CPU（有16个标志位）、PIE（有12组每组有12个标志位）和外设（有的外设没有）。</p>
 <p>标志位在中断发生后锁存中断状态，即表示中断发生。在CPU响应中断后，会自动清除cpu级别的标志位IFR bit，同时将INTM bit 置位，以防止其它中断的发生；</p>
 <p>CPU在从PIE中取中断向量时PIE会自动清除PIE级别的标志位PIEIFRx.y。所以在进入中断处理程序后除了外设所有中断位都已经清除。</p>
