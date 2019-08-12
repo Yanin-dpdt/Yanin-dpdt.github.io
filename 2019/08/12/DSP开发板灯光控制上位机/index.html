@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/faviconY.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="想法在前几天对PYQT5的学习以后，自己试着做了一个上位机 来对DSP开发板实现LED亮灭操作。 软硬件:pycharm + PYQT5 + CCS6.0 + DSP开发板 成果上位机界面 LED控制   描述：当按下 &amp;lt;打开1灯&amp;gt;时 1亮、2灭。当按下 &amp;lt;打开2灯&amp;gt;时 2亮、1灭。  遇到的问题 在CCS对GPIO进行写操作时(GPXDTA.bit = ) 无法成功写入，">
+<meta name="keywords" content="上位机,DSP开发板">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DSP开发板灯光控制上位机">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/DSP开发板灯光控制上位机/index.html">
+<meta property="og:site_name" content="颜">
+<meta property="og:description" content="想法在前几天对PYQT5的学习以后，自己试着做了一个上位机 来对DSP开发板实现LED亮灭操作。 软硬件:pycharm + PYQT5 + CCS6.0 + DSP开发板 成果上位机界面 LED控制   描述：当按下 &amp;lt;打开1灯&amp;gt;时 1亮、2灭。当按下 &amp;lt;打开2灯&amp;gt;时 2亮、1灭。  遇到的问题 在CCS对GPIO进行写操作时(GPXDTA.bit = ) 无法成功写入，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/12/mSdSbj.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/12/mSdZMF.jpg">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/12/mSdExU.jpg">
+<meta property="og:updated_time" content="2019-08-12T09:36:04.537Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DSP开发板灯光控制上位机">
+<meta name="twitter:description" content="想法在前几天对PYQT5的学习以后，自己试着做了一个上位机 来对DSP开发板实现LED亮灭操作。 软硬件:pycharm + PYQT5 + CCS6.0 + DSP开发板 成果上位机界面 LED控制   描述：当按下 &amp;lt;打开1灯&amp;gt;时 1亮、2灭。当按下 &amp;lt;打开2灯&amp;gt;时 2亮、1灭。  遇到的问题 在CCS对GPIO进行写操作时(GPXDTA.bit = ) 无法成功写入，">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/12/mSdSbj.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/08/12/DSP开发板灯光控制上位机/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>DSP开发板灯光控制上位机 | 颜</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">颜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">控制、PMSM、Python、IOT</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/12/DSP开发板灯光控制上位机/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shiwei-Yan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DSP开发板灯光控制上位机
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-08-12 00:00:00 / 修改时间：17:36:04" itemprop="dateCreated datePublished" datetime="2019-08-12T00:00:00+08:00">2019-08-12</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">25k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">23 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h2><p>在前几天对PYQT5的学习以后，自己试着做了一个上位机 来对DSP开发板实现LED亮灭操作。</p>
+<p>软硬件:pycharm + PYQT5 + CCS6.0 + DSP开发板</p>
+<h2 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h2><p>上位机界面<br><img src="https://s2.ax1x.com/2019/08/12/mSdSbj.png" alt="mSdSbj.png"></p>
+<p>LED控制  </p>
+<p>描述：当按下 &lt;打开1灯&gt;时 1亮、2灭。当按下 &lt;打开2灯&gt;时 2亮、1灭。</p>
+<p><img src="https://s2.ax1x.com/2019/08/12/mSdZMF.jpg" alt="mSdZMF.jpg"><br><img src="https://s2.ax1x.com/2019/08/12/mSdExU.jpg" alt="mSdExU.jpg"></p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><ol>
+<li><p>在CCS对GPIO进行写操作时(GPXDTA.bit = ) 无法成功写入，在顺华师兄建议下 改用SET CLEAR操作解决. 至于为何DAT不好用还未知？</p>
+</li>
+<li><p>关于串口发送 16进制问题</p>
+</li>
+</ol>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><blockquote>
+<p>ui_demo.py</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Form implementation generated from reading ui file 'ui_demo_1.ui'</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Created by: PyQt5 UI code generator 5.11.3</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># WARNING! All changes made in this file will be lost!</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtCore, QtGui, QtWidgets</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Ui_Form</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setupUi</span><span class="params">(self, Form)</span>:</span></span><br><span class="line">        Form.setObjectName(<span class="string">"Form"</span>)</span><br><span class="line">        Form.resize(<span class="number">868</span>, <span class="number">452</span>)</span><br><span class="line">        self.formGroupBox = QtWidgets.QGroupBox(Form)</span><br><span class="line">        self.formGroupBox.setGeometry(QtCore.QRect(<span class="number">20</span>, <span class="number">20</span>, <span class="number">167</span>, <span class="number">301</span>))</span><br><span class="line">        self.formGroupBox.setObjectName(<span class="string">"formGroupBox"</span>)</span><br><span class="line">        self.formLayout = QtWidgets.QFormLayout(self.formGroupBox)</span><br><span class="line">        self.formLayout.setContentsMargins(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">        self.formLayout.setSpacing(<span class="number">10</span>)</span><br><span class="line">        self.formLayout.setObjectName(<span class="string">"formLayout"</span>)</span><br><span class="line">        self.s1__lb_1 = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.s1__lb_1.setObjectName(<span class="string">"s1__lb_1"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">0</span>, QtWidgets.QFormLayout.LabelRole, self.s1__lb_1)</span><br><span class="line">        self.s1__box_1 = QtWidgets.QPushButton(self.formGroupBox)</span><br><span class="line">        self.s1__box_1.setAutoRepeatInterval(<span class="number">100</span>)</span><br><span class="line">        self.s1__box_1.setDefault(<span class="literal">True</span>)</span><br><span class="line">        self.s1__box_1.setObjectName(<span class="string">"s1__box_1"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">0</span>, QtWidgets.QFormLayout.FieldRole, self.s1__box_1)</span><br><span class="line">        self.s1__lb_2 = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.s1__lb_2.setObjectName(<span class="string">"s1__lb_2"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">1</span>, QtWidgets.QFormLayout.LabelRole, self.s1__lb_2)</span><br><span class="line">        self.s1__box_2 = QtWidgets.QComboBox(self.formGroupBox)</span><br><span class="line">        self.s1__box_2.setObjectName(<span class="string">"s1__box_2"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">1</span>, QtWidgets.QFormLayout.FieldRole, self.s1__box_2)</span><br><span class="line">        self.s1__lb_3 = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.s1__lb_3.setObjectName(<span class="string">"s1__lb_3"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">3</span>, QtWidgets.QFormLayout.LabelRole, self.s1__lb_3)</span><br><span class="line">        self.s1__box_3 = QtWidgets.QComboBox(self.formGroupBox)</span><br><span class="line">        self.s1__box_3.setObjectName(<span class="string">"s1__box_3"</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_3.addItem(<span class="string">""</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">3</span>, QtWidgets.QFormLayout.FieldRole, self.s1__box_3)</span><br><span class="line">        self.s1__lb_4 = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.s1__lb_4.setObjectName(<span class="string">"s1__lb_4"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">4</span>, QtWidgets.QFormLayout.LabelRole, self.s1__lb_4)</span><br><span class="line">        self.s1__box_4 = QtWidgets.QComboBox(self.formGroupBox)</span><br><span class="line">        self.s1__box_4.setObjectName(<span class="string">"s1__box_4"</span>)</span><br><span class="line">        self.s1__box_4.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_4.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_4.addItem(<span class="string">""</span>)</span><br><span class="line">        self.s1__box_4.addItem(<span class="string">""</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">4</span>, QtWidgets.QFormLayout.FieldRole, self.s1__box_4)</span><br><span class="line">        self.s1__lb_5 = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.s1__lb_5.setObjectName(<span class="string">"s1__lb_5"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">5</span>, QtWidgets.QFormLayout.LabelRole, self.s1__lb_5)</span><br><span class="line">        self.s1__box_5 = QtWidgets.QComboBox(self.formGroupBox)</span><br><span class="line">        self.s1__box_5.setObjectName(<span class="string">"s1__box_5"</span>)</span><br><span class="line">        self.s1__box_5.addItem(<span class="string">""</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">5</span>, QtWidgets.QFormLayout.FieldRole, self.s1__box_5)</span><br><span class="line">        self.open_button = QtWidgets.QPushButton(self.formGroupBox)</span><br><span class="line">        self.open_button.setObjectName(<span class="string">"open_button"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">7</span>, QtWidgets.QFormLayout.SpanningRole, self.open_button)</span><br><span class="line">        self.close_button = QtWidgets.QPushButton(self.formGroupBox)</span><br><span class="line">        self.close_button.setObjectName(<span class="string">"close_button"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">8</span>, QtWidgets.QFormLayout.SpanningRole, self.close_button)</span><br><span class="line">        self.s1__lb_6 = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.s1__lb_6.setObjectName(<span class="string">"s1__lb_6"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">6</span>, QtWidgets.QFormLayout.LabelRole, self.s1__lb_6)</span><br><span class="line">        self.s1__box_6 = QtWidgets.QComboBox(self.formGroupBox)</span><br><span class="line">        self.s1__box_6.setObjectName(<span class="string">"s1__box_6"</span>)</span><br><span class="line">        self.s1__box_6.addItem(<span class="string">""</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">6</span>, QtWidgets.QFormLayout.FieldRole, self.s1__box_6)</span><br><span class="line">        self.state_label = QtWidgets.QLabel(self.formGroupBox)</span><br><span class="line">        self.state_label.setText(<span class="string">""</span>)</span><br><span class="line">        self.state_label.setTextFormat(QtCore.Qt.AutoText)</span><br><span class="line">        self.state_label.setScaledContents(<span class="literal">True</span>)</span><br><span class="line">        self.state_label.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)</span><br><span class="line">        self.state_label.setObjectName(<span class="string">"state_label"</span>)</span><br><span class="line">        self.formLayout.setWidget(<span class="number">2</span>, QtWidgets.QFormLayout.SpanningRole, self.state_label)</span><br><span class="line">        self.verticalGroupBox = QtWidgets.QGroupBox(Form)</span><br><span class="line">        self.verticalGroupBox.setGeometry(QtCore.QRect(<span class="number">210</span>, <span class="number">20</span>, <span class="number">401</span>, <span class="number">241</span>))</span><br><span class="line">        self.verticalGroupBox.setObjectName(<span class="string">"verticalGroupBox"</span>)</span><br><span class="line">        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalGroupBox)</span><br><span class="line">        self.verticalLayout.setContentsMargins(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">        self.verticalLayout.setObjectName(<span class="string">"verticalLayout"</span>)</span><br><span class="line">        self.s2__receive_text = QtWidgets.QTextBrowser(self.verticalGroupBox)</span><br><span class="line">        self.s2__receive_text.setObjectName(<span class="string">"s2__receive_text"</span>)</span><br><span class="line">        self.verticalLayout.addWidget(self.s2__receive_text)</span><br><span class="line">        self.verticalGroupBox_2 = QtWidgets.QGroupBox(Form)</span><br><span class="line">        self.verticalGroupBox_2.setGeometry(QtCore.QRect(<span class="number">210</span>, <span class="number">280</span>, <span class="number">401</span>, <span class="number">101</span>))</span><br><span class="line">        self.verticalGroupBox_2.setObjectName(<span class="string">"verticalGroupBox_2"</span>)</span><br><span class="line">        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.verticalGroupBox_2)</span><br><span class="line">        self.verticalLayout_2.setContentsMargins(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">        self.verticalLayout_2.setObjectName(<span class="string">"verticalLayout_2"</span>)</span><br><span class="line">        self.s3__send_text = QtWidgets.QTextEdit(self.verticalGroupBox_2)</span><br><span class="line">        self.s3__send_text.setObjectName(<span class="string">"s3__send_text"</span>)</span><br><span class="line">        self.verticalLayout_2.addWidget(self.s3__send_text)</span><br><span class="line">        self.s3__send_button = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.s3__send_button.setGeometry(QtCore.QRect(<span class="number">620</span>, <span class="number">310</span>, <span class="number">61</span>, <span class="number">31</span>))</span><br><span class="line">        self.s3__send_button.setObjectName(<span class="string">"s3__send_button"</span>)</span><br><span class="line">        self.s3__clear_button = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.s3__clear_button.setGeometry(QtCore.QRect(<span class="number">620</span>, <span class="number">350</span>, <span class="number">61</span>, <span class="number">31</span>))</span><br><span class="line">        self.s3__clear_button.setObjectName(<span class="string">"s3__clear_button"</span>)</span><br><span class="line">        self.formGroupBox1 = QtWidgets.QGroupBox(Form)</span><br><span class="line">        self.formGroupBox1.setGeometry(QtCore.QRect(<span class="number">20</span>, <span class="number">340</span>, <span class="number">171</span>, <span class="number">101</span>))</span><br><span class="line">        self.formGroupBox1.setObjectName(<span class="string">"formGroupBox1"</span>)</span><br><span class="line">        self.formLayout_2 = QtWidgets.QFormLayout(self.formGroupBox1)</span><br><span class="line">        self.formLayout_2.setContentsMargins(<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">        self.formLayout_2.setSpacing(<span class="number">10</span>)</span><br><span class="line">        self.formLayout_2.setObjectName(<span class="string">"formLayout_2"</span>)</span><br><span class="line">        self.label = QtWidgets.QLabel(self.formGroupBox1)</span><br><span class="line">        self.label.setObjectName(<span class="string">"label"</span>)</span><br><span class="line">        self.formLayout_2.setWidget(<span class="number">0</span>, QtWidgets.QFormLayout.LabelRole, self.label)</span><br><span class="line">        self.label_2 = QtWidgets.QLabel(self.formGroupBox1)</span><br><span class="line">        self.label_2.setObjectName(<span class="string">"label_2"</span>)</span><br><span class="line">        self.formLayout_2.setWidget(<span class="number">1</span>, QtWidgets.QFormLayout.LabelRole, self.label_2)</span><br><span class="line">        self.lineEdit = QtWidgets.QLineEdit(self.formGroupBox1)</span><br><span class="line">        self.lineEdit.setObjectName(<span class="string">"lineEdit"</span>)</span><br><span class="line">        self.formLayout_2.setWidget(<span class="number">0</span>, QtWidgets.QFormLayout.FieldRole, self.lineEdit)</span><br><span class="line">        self.lineEdit_2 = QtWidgets.QLineEdit(self.formGroupBox1)</span><br><span class="line">        self.lineEdit_2.setObjectName(<span class="string">"lineEdit_2"</span>)</span><br><span class="line">        self.formLayout_2.setWidget(<span class="number">1</span>, QtWidgets.QFormLayout.FieldRole, self.lineEdit_2)</span><br><span class="line">        self.hex_send = QtWidgets.QCheckBox(Form)</span><br><span class="line">        self.hex_send.setGeometry(QtCore.QRect(<span class="number">620</span>, <span class="number">280</span>, <span class="number">71</span>, <span class="number">16</span>))</span><br><span class="line">        self.hex_send.setObjectName(<span class="string">"hex_send"</span>)</span><br><span class="line">        self.hex_receive = QtWidgets.QCheckBox(Form)</span><br><span class="line">        self.hex_receive.setGeometry(QtCore.QRect(<span class="number">620</span>, <span class="number">40</span>, <span class="number">71</span>, <span class="number">16</span>))</span><br><span class="line">        self.hex_receive.setObjectName(<span class="string">"hex_receive"</span>)</span><br><span class="line">        self.s2__clear_button = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.s2__clear_button.setGeometry(QtCore.QRect(<span class="number">620</span>, <span class="number">80</span>, <span class="number">61</span>, <span class="number">31</span>))</span><br><span class="line">        self.s2__clear_button.setObjectName(<span class="string">"s2__clear_button"</span>)</span><br><span class="line">        self.timer_send_cb = QtWidgets.QCheckBox(Form)</span><br><span class="line">        self.timer_send_cb.setGeometry(QtCore.QRect(<span class="number">260</span>, <span class="number">390</span>, <span class="number">71</span>, <span class="number">16</span>))</span><br><span class="line">        self.timer_send_cb.setObjectName(<span class="string">"timer_send_cb"</span>)</span><br><span class="line">        self.lineEdit_3 = QtWidgets.QLineEdit(Form)</span><br><span class="line">        self.lineEdit_3.setGeometry(QtCore.QRect(<span class="number">350</span>, <span class="number">390</span>, <span class="number">61</span>, <span class="number">20</span>))</span><br><span class="line">        self.lineEdit_3.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)</span><br><span class="line">        self.lineEdit_3.setObjectName(<span class="string">"lineEdit_3"</span>)</span><br><span class="line">        self.dw = QtWidgets.QLabel(Form)</span><br><span class="line">        self.dw.setGeometry(QtCore.QRect(<span class="number">420</span>, <span class="number">390</span>, <span class="number">54</span>, <span class="number">20</span>))</span><br><span class="line">        self.dw.setObjectName(<span class="string">"dw"</span>)</span><br><span class="line">        self.line = QtWidgets.QFrame(Form)</span><br><span class="line">        self.line.setGeometry(QtCore.QRect(<span class="number">700</span>, <span class="number">30</span>, <span class="number">20</span>, <span class="number">351</span>))</span><br><span class="line">        self.line.setFrameShape(QtWidgets.QFrame.VLine)</span><br><span class="line">        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)</span><br><span class="line">        self.line.setObjectName(<span class="string">"line"</span>)</span><br><span class="line">        self.s4__open1_button = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.s4__open1_button.setGeometry(QtCore.QRect(<span class="number">740</span>, <span class="number">160</span>, <span class="number">61</span>, <span class="number">31</span>))</span><br><span class="line">        self.s4__open1_button.setObjectName(<span class="string">"s4__open1_button"</span>)</span><br><span class="line">        self.s4__open2_button = QtWidgets.QPushButton(Form)</span><br><span class="line">        self.s4__open2_button.setGeometry(QtCore.QRect(<span class="number">740</span>, <span class="number">210</span>, <span class="number">61</span>, <span class="number">31</span>))</span><br><span class="line">        self.s4__open2_button.setObjectName(<span class="string">"s4__open2_button"</span>)</span><br><span class="line">        self.verticalGroupBox.raise_()</span><br><span class="line">        self.verticalGroupBox_2.raise_()</span><br><span class="line">        self.formGroupBox.raise_()</span><br><span class="line">        self.s3__send_button.raise_()</span><br><span class="line">        self.s3__clear_button.raise_()</span><br><span class="line">        self.formGroupBox.raise_()</span><br><span class="line">        self.hex_send.raise_()</span><br><span class="line">        self.hex_receive.raise_()</span><br><span class="line">        self.s2__clear_button.raise_()</span><br><span class="line">        self.timer_send_cb.raise_()</span><br><span class="line">        self.lineEdit_3.raise_()</span><br><span class="line">        self.dw.raise_()</span><br><span class="line">        self.line.raise_()</span><br><span class="line">        self.s4__open1_button.raise_()</span><br><span class="line">        self.s4__open2_button.raise_()</span><br><span class="line"></span><br><span class="line">        self.retranslateUi(Form)</span><br><span class="line">        QtCore.QMetaObject.connectSlotsByName(Form)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">retranslateUi</span><span class="params">(self, Form)</span>:</span></span><br><span class="line">        _translate = QtCore.QCoreApplication.translate</span><br><span class="line">        Form.setWindowTitle(_translate(<span class="string">"Form"</span>, <span class="string">"Form"</span>))</span><br><span class="line">        self.formGroupBox.setTitle(_translate(<span class="string">"Form"</span>, <span class="string">"串口设置"</span>))</span><br><span class="line">        self.s1__lb_1.setText(_translate(<span class="string">"Form"</span>, <span class="string">"串口检测："</span>))</span><br><span class="line">        self.s1__box_1.setText(_translate(<span class="string">"Form"</span>, <span class="string">"检测串口"</span>))</span><br><span class="line">        self.s1__lb_2.setText(_translate(<span class="string">"Form"</span>, <span class="string">"串口选择："</span>))</span><br><span class="line">        self.s1__lb_3.setText(_translate(<span class="string">"Form"</span>, <span class="string">"波特率："</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">0</span>, _translate(<span class="string">"Form"</span>, <span class="string">"115200"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">1</span>, _translate(<span class="string">"Form"</span>, <span class="string">"2400"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">2</span>, _translate(<span class="string">"Form"</span>, <span class="string">"4800"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">3</span>, _translate(<span class="string">"Form"</span>, <span class="string">"9600"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">4</span>, _translate(<span class="string">"Form"</span>, <span class="string">"14400"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">5</span>, _translate(<span class="string">"Form"</span>, <span class="string">"19200"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">6</span>, _translate(<span class="string">"Form"</span>, <span class="string">"38400"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">7</span>, _translate(<span class="string">"Form"</span>, <span class="string">"57600"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">8</span>, _translate(<span class="string">"Form"</span>, <span class="string">"76800"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">9</span>, _translate(<span class="string">"Form"</span>, <span class="string">"12800"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">10</span>, _translate(<span class="string">"Form"</span>, <span class="string">"230400"</span>))</span><br><span class="line">        self.s1__box_3.setItemText(<span class="number">11</span>, _translate(<span class="string">"Form"</span>, <span class="string">"460800"</span>))</span><br><span class="line">        self.s1__lb_4.setText(_translate(<span class="string">"Form"</span>, <span class="string">"数据位："</span>))</span><br><span class="line">        self.s1__box_4.setItemText(<span class="number">0</span>, _translate(<span class="string">"Form"</span>, <span class="string">"8"</span>))</span><br><span class="line">        self.s1__box_4.setItemText(<span class="number">1</span>, _translate(<span class="string">"Form"</span>, <span class="string">"7"</span>))</span><br><span class="line">        self.s1__box_4.setItemText(<span class="number">2</span>, _translate(<span class="string">"Form"</span>, <span class="string">"6"</span>))</span><br><span class="line">        self.s1__box_4.setItemText(<span class="number">3</span>, _translate(<span class="string">"Form"</span>, <span class="string">"5"</span>))</span><br><span class="line">        self.s1__lb_5.setText(_translate(<span class="string">"Form"</span>, <span class="string">"校验位："</span>))</span><br><span class="line">        self.s1__box_5.setItemText(<span class="number">0</span>, _translate(<span class="string">"Form"</span>, <span class="string">"N"</span>))</span><br><span class="line">        self.open_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"打开串口"</span>))</span><br><span class="line">        self.close_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"关闭串口"</span>))</span><br><span class="line">        self.s1__lb_6.setText(_translate(<span class="string">"Form"</span>, <span class="string">"停止位："</span>))</span><br><span class="line">        self.s1__box_6.setItemText(<span class="number">0</span>, _translate(<span class="string">"Form"</span>, <span class="string">"1"</span>))</span><br><span class="line">        self.verticalGroupBox.setTitle(_translate(<span class="string">"Form"</span>, <span class="string">"接受区"</span>))</span><br><span class="line">        self.verticalGroupBox_2.setTitle(_translate(<span class="string">"Form"</span>, <span class="string">"发送区"</span>))</span><br><span class="line">        self.s3__send_text.setHtml(_translate(<span class="string">"Form"</span>, <span class="string">"&lt;!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"&gt;\n"</span></span><br><span class="line"><span class="string">"&lt;html&gt;&lt;head&gt;&lt;meta name=\"qrichtext\" content=\"1\" /&gt;&lt;style type=\"text/css\"&gt;\n"</span></span><br><span class="line"><span class="string">"p, li &#123; white-space: pre-wrap; &#125;\n"</span></span><br><span class="line"><span class="string">"&lt;/style&gt;&lt;/head&gt;&lt;body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\"&gt;\n"</span></span><br><span class="line"><span class="string">"&lt;p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"&gt;123456&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"</span>))</span><br><span class="line">        self.s3__send_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"发送"</span>))</span><br><span class="line">        self.s3__clear_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"清除"</span>))</span><br><span class="line">        self.formGroupBox1.setTitle(_translate(<span class="string">"Form"</span>, <span class="string">"串口状态"</span>))</span><br><span class="line">        self.label.setText(_translate(<span class="string">"Form"</span>, <span class="string">"已接收："</span>))</span><br><span class="line">        self.label_2.setText(_translate(<span class="string">"Form"</span>, <span class="string">"已发送："</span>))</span><br><span class="line">        self.hex_send.setText(_translate(<span class="string">"Form"</span>, <span class="string">"Hex发送"</span>))</span><br><span class="line">        self.hex_receive.setText(_translate(<span class="string">"Form"</span>, <span class="string">"Hex接收"</span>))</span><br><span class="line">        self.s2__clear_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"清除"</span>))</span><br><span class="line">        self.timer_send_cb.setText(_translate(<span class="string">"Form"</span>, <span class="string">"定时发送"</span>))</span><br><span class="line">        self.lineEdit_3.setText(_translate(<span class="string">"Form"</span>, <span class="string">"1000"</span>))</span><br><span class="line">        self.dw.setText(_translate(<span class="string">"Form"</span>, <span class="string">"ms/次"</span>))</span><br><span class="line">        self.s4__open1_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"打开1灯"</span>))</span><br><span class="line">        self.s4__open2_button.setText(_translate(<span class="string">"Form"</span>, <span class="string">"打开2灯"</span>))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>ui_demo.py</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> serial</span><br><span class="line"><span class="keyword">import</span> serial.tools.list_ports</span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtWidgets</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QMessageBox</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> QTimer</span><br><span class="line"><span class="keyword">from</span> ui_demo_1 <span class="keyword">import</span> Ui_Form</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pyqt5_Serial</span><span class="params">(QtWidgets.QWidget, Ui_Form)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(Pyqt5_Serial, self).__init__()</span><br><span class="line">        self.setupUi(self)</span><br><span class="line">        self.init()</span><br><span class="line">        self.setWindowTitle(<span class="string">"串口小助手"</span>)</span><br><span class="line">        self.ser = serial.Serial()</span><br><span class="line">        self.port_check()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 接收数据和发送数据数目置零</span></span><br><span class="line">        self.data_num_received = <span class="number">0</span></span><br><span class="line">        self.lineEdit.setText(str(self.data_num_received))</span><br><span class="line">        self.data_num_sended = <span class="number">0</span></span><br><span class="line">        self.lineEdit_2.setText(str(self.data_num_sended))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 串口检测按钮</span></span><br><span class="line">        self.s1__box_1.clicked.connect(self.port_check)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 串口信息显示</span></span><br><span class="line">        self.s1__box_2.currentTextChanged.connect(self.port_imf)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 打开串口按钮</span></span><br><span class="line">        self.open_button.clicked.connect(self.port_open)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 关闭串口按钮</span></span><br><span class="line">        self.close_button.clicked.connect(self.port_close)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 发送数据按钮</span></span><br><span class="line">        self.s3__send_button.clicked.connect(self.data_send)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 定时发送数据</span></span><br><span class="line">        self.timer_send = QTimer()</span><br><span class="line">        self.timer_send.timeout.connect(self.data_send)</span><br><span class="line">        self.timer_send_cb.stateChanged.connect(self.data_send_timer)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 定时器接收数据</span></span><br><span class="line">        self.timer = QTimer(self)</span><br><span class="line">        self.timer.timeout.connect(self.data_receive)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 清除发送窗口</span></span><br><span class="line">        self.s3__clear_button.clicked.connect(self.send_data_clear)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 清除接收窗口</span></span><br><span class="line">        self.s2__clear_button.clicked.connect(self.receive_data_clear)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 打开1灯</span></span><br><span class="line">        self.s4__open1_button.clicked.connect(self.open_led1)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 打开2灯</span></span><br><span class="line">        self.s4__open2_button.clicked.connect(self.open_led2)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 串口检测</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">port_check</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 检测所有存在的串口，将信息存储在字典中</span></span><br><span class="line">        self.Com_Dict = &#123;&#125;</span><br><span class="line">        port_list = list(serial.tools.list_ports.comports())</span><br><span class="line">        self.s1__box_2.clear()</span><br><span class="line">        <span class="keyword">for</span> port <span class="keyword">in</span> port_list:</span><br><span class="line">            self.Com_Dict[<span class="string">"%s"</span> % port[<span class="number">0</span>]] = <span class="string">"%s"</span> % port[<span class="number">1</span>]</span><br><span class="line">            self.s1__box_2.addItem(port[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">if</span> len(self.Com_Dict) == <span class="number">0</span>:</span><br><span class="line">            self.state_label.setText(<span class="string">" 无串口"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 串口信息</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">port_imf</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="comment"># 显示选定的串口的详细信息</span></span><br><span class="line">        imf_s = self.s1__box_2.currentText()</span><br><span class="line">        <span class="keyword">if</span> imf_s != <span class="string">""</span>:</span><br><span class="line">            self.state_label.setText(self.Com_Dict[self.s1__box_2.currentText()])</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 打开串口</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">port_open</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.ser.port = self.s1__box_2.currentText()</span><br><span class="line">        self.ser.baudrate = int(self.s1__box_3.currentText())</span><br><span class="line">        self.ser.bytesize = int(self.s1__box_4.currentText())</span><br><span class="line">        self.ser.stopbits = int(self.s1__box_6.currentText())</span><br><span class="line">        self.ser.parity = self.s1__box_5.currentText()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.ser.open()</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            QMessageBox.critical(self, <span class="string">"Port Error"</span>, <span class="string">"此串口不能被打开！"</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 打开串口接收定时器，周期为2ms</span></span><br><span class="line">        self.timer.start(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> self.ser.isOpen():</span><br><span class="line">            self.open_button.setEnabled(<span class="literal">False</span>)</span><br><span class="line">            self.close_button.setEnabled(<span class="literal">True</span>)</span><br><span class="line">            self.formGroupBox1.setTitle(<span class="string">"串口状态（已开启）"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 关闭串口</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">port_close</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.timer.stop()</span><br><span class="line">        self.timer_send.stop()</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.ser.close()</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">        self.open_button.setEnabled(<span class="literal">True</span>)</span><br><span class="line">        self.close_button.setEnabled(<span class="literal">False</span>)</span><br><span class="line">        self.lineEdit_3.setEnabled(<span class="literal">True</span>)</span><br><span class="line">        <span class="comment"># 接收数据和发送数据数目置零</span></span><br><span class="line">        self.data_num_received = <span class="number">0</span></span><br><span class="line">        self.lineEdit.setText(str(self.data_num_received))</span><br><span class="line">        self.data_num_sended = <span class="number">0</span></span><br><span class="line">        self.lineEdit_2.setText(str(self.data_num_sended))</span><br><span class="line">        self.formGroupBox1.setTitle(<span class="string">"串口状态（已关闭）"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 发送数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data_send</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.ser.isOpen():</span><br><span class="line">            input_s = self.s3__send_text.toPlainText()</span><br><span class="line">            <span class="keyword">if</span> input_s != <span class="string">""</span>:</span><br><span class="line">                <span class="comment"># 非空字符串</span></span><br><span class="line">                <span class="keyword">if</span> self.hex_send.isChecked():</span><br><span class="line">                    <span class="comment"># hex发送</span></span><br><span class="line">                    input_s = input_s.strip()</span><br><span class="line">                    send_list = []</span><br><span class="line">                    <span class="keyword">while</span> input_s != <span class="string">''</span>:</span><br><span class="line">                        <span class="keyword">try</span>:</span><br><span class="line">                            num = int(input_s[<span class="number">0</span>:<span class="number">2</span>], <span class="number">16</span>)</span><br><span class="line">                        <span class="keyword">except</span> ValueError:</span><br><span class="line">                            QMessageBox.critical(self, <span class="string">'wrong data'</span>, <span class="string">'请输入十六进制数据，以空格分开!'</span>)</span><br><span class="line">                            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">                        input_s = input_s[<span class="number">2</span>:].strip()</span><br><span class="line">                        send_list.append(num)</span><br><span class="line">                    input_s = bytes(send_list)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># ascii发送</span></span><br><span class="line">                    input_s = (input_s + <span class="string">'\r\n'</span>).encode(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line">                num = self.ser.write(input_s)</span><br><span class="line">                self.data_num_sended += num</span><br><span class="line">                self.lineEdit_2.setText(str(self.data_num_sended))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 接收数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data_receive</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            num = self.ser.inWaiting()</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            self.port_close()</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> num &gt; <span class="number">0</span>:</span><br><span class="line">            data = self.ser.read(num)</span><br><span class="line">            num = len(data)</span><br><span class="line">            <span class="comment"># hex显示</span></span><br><span class="line">            <span class="keyword">if</span> self.hex_receive.checkState():</span><br><span class="line">                out_s = <span class="string">''</span></span><br><span class="line">                <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, len(data)):</span><br><span class="line">                    out_s = out_s + <span class="string">'&#123;:02X&#125;'</span>.format(data[i]) + <span class="string">' '</span></span><br><span class="line">                self.s2__receive_text.insertPlainText(out_s)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 串口接收到的字符串为b'123',要转化成unicode字符串才能输出到窗口中去</span></span><br><span class="line">                self.s2__receive_text.insertPlainText(data.decode(<span class="string">'iso-8859-1'</span>))</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 统计接收字符的数量</span></span><br><span class="line">            self.data_num_received += num</span><br><span class="line">            self.lineEdit.setText(str(self.data_num_received))</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 获取到text光标</span></span><br><span class="line">            textCursor = self.s2__receive_text.textCursor()</span><br><span class="line">            <span class="comment"># 滚动到底部</span></span><br><span class="line">            textCursor.movePosition(textCursor.End)</span><br><span class="line">            <span class="comment"># 设置光标到text中去</span></span><br><span class="line">            self.s2__receive_text.setTextCursor(textCursor)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 定时发送数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">data_send_timer</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.timer_send_cb.isChecked():</span><br><span class="line">            self.timer_send.start(int(self.lineEdit_3.text()))</span><br><span class="line">            self.lineEdit_3.setEnabled(<span class="literal">False</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.timer_send.stop()</span><br><span class="line">            self.lineEdit_3.setEnabled(<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 清除显示</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send_data_clear</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.s3__send_text.setText(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">receive_data_clear</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.s2__receive_text.setText(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_led1</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">        input_s = <span class="string">'1'</span></span><br><span class="line">        input_s = input_s.strip()</span><br><span class="line">        send_list = []</span><br><span class="line">        <span class="keyword">while</span> input_s != <span class="string">''</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                num = int(input_s[<span class="number">0</span>:<span class="number">2</span>], <span class="number">16</span>)</span><br><span class="line">            <span class="keyword">except</span> ValueError:</span><br><span class="line">                QMessageBox.critical(self, <span class="string">'wrong data'</span>, <span class="string">'请输入十六进制数据，以空格分开!'</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            input_s = input_s[<span class="number">2</span>:].strip()</span><br><span class="line">            send_list.append(num)</span><br><span class="line">        input_s = bytes(send_list)</span><br><span class="line"></span><br><span class="line">        num = self.ser.write(input_s)</span><br><span class="line">        self.data_num_sended += num</span><br><span class="line">        self.lineEdit_2.setText(str(self.data_num_sended))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_led2</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">        input_s = <span class="string">'2'</span></span><br><span class="line">        input_s = input_s.strip()</span><br><span class="line">        send_list = []</span><br><span class="line">        <span class="keyword">while</span> input_s != <span class="string">''</span>:</span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                num = int(input_s[<span class="number">0</span>:<span class="number">2</span>], <span class="number">16</span>)</span><br><span class="line">            <span class="keyword">except</span> ValueError:</span><br><span class="line">                QMessageBox.critical(self, <span class="string">'wrong data'</span>, <span class="string">'请输入十六进制数据，以空格分开!'</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">            input_s = input_s[<span class="number">2</span>:].strip()</span><br><span class="line">            send_list.append(num)</span><br><span class="line">        input_s = bytes(send_list)</span><br><span class="line"></span><br><span class="line">        num = self.ser.write(input_s)</span><br><span class="line">        self.data_num_sended += num</span><br><span class="line">        self.lineEdit_2.setText(str(self.data_num_sended))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app = QtWidgets.QApplication(sys.argv)</span><br><span class="line">    myshow = Pyqt5_Serial()</span><br><span class="line">    myshow.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>CCS源代码</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DSP2833x_Device.h"</span>     <span class="comment">// DSP2833x 头文件</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"DSP2833x_Examples.h"</span>   <span class="comment">// DSP2833x 例子相关头文件</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**************************************函数声明************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scib_echoback_init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scib_xmit</span><span class="params">(<span class="keyword">int</span> a)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scib_msg</span><span class="params">(<span class="keyword">char</span> *msg)</span></span>;</span><br><span class="line"><span class="comment">/**********************************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用前，声明本文件中的相关函数；</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">configtestled</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**************************************宏定义************************************************/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> InitDIR()                                          \</span></span><br><span class="line">                     EALLOW;                               \</span><br><span class="line">                     GpioCtrlRegs.GPBPUD.bit.GPIO49 = <span class="number">0</span>;   \</span><br><span class="line">                     GpioCtrlRegs.GPBDIR.bit.GPIO49 = <span class="number">1</span>;   \</span><br><span class="line">                     GpioDataRegs.GPBCLEAR.bit.GPIO49 = <span class="number">1</span>; \</span><br><span class="line">                     EDIS;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> RX_EN       GpioDataRegs.GPBCLEAR.bit.GPIO49 = 1;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TX_EN       GpioDataRegs.GPBSET.bit.GPIO49 = 1;</span></span><br><span class="line"><span class="comment">/**********************************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Uint16 ReceivedChar;   <span class="comment">//变量定义</span></span><br><span class="line">    <span class="keyword">char</span> *msg;             <span class="comment">//指针</span></span><br><span class="line"><span class="comment">// 步骤 1. 初始化系统控制:</span></span><br><span class="line"><span class="comment">// 设置PLL, WatchDog, 使能外设时钟</span></span><br><span class="line"><span class="comment">// 下面这个函数可以从DSP2833x_SysCtrl.c文件中找到..</span></span><br><span class="line">   InitSysCtrl();</span><br><span class="line">   InitScibGpio();</span><br><span class="line"><span class="comment">// 步骤 2. 初始化通用输入输出多路复用器GPIO:</span></span><br><span class="line"><span class="comment">// 这个函数在DSP2833x_Gpio.c源文件中被定义了</span></span><br><span class="line"><span class="comment">// 这个函数使GPIO控制类寄存器初始化到默认状态</span></span><br><span class="line"><span class="comment">// InitGpio();  // 本例不用此子函数</span></span><br><span class="line">   InitDIR();</span><br><span class="line"><span class="comment">// 本例使用下面的GPIO配置</span></span><br><span class="line">   configtestled();</span><br><span class="line"><span class="comment">// 总线初始化函数</span></span><br><span class="line">   InitXintf16Gpio();	<span class="comment">//zq</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 步骤 3. 清除所有中断初始化中断向量表:</span></span><br><span class="line"><span class="comment">// 禁止CPU全局中断</span></span><br><span class="line">   DINT;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化PIE控制寄存器到他们的默认状态.</span></span><br><span class="line"><span class="comment">// 这个默认状态就是禁止PIE中断及清除所有PIE中断标志</span></span><br><span class="line"><span class="comment">// 这个函数放在DSP2833x_PieCtrl.c源文件里</span></span><br><span class="line">   InitPieCtrl();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 禁止CPU中断和清除所有CPU中断标志</span></span><br><span class="line">   IER = <span class="number">0x0000</span>;</span><br><span class="line">   IFR = <span class="number">0x0000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化PIE中断向量表，并使其指向中断服务子程序（ISR）</span></span><br><span class="line"><span class="comment">// 这些中断服务子程序被放在了DSP280x_DefaultIsr.c源文件中</span></span><br><span class="line"><span class="comment">// 这个函数放在了DSP2833x_PieVect.c源文件里面.</span></span><br><span class="line">   InitPieVectTable();</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 步骤 4. 初始化片内外设:</span></span><br><span class="line"><span class="comment">// 这个函数可以在DSP280x_CpuTimers.c源文件中找到</span></span><br><span class="line"><span class="comment">//   InitCpuTimers();   // 这个例子仅初始化了Cpu定时器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 步骤 5. 用户特定的代码</span></span><br><span class="line">   scib_echoback_init();</span><br><span class="line"></span><br><span class="line">   msg = <span class="string">"\r\n\nled control\0"</span>;  <span class="comment">//发送语句</span></span><br><span class="line">   scib_msg(msg);                    <span class="comment">//发送函数</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   msg = <span class="string">"\r\n \n\0"</span>;  <span class="comment">//发送语句</span></span><br><span class="line">   scib_msg(msg);                    <span class="comment">//发送函数</span></span><br><span class="line"></span><br><span class="line">  	GpioDataRegs.GPASET.bit.GPIO1 = <span class="number">1</span>;</span><br><span class="line">  	GpioDataRegs.GPASET.bit.GPIO2 = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(;;)</span><br><span class="line">   &#123;</span><br><span class="line">      msg = <span class="string">"\r\n \0"</span>;  <span class="comment">//发送语句</span></span><br><span class="line">      scib_msg(msg);                      <span class="comment">//发送函数</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">//等待接收到数据，否则在此循环</span></span><br><span class="line">      <span class="keyword">while</span>(ScibRegs.SCIRXST.bit.RXRDY !=<span class="number">1</span>) &#123; &#125; <span class="comment">// wait for XRDY =1 for empty state</span></span><br><span class="line"></span><br><span class="line">      <span class="comment">//把接收BUF里的数据赋值给ReceivedChar</span></span><br><span class="line">      ReceivedChar = ScibRegs.SCIRXBUF.all;</span><br><span class="line">      msg = <span class="string">"  led open \0"</span>;           <span class="comment">//发送语句</span></span><br><span class="line">      scib_msg(msg);                    <span class="comment">//发送函数</span></span><br><span class="line">      scib_xmit(ReceivedChar);          <span class="comment">//发送ReceivedChar</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span>(ScibRegs.SCIRXBUF.all == <span class="number">1</span>)</span><br><span class="line">      &#123;</span><br><span class="line"></span><br><span class="line">      GpioDataRegs.GPACLEAR.bit.GPIO1 = <span class="number">1</span>;</span><br><span class="line">      GpioDataRegs.GPASET.bit.GPIO2 = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">   	   msg = <span class="string">"1"</span>;</span><br><span class="line">   	   scib_msg(msg);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">else</span> <span class="keyword">if</span> (ScibRegs.SCIRXBUF.all == <span class="number">2</span>)</span><br><span class="line">      &#123;</span><br><span class="line">    	GpioDataRegs.GPACLEAR.bit.GPIO2 = <span class="number">1</span>;</span><br><span class="line">        GpioDataRegs.GPASET.bit.GPIO1 = <span class="number">1</span>;</span><br><span class="line">      	msg = <span class="string">"2"</span>;</span><br><span class="line">      	scib_msg(msg);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">configtestled</span><span class="params">(<span class="keyword">void</span>)</span>  <span class="comment">//GPIO初始化函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   EALLOW;</span><br><span class="line">   GpioCtrlRegs.GPAMUX1.bit.GPIO1 = <span class="number">0</span>; <span class="comment">// GPIO0复用为GPIO功能</span></span><br><span class="line">   GpioCtrlRegs.GPADIR.bit.GPIO1 = <span class="number">1</span>;  <span class="comment">// GPIO0设置为输出</span></span><br><span class="line">   GpioCtrlRegs.GPAMUX1.bit.GPIO2 = <span class="number">0</span>; <span class="comment">// GPIO1复用为GPIO功能</span></span><br><span class="line">   GpioCtrlRegs.GPADIR.bit.GPIO2 = <span class="number">1</span>;  <span class="comment">// GPIO1设置为输出</span></span><br><span class="line"></span><br><span class="line">   EDIS;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scib_echoback_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Note: Clocks were turned on to the SCIA peripheral</span></span><br><span class="line">    <span class="comment">// in the InitSysCtrl() function</span></span><br><span class="line">	<span class="comment">//SCI的工作模式和参数需要用户在后面的学习中，深入的了解一个寄存器底层相关的资料了，多看看芯片手册和寄存器的意思。</span></span><br><span class="line">    <span class="comment">//因为28335的寄存器太多了，所以在以后的学习过程中，就不会对寄存器进行详细的注释了。</span></span><br><span class="line">    ScibRegs.SCICTL1.bit.SWRESET =<span class="number">0</span>;</span><br><span class="line"> 	ScibRegs.SCICCR.all =<span class="number">0x0007</span>;   <span class="comment">// 1 stop bit,  No loopback</span></span><br><span class="line">                                   <span class="comment">// No parity,8 char bits,</span></span><br><span class="line">                                   <span class="comment">// async mode, idle-line protocol</span></span><br><span class="line">	ScibRegs.SCICTL1.all =<span class="number">0x0003</span>;  <span class="comment">// enable TX, RX, internal SCICLK,</span></span><br><span class="line">                                   <span class="comment">// Disable RX ERR, SLEEP, TXWAKE</span></span><br><span class="line"></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">if</span> (CPU_FRQ_150MHZ)</span></span><br><span class="line">	      ScibRegs.SCIHBAUD    =<span class="number">0x0001</span>;  <span class="comment">// 9600 baud @LSPCLK = 37.5MHz.</span></span><br><span class="line">	      ScibRegs.SCILBAUD    =<span class="number">0x00E7</span>;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	<span class="meta">#<span class="meta-keyword">if</span> (CPU_FRQ_100MHZ)</span></span><br><span class="line">          ScibRegs.SCIHBAUD    =<span class="number">0x0001</span>;  <span class="comment">// 9600 baud @LSPCLK = 20MHz.</span></span><br><span class="line">          ScibRegs.SCILBAUD    =<span class="number">0x0044</span>;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	ScibRegs.SCICTL1.all =<span class="number">0x0023</span>;  <span class="comment">// Relinquish SCI from Reset</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Transmit a character from the SCI</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scib_xmit</span><span class="params">(<span class="keyword">int</span> a)</span>              <span class="comment">//发送字节的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (ScibRegs.SCICTL2.bit.TXRDY == <span class="number">0</span>) &#123;&#125;</span><br><span class="line">    ScibRegs.SCITXBUF=a;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">scib_msg</span><span class="params">(<span class="keyword">char</span> * msg)</span>          <span class="comment">//发送数组的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    i = <span class="number">0</span>;</span><br><span class="line">	TX_EN;</span><br><span class="line">    <span class="keyword">while</span>(msg[i] != <span class="string">'\0'</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        scib_xmit(msg[i]);</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">	RX_EN;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//===========================================================================</span></span><br><span class="line"><span class="comment">// No more.</span></span><br><span class="line"><span class="comment">//===========================================================================</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/ColinFred/Pyserial-Demo" target="_blank" rel="noopener">参考的串口程序</a></p>
+<p>[2] 王硕,孙洋洋.PyQt5快速开发与实战[M].电子工业出版社:北京,2017</p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/上位机/" rel="tag"><i class="fa fa-tag"></i> 上位机</a>
+          
+            <a href="/tags/DSP开发板/" rel="tag"><i class="fa fa-tag"></i> DSP开发板</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/10/DSP基础知识一览/" rel="next" title="DSP基础知识一览">
+                <i class="fa fa-chevron-left"></i> DSP基础知识一览
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Shiwei-Yan">
+  
+  <p class="site-author-name" itemprop="name">Shiwei-Yan</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Yanin-dpdt" title="GitHub &rarr; https://github.com/Yanin-dpdt" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:Yanin-dpdt@foxmail.com" title="E-Mail &rarr; mailto:Yanin-dpdt@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#想法"><span class="nav-number">1.</span> <span class="nav-text">想法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#成果"><span class="nav-number">2.</span> <span class="nav-text">成果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题"><span class="nav-number">3.</span> <span class="nav-text">遇到的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shiwei-Yan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">48k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">43 分钟</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+
+
+
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("07/23/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </footer></div>
+    
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
+
+
+
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

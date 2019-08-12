@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/10/eXpGTJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/10/eXpr0e.png">
-<meta property="og:updated_time" content="2019-08-10T12:59:27.810Z">
+<meta property="og:updated_time" content="2019-08-11T10:14:00.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DSP基础知识一览">
 <meta name="twitter:description" content="CCS编程基础CCS开发环境已经为我们封装好了许多片内外设寄存器的结构体，我们只需要包含相应的官方的头文件就可以使用了，那么它的内部具体是如何实现的呢？ 下面来一个典型的例子： 1.使用结构体和联合体A.用struct定义位域的作用：在DSP2833x_Sci.h中有一段:  1234567891011121314struct  SCICCR_BITS &amp;#123;        // bit">
@@ -394,13 +394,23 @@
                 
               
 
-              <time title="创建时间：2019-08-10 00:00:00 / 修改时间：20:59:27" itemprop="dateCreated datePublished" datetime="2019-08-10T00:00:00+08:00">2019-08-10</time>
+              <time title="创建时间：2019-08-10 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-10T00:00:00+08:00">2019-08-10</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-11 18:14:00" itemprop="dateModified" datetime="2019-08-11T18:14:00+08:00">2019-08-11</time>
+              </span>
             
           
 
@@ -528,7 +538,7 @@
 <p>1、GPxMUX寄存器（功能选择寄存器）</p>
 <p>每个I/O口都有一个功能选择寄存器，功能选择寄存器主要用于选择I/O工作在特殊功能还是通用数组I/O模式。在复位时，所有GPIO配置成通用数字模式。</p>
 <p>1）如果GPxMUX.bit = 0，配置成通用数字I/O功能；</p>
-<p>2）如果GPxMUX.bit = 1，配置成特殊外设功能口（如SCI、CAN）；</p>
+<p>2）如果GPxMUX.bit = 1   2  3，配置成特殊外设功能口（如SCI、CAN）；</p>
 <p>I/O的输入功能和外设的输入通道总是被使能的，输出通道是通用数组I/O和特殊外设复用的。如果引脚配置成通用数组I/O功能，相应的外设功能将被禁止。</p>
 <p>2、GPxDIR（方向控制寄存器）</p>
 <p>每个I/O口都有数据方向控制寄存器，数据方向控制寄存器用于设置通用数字I/O为输入还是输出口，在复位时，引脚的默认状态为输入状态。</p>
@@ -632,6 +642,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/08/12/DSP开发板灯光控制上位机/" rel="prev" title="DSP开发板灯光控制上位机">
+                DSP开发板灯光控制上位机 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -702,7 +716,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -747,7 +761,9 @@
         
           
         
-        <span class="site-state-item-count">13</span>
+          
+        
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -843,7 +859,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">22k</span>
+    <span title="站点总字数">48k</span>
   
 
   
@@ -854,7 +870,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">20 分钟</span>
+    <span title="站点阅读时长">43 分钟</span>
   
 </div>
 
