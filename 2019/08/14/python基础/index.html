@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="颜">
 <meta property="og:description" content="第一个python程序 在写代码之前，请千万不要用复制-粘贴把代码从页面粘贴到你自己的电脑上。写程序也讲究一个感觉，你需要一个字母一个字母地把代码自己敲进去，在敲代码的过程中，初学者经常会敲错代码：拼写不对，大小写不对，混用中英文标点，混用空格和Tab键，所以，你需要仔细地检查、对照，才能以最快的速度掌握如何写程序。  直接运行py   有同学问，能不能像.exe文件那样直接运行.py文件呢？在W">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-14T03:33:45.420Z">
+<meta property="og:updated_time" content="2019-08-15T03:27:22.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础">
 <meta name="twitter:description" content="第一个python程序 在写代码之前，请千万不要用复制-粘贴把代码从页面粘贴到你自己的电脑上。写程序也讲究一个感觉，你需要一个字母一个字母地把代码自己敲进去，在敲代码的过程中，初学者经常会敲错代码：拼写不对，大小写不对，混用中英文标点，混用空格和Tab键，所以，你需要仔细地检查、对照，才能以最快的速度掌握如何写程序。  直接运行py   有同学问，能不能像.exe文件那样直接运行.py文件呢？在W">
@@ -391,13 +391,23 @@
                 
               
 
-              <time title="创建时间：2019-08-14 00:00:00 / 修改时间：11:33:45" itemprop="dateCreated datePublished" datetime="2019-08-14T00:00:00+08:00">2019-08-14</time>
+              <time title="创建时间：2019-08-14 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-14T00:00:00+08:00">2019-08-14</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-15 11:27:22" itemprop="dateModified" datetime="2019-08-15T11:27:22+08:00">2019-08-15</time>
+              </span>
             
           
 
@@ -432,7 +442,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">3k</span>
+              <span title="本文字数">6k</span>
             </span>
           
 
@@ -444,7 +454,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">3 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -555,7 +565,249 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> n &lt; <span class="number">10</span>:</span><br><span class="line">    n = n + <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>: <span class="comment"># 如果n是偶数，执行continue语句</span></span><br><span class="line">        <span class="keyword">continue</span> <span class="comment"># continue语句会直接继续下一轮循环，后续的print()语句不会执行</span></span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2>
+<h2 id="字符串方法及注释"><a href="#字符串方法及注释" class="headerlink" title="字符串方法及注释"></a>字符串方法及注释</h2><table>
+<thead>
+<tr>
+<th>capitalize()</th>
+<th>把字符串的第一个字符改为大写</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>casefold()</td>
+<td>把整个字符串的所有字符改为小写</td>
+</tr>
+<tr>
+<td>center(width)</td>
+<td>将字符串居中，并使用空格填充至长度 width 的新字符串</td>
+</tr>
+<tr>
+<td>count(sub[, start[, end]])</td>
+<td>返回 sub 在字符串里边出现的次数，start 和 end 参数表示范围，可选。</td>
+</tr>
+<tr>
+<td>encode(encoding=’utf-8’, errors=’strict’)</td>
+<td>以 encoding 指定的编码格式对字符串进行编码。</td>
+</tr>
+<tr>
+<td>endswith(sub[, start[, end]])</td>
+<td>检查字符串是否以 sub 子字符串结束，如果是返回 True，否则返回 False。start 和 end 参数表示范围，可选。</td>
+</tr>
+<tr>
+<td>expandtabs([tabsize=8])</td>
+<td>把字符串中的 tab 符号（\t）转换为空格，如不指定参数，默认的空格数是 tabsize=8。</td>
+</tr>
+<tr>
+<td>find(sub[, start[, end]])</td>
+<td>检测 sub 是否包含在字符串中，如果有则返回索引值，否则返回 -1，start 和 end 参数表示范围，可选。</td>
+</tr>
+<tr>
+<td>index(sub[, start[, end]])</td>
+<td>跟 find 方法一样，不过如果 sub 不在 string 中会产生一个异常。</td>
+</tr>
+<tr>
+<td>isalnum()</td>
+<td>如果字符串至少有一个字符并且所有字符都是字母或数字则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>isalpha()</td>
+<td>如果字符串至少有一个字符并且所有字符都是字母则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>isdecimal()</td>
+<td>如果字符串只包含十进制数字则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>isdigit()</td>
+<td>如果字符串只包含数字则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>islower()</td>
+<td>如果字符串中至少包含一个区分大小写的字符，并且这些字符都是小写，则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>isnumeric()</td>
+<td>如果字符串中只包含数字字符，则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>isspace()</td>
+<td>如果字符串中只包含空格，则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>istitle()</td>
+<td>如果字符串是标题化（所有的单词都是以大写开始，其余字母均小写），则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>isupper()</td>
+<td>如果字符串中至少包含一个区分大小写的字符，并且这些字符都是大写，则返回 True，否则返回 False。</td>
+</tr>
+<tr>
+<td>join(sub)</td>
+<td>以字符串作为分隔符，插入到 sub 中所有的字符之间。</td>
+</tr>
+<tr>
+<td>ljust(width)</td>
+<td>返回一个左对齐的字符串，并使用空格填充至长度为 width 的新字符串。</td>
+</tr>
+<tr>
+<td>lower()</td>
+<td>转换字符串中所有大写字符为小写。</td>
+</tr>
+<tr>
+<td>lstrip()</td>
+<td>去掉字符串左边的所有空格</td>
+</tr>
+<tr>
+<td>partition(sub)</td>
+<td>找到子字符串 sub，把字符串分成一个 3 元组 (pre_sub, sub, fol_sub)，如果字符串中不包含 sub 则返回 (‘原字符串’, ‘’, ‘’)</td>
+</tr>
+<tr>
+<td>replace(old, new[, count])</td>
+<td>把字符串中的 old 子字符串替换成 new 子字符串，如果 count 指定，则替换不超过 count 次。</td>
+</tr>
+<tr>
+<td>rfind(sub[, start[, end]])</td>
+<td>类似于 find() 方法，不过是从右边开始查找。</td>
+</tr>
+<tr>
+<td>rindex(sub[, start[, end]])</td>
+<td>类似于 index() 方法，不过是从右边开始。</td>
+</tr>
+<tr>
+<td>rjust(width)</td>
+<td>返回一个右对齐的字符串，并使用空格填充至长度为 width 的新字符串。</td>
+</tr>
+<tr>
+<td>rpartition(sub)</td>
+<td>类似于 partition() 方法，不过是从右边开始查找。</td>
+</tr>
+<tr>
+<td>rstrip()</td>
+<td>删除字符串末尾的空格。</td>
+</tr>
+<tr>
+<td>split(sep=None, maxsplit=-1)</td>
+<td>不带参数默认是以空格为分隔符切片字符串，如果 maxsplit 参数有设置，则仅分隔 maxsplit 个子字符串，返回切片后的子字符串拼接的列表。</td>
+</tr>
+<tr>
+<td>splitlines(([keepends]))</td>
+<td>在输出结果里是否去掉换行符，默认为 False，不包含换行符；如果为 True，则保留换行符。。</td>
+</tr>
+<tr>
+<td>startswith(prefix[, start[, end]])</td>
+<td>检查字符串是否以 prefix 开头，是则返回 True，否则返回 False。start 和 end 参数可以指定范围检查，可选。</td>
+</tr>
+<tr>
+<td>strip([chars])</td>
+<td>删除字符串前边和后边所有的空格，chars 参数可以定制删除的字符，可选。</td>
+</tr>
+<tr>
+<td>swapcase()</td>
+<td>翻转字符串中的大小写。</td>
+</tr>
+<tr>
+<td>title()</td>
+<td>返回标题化（所有的单词都是以大写开始，其余字母均小写）的字符串。</td>
+</tr>
+<tr>
+<td>translate(table)</td>
+<td>根据 table 的规则（可以由 str.maketrans(‘a’, ‘b’) 定制）转换字符串中的字符。</td>
+</tr>
+<tr>
+<td>upper()</td>
+<td>转换字符串中的所有小写字符为大写。</td>
+</tr>
+<tr>
+<td>zfill(width)</td>
+<td>返回长度为 width 的字符串，原字符串右对齐，前边用 0 填充。</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p> <strong>定义默认参数要牢记一点：默认参数必须指向不变对象！</strong></p>
+<p>为什么要设计<code>str</code>、<code>None</code>这样的不变对象呢？因为不变对象一旦创建，对象内部的数据就不能修改，这样就减少了由于修改数据导致的错误。此外，由于对象不变，多任务环境下同时读取对象不需要加锁，同时读一点问题都没有。我们在编写程序时，如果可以设计一个不变对象，那就尽量设计成不变对象。</p>
+<hr>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><p><strong>文件打开模式</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>打开模式</strong></th>
+<th><strong>执行操作</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>‘r’</td>
+<td>以只读方式打开文件（默认）</td>
+</tr>
+<tr>
+<td>‘w’</td>
+<td>以写入的方式打开文件，会覆盖已存在的文件</td>
+</tr>
+<tr>
+<td>‘x’</td>
+<td>如果文件已经存在，使用此模式打开将引发异常</td>
+</tr>
+<tr>
+<td>‘a’</td>
+<td>以写入模式打开，如果文件存在，则在末尾追加写入</td>
+</tr>
+<tr>
+<td>‘b’</td>
+<td>以二进制模式打开文件</td>
+</tr>
+<tr>
+<td>‘t’</td>
+<td>以文本模式打开（默认）</td>
+</tr>
+<tr>
+<td>‘+’</td>
+<td>可读写模式（可添加到其他模式中使用）</td>
+</tr>
+<tr>
+<td>‘U’</td>
+<td>通用换行符支持</td>
+</tr>
+</tbody></table>
+<p>​    <strong>文件对象方法</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>文件对象方法</strong></th>
+<th><strong>执行操作</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f.close()</td>
+<td>关闭文件</td>
+</tr>
+<tr>
+<td>f.read([size=-1])</td>
+<td>从文件读取size个字符，当未给定size或给定负值的时候，读取剩余的所有字符，然后作为字符串返回</td>
+</tr>
+<tr>
+<td>f.readline([size=-1])</td>
+<td>从文件中读取并返回一行（包括行结束符），如果有size有定义则返回size个字符</td>
+</tr>
+<tr>
+<td>f.write(str)</td>
+<td>将字符串str写入文件</td>
+</tr>
+<tr>
+<td>f.writelines(seq)</td>
+<td>向文件写入字符串序列seq，seq应该是一个返回字符串的可迭代对象</td>
+</tr>
+<tr>
+<td>f.seek(offset, from)</td>
+<td>在文件中移动文件指针，从from（0代表文件起始位置，1代表当前位置，2代表文件末尾）偏移offset个字节</td>
+</tr>
+<tr>
+<td>f.tell()</td>
+<td>返回当前在文件中的位置</td>
+</tr>
+<tr>
+<td>f.truncate([size=file.tell()])</td>
+<td>截取文件到size个字节，默认是截取到文件指针当前位置</td>
+</tr>
+</tbody></table>
+
       
     </div>
 
@@ -786,7 +1038,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个python程序"><span class="nav-number">1.</span> <span class="nav-text">第一个python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python基础"><span class="nav-number">2.</span> <span class="nav-text">python基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个python程序"><span class="nav-number">1.</span> <span class="nav-text">第一个python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python基础"><span class="nav-number">2.</span> <span class="nav-text">python基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串方法及注释"><span class="nav-number">3.</span> <span class="nav-text">字符串方法及注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件"><span class="nav-number">5.</span> <span class="nav-text">文件</span></a></li></ol></div>
             
 
           </div>
@@ -821,7 +1073,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">51k</span>
+    <span title="站点总字数">54k</span>
   
 
   
@@ -832,7 +1084,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">46 分钟</span>
+    <span title="站点阅读时长">49 分钟</span>
   
 </div>
 
@@ -1018,6 +1270,13 @@
 
 
   
+  
+
+  
+  
+
+  
+
 
 
 
