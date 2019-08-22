@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="颜">
 <meta property="og:description" content="第一个python程序 在写代码之前，请千万不要用复制-粘贴把代码从页面粘贴到你自己的电脑上。写程序也讲究一个感觉，你需要一个字母一个字母地把代码自己敲进去，在敲代码的过程中，初学者经常会敲错代码：拼写不对，大小写不对，混用中英文标点，混用空格和Tab键，所以，你需要仔细地检查、对照，才能以最快的速度掌握如何写程序。  直接运行py   有同学问，能不能像.exe文件那样直接运行.py文件呢？在W">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-21T01:55:12.005Z">
+<meta property="og:updated_time" content="2019-08-22T12:57:21.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础">
 <meta name="twitter:description" content="第一个python程序 在写代码之前，请千万不要用复制-粘贴把代码从页面粘贴到你自己的电脑上。写程序也讲究一个感觉，你需要一个字母一个字母地把代码自己敲进去，在敲代码的过程中，初学者经常会敲错代码：拼写不对，大小写不对，混用中英文标点，混用空格和Tab键，所以，你需要仔细地检查、对照，才能以最快的速度掌握如何写程序。  直接运行py   有同学问，能不能像.exe文件那样直接运行.py文件呢？在W">
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-21 09:55:12" itemprop="dateModified" datetime="2019-08-21T09:55:12+08:00">2019-08-21</time>
+                <time title="修改时间：2019-08-22 20:57:21" itemprop="dateModified" datetime="2019-08-22T20:57:21+08:00">2019-08-22</time>
               </span>
             
           
@@ -442,7 +442,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">11k</span>
+              <span title="本文字数">15k</span>
             </span>
           
 
@@ -454,7 +454,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">10 分钟</span>
+              <span title="阅读时长">13 分钟</span>
             </span>
           
 
@@ -1108,6 +1108,378 @@ mod.X # Error</code></p>
 <p>下面提供as的完整语法格式，import和from都支持：</p>
 <p><code>import modulename as name  # 只能通过name来引用</code></p>
 <p><code>from modulename import attrname as name  # 只能通过name来引用</code></p>
+<h2 id="魔法方法-左右两边两个下划线"><a href="#魔法方法-左右两边两个下划线" class="headerlink" title="魔法方法(左右两边两个下划线)"></a>魔法方法(左右两边两个下划线)</h2><table>
+<thead>
+<tr>
+<th><strong>魔法方法</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td><strong>基本的魔法方法</strong></td>
+</tr>
+<tr>
+<td><strong>new</strong>(cls[, …])</td>
+<td>1. <strong>new</strong> 是在一个对象实例化的时候所调用的第一个方法 2. 它的第一个参数是这个类，其他的参数是用来直接传递给 <strong>init</strong> 方法 3. <strong>new</strong> 决定是否要使用该 <strong>init</strong> 方法，因为 <strong>new</strong> 可以调用其他类的构造方法或者直接返回别的实例对象来作为本类的实例，如果 <strong>new</strong> 没有返回实例对象，则 <strong>init</strong> 不会被调用 4. <strong>new</strong> 主要是用于继承一个不可变的类型比如一个 tuple 或者 string</td>
+</tr>
+<tr>
+<td><strong>init</strong>(self[, …])</td>
+<td>构造器，当一个实例被创建的时候调用的初始化方法</td>
+</tr>
+<tr>
+<td><strong>del</strong>(self)</td>
+<td>析构器，当一个实例被销毁的时候调用的方法</td>
+</tr>
+<tr>
+<td><strong>call</strong>(self[, args…])</td>
+<td>允许一个类的实例像函数一样被调用：x(a, b) 调用 x.<strong>call</strong>(a, b)</td>
+</tr>
+<tr>
+<td><strong>len</strong>(self)</td>
+<td>定义当被 len() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>repr</strong>(self)</td>
+<td>定义当被 repr() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>str</strong>(self)</td>
+<td>定义当被 str() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>bytes</strong>(self)</td>
+<td>定义当被 bytes() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>hash</strong>(self)</td>
+<td>定义当被 hash() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>bool</strong>(self)</td>
+<td>定义当被 bool() 调用时的行为，应该返回 True 或 False</td>
+</tr>
+<tr>
+<td><strong>format</strong>(self, format_spec)</td>
+<td>定义当被 format() 调用时的行为</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>有关属性</strong></td>
+</tr>
+<tr>
+<td><strong>getattr</strong>(self, name)</td>
+<td>定义当用户试图获取一个不存在的属性时的行为</td>
+</tr>
+<tr>
+<td><strong>getattribute</strong>(self, name)</td>
+<td>定义当该类的属性被访问时的行为</td>
+</tr>
+<tr>
+<td><strong>setattr</strong>(self, name, value)</td>
+<td>定义当一个属性被设置时的行为</td>
+</tr>
+<tr>
+<td><strong>delattr</strong>(self, name)</td>
+<td>定义当一个属性被删除时的行为</td>
+</tr>
+<tr>
+<td><strong>dir</strong>(self)</td>
+<td>定义当 dir() 被调用时的行为</td>
+</tr>
+<tr>
+<td><strong>get</strong>(self, instance, owner)</td>
+<td>定义当描述符的值被取得时的行为</td>
+</tr>
+<tr>
+<td><strong>set</strong>(self, instance, value)</td>
+<td>定义当描述符的值被改变时的行为</td>
+</tr>
+<tr>
+<td><strong>delete</strong>(self, instance)</td>
+<td>定义当描述符的值被删除时的行为</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>比较操作符</strong></td>
+</tr>
+<tr>
+<td><strong>lt</strong>(self, other)</td>
+<td>定义小于号的行为：x &lt; y 调用 x.<strong>lt</strong>(y)</td>
+</tr>
+<tr>
+<td><strong>le</strong>(self, other)</td>
+<td>定义小于等于号的行为：x &lt;= y 调用 x.<strong>le</strong>(y)</td>
+</tr>
+<tr>
+<td><strong>eq</strong>(self, other)</td>
+<td>定义等于号的行为：x == y 调用 x.<strong>eq</strong>(y)</td>
+</tr>
+<tr>
+<td><strong>ne</strong>(self, other)</td>
+<td>定义不等号的行为：x != y 调用 x.<strong>ne</strong>(y)</td>
+</tr>
+<tr>
+<td><strong>gt</strong>(self, other)</td>
+<td>定义大于号的行为：x &gt; y 调用 x.<strong>gt</strong>(y)</td>
+</tr>
+<tr>
+<td><strong>ge</strong>(self, other)</td>
+<td>定义大于等于号的行为：x &gt;= y 调用 x.<strong>ge</strong>(y)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>算数运算符</strong></td>
+</tr>
+<tr>
+<td><strong>add</strong>(self, other)</td>
+<td>定义加法的行为：+</td>
+</tr>
+<tr>
+<td><strong>sub</strong>(self, other)</td>
+<td>定义减法的行为：-</td>
+</tr>
+<tr>
+<td><strong>mul</strong>(self, other)</td>
+<td>定义乘法的行为：*</td>
+</tr>
+<tr>
+<td><strong>truediv</strong>(self, other)</td>
+<td>定义真除法的行为：/</td>
+</tr>
+<tr>
+<td><strong>floordiv</strong>(self, other)</td>
+<td>定义整数除法的行为：//</td>
+</tr>
+<tr>
+<td><strong>mod</strong>(self, other)</td>
+<td>定义取模算法的行为：%</td>
+</tr>
+<tr>
+<td><strong>divmod</strong>(self, other)</td>
+<td>定义当被 divmod() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>pow</strong>(self, other[, modulo])</td>
+<td>定义当被 power() 调用或 ** 运算时的行为</td>
+</tr>
+<tr>
+<td><strong>lshift</strong>(self, other)</td>
+<td>定义按位左移位的行为：&lt;&lt;</td>
+</tr>
+<tr>
+<td><strong>rshift</strong>(self, other)</td>
+<td>定义按位右移位的行为：&gt;&gt;</td>
+</tr>
+<tr>
+<td><strong>and</strong>(self, other)</td>
+<td>定义按位与操作的行为：&amp;</td>
+</tr>
+<tr>
+<td><strong>xor</strong>(self, other)</td>
+<td>定义按位异或操作的行为：^</td>
+</tr>
+<tr>
+<td><strong>or</strong>(self, other)</td>
+<td>定义按位或操作的行为：|</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>反运算</strong></td>
+</tr>
+<tr>
+<td><strong>radd</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rsub</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rmul</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rtruediv</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rfloordiv</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rmod</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rdivmod</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rpow</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rlshift</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rrshift</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rand</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>rxor</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td><strong>ror</strong>(self, other)</td>
+<td>（与上方相同，当左操作数不支持相应的操作时被调用）</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>增量赋值运算</strong></td>
+</tr>
+<tr>
+<td><strong>iadd</strong>(self, other)</td>
+<td>定义赋值加法的行为：+=</td>
+</tr>
+<tr>
+<td><strong>isub</strong>(self, other)</td>
+<td>定义赋值减法的行为：-=</td>
+</tr>
+<tr>
+<td><strong>imul</strong>(self, other)</td>
+<td>定义赋值乘法的行为：*=</td>
+</tr>
+<tr>
+<td><strong>itruediv</strong>(self, other)</td>
+<td>定义赋值真除法的行为：/=</td>
+</tr>
+<tr>
+<td><strong>ifloordiv</strong>(self, other)</td>
+<td>定义赋值整数除法的行为：//=</td>
+</tr>
+<tr>
+<td><strong>imod</strong>(self, other)</td>
+<td>定义赋值取模算法的行为：%=</td>
+</tr>
+<tr>
+<td><strong>ipow</strong>(self, other[, modulo])</td>
+<td>定义赋值幂运算的行为：**=</td>
+</tr>
+<tr>
+<td><strong>ilshift</strong>(self, other)</td>
+<td>定义赋值按位左移位的行为：&lt;&lt;=</td>
+</tr>
+<tr>
+<td><strong>irshift</strong>(self, other)</td>
+<td>定义赋值按位右移位的行为：&gt;&gt;=</td>
+</tr>
+<tr>
+<td><strong>iand</strong>(self, other)</td>
+<td>定义赋值按位与操作的行为：&amp;=</td>
+</tr>
+<tr>
+<td><strong>ixor</strong>(self, other)</td>
+<td>定义赋值按位异或操作的行为：^=</td>
+</tr>
+<tr>
+<td><strong>ior</strong>(self, other)</td>
+<td>定义赋值按位或操作的行为：|=</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>一元操作符</strong></td>
+</tr>
+<tr>
+<td><strong>pos</strong>(self)</td>
+<td>定义正号的行为：+x</td>
+</tr>
+<tr>
+<td><strong>neg</strong>(self)</td>
+<td>定义负号的行为：-x</td>
+</tr>
+<tr>
+<td><strong>abs</strong>(self)</td>
+<td>定义当被 abs() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>invert</strong>(self)</td>
+<td>定义按位求反的行为：~x</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>类型转换</strong></td>
+</tr>
+<tr>
+<td><strong>complex</strong>(self)</td>
+<td>定义当被 complex() 调用时的行为（需要返回恰当的值）</td>
+</tr>
+<tr>
+<td><strong>int</strong>(self)</td>
+<td>定义当被 int() 调用时的行为（需要返回恰当的值）</td>
+</tr>
+<tr>
+<td><strong>float</strong>(self)</td>
+<td>定义当被 float() 调用时的行为（需要返回恰当的值）</td>
+</tr>
+<tr>
+<td><strong>round</strong>(self[, n])</td>
+<td>定义当被 round() 调用时的行为（需要返回恰当的值）</td>
+</tr>
+<tr>
+<td><strong>index</strong>(self)</td>
+<td>1. 当对象是被应用在切片表达式中时，实现整形强制转换 2. 如果你定义了一个可能在切片时用到的定制的数值型,你应该定义 <strong>index</strong> 3. 如果 <strong>index</strong> 被定义，则 <strong>int</strong> 也需要被定义，且返回相同的值</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>上下文管理（with 语句）</strong></td>
+</tr>
+<tr>
+<td><strong>enter</strong>(self)</td>
+<td>1. 定义当使用 with 语句时的初始化行为 2. <strong>enter</strong> 的返回值被 with 语句的目标或者 as 后的名字绑定</td>
+</tr>
+<tr>
+<td><strong>exit</strong>(self, exc_type, exc_value, traceback)</td>
+<td>1. 定义当一个代码块被执行或者终止后上下文管理器应该做什么 2. 一般被用来处理异常，清除工作或者做一些代码块执行完毕之后的日常工作</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>容器类型</strong></td>
+</tr>
+<tr>
+<td><strong>len</strong>(self)</td>
+<td>定义当被 len() 调用时的行为（返回容器中元素的个数）</td>
+</tr>
+<tr>
+<td><strong>getitem</strong>(self, key)</td>
+<td>定义获取容器中指定元素的行为，相当于 self[key]</td>
+</tr>
+<tr>
+<td><strong>setitem</strong>(self, key, value)</td>
+<td>定义设置容器中指定元素的行为，相当于 self[key] = value</td>
+</tr>
+<tr>
+<td><strong>delitem</strong>(self, key)</td>
+<td>定义删除容器中指定元素的行为，相当于 del self[key]</td>
+</tr>
+<tr>
+<td><strong>iter</strong>(self)</td>
+<td>定义当迭代容器中的元素的行为</td>
+</tr>
+<tr>
+<td><strong>reversed</strong>(self)</td>
+<td>定义当被 reversed() 调用时的行为</td>
+</tr>
+<tr>
+<td><strong>contains</strong>(self, item)</td>
+<td>定义当使用成员测试运算符（in 或 not in）时的行为</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -1339,7 +1711,7 @@ mod.X # Error</code></p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个python程序"><span class="nav-number">1.</span> <span class="nav-text">第一个python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python基础"><span class="nav-number">2.</span> <span class="nav-text">python基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串方法及注释"><span class="nav-number">3.</span> <span class="nav-text">字符串方法及注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件"><span class="nav-number">5.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准异常"><span class="nav-number">6.</span> <span class="nav-text">标准异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">7.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-number">7.0.1.</span> <span class="nav-text">import</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个python程序"><span class="nav-number">1.</span> <span class="nav-text">第一个python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python基础"><span class="nav-number">2.</span> <span class="nav-text">python基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串方法及注释"><span class="nav-number">3.</span> <span class="nav-text">字符串方法及注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">4.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件"><span class="nav-number">5.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准异常"><span class="nav-number">6.</span> <span class="nav-text">标准异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">7.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-number">7.0.1.</span> <span class="nav-text">import</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#魔法方法-左右两边两个下划线"><span class="nav-number">8.</span> <span class="nav-text">魔法方法(左右两边两个下划线)</span></a></li></div>
             
 
           </div>
@@ -1374,7 +1746,7 @@ mod.X # Error</code></p>
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">63k</span>
   
 
   
@@ -1385,7 +1757,7 @@ mod.X # Error</code></p>
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">54 分钟</span>
+    <span title="站点阅读时长">57 分钟</span>
   
 </div>
 
