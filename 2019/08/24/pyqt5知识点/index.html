@@ -102,10 +102,12 @@
 <meta property="og:site_name" content="颜">
 <meta property="og:description" content="pqqt基础知识汇总 第一个窗口1、if __name__ == “__main__“: 是代表如果这个文件是主程序这运行下面的代码，如果是被别的程序文件调用的话，则运行下面的代码。 2、__init __ 方法在类的一个对象被建立时，马上运行。这个方法可以用来对你的对象做一些你希望的 初始化 。注意，这个名称的开始和结尾都是双下划线。 3、生成实例（对象）必须以类名()，别忘记了() 4、类中的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-24T02:32:01.274Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/25/mcs0Hg.png">
+<meta property="og:updated_time" content="2019-08-25T02:08:30.490Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="pyqt基础知识">
 <meta name="twitter:description" content="pqqt基础知识汇总 第一个窗口1、if __name__ == “__main__“: 是代表如果这个文件是主程序这运行下面的代码，如果是被别的程序文件调用的话，则运行下面的代码。 2、__init __ 方法在类的一个对象被建立时，马上运行。这个方法可以用来对你的对象做一些你希望的 初始化 。注意，这个名称的开始和结尾都是双下划线。 3、生成实例（对象）必须以类名()，别忘记了() 4、类中的">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/25/mcs0Hg.png">
 
 
 
@@ -391,13 +393,23 @@
                 
               
 
-              <time title="创建时间：2019-08-24 00:00:00 / 修改时间：10:32:01" itemprop="dateCreated datePublished" datetime="2019-08-24T00:00:00+08:00">2019-08-24</time>
+              <time title="创建时间：2019-08-24 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-24T00:00:00+08:00">2019-08-24</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-25 10:08:30" itemprop="dateModified" datetime="2019-08-25T10:08:30+08:00">2019-08-25</time>
+              </span>
             
           
 
@@ -432,7 +444,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">630</span>
+              <span title="本文字数">2.6k</span>
             </span>
           
 
@@ -444,7 +456,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">2 分钟</span>
             </span>
           
 
@@ -471,10 +483,29 @@
 <p>5、QApplication相当于main函数，也就是整个程序（有很多文件）的主入口函数。</p>
 <p>​    对于一个Gui程序必须至少有一个这样的一个实例来让程序运行。</p>
 <p>6、最后一句是调用sys库的exit退出方法，退出条件（参数）是app.exec_()也就是整个窗口关闭。</p>
-<h3 id="初探Qt-Designer"><a href="#初探Qt-Designer" class="headerlink" title="初探Qt Designer"></a>初探Qt Designer</h3><p>1、记得在Qt Designer中窗体的layout层次可以通过对象查看器来查看，layout的一些设置可以通过属性编辑器来修该。</p>
+<h3 id="Qt-Designer"><a href="#Qt-Designer" class="headerlink" title="Qt Designer"></a>Qt Designer</h3><p>1、记得在Qt Designer中窗体的layout层次可以通过对象查看器来查看，layout的一些设置可以通过属性编辑器来修该。</p>
 <p>2、通常我们使用栅格布局作为顶层布局，将控件放置好之后可以通过右键–布局–栅格布局，将布局充满整个窗体。</p>
 <p>3、我们可以先放入控件，然后ctrl选中多个控件，然后点击工具栏上快速布局工具进行布局。</p>
 <p> 4、在mianwindows中默认会有个centralwidget布局也是继承自QtWidgets.QWidget，表示窗口的中央部分。</p>
+<h3 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h3><p>信号和槽是一种高级接口，应用于对象之间的通信，它是 QT 的核心特性，也是 QT 区别于其它工具包的重要地方。它为高层次的事件处理自动生成所需要的附加代码。在我们所熟知的很多 GUI 工具包中，窗口小部件 (widget) 都有一个回调函数用于响应它们能触发的每个动作，这个回调函数通常是一个指向某个函数的指针。但是，在 QT 中信号和槽取代了这些凌乱的函数指针，使得我们编写这些通信程序更为简洁明了。<br><strong>所有从 QObject 或其子类 ( 例如 Qwidget) 派生的类都能够包含信号和槽。</strong>当对象改变其状态时，信号就由该对象发射 (emit) 出去，这就是对象所要做的全部事情，它不知道另一端是谁在接收这个信号。这就是真正的信息封装，它确保对象被当作一个真正的软件组件来使用。槽用于接收信号，但它们是普通的对象成员函数。<strong>一个槽并不知道是否有任何信号与自己相连接。而且，对象并不了解具体的通信机制。</strong><br>你可以将很多信号与单个的槽进行连接，也可以将单个的信号与很多的槽进行连接，甚至于将一个信号与另外一个信号相连接也是可能的，这时无论第一个信号什么时候发射系统都将立刻发射第二个信号。总之，信号与槽构造了一个强大的部件编程机制。</p>
+<p>说实话对于像我这样的新手来说看着就蛋疼，想学会它没办法，我们还是简化一下概念吧：<br>所有QObject类都可以使用信号槽，换句话来说继承自pyqt中的类基本上都可以使用信号槽机制。当然非QObject也是可以通过其他一些办法来使用信号槽的。</p>
+<p>仅仅有了信号和槽是不行的，我们还需要了解：<br>信号(Signal)、槽(slot)、连接(connect)、动作事件(action)、发射(emit)、发送者、接受者等等一些列的知识。</p>
+<ol>
+<li><p>在PyQt中接受者和发送者必须是个对象（实例）！</p>
+</li>
+<li><p>PyQt中的控件中提供了很多信号和槽方法，大家可以多多使用Qt Designer 设计参考！</p>
+</li>
+<li><p>槽其实就个函数（方法），Qt5中的槽函数不在限定必须是slot，可以是普通的函数、类的普通成员函数、lambda函数等。编译期间就会检查信号与槽是否存在！</p>
+</li>
+<li><p><strong>信号的connect连接最好放在__init__析构函数里面</strong>，这样只会声明一次连接，如果在类方法（函数中）使用的话，要记得disconnect，否则connect会连接多次，导致程序异常。</p>
+</li>
+<li><p><strong>信号槽函数不用加 ()</strong>，否则可能会导致连接异常。</p>
+</li>
+</ol>
+<h3 id="自定义信号emit及传参"><a href="#自定义信号emit及传参" class="headerlink" title="自定义信号emit及传参"></a>自定义信号emit及传参</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> f1 <span class="keyword">import</span> Ui_MainWindow</span><br><span class="line"><span class="keyword">from</span> PyQt5 <span class="keyword">import</span> QtWidgets,QtCore</span><br><span class="line"><span class="keyword">import</span> sys,time</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyWindow</span><span class="params">(QtWidgets.QMainWindow, Ui_MainWindow)</span>:</span> <span class="comment"># 继承QWidget和Ui_MainWindow</span></span><br><span class="line">    _signal = QtCore.pyqtSignal() <span class="comment"># 定义信号</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(MyWindow, self).__init__()</span><br><span class="line">        self.setupUi(self)          <span class="comment">#加载窗体</span></span><br><span class="line"></span><br><span class="line">        self.pushButton.clicked.connect(self.prn)     <span class="comment"># 按钮1链接到prn槽函数</span></span><br><span class="line">        <span class="comment"># self.pushButton_2.clicked.connect(self.prn)</span></span><br><span class="line">        self._signal.connect(self.mysignalslot)       <span class="comment"># 将信号连接到mysignalslot</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prn</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'打印测试'</span>)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        print(<span class="string">'延时1秒'</span>)</span><br><span class="line">        self._signal.emit()     <span class="comment">#发射信号</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mysignalslot</span><span class="params">(self)</span>:</span>     <span class="comment"># 自定义槽函数</span></span><br><span class="line">        print(<span class="string">'我是slot'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">    app = QtWidgets.QApplication(sys.argv)</span><br><span class="line">    mywindow = MyWindow()           <span class="comment"># 创建实例</span></span><br><span class="line">    mywindow.show()                 <span class="comment"># 使用QtWidgets的show()方法</span></span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure>
+
+<p>main.py的程序如上所示。实现功能：</p>
+<p><img src="https://s2.ax1x.com/2019/08/25/mcs0Hg.png" alt="mcs0Hg.png"></p>
 
       
     </div>
@@ -710,7 +741,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个窗口"><span class="nav-number">1.</span> <span class="nav-text">第一个窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初探Qt-Designer"><span class="nav-number">2.</span> <span class="nav-text">初探Qt Designer</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个窗口"><span class="nav-number">1.</span> <span class="nav-text">第一个窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Qt-Designer"><span class="nav-number">2.</span> <span class="nav-text">Qt Designer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信号和槽"><span class="nav-number">3.</span> <span class="nav-text">信号和槽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义信号emit及传参"><span class="nav-number">4.</span> <span class="nav-text">自定义信号emit及传参</span></a></li></ol></div>
             
 
           </div>
@@ -745,7 +776,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">63k</span>
+    <span title="站点总字数">66k</span>
   
 
   
@@ -756,7 +787,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">58 分钟</span>
+    <span title="站点阅读时长">1:01</span>
   
 </div>
 
