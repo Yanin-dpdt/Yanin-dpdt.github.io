@@ -5,8 +5,8 @@
     <url>%2F2019%2F08%2F24%2Fpyqt5%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
     <content type="text"><![CDATA[pqqt基础知识汇总 第一个窗口1、if __name__ == “__main__“: 是代表如果这个文件是主程序这运行下面的代码，如果是被别的程序文件调用的话，则运行下面的代码。 2、__init __ 方法在类的一个对象被建立时，马上运行。这个方法可以用来对你的对象做一些你希望的 初始化 。注意，这个名称的开始和结尾都是双下划线。 3、生成实例（对象）必须以类名()，别忘记了() 4、类中的函数（方法）必须有self，是代表属于这个实例（对象）本身持有的，而外部定义的函数则不需要。 5、QApplication相当于main函数，也就是整个程序（有很多文件）的主入口函数。 ​ 对于一个Gui程序必须至少有一个这样的一个实例来让程序运行。 6、最后一句是调用sys库的exit退出方法，退出条件（参数）是app.exec_()也就是整个窗口关闭。 Qt Designer1、记得在Qt Designer中窗体的layout层次可以通过对象查看器来查看，layout的一些设置可以通过属性编辑器来修该。 2、通常我们使用栅格布局作为顶层布局，将控件放置好之后可以通过右键–布局–栅格布局，将布局充满整个窗体。 3、我们可以先放入控件，然后ctrl选中多个控件，然后点击工具栏上快速布局工具进行布局。 4、在mianwindows中默认会有个centralwidget布局也是继承自QtWidgets.QWidget，表示窗口的中央部分。 信号和槽信号和槽是一种高级接口，应用于对象之间的通信，它是 QT 的核心特性，也是 QT 区别于其它工具包的重要地方。它为高层次的事件处理自动生成所需要的附加代码。在我们所熟知的很多 GUI 工具包中，窗口小部件 (widget) 都有一个回调函数用于响应它们能触发的每个动作，这个回调函数通常是一个指向某个函数的指针。但是，在 QT 中信号和槽取代了这些凌乱的函数指针，使得我们编写这些通信程序更为简洁明了。所有从 QObject 或其子类 ( 例如 Qwidget) 派生的类都能够包含信号和槽。当对象改变其状态时，信号就由该对象发射 (emit) 出去，这就是对象所要做的全部事情，它不知道另一端是谁在接收这个信号。这就是真正的信息封装，它确保对象被当作一个真正的软件组件来使用。槽用于接收信号，但它们是普通的对象成员函数。一个槽并不知道是否有任何信号与自己相连接。而且，对象并不了解具体的通信机制。你可以将很多信号与单个的槽进行连接，也可以将单个的信号与很多的槽进行连接，甚至于将一个信号与另外一个信号相连接也是可能的，这时无论第一个信号什么时候发射系统都将立刻发射第二个信号。总之，信号与槽构造了一个强大的部件编程机制。 说实话对于像我这样的新手来说看着就蛋疼，想学会它没办法，我们还是简化一下概念吧：所有QObject类都可以使用信号槽，换句话来说继承自pyqt中的类基本上都可以使用信号槽机制。当然非QObject也是可以通过其他一些办法来使用信号槽的。 仅仅有了信号和槽是不行的，我们还需要了解：信号(Signal)、槽(slot)、连接(connect)、动作事件(action)、发射(emit)、发送者、接受者等等一些列的知识。 在PyQt中接受者和发送者必须是个对象（实例）！ PyQt中的控件中提供了很多信号和槽方法，大家可以多多使用Qt Designer 设计参考！ 槽其实就个函数（方法），Qt5中的槽函数不在限定必须是slot，可以是普通的函数、类的普通成员函数、lambda函数等。编译期间就会检查信号与槽是否存在！ 信号的connect连接最好放在__init__析构函数里面，这样只会声明一次连接，如果在类方法（函数中）使用的话，要记得disconnect，否则connect会连接多次，导致程序异常。 信号槽函数不用加 ()，否则可能会导致连接异常。 自定义信号emit及传参12345678910111213141516171819202122232425262728293031from f1 import Ui_MainWindowfrom PyQt5 import QtWidgets,QtCoreimport sys,timeclass MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): # 继承QWidget和Ui_MainWindow _signal = QtCore.pyqtSignal() # 定义信号 def __init__(self): super(MyWindow, self).__init__() self.setupUi(self) #加载窗体 self.pushButton.clicked.connect(self.prn) # 按钮1链接到prn槽函数 # self.pushButton_2.clicked.connect(self.prn) self._signal.connect(self.mysignalslot) # 将信号连接到mysignalslot def prn(self): print('打印测试') time.sleep(1) print('延时1秒') self._signal.emit() #发射信号 def mysignalslot(self): # 自定义槽函数 print('我是slot')if __name__ == '__main__': import sys app = QtWidgets.QApplication(sys.argv) mywindow = MyWindow() # 创建实例 mywindow.show() # 使用QtWidgets的show()方法 sys.exit(app.exec_()) main.py的程序如上所示。实现功能：]]></content>
       <tags>
-        <tag>python</tag>
         <tag>pyqt</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -45,22 +45,22 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[DSP电机平台上位机编写(Python+pyqt)]]></title>
+    <url>%2F2019%2F08%2F06%2FDSP%E5%B9%B3%E5%8F%B0%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91%2F</url>
+    <content type="text"><![CDATA[准备给DSP电机平台增加一个电机转速调节的上位机。 目的： 1.学习python，并利用它做点东西 2.对串口通信有更加深刻的了解 计划步骤： 1.先把Python的基础知识有大体了解 2.学习pyqt并绘制上位机界面 3.做好串口通信的工作 环境的搭建环境搭建参考： 环境搭建 再由.ui转成.py时，再最后添加：参考 Ui_MainWindow 要和前面类名一致 1234567891011class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): def __init__(self): super(MyWindow, self).__init__() self.setupUi(self)if __name__ == '__main__': import sys app = QtWidgets.QApplication(sys.argv) mywindow = MyWindow() mywindow.show() sys.exit(app.exec_()) 槽函数 未完待续~~]]></content>
+      <tags>
+        <tag>DSP平台</tag>
+        <tag>上位机</tag>
+        <tag>Python</tag>
+        <tag>pyqt</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[企业岗位要求]]></title>
     <url>%2F2019%2F08%2F06%2F%E4%BC%81%E4%B8%9A%E5%B2%97%E4%BD%8D%E8%A6%81%E6%B1%82%2F</url>
     <content type="text"><![CDATA[几家企业的岗位要求，激励自己不断前进！]]></content>
       <tags>
         <tag>岗位要求</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[DSP电机平台上位机编写(Python+pyqt)]]></title>
-    <url>%2F2019%2F08%2F06%2FDSP%E5%B9%B3%E5%8F%B0%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91%2F</url>
-    <content type="text"><![CDATA[准备给DSP电机平台增加一个电机转速调节的上位机。 目的： 1.学习python，并利用它做点东西 2.对串口通信有更加深刻的了解 计划步骤： 1.先把Python的基础知识有大体了解 2.学习pyqt并绘制上位机界面 3.做好串口通信的工作 环境的搭建环境搭建参考： 环境搭建 再由.ui转成.py时，再最后添加：参考 Ui_MainWindow 要和前面类名一致 1234567891011class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): def __init__(self): super(MyWindow, self).__init__() self.setupUi(self)if __name__ == '__main__': import sys app = QtWidgets.QApplication(sys.argv) mywindow = MyWindow() mywindow.show() sys.exit(app.exec_()) 槽函数 未完待续~~]]></content>
-      <tags>
-        <tag>pyqt</tag>
-        <tag>DSP平台</tag>
-        <tag>上位机</tag>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -116,11 +116,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[my first generage blog]]></title>
-    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[关于dsp平台电流环解耦]]></title>
     <url>%2F2019%2F07%2F23%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E7%94%B5%E6%B5%81%E7%8E%AF%E8%A7%A3%E8%80%A6%2F</url>
     <content type="text"><![CDATA[120V电压 400rpm的给定电流 应该加的补偿值 ​ttt = 0.00105 \* \_IQmpy(pi_id.Fbk,pi_spd.Fbk) \* 4500 \* 9 /(volt1.DcBusVolt\*409.9) + 0.065 \* pi_spd.Fbk \* 4500 /(volt1.DcBusVolt\*409.9); 下面是解耦后应该的公式. ​ipark1.Qs = pi_iq.Out + ttt;​ 在未解耦的时候，测得ipark1.Qs = 0.515 . 换算成真实的电压值为(乘当前的电流值) 0.515 * 120 V=61.8V 测得ttt = 0.22 . 换算成真实的电压值为26.4V. ttt的主要成份是反电势 ​flux\*we=0.1552\*400\*4\*3.14/30=26.0V​ 所以证明电流环解耦 程序是正确的. 实验结果 （右为解耦）]]></content>
@@ -128,5 +123,10 @@
         <tag>DSP平台</tag>
         <tag>PMSM</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[my first generage blog]]></title>
+    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
   </entry>
 </search>
