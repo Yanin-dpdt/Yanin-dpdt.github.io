@@ -94,18 +94,23 @@
   };
 </script>
 
-  <meta name="description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop190801.c为源程序。  5.文件夹中   01-07为电流环调试过程,  08-11为速度环调试过">
-<meta name="keywords" content="DSP平台,PMSM,UDE">
+  <meta name="description" content="关于杨明老师柔性负载的文献综述制作人：颜世伟 制作时间：2019.8 ---  一、机械谐振建模 [1]  电机和执行机构通过传动轴系联接，传动轴系具有一定的抗扭刚度 K 和阻尼系数 Cw。当传动轴系发生扭转形变时轴系将产生转矩 Tw，此转矩对于电机来说可看作是电机的负载转矩，而对于执行机构来说可看作是驱动转矩。伺服驱动器控制电机运行，为电机的转轴提供电磁转矩 Te。在电机端电磁转矩 Te和传动轴">
+<meta name="keywords" content="PMSM,柔性负载">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于DSP平台双UDE 参数调试">
-<meta property="og:url" content="http://yoursite.com/2019/08/02/关于DSP平台双UDE调试/index.html">
+<meta property="og:title" content="柔性负载-杨明">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/柔性负载-杨明/index.html">
 <meta property="og:site_name" content="颜">
-<meta property="og:description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop190801.c为源程序。  5.文件夹中   01-07为电流环调试过程,  08-11为速度环调试过">
+<meta property="og:description" content="关于杨明老师柔性负载的文献综述制作人：颜世伟 制作时间：2019.8 ---  一、机械谐振建模 [1]  电机和执行机构通过传动轴系联接，传动轴系具有一定的抗扭刚度 K 和阻尼系数 Cw。当传动轴系发生扭转形变时轴系将产生转矩 Tw，此转矩对于电机来说可看作是电机的负载转矩，而对于执行机构来说可看作是驱动转矩。伺服驱动器控制电机运行，为电机的转轴提供电磁转矩 Te。在电机端电磁转矩 Te和传动轴">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-06T11:40:48.547Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/26/mWqgs0.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/26/mWLTAS.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/26/mWOK4e.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/26/mWxlIf.png">
+<meta property="og:updated_time" content="2019-08-26T08:00:20.789Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于DSP平台双UDE 参数调试">
-<meta name="twitter:description" content="1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）  2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。    3.图中的时间 10000点 = 5s  4.Main_twoloop190801.c为源程序。  5.文件夹中   01-07为电流环调试过程,  08-11为速度环调试过">
+<meta name="twitter:title" content="柔性负载-杨明">
+<meta name="twitter:description" content="关于杨明老师柔性负载的文献综述制作人：颜世伟 制作时间：2019.8 ---  一、机械谐振建模 [1]  电机和执行机构通过传动轴系联接，传动轴系具有一定的抗扭刚度 K 和阻尼系数 Cw。当传动轴系发生扭转形变时轴系将产生转矩 Tw，此转矩对于电机来说可看作是电机的负载转矩，而对于执行机构来说可看作是驱动转矩。伺服驱动器控制电机运行，为电机的转轴提供电磁转矩 Te。在电机端电磁转矩 Te和传动轴">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/26/mWqgs0.png">
 
 
 
@@ -113,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/08/02/关于DSP平台双UDE调试/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/25/柔性负载-杨明/">
 
 
 
@@ -124,7 +129,7 @@
 </script>
 
   
-  <title>关于DSP平台双UDE 参数调试 | 颜</title>
+  <title>柔性负载-杨明 | 颜</title>
   
 
 
@@ -348,7 +353,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/02/关于DSP平台双UDE调试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/柔性负载-杨明/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shiwei-Yan">
@@ -365,7 +370,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于DSP平台双UDE 参数调试
+          <h1 class="post-title" itemprop="name headline">柔性负载-杨明
 
               
             
@@ -391,7 +396,7 @@
                 
               
 
-              <time title="创建时间：2019-08-02 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-02T00:00:00+08:00">2019-08-02</time>
+              <time title="创建时间：2019-08-25 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-25T00:00:00+08:00">2019-08-25</time>
             </span>
           
 
@@ -406,7 +411,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-06 19:40:48" itemprop="dateModified" datetime="2019-08-06T19:40:48+08:00">2019-08-06</time>
+                <time title="修改时间：2019-08-26 16:00:20" itemprop="dateModified" datetime="2019-08-26T16:00:20+08:00">2019-08-26</time>
               </span>
             
           
@@ -442,7 +447,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">753</span>
+              <span title="本文字数">521</span>
             </span>
           
 
@@ -473,86 +478,24 @@
       
 
       
-        <ul>
-<li><p><strong>1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系）</strong></p>
-</li>
-<li><p><strong>2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。</strong></p>
-</li>
-</ul>
-<ul>
-<li><p><strong>3.图中的时间 10000点 = 5s</strong></p>
-</li>
-<li><p><strong>4.Main_twoloop190801.c为源程序。</strong></p>
-</li>
-<li><p><strong>5.文件夹中</strong></p>
-<p>  01-07为电流环调试过程,<br>  08-11为速度环调试过程,<br>  12 给了一个比较极端的速度环滤波器参数。</p>
-</li>
-</ul>
-<blockquote>
-<p>数据对应参数：</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">spd_Factor</th>
-<th align="center">spd_kp</th>
-<th align="center">spd_ki</th>
-<th align="center">iq_Factor</th>
-<th align="center">iq_kp</th>
-<th align="center">iq_ki</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">01参数</td>
-<td align="center">0.1667</td>
-<td align="center">0.8</td>
-<td align="center">0.0015</td>
-<td align="center">0.007</td>
-<td align="center">1.0</td>
-<td align="center">0.0025</td>
-</tr>
-<tr>
-<td align="center">05参数</td>
-<td align="center">0.1667</td>
-<td align="center">0.8</td>
-<td align="center">0.0015</td>
-<td align="center">0.007</td>
-<td align="center">2.1</td>
-<td align="center">0.0025</td>
-</tr>
-<tr>
-<td align="center">06参数</td>
-<td align="center">0.1667</td>
-<td align="center">0.8</td>
-<td align="center">0.0015</td>
-<td align="center">0.007</td>
-<td align="center">2.5</td>
-<td align="center">0.0025</td>
-</tr>
-<tr>
-<td align="center">10参数</td>
-<td align="center">0.1667</td>
-<td align="center">3.0</td>
-<td align="center">0.0015</td>
-<td align="center">0.007</td>
-<td align="center">2.5</td>
-<td align="center">0.0025</td>
-</tr>
-<tr>
-<td align="center">12参数</td>
-<td align="center">0.0007</td>
-<td align="center">0.8</td>
-<td align="center">0.0015</td>
-<td align="center">0.007</td>
-<td align="center">2.5</td>
-<td align="center">0.0025</td>
-</tr>
-</tbody></table>
-<ul>
-<li><p><strong>6.画图函数</strong></p>
-  <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">figure</span>(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">plot</span>(t,spd,<span class="string">'r'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(t,spdr<span class="number">-5</span>,<span class="string">'g'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(t,spdc<span class="number">-5</span>,<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>)</span><br><span class="line">grid on</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>)</span><br><span class="line"><span class="built_in">plot</span>(t,iq,<span class="string">'r'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(t,iqr,<span class="string">'g'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>)</span><br><span class="line"><span class="built_in">hold</span> on</span><br><span class="line"><span class="built_in">plot</span>(t,iqc,<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>)</span><br><span class="line">grid on</span><br></pre></td></tr></table></figure></li>
-</ul>
+        <h2 id="关于杨明老师柔性负载的文献综述"><a href="#关于杨明老师柔性负载的文献综述" class="headerlink" title="关于杨明老师柔性负载的文献综述"></a><center>关于杨明老师柔性负载的文献综述</center></h2><p align="right">制作人：颜世伟</p>
+<p align="right">制作时间：2019.8</p>
+---
+
+<h3 id="一、机械谐振建模-1"><a href="#一、机械谐振建模-1" class="headerlink" title="一、机械谐振建模 [1]"></a>一、机械谐振建模 [1]</h3><img src="https://s2.ax1x.com/2019/08/26/mWqgs0.png" width="380" height="130" alt="图片名称" align="center">
+
+<p>电机和执行机构通过传动轴系联接，传动轴系具有一定的抗扭刚度 K 和阻尼系数 Cw。当传动轴系发生扭转形变时轴系将产生转矩 Tw，此转矩对于电机来说可看作是电机的负载转矩，而对于执行机构来说可看作是驱动转矩。伺服驱动器控制电机运行，为电机的转轴提供电磁转矩 Te。在电机端电磁转矩 Te和传动轴系转矩 Tw作用于转动惯量为 J1、阻尼系数为 C1的电机转轴。在执行机构端，执行机构具有大小为 J2的等效转动惯量以及阻尼系数 C2，传动轴系转矩 Tw与负载转矩Tl共同作用于执行机构最终决定了负载转速。</p>
+<p>系统中的阻尼系数很小，可忽略阻尼系数从而对系统模型进行化简得到  传动装置的数学表达：</p>
+<img src="https://s2.ax1x.com/2019/08/26/mWLTAS.png" width="380" height="450" alt="图片名称" align="center">
+
+<p>实际系统模型框图：</p>
+<img src="https://s2.ax1x.com/2019/08/26/mWOK4e.png" width="380" height="150" alt="图片名称" align="center">
+
+<p> 根据系统的传递函数画处Bode图(A:  ω1/ ωref传递函数的幅频特性曲线. B：ω2/ ω1 .  C为A+B)</p>
+<img src="https://s2.ax1x.com/2019/08/26/mWxlIf.png" width="380" height="250" alt="图片名称" align="center">
+
+<p>可以看出闭环系统中存在一个谐振点，系统对于此频率点的响应比较强烈，存在机械谐振。并且谐振频率受系统中的机械谐振频率和振幅主要受到负载转动惯量 J2和传动轴扭转弹性系数 K 两个参数影响.</p>
+<hr>
 
       
     </div>
@@ -583,11 +526,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/DSP平台/" rel="tag"><i class="fa fa-tag"></i> DSP平台</a>
-          
             <a href="/tags/PMSM/" rel="tag"><i class="fa fa-tag"></i> PMSM</a>
           
-            <a href="/tags/UDE/" rel="tag"><i class="fa fa-tag"></i> UDE</a>
+            <a href="/tags/柔性负载/" rel="tag"><i class="fa fa-tag"></i> 柔性负载</a>
           
         </div>
       
@@ -600,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/01/不懂的知识点/" rel="next" title="不懂的知识点 查阅 汇总">
-                <i class="fa fa-chevron-left"></i> 不懂的知识点 查阅 汇总
+              <a href="/2019/08/24/pyqt5知识点/" rel="next" title="pyqt基础知识">
+                <i class="fa fa-chevron-left"></i> pyqt基础知识
               </a>
             
           </div>
@@ -609,10 +550,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/02/关于加入站内搜索/" rel="prev" title="关于加入站内搜索">
-                关于加入站内搜索 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -656,8 +593,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -774,6 +720,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于杨明老师柔性负载的文献综述"><span class="nav-number">1.</span> <span class="nav-text">关于杨明老师柔性负载的文献综述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、机械谐振建模-1"><span class="nav-number">1.1.</span> <span class="nav-text">一、机械谐振建模 [1]</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1005,6 +968,46 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
