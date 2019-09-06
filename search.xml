@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[matplotlib]]></title>
+    <url>%2F2019%2F09%2F05%2Fmatplotlib%2F</url>
+    <content type="text"><![CDATA[GUI编程–matplotlib绘图 numpyarray 12345678910111213141516import numpy as npt1 = np.array([1, 2, 3]) # 存放数组t2 = np.array(range(1,4),dtype = float) # 指定数组类型t6 = t5.astype('int8') # 调整数据类型#random.random() 取小数np.round(t7,2) # 取t7里小数的前两位t1.shape # 返回一个元祖 返回元祖的含义注意！ 第一个是0轴，第二个是1轴...t1.reshape((3, 4)) # 转入一个元祖 把1*12 变成3*4t5.flatte() # 把数据转换成一维的 轴 二维数组里 axis=0 代表行 1代表列 numpy读取数据(.csv) np.loadtxt(fram.dtype = np.float,delimiter = None, skipprows = 0, usecoles = None, unpack=False) fram 文件、字符或者生成器，可以是.gz (文件名) delimiter 分隔字符串，默认空格，可改成， skiprows 跳过前x行，一般跳过第一行表头 usecols 读取指定的列，索引，元祖类型 unpack 如True读入属性分别写入不同数组变量，False 只写入一个数组变量，默认False。(类似于把矩阵旋转了) t1.transpose()数组转置 或者t1.T 索引 切片 t2[2]取第二行 , 取多行t2[2,6,9] 取行t2[1,:] 取列t2[:,[0,2,7]] numpy中数值修改 t2[t2&lt;10] = 3 np.where(t&lt;10,0,10) 小于10是0，大于10是10 t.clip(10,18) 小于10 是10 大于18是18 数组的拼接 np.vstack((t1,t2)) 竖直拼接 np.hstack((t1,t2)) 水平拼接 行列交换t[[1,2],:] = t[[2,1],:] 构造全为0的数组 np.zero((us_data.shape[0],1)) 构造全为1的数组 np.ones((us_data.shape[0],1)) 获取最大值最小值的位置np.argmax(t,axis=0) /np.argmin(t,axis=1) 创建一个对角线为1的正方形数组(方阵)：np.eye(3) numpy的注意点copy和view a=b 完全不复制，a和b相互影响 a = b[:],视图的操作，一种切片，会创建新的对象a，但是a的数据完全由b保管，他们两个的数据变化是一致的， a = b.copy(),复制，a和b互不影响]]></content>
+      <tags>
+        <tag>matplotlib</tag>
+        <tag>pyqt</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[柔性负载-杨明]]></title>
     <url>%2F2019%2F08%2F25%2F%E6%9F%94%E6%80%A7%E8%B4%9F%E8%BD%BD-%E6%9D%A8%E6%98%8E%2F</url>
     <content type="text"><![CDATA[关于杨明老师柔性负载的文献综述制作人：颜世伟 制作时间：2019.8 --- 一、机械谐振建模 [1] 电机和执行机构通过传动轴系联接，传动轴系具有一定的抗扭刚度 K 和阻尼系数 Cw。当传动轴系发生扭转形变时轴系将产生转矩 Tw，此转矩对于电机来说可看作是电机的负载转矩，而对于执行机构来说可看作是驱动转矩。伺服驱动器控制电机运行，为电机的转轴提供电磁转矩 Te。在电机端电磁转矩 Te和传动轴系转矩 Tw作用于转动惯量为 J1、阻尼系数为 C1的电机转轴。在执行机构端，执行机构具有大小为 J2的等效转动惯量以及阻尼系数 C2，传动轴系转矩 Tw与负载转矩Tl共同作用于执行机构最终决定了负载转速。 系统中的阻尼系数很小，可忽略阻尼系数从而对系统模型进行化简得到 传动装置的数学表达： 实际系统模型框图： 根据系统的传递函数画处Bode图(A: ω1/ ωref传递函数的幅频特性曲线. B：ω2/ ω1 . C为A+B) 可以看出闭环系统中存在一个谐振点，系统对于此频率点的响应比较强烈，存在机械谐振。并且谐振频率受系统中的机械谐振频率和振幅主要受到负载转动惯量 J2和传动轴扭转弹性系数 K 两个参数影响. 二、双惯量弹性伺服系统外部机械参数辨识方法综述[5] 参考文献[1] 杨明, 胡浩, 徐殿国. 永磁交流伺服系统机械谐振成因及其抑制[J]. 电机与控制学报, 2012, 16(1):79-84. [2] 杨明, 郝亮, 徐殿国. 基于自适应陷波滤波器的在线机械谐振抑制[J]. 哈尔滨工业大学学报, 2014, 46(4):63-69. [3] 王璨, 杨明, 徐殿国. 基于PI控制的双惯量弹性系统机械谐振的抑制[J]. 电气传动, 2015(1). [4] 杨明, 王璨, 徐殿国. 基于轴矩限幅控制的机械谐振抑制技术[J]. 电机与控制学报, 2015, 19(4):58-64. [5] 王璨, 杨明, 栾添瑞. 双惯量弹性伺服系统外部机械参数辨识综述[J]. 中国电机工程学报, 2016, 36(3):804-817. [6] 杨明, 郝亮, 徐殿国. 双惯量弹性负载系统机械谐振机理分析及谐振特征快速辨识[J]. 电机与控制学报, 2016, 20(04):112-120. [7] 郎志, 杨明, 徐殿国. 双惯量弹性系统负载扰动观测器设计研究[J]. 电工技术学报, 2016(S2):90-97. [8] Beinke S，Wertz H，Schutte F，et al．Identification of nonlinear two-mass systems for self-commissioning speed control of electrical drives[C]//Proceedings of the 24th Annual Conference of the IEEE Industrial Electronics Society．Aachen：IEEE，1998：2251-2256． [9] GuoY J，HuangL P，Muramatsu M．Research on inertia identification and auto-tuning of speed controller for AC servo system[C]//Proceedings of the Power Conversion Conference．Osaka：IEEE，2002：896-901 [10] Östring M ， Gunnarsson S ， Norrlöf M ． Closed-loop identification of an industrial robot containing flexibilities [J]．Control Engineering Practice，2003，11(3)：291-300 [11] Östring M．Closed loop identification of the physical parameters of an industrial robot[C]//Proceedings of the 32nd International Symposium on Robotics ． Seoul ，Korea，2000． [12]Dhaouadi R，KuboK．Transfer function and parameters identification of a motor drive system using adaptive filtering[C]//Proceedings of the 4th International Workshop on Advanced Motion Control．Mie：IEEE，1996：588-593． [13] Eker I，Vural M．Experimental online identification of a three-mass mechanical system[C]//Proceedings of 2003 IEEE Conference on Control Applications．Istanbul，Turkey：IEEE，2003：60-65． [14] Landau I D，Karimi A．An extended output error recursive algorithm for identification in closed loop[C]//Proceedings of the 35th IEEE Conference on Decision and Control．Kobe：IEEE，1996：1405-1410． [15] Eker I，Vural M．Experimental online identification of a three-mass mechanical system[C]//Proceedings of 2003 IEEE Conference on Control Applications．Istanbul，Turkey：IEEE，2003：60-65． [16] Landau I D，Karimi A．An extended output error recursive algorithm for identification in closed loop[C]//Proceedings of the 35th IEEE Conference on Decision and Control．Kobe：IEEE，1996：1405-1410． [17] Zoubek H，Pacas M．A method for speed-sensorless identification of two-mass-systems[C]//Proceedings of the 2010 IEEE Energy Conversion Congress and Exposition．Atlanta，GA：IEEE，2010：4461-4468． [18] YoshiokaY ， HanamotoT ． Estimation of a multimass system using the LWTLS and a coefficient diagram for vibration-controller design[J] ． IEEE Transactions on Industry Applications，2008，44(2)：566-574． [19] Villwock S，Pacas M．Application of the Welch-method for the identification of two-and three-mass-systems [J]．IEEE Transactions on Industrial Electronics，2008，55(1)：457-466．]]></content>
@@ -54,22 +63,22 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[DSP电机平台上位机编写(Python+pyqt)]]></title>
+    <url>%2F2019%2F08%2F06%2FDSP%E5%B9%B3%E5%8F%B0%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91%2F</url>
+    <content type="text"><![CDATA[准备给DSP电机平台增加一个电机转速调节的上位机。 目的： 1.学习python，并利用它做点东西 2.对串口通信有更加深刻的了解 计划步骤： 1.先把Python的基础知识有大体了解 2.学习pyqt并绘制上位机界面 3.做好串口通信的工作 环境的搭建环境搭建参考： 环境搭建 再由.ui转成.py时，再最后添加：参考 Ui_MainWindow 要和前面类名一致 1234567891011class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): def __init__(self): super(MyWindow, self).__init__() self.setupUi(self)if __name__ == '__main__': import sys app = QtWidgets.QApplication(sys.argv) mywindow = MyWindow() mywindow.show() sys.exit(app.exec_()) 槽函数 未完待续~~]]></content>
+      <tags>
+        <tag>pyqt</tag>
+        <tag>DSP平台</tag>
+        <tag>上位机</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[企业岗位要求]]></title>
     <url>%2F2019%2F08%2F06%2F%E4%BC%81%E4%B8%9A%E5%B2%97%E4%BD%8D%E8%A6%81%E6%B1%82%2F</url>
     <content type="text"><![CDATA[几家企业的岗位要求，激励自己不断前进！]]></content>
       <tags>
         <tag>岗位要求</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[DSP电机平台上位机编写(Python+pyqt)]]></title>
-    <url>%2F2019%2F08%2F06%2FDSP%E5%B9%B3%E5%8F%B0%E4%B8%8A%E4%BD%8D%E6%9C%BA%E5%BC%80%E5%8F%91%2F</url>
-    <content type="text"><![CDATA[准备给DSP电机平台增加一个电机转速调节的上位机。 目的： 1.学习python，并利用它做点东西 2.对串口通信有更加深刻的了解 计划步骤： 1.先把Python的基础知识有大体了解 2.学习pyqt并绘制上位机界面 3.做好串口通信的工作 环境的搭建环境搭建参考： 环境搭建 再由.ui转成.py时，再最后添加：参考 Ui_MainWindow 要和前面类名一致 1234567891011class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow): def __init__(self): super(MyWindow, self).__init__() self.setupUi(self)if __name__ == '__main__': import sys app = QtWidgets.QApplication(sys.argv) mywindow = MyWindow() mywindow.show() sys.exit(app.exec_()) 槽函数 未完待续~~]]></content>
-      <tags>
-        <tag>DSP平台</tag>
-        <tag>上位机</tag>
-        <tag>Python</tag>
-        <tag>pyqt</tag>
       </tags>
   </entry>
   <entry>
@@ -82,6 +91,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[关于加入站内搜索]]></title>
+    <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[今天按照网上的加入本站搜索功能 无论如何都加不进去，后来在查看 NEXT给的官方解读中看到解决方法网址如下，查看Local Search方法 https://theme-next.org/docs/third-party-services/search-services]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[关于DSP平台双UDE 参数调试]]></title>
     <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E5%8F%8CUDE%E8%B0%83%E8%AF%95%2F</url>
     <content type="text"><![CDATA[1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系） 2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。 3.图中的时间 10000点 = 5s 4.Main_twoloop190801.c为源程序。 5.文件夹中 01-07为电流环调试过程, 08-11为速度环调试过程, 12 给了一个比较极端的速度环滤波器参数。 数据对应参数： spd_Factor spd_kp spd_ki iq_Factor iq_kp iq_ki 01参数 0.1667 0.8 0.0015 0.007 1.0 0.0025 05参数 0.1667 0.8 0.0015 0.007 2.1 0.0025 06参数 0.1667 0.8 0.0015 0.007 2.5 0.0025 10参数 0.1667 3.0 0.0015 0.007 2.5 0.0025 12参数 0.0007 0.8 0.0015 0.007 2.5 0.0025 6.画图函数 1234567891011121314figure(1)plot(t,spd,'r','LineWidth',1)hold onplot(t,spdr-5,'g','LineWidth',1)hold onplot(t,spdc-5,'b','LineWidth',1)grid onfigure(2)plot(t,iq,'r','LineWidth',1)hold onplot(t,iqr,'g','LineWidth',1)hold onplot(t,iqc,'b','LineWidth',1)grid on]]></content>
@@ -89,14 +106,6 @@
         <tag>DSP平台</tag>
         <tag>PMSM</tag>
         <tag>UDE</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[关于加入站内搜索]]></title>
-    <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
-    <content type="text"><![CDATA[今天按照网上的加入本站搜索功能 无论如何都加不进去，后来在查看 NEXT给的官方解读中看到解决方法网址如下，查看Local Search方法 https://theme-next.org/docs/third-party-services/search-services]]></content>
-      <tags>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -125,6 +134,11 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[my first generage blog]]></title>
+    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[关于dsp平台电流环解耦]]></title>
     <url>%2F2019%2F07%2F23%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E7%94%B5%E6%B5%81%E7%8E%AF%E8%A7%A3%E8%80%A6%2F</url>
     <content type="text"><![CDATA[120V电压 400rpm的给定电流 应该加的补偿值 ​ttt = 0.00105 \* \_IQmpy(pi_id.Fbk,pi_spd.Fbk) \* 4500 \* 9 /(volt1.DcBusVolt\*409.9) + 0.065 \* pi_spd.Fbk \* 4500 /(volt1.DcBusVolt\*409.9); 下面是解耦后应该的公式. ​ipark1.Qs = pi_iq.Out + ttt;​ 在未解耦的时候，测得ipark1.Qs = 0.515 . 换算成真实的电压值为(乘当前的电流值) 0.515 * 120 V=61.8V 测得ttt = 0.22 . 换算成真实的电压值为26.4V. ttt的主要成份是反电势 ​flux\*we=0.1552\*400\*4\*3.14/30=26.0V​ 所以证明电流环解耦 程序是正确的. 实验结果 （右为解耦）]]></content>
@@ -132,10 +146,5 @@
         <tag>DSP平台</tag>
         <tag>PMSM</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[my first generage blog]]></title>
-    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
   </entry>
 </search>
