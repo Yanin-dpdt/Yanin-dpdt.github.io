@@ -103,7 +103,7 @@
 <meta property="og:description" content="GUI编程–matplotlib绘图  numpyarray 12345678910111213141516import numpy as npt1 = np.array([1, 2, 3]) # 存放数组t2 = np.array(range(1,4),dtype = float) # 指定数组类型t6 = t5.astype(&apos;int8&apos;) # 调整数据类型#random.random() 取">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/06/nMFMyd.png">
-<meta property="og:updated_time" content="2019-09-06T13:41:57.016Z">
+<meta property="og:updated_time" content="2019-09-08T11:39:09.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matplotlib">
 <meta name="twitter:description" content="GUI编程–matplotlib绘图  numpyarray 12345678910111213141516import numpy as npt1 = np.array([1, 2, 3]) # 存放数组t2 = np.array(range(1,4),dtype = float) # 指定数组类型t6 = t5.astype(&apos;int8&apos;) # 调整数据类型#random.random() 取">
@@ -408,7 +408,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-06 21:41:57" itemprop="dateModified" datetime="2019-09-06T21:41:57+08:00">2019-09-06</time>
+                <time title="修改时间：2019-09-08 19:39:09" itemprop="dateModified" datetime="2019-09-08T19:39:09+08:00">2019-09-08</time>
               </span>
             
           
@@ -444,7 +444,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.2k</span>
+              <span title="本文字数">3.1k</span>
             </span>
           
 
@@ -456,7 +456,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">3 分钟</span>
             </span>
           
 
@@ -516,6 +516,27 @@
 <li><p>a = b.copy(),复制，a和b互不影响</p>
 </li>
 </ol>
+<p><strong>常用的统计函数</strong></p>
+<p>求和：t.sum(axis=None)  指定一个轴</p>
+<p>均值：t.mean(a,axis=None)  受离群点的影响较大</p>
+<p>中值：np.median(t,axis=None) </p>
+<p>最大值：t.max(axis=None) </p>
+<p>最小值：t.min(axis=None)</p>
+<p>极值：np.ptp(t,axis=None) 即最大值和最小值只差</p>
+<p>标准差：t.std(axis=None) </p>
+<h3 id="FuncAnimation动态绘图"><a href="#FuncAnimation动态绘图" class="headerlink" title="FuncAnimation动态绘图"></a>FuncAnimation动态绘图</h3><p>1、函数FuncAnimation(fig,func,frames,init_func,interval,blit)是绘制动图的主要函数，其参数如下：</p>
+<p>　　a.<code>fig</code> 绘制动图的画布名称</p>
+<p>　　b.func自定义动画函数，即下边程序定义的函数<code>update</code></p>
+<p>　　c.frames动画长度，一次循环包含的帧数，在函数运行时，其值会传递给函数update(n)的形参“n”</p>
+<p>　　d.init_func自定义开始帧，即传入刚定义的函数<code>init,初始化函数</code></p>
+<p>　　e.interval更新频率，以ms计</p>
+<p>　　f.blit选择更新所有点，还是仅更新产生变化的点。应选择<code>True</code>，但mac用户请选择<code>False</code>，否则无法显</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.animation <span class="keyword">import</span> FuncAnimation</span><br><span class="line"></span><br><span class="line">fig, ax = plt.subplots()   <span class="comment">#生成子图，相当于fig = plt.figure(),ax = fig.add_subplot(),其中ax的函数参数表示把当前画布进行分割，例：fig.add_subplot(2,2,2).表示将画布分割为两行两列　　　　　　　　　　　　　　　　#ax在第2个子图中绘制，其中行优先，</span></span><br><span class="line">xdata, ydata = [], []      <span class="comment">#初始化两个数组</span></span><br><span class="line">ln, = ax.plot([], [], <span class="string">'r-'</span>, animated=<span class="literal">False</span>)  <span class="comment">#第三个参数表示画曲线的颜色和线型，具体参见：https://blog.csdn.net/tengqingyong/article/details/78829596</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init</span><span class="params">()</span>:</span></span><br><span class="line">    ax.set_xlim(<span class="number">0</span>, <span class="number">2</span>*np.pi)  <span class="comment">#设置x轴的范围pi代表3.14...圆周率，</span></span><br><span class="line">    ax.set_ylim(<span class="number">-1</span>, <span class="number">1</span>)　　　　<span class="comment">#设置y轴的范围</span></span><br><span class="line">    <span class="keyword">return</span> ln,               <span class="comment">#返回曲线</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(n)</span>:</span></span><br><span class="line">    xdata.append(n)         <span class="comment">#将每次传过来的n追加到xdata中</span></span><br><span class="line">    ydata.append(np.sin(n))</span><br><span class="line">    ln.set_data(xdata, ydata)    <span class="comment">#重新设置曲线的值</span></span><br><span class="line">    <span class="keyword">return</span> ln,</span><br><span class="line"></span><br><span class="line">ani = FuncAnimation(fig, update, frames=np.linspace(<span class="number">0</span>, <span class="number">2</span>*np.pi, <span class="number">10</span>),     <span class="comment">#这里的frames在调用update函数是会将frames作为实参传递给“n”</span></span><br><span class="line">                    init_func=init, blit=<span class="literal">True</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p> PS:一般来说一个动图有两类函数，一类是初始化函数，另一类是需要更新的函数！！</p>
+<h3 id="Figure构造器参数说明"><a href="#Figure构造器参数说明" class="headerlink" title="Figure构造器参数说明"></a>Figure构造器参数说明</h3><blockquote>
+<p>class matplotlib.figure.Figure(<br>    figsize=None,     #Figure的大小，单位是英寸<br>    dpi=None,     #分辨率（每英寸的点数）<br>    facecolor=None,     #修饰的颜色<br>    edgecolor=None,     #边界颜色<br>    linewidth=0.0,     #线条宽度<br>    frameon=None,     #布尔值，是否绘制框架（Frame）<br>    subplotpars=None,     #子图的参数<br>    tight_layout=None,     #取值布尔或者字典，缺省自动布局，False 使用 <strong>subplotpars</strong>参数，True就使用<strong>tight_layout</strong>，如果是字典，则包含如下字段：<strong>pad</strong>, <strong>w_pad</strong>, <strong>h_pad</strong>, 与 <strong>rect</strong><br>    constrained_layout=None)     #True就使用constrained_layout，会自动调整plot的位置。</p>
+</blockquote>
 
       
     </div>
@@ -753,7 +774,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy"><span class="nav-number">1.</span> <span class="nav-text">numpy</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy"><span class="nav-number">1.</span> <span class="nav-text">numpy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FuncAnimation动态绘图"><span class="nav-number">2.</span> <span class="nav-text">FuncAnimation动态绘图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Figure构造器参数说明"><span class="nav-number">3.</span> <span class="nav-text">Figure构造器参数说明</span></a></li></ol></div>
             
 
           </div>
@@ -788,7 +809,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">79k</span>
+    <span title="站点总字数">81k</span>
   
 
   
@@ -799,7 +820,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:12</span>
+    <span title="站点阅读时长">1:14</span>
   
 </div>
 
