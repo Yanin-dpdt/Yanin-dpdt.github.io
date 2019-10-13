@@ -111,7 +111,8 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/23/uPX5an.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/23/uPX7GV.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/09/23/uPjgF1.png">
-<meta property="og:updated_time" content="2019-09-23T14:19:10.673Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/09/u59ym6.png">
+<meta property="og:updated_time" content="2019-10-09T06:30:43.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与算法python版">
 <meta name="twitter:description" content="1. 基础概念  split() 通过指定分隔符对字符串进行切片，如果参数 num 有指定值，则分隔 num+1 个子字符串 split() 方法语法： 1str.split(str=&quot;&quot;, num=string.count(str))  链表是一种常见的基础数据结构，结构体指针在这里得到了充分的利用。链表可以动态的进行存储分配，也就是说，链表是一个功能极为强大的数组，他可以在节点中定义多种数据类">
@@ -416,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-23 22:19:10" itemprop="dateModified" datetime="2019-09-23T22:19:10+08:00">2019-09-23</time>
+                <time title="修改时间：2019-10-09 14:30:43" itemprop="dateModified" datetime="2019-10-09T14:30:43+08:00">2019-10-09</time>
               </span>
             
           
@@ -452,7 +453,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">4k</span>
+              <span title="本文字数">5.1k</span>
             </span>
           
 
@@ -464,7 +465,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -578,6 +579,19 @@
 <p><img src="https://s2.ax1x.com/2019/09/23/uPXI5q.png" alt="uPXI5q.png"><br><img src="https://s2.ax1x.com/2019/09/23/uPX5an.png" alt="uPX5an.png"></p>
 <p><img src="https://s2.ax1x.com/2019/09/23/uPX7GV.png" alt="uPX7GV.png"></p>
 <p><img src="https://s2.ax1x.com/2019/09/23/uPjgF1.png" alt="uPjgF1.png"></p>
+<hr>
+<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p>​      个人以为，BFS就像是再画一个半径为R++的圆，每画一次，这个圆就一点点的扩大，这样的好处在于他能够巨细无遗地扫描到你想要的元素；DFS就像是我们在画阴影的时候的方法，先沿对角线画一条斜线，然后在他的左边或者右边不断地画斜线填充，直到斜线接触到你想要的点；。</p>
+<p>​      综上而言，在空间效率问题上，小范围而言BFS由于是采用队列的方式二优于DFS的递归方式，但是如果数据量扩大，这个真的不好说，这其中应该会有一个临界值，让两者的效率逆转。</p>
+<p>​     而在时间效率上的话，一定程度上DFS的时间效率优于BFS。个人认为，BFS的主要作用在于扫描与找方向，DFS的作用主要在于在找到方向之后的建立最短 路径。 </p>
+<p><strong>1.dfs(深度优先搜索)是两个搜索中先理解并使用的，其实就是暴力把所有的路径都搜索出来，它运用了回溯，保存这次的位置，深入搜索，都搜索完了便回溯回来，搜下一个位置，直到把所有最深位置都搜一遍，要注意的一点是，搜索的时候有记录走过的位置，标记完后可能要改回来；</strong></p>
+<p>回溯法是一种搜索法，按条件向前搜索，以达到目标。但当探索到某一步时，发现原先选择达不到目标，就退回一步重新选择，这种走不通就退回再走的技术为回溯法；</p>
+<p><a href="https://imgchr.com/i/u59ym6" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/10/09/u59ym6.png" alt="u59ym6.png"></a></p>
+<p>例如这张图，从1开始到2，之后到5，5不能再走了，退回2，到6，退回2退回1，到3，一直进行；</p>
+<p><strong>理解这种方法比较简单，难的是要怎么用</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> deep)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x=deep/n,y=deep%n;</span><br><span class="line">    <span class="keyword">if</span>(符合某种要求||已经不能在搜了)</span><br><span class="line">    &#123;</span><br><span class="line">        做一些操作；</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(符合某种条件且有地方可以继续搜索的)<span class="comment">//这里可能会有多种条件，可能要循环什么的</span></span><br><span class="line">    &#123;</span><br><span class="line">        a[x][y]=<span class="string">'x'</span>;<span class="comment">//可能要改变条件，这个是瞎写的</span></span><br><span class="line">            dfs(deep+<span class="number">1</span>,sum+<span class="number">1</span>);<span class="comment">//搜索下一层</span></span><br><span class="line">        a[x][y]=<span class="string">'.'</span>;<span class="comment">//可能要改回条件，有些可能不用改比如搜地图上有多少块连续的东西</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.bfs(宽度/广度优先搜索)，这个一直理解了思想，不会用，后面才会的，思想，从某点开始，走四面可以走的路，然后在从这些路，在找可以走的路，直到最先找到符合条件的，这个运用需要用到队列(queue)，需要稍微掌握这个才能用bfs</strong>.</p>
+<p>还是这张图，从1开始搜，有2，3，4几个点，存起来，从2开始有5，6，存起来，搜3，有7，8，存起来，搜4，没有了；现在开始搜刚刚存的点，从5开始，没有，然后搜6.。。一直进行，直到找到；</p>
 
       
     </div>
@@ -623,8 +637,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/15/数据结构python-题目/" rel="next" title="数据结构与算法题目python版">
-                <i class="fa fa-chevron-left"></i> 数据结构与算法题目python版
+              <a href="/2019/09/05/matplotlib/" rel="next" title="matplotlib">
+                <i class="fa fa-chevron-left"></i> matplotlib
               </a>
             
           </div>
@@ -632,6 +646,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/09/15/数据结构python-题目/" rel="prev" title="数据结构与算法题目python版">
+                数据结构与算法题目python版 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -675,8 +693,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -798,6 +825,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#图"><span class="nav-number">1.</span> <span class="nav-text">图</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -826,7 +870,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">93k</span>
+    <span title="站点总字数">95k</span>
   
 
   
@@ -837,7 +881,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:25</span>
+    <span title="站点阅读时长">1:27</span>
   
 </div>
 
