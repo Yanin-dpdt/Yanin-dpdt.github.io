@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="颜">
 <meta property="og:description" content="名词DB(database) DBMS(DB Management System)数据库管理系统，C/S客户端/服务端 SQL(Structure Query L)语言 DBA数据库管理员(职务) cmd进sql  C:\Windows\system32&amp;gt;mysql -h localhost -P3306 -u root -p 连接本机可以简化为 C:\Windows\system32&amp;gt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-19T02:58:55.545Z">
+<meta property="og:updated_time" content="2019-10-24T13:15:14.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL学习">
 <meta name="twitter:description" content="名词DB(database) DBMS(DB Management System)数据库管理系统，C/S客户端/服务端 SQL(Structure Query L)语言 DBA数据库管理员(职务) cmd进sql  C:\Windows\system32&amp;gt;mysql -h localhost -P3306 -u root -p 连接本机可以简化为 C:\Windows\system32&amp;gt">
@@ -189,7 +189,7 @@
     </div>
     
       
-        <p class="site-subtitle">控制、PMSM、Python、IOT</p>
+        <p class="site-subtitle">控制、PMSM、Python、...</p>
       
     
     
@@ -406,7 +406,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-19 10:58:55" itemprop="dateModified" datetime="2019-10-19T10:58:55+08:00">2019-10-19</time>
+                <time title="修改时间：2019-10-24 21:15:14" itemprop="dateModified" datetime="2019-10-24T21:15:14+08:00">2019-10-24</time>
               </span>
             
           
@@ -442,7 +442,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">923</span>
+              <span title="本文字数">4k</span>
             </span>
           
 
@@ -454,7 +454,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">4 分钟</span>
             </span>
           
 
@@ -482,6 +482,9 @@
 <blockquote>
 <p>sql命令后面加;</p>
 </blockquote>
+<p>mysql中<code>+</code>只作为   数值加法</p>
+<p>CONCAT(  ,  )是拼接</p>
+<p>DESC 表名 ； 显示表的结构 </p>
 <h3 id="MySQL的常见命令"><a href="#MySQL的常见命令" class="headerlink" title="MySQL的常见命令"></a>MySQL的常见命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1.查看当前所有的数据库</span><br><span class="line">show databases;</span><br><span class="line">2.打开指定的库</span><br><span class="line">use 库名;</span><br><span class="line">3.查看当前库的所有表</span><br><span class="line">show tables;</span><br><span class="line">4.查看其它库的所有表</span><br><span class="line">show tables from 库名;</span><br><span class="line">5.创建表</span><br><span class="line">create table 表名(</span><br><span class="line"></span><br><span class="line">	列名 列类型,</span><br><span class="line">	列名 列类型，</span><br><span class="line">	。。。</span><br><span class="line">);</span><br><span class="line">6.查看表结构</span><br><span class="line">desc 表名;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">7.查看服务器的版本</span><br><span class="line">方式一：登录到mysql服务端</span><br><span class="line">select version();</span><br><span class="line">方式二：没有登录到mysql服务端</span><br><span class="line">mysql --version</span><br><span class="line">或</span><br><span class="line">mysql --V</span><br></pre></td></tr></table></figure>
@@ -492,6 +495,53 @@
 
 <h2 id="DQL语言的学习"><a href="#DQL语言的学习" class="headerlink" title="DQL语言的学习"></a>DQL语言的学习</h2><p>###进阶1：基础查询</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">SELECT 要查询的东西</span><br><span class="line">【FROM 表名】;</span><br><span class="line"></span><br><span class="line">特点：</span><br><span class="line">①通过select查询完的结果 ，是一个虚拟的表格，不是真实存在</span><br><span class="line">② 要查询的东西 可以是常量值、可以是表达式、可以是字段、可以是函数</span><br><span class="line">可以直接双击表 不用打字了!</span><br><span class="line">F12可以整理格式</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶2：条件查询"><a href="#进阶2：条件查询" class="headerlink" title="进阶2：条件查询"></a>进阶2：条件查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">条件查询：根据条件过滤原始表的数据，查询到想要的数据</span><br><span class="line">语法：</span><br><span class="line">select </span><br><span class="line">	要查询的字段|表达式|常量值|函数</span><br><span class="line">from </span><br><span class="line">	表</span><br><span class="line">where </span><br><span class="line">	条件 ;</span><br><span class="line"></span><br><span class="line">分类：</span><br><span class="line">一、条件表达式</span><br><span class="line">	示例：salary&gt;10000</span><br><span class="line">	条件运算符：</span><br><span class="line">	&gt; &lt; &gt;= &lt;= = != &lt;&gt;</span><br><span class="line"></span><br><span class="line">二、逻辑表达式</span><br><span class="line">示例：salary&gt;10000 &amp;&amp; salary&lt;20000</span><br><span class="line"></span><br><span class="line">逻辑运算符：</span><br><span class="line"></span><br><span class="line">	and（&amp;&amp;）:两个条件如果同时成立，结果为true，否则为false</span><br><span class="line">	or(||)：两个条件只要有一个成立，结果为true，否则为false</span><br><span class="line">	not(!)：如果条件成立，则not后为false，否则为true</span><br><span class="line"></span><br><span class="line">三、模糊查询</span><br><span class="line">示例：last_name like &apos;a%&apos;</span><br><span class="line">IS NULL  IS NOT NULL</span><br><span class="line">IN</span><br><span class="line">安全等于&lt;=&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶3：排序查询"><a href="#进阶3：排序查询" class="headerlink" title="进阶3：排序查询"></a>进阶3：排序查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">select</span><br><span class="line">	要查询的东西</span><br><span class="line">from</span><br><span class="line">	表</span><br><span class="line">where </span><br><span class="line">	条件</span><br><span class="line"></span><br><span class="line">order by 排序的字段|表达式|函数|别名 【asc|desc】</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶4：常见函数"><a href="#进阶4：常见函数" class="headerlink" title="进阶4：常见函数"></a>进阶4：常见函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">一、单行函数</span><br><span class="line">1、字符函数</span><br><span class="line">	concat拼接</span><br><span class="line">	substr截取子串</span><br><span class="line">	upper转换成大写</span><br><span class="line">	lower转换成小写</span><br><span class="line">	trim去前后指定的空格和字符</span><br><span class="line">	ltrim去左边空格</span><br><span class="line">	rtrim去右边空格</span><br><span class="line">	replace替换</span><br><span class="line">	lpad左填充</span><br><span class="line">	rpad右填充</span><br><span class="line">	instr返回子串第一次出现的索引</span><br><span class="line">	length 获取字节个数</span><br><span class="line">	</span><br><span class="line">2、数学函数</span><br><span class="line">	round 四舍五入</span><br><span class="line">	rand 随机数</span><br><span class="line">	floor向下取整</span><br><span class="line">	ceil向上取整</span><br><span class="line">	mod取余</span><br><span class="line">	truncate截断</span><br><span class="line">3、日期函数</span><br><span class="line">	now当前系统日期+时间</span><br><span class="line">	curdate当前系统日期</span><br><span class="line">	curtime当前系统时间</span><br><span class="line">	str_to_date 将字符转换成日期</span><br><span class="line">	date_format将日期转换成字符</span><br><span class="line">	datadiff(&apos;2019-02-01&apos;,&apos;2019-1-1&apos;)前面的日期减后面的  </span><br><span class="line">4、流程控制函数</span><br><span class="line">	if(判断条件，1，0)</span><br><span class="line">	case 要判断的字段和表达式</span><br><span class="line">	 when 常量1 then 要显示的值1或语句1</span><br><span class="line">	 when 常量2 then 要显示的值2或语句2</span><br><span class="line">	 else 要显示的值n</span><br><span class="line">	 end</span><br><span class="line">	(在最后一条后面加；)</span><br><span class="line">	</span><br><span class="line">	多重if</span><br><span class="line">	case</span><br><span class="line">	when 条件1 then 要显示的值1或语句1</span><br><span class="line">	when 条件2 then 要显示的值2或语句2</span><br><span class="line">	else 要显示的值n或语句n</span><br><span class="line">	end</span><br><span class="line">	</span><br><span class="line">5、其他函数</span><br><span class="line">	version版本</span><br><span class="line">	database当前库</span><br><span class="line">	user当前连接用户</span><br></pre></td></tr></table></figure>
+
+<p>​    </p>
+<p>二、分组函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sum 求和</span><br><span class="line">max 最大值</span><br><span class="line">min 最小值</span><br><span class="line">avg 平均值</span><br><span class="line">count 计数</span><br><span class="line"></span><br><span class="line">特点：</span><br><span class="line">1、以上五个分组函数都忽略null值，除了count(*)</span><br><span class="line">2、sum和avg一般用于处理数值型</span><br><span class="line">	max、min、count可以处理任何数据类型</span><br><span class="line">   3、都可以搭配distinct使用，用于统计去重后的结果(只能去重一个)</span><br><span class="line">4、count的参数可以支持：</span><br><span class="line">	字段、*、常量值，一般放1</span><br><span class="line"></span><br><span class="line">   建议使用 count(*) -----可以用来统计个数</span><br><span class="line">   eg：查询部门编号为90的员工个数</span><br><span class="line">   SELECT COUNT(*) 个数</span><br><span class="line">   FROM employees</span><br><span class="line">   WHERE department_id = 90;</span><br><span class="line">6、和分组函数一同查询的字段有限制（意义上的）要求是 group by 后面的字段</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶5：分组查询"><a href="#进阶5：分组查询" class="headerlink" title="进阶5：分组查询"></a>进阶5：分组查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">select 查询的字段，分组函数</span><br><span class="line">from 表</span><br><span class="line">group by 分组的字段</span><br></pre></td></tr></table></figure>
+
+<p>​    特点：<br>​    1、可以按单个字段分组<br>​    2、和分组函数一同查询的字段最好是分组后的字段<br>​    3、分组筛选<br>​            针对的表    位置            关键字<br>​    分组前筛选：    原始表        group by的前面        where<br>​    分组后筛选：    分组后的结果集    group by的后面        having<br>​<br>​    4、可以按多个字段分组，字段之间用逗号隔开<br>​    5、可以支持排序<br>​    6、having后可以支持别名</p>
+<h3 id="进阶6：多表连接查询"><a href="#进阶6：多表连接查询" class="headerlink" title="进阶6：多表连接查询"></a>进阶6：多表连接查询</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">笛卡尔乘积：如果连接条件省略或无效则会出现</span><br><span class="line">解决办法：添加上连接条件</span><br></pre></td></tr></table></figure>
+
+<p>一、传统模式下的连接 ：等值连接——非等值连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.等值连接的结果 = 多个表的交集</span><br><span class="line">2.n表连接，至少需要n-1个连接条件</span><br><span class="line">3.多个表不分主次，没有顺序要求</span><br><span class="line">4.一般为表起别名，提高阅读性和性能</span><br></pre></td></tr></table></figure>
+
+<p>二、sql99语法：通过join关键字实现连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">含义：1999年推出的sql语法</span><br><span class="line">支持：</span><br><span class="line">等值连接、非等值连接 （内连接）</span><br><span class="line">外连接</span><br><span class="line">交叉连接</span><br><span class="line"></span><br><span class="line">语法：</span><br><span class="line"></span><br><span class="line">select 字段，...</span><br><span class="line">from 表1</span><br><span class="line">【inner|left outer|right outer|cross】join 表2 on  连接条件</span><br><span class="line">【inner|left outer|right outer|cross】join 表3 on  连接条件</span><br><span class="line">【where 筛选条件】</span><br><span class="line">【group by 分组字段】</span><br><span class="line">【having 分组后的筛选条件】</span><br><span class="line">【order by 排序的字段或表达式】</span><br><span class="line"></span><br><span class="line">好处：语句上，连接条件和筛选条件实现了分离，简洁明了！</span><br></pre></td></tr></table></figure>
+
+<p>​<br>三、自连接</p>
+<p>案例：查询员工名和直接上级的名称</p>
+<p>sql99</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT e.last_name,m.last_name</span><br><span class="line">FROM employees e</span><br><span class="line">JOIN employees m ON e.`manager_id`=m.`employee_id`;</span><br></pre></td></tr></table></figure>
+
+<p>sql92</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT e.last_name,m.last_name</span><br><span class="line">FROM employees e,employees m </span><br><span class="line">WHERE e.`manager_id`=m.`employee_id`;</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶8：分页查询"><a href="#进阶8：分页查询" class="headerlink" title="进阶8：分页查询"></a>进阶8：分页查询</h3><p>应用场景：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">实际的web项目中需要根据用户的需求提交对应的分页查询的sql语句</span><br></pre></td></tr></table></figure>
+
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select 字段|表达式,...</span><br><span class="line">from 表</span><br><span class="line">【where 条件】</span><br><span class="line">【group by 分组字段】</span><br><span class="line">【having 条件】</span><br><span class="line">【order by 排序的字段】</span><br><span class="line">limit 【起始的条目索引，】条目数;</span><br></pre></td></tr></table></figure>
+
+<p>特点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.起始条目索引从0开始</span><br><span class="line"></span><br><span class="line">2.limit子句放在查询语句的最后</span><br><span class="line"></span><br><span class="line">3.公式：select * from  表 limit （page-1）*sizePerPage,sizePerPage</span><br><span class="line">假如:</span><br><span class="line">每页显示条目数sizePerPage</span><br><span class="line">要显示的页数 page</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶9：联合查询"><a href="#进阶9：联合查询" class="headerlink" title="进阶9：联合查询"></a>进阶9：联合查询</h3><p>引入：<br>    union 联合、合并</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】</span><br><span class="line">select 字段|常量|表达式|函数 【from 表】 【where 条件】 union 【all】</span><br><span class="line">select 字段|常量|表达式|函数 【from 表】 【where 条件】 union  【all】</span><br><span class="line">.....</span><br><span class="line">select 字段|常量|表达式|函数 【from 表】 【where 条件】</span><br></pre></td></tr></table></figure>
+
+<p>特点：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、多条查询语句的查询的列数必须是一致的</span><br><span class="line">2、多条查询语句的查询的列的类型几乎相同</span><br><span class="line">3、union代表去重，union all代表不去重</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
 
@@ -730,7 +780,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#名词"><span class="nav-number">1.</span> <span class="nav-text">名词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的常见命令"><span class="nav-number">1.0.1.</span> <span class="nav-text">MySQL的常见命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的语法规范"><span class="nav-number">1.0.2.</span> <span class="nav-text">MySQL的语法规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL的常见命令"><span class="nav-number">1.0.3.</span> <span class="nav-text">SQL的常见命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DQL语言的学习"><span class="nav-number">1.1.</span> <span class="nav-text">DQL语言的学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#名词"><span class="nav-number">1.</span> <span class="nav-text">名词</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的常见命令"><span class="nav-number">1.0.1.</span> <span class="nav-text">MySQL的常见命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL的语法规范"><span class="nav-number">1.0.2.</span> <span class="nav-text">MySQL的语法规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL的常见命令"><span class="nav-number">1.0.3.</span> <span class="nav-text">SQL的常见命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DQL语言的学习"><span class="nav-number">1.1.</span> <span class="nav-text">DQL语言的学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶2：条件查询"><span class="nav-number">1.1.1.</span> <span class="nav-text">进阶2：条件查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶3：排序查询"><span class="nav-number">1.1.2.</span> <span class="nav-text">进阶3：排序查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶4：常见函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">进阶4：常见函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶5：分组查询"><span class="nav-number">1.1.4.</span> <span class="nav-text">进阶5：分组查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶6：多表连接查询"><span class="nav-number">1.1.5.</span> <span class="nav-text">进阶6：多表连接查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶8：分页查询"><span class="nav-number">1.1.6.</span> <span class="nav-text">进阶8：分页查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶9：联合查询"><span class="nav-number">1.1.7.</span> <span class="nav-text">进阶9：联合查询</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -765,7 +815,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">96k</span>
+    <span title="站点总字数">99k</span>
   
 
   
@@ -776,7 +826,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:28</span>
+    <span title="站点阅读时长">1:30</span>
   
 </div>
 
