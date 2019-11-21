@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[大数据技术原理与应用]]></title>
     <url>%2F2019%2F11%2F13%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%BA%94%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[hadoop的启动12cd /usr/local/hadoop./sbin/start-dfs.sh #启动hadoop HDFS用pyhdfs对文件进行操作：(先启动hadoop) 1234567891011121314import pyhdfsclient = pyhdfs.HdfsClient(hosts="localhost,50070",user_name="hadoop")print(client.listdir("/user/hadoop/input")) # 返回指定目录下的所有文件response = client.open("/user/hadoop/input/test.txt") # 打开文件 并读取print(response.read())print(client.exists('/user/hadoop/input/test.txt')) # 判断文件是否存在print(client.get_home_directory()) # 返回 用户的根目录print(client.get_active_namenode()) # 返回可用的namenode节点]]></content>
+    <content type="text"><![CDATA[hadoop的启动12cd /usr/local/hadoop./sbin/start-dfs.sh #启动hadoop HDFS用pyhdfs对文件进行操作：(先启动hadoop) 1234567891011121314import pyhdfsclient = pyhdfs.HdfsClient(hosts="localhost,50070",user_name="hadoop")print(client.listdir("/user/hadoop/input")) # 返回指定目录下的所有文件response = client.open("/user/hadoop/input/test.txt") # 打开文件 并读取print(response.read())print(client.exists('/user/hadoop/input/test.txt')) # 判断文件是否存在print(client.get_home_directory()) # 返回 用户的根目录print(client.get_active_namenode()) # 返回可用的namenode节点 HBase启动HBase 1234567891.启动hadoop (启动后输入jps后可以看大盘Name(data/secondary)Node)ssh localhostcd /usr/local/hadoop./sbin/start-dfs.sh2.启动HBasecd /usr/local/hbasebin/start-hbase.sh进入shell界面bin/hbase shell HBase Shell 基本使用]]></content>
       <tags>
         <tag>BD</tag>
         <tag>hadoop</tag>
