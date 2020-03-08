@@ -94,18 +94,28 @@
   };
 </script>
 
-  <meta name="description" content="spark的运行1.启动hadoop (要在root用户下运行) 12cd app/hadoopxxxxxxx/sbinstart-dfs.sh  2.启动spark 12cd app/sparkxxxxxxx/binsudo ./spark-shell  spark core核心 RDDSpark源码所在的地方：https://github.com/apache/spark 官网：xxxx.ap">
+  <meta name="description" content="spark的运行1.启动hadoop (要在root用户下运行) 123cd app/hadoopxxxxxxx/sbinstart-dfs.sh**可在 http://localhost:50070/ 中查看自己上传的文件**  2.启动spark 12cd app/sparkxxxxxxx/bin./spark-shell  spark core核心 RDDSpark源码所在的地方：https">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python3实战Spark大数据分析及调度">
 <meta property="og:url" content="http://yoursite.com/2019/12/17/Python3实战Spark大数据分析及调度/index.html">
 <meta property="og:site_name" content="颜">
-<meta property="og:description" content="spark的运行1.启动hadoop (要在root用户下运行) 12cd app/hadoopxxxxxxx/sbinstart-dfs.sh  2.启动spark 12cd app/sparkxxxxxxx/binsudo ./spark-shell  spark core核心 RDDSpark源码所在的地方：https://github.com/apache/spark 官网：xxxx.ap">
+<meta property="og:description" content="spark的运行1.启动hadoop (要在root用户下运行) 123cd app/hadoopxxxxxxx/sbinstart-dfs.sh**可在 http://localhost:50070/ 中查看自己上传的文件**  2.启动spark 12cd app/sparkxxxxxxx/bin./spark-shell  spark core核心 RDDSpark源码所在的地方：https">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/12/18/Q7nJ0O.png">
-<meta property="og:updated_time" content="2019-12-19T14:17:08.120Z">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/16/ljBa6I.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/16/ljBytg.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/06/lyCVbT.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/09/lRXHAS.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/09/lRO7W9.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/12/lTA7NT.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lOxDKA.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lOxHaV.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lXPCCV.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lXmn54.png">
+<meta property="og:updated_time" content="2020-01-16T03:25:09.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3实战Spark大数据分析及调度">
-<meta name="twitter:description" content="spark的运行1.启动hadoop (要在root用户下运行) 12cd app/hadoopxxxxxxx/sbinstart-dfs.sh  2.启动spark 12cd app/sparkxxxxxxx/binsudo ./spark-shell  spark core核心 RDDSpark源码所在的地方：https://github.com/apache/spark 官网：xxxx.ap">
+<meta name="twitter:description" content="spark的运行1.启动hadoop (要在root用户下运行) 123cd app/hadoopxxxxxxx/sbinstart-dfs.sh**可在 http://localhost:50070/ 中查看自己上传的文件**  2.启动spark 12cd app/sparkxxxxxxx/bin./spark-shell  spark core核心 RDDSpark源码所在的地方：https">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/12/18/Q7nJ0O.png">
 
 
@@ -407,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-19 22:17:08" itemprop="dateModified" datetime="2019-12-19T22:17:08+08:00">2019-12-19</time>
+                <time title="修改时间：2020-01-16 11:25:09" itemprop="dateModified" datetime="2020-01-16T11:25:09+08:00">2020-01-16</time>
               </span>
             
           
@@ -443,7 +453,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">4.9k</span>
+              <span title="本文字数">16k</span>
             </span>
           
 
@@ -455,7 +465,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">4 分钟</span>
+              <span title="阅读时长">15 分钟</span>
             </span>
           
 
@@ -475,10 +485,10 @@
 
       
         <h1 id="spark的运行"><a href="#spark的运行" class="headerlink" title="spark的运行"></a>spark的运行</h1><p>1.启动hadoop (要在root用户下运行)</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd app/hadoopxxxxxxx/sbin</span><br><span class="line">start-dfs.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd app/hadoopxxxxxxx/sbin</span><br><span class="line">start-dfs.sh</span><br><span class="line">**可在 http://localhost:50070/ 中查看自己上传的文件**</span><br></pre></td></tr></table></figure>
 
 <p>2.启动spark</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd app/sparkxxxxxxx/bin</span><br><span class="line">sudo ./spark-shell</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd app/sparkxxxxxxx/bin</span><br><span class="line">./spark-shell</span><br></pre></td></tr></table></figure>
 
 <h1 id="spark-core核心-RDD"><a href="#spark-core核心-RDD" class="headerlink" title="spark core核心 RDD"></a>spark core核心 RDD</h1><p>Spark源码所在的地方：<a href="https://github.com/apache/spark" target="_blank" rel="noopener">https://github.com/apache/spark</a></p>
 <p>官网：xxxx.apache.org<br>源码：<a href="https://github.com/apache/xxxx" target="_blank" rel="noopener">https://github.com/apache/xxxx</a></p>
@@ -512,9 +522,16 @@
 <p>If using a path on the local filesystem, the file must also be accessible at the same path on worker nodes<br>    1）我们上课是在单节点上的：一个节点， hello.txt只要在这台机器上有就行了<br>    2）standalone: Spark集群： 3个节点  local path 都是从节点的本地读取数据  不建议</p>
 <h2 id="IDE开发"><a href="#IDE开发" class="headerlink" title="IDE开发"></a>IDE开发</h2><p>开发pyspark应用程序<br>    1) IDE(Integrated Development Environment ): IDEA  pycharm<br>    2) 设置基本参数: python interceptor    PYTHONPATH   SPARK_HOME   2zip包<br>    3）开发<br>    4）使用local进行本地测试</p>
 <p>提交pyspark应用程序($SPARK_HOME)<br>    ./spark-submit –master local[2] –name spark0301 /home/hadoop/script/spark0301.py<br>    具体提交的详细说明参见：<a href="http://spark.apache.org/docs/latest/submitting-applications.html" target="_blank" rel="noopener">http://spark.apache.org/docs/latest/submitting-applications.html</a></p>
-<h2 id="a-example-about-SparkContext-amp-SparkConf"><a href="#a-example-about-SparkContext-amp-SparkConf" class="headerlink" title="a example about SparkContext&amp;SparkConf"></a>a example about SparkContext&amp;SparkConf</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark <span class="keyword">import</span> SparkConf,SparkContext</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建SparkConf：设置的是Spark相关的参数信息</span></span><br><span class="line">conf = SparkConf().setMaster(<span class="string">"local[2]"</span>).setAppName(<span class="string">"spark0301"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建SparkContext</span></span><br><span class="line">sc = SparkContext(conf=conf)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 业务逻辑</span></span><br><span class="line">data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">distData = sc.parallelize(data)</span><br><span class="line">print(distData.collect())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 好的习惯</span></span><br><span class="line">sc.stop()</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://blog.csdn.net/qq_37332702/article/details/88687251" target="_blank" rel="noopener">Spark任务提交全流程</a></strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/16/ljBa6I.png" alt="ljBa6I.png"></p>
+<p>1.Driver端启动SparkSubmit进程，启动后开始向Master进行通信，此时创建了一个对象（SparkContext），接着向Master发送任务消息<br>2.Master接收到任务信息后，开始资源调度，此时会和所有的Worker进行通信，找到空闲的Worker，并通知Worker来拿取任务和启动相应的Executor<br>3.Executor启动后，开始与Driver进行反向注册，接下来Driver开始把任务发送给相应的Executor，Executor开始计算任务</p>
+<p>全流程:</p>
+<p><img src="https://s2.ax1x.com/2020/01/16/ljBytg.png" alt="ljBytg.png"><a href="https://imgchr.com/i/ljBytg" target="_blank" rel="noopener">https://imgchr.com/i/ljBytg</a></p>
+<p>1.调用SparkSubmit类，内部执行submit –&gt; doRunMain -&gt; 通过反射获取应用程序的主类对象 –&gt; 执行主类的main方法。<br>2.构建SparkConf和SparkContext对象，在SparkContext入口做了三件事，创建了SparkEnv对象（创建了ActorSystem对象），TaskScheduler（用来生成并发送task给Executor），DAGScheduler（用来划分Stage）。<br>3.ClientActor将任务信息封装到ApplicationDescription对象里并且提交给Master。<br>4.Master收到ClientActor提交的任务信息后，把任务信息存在内存中，然后又将任务信息放到队列中。<br>5.当开始执行这个任务信息的时候，调用scheduler方法，进行资源的调度。<br>6.将调度好的资源封装到LaunchExecutor并发送给对应的Worker。<br>7.Worker接收到Master发送过来的调度信息（LaunchExecutor）后，将信息封装成一个ExecutorRunner对象。<br>8.封装成ExecutorRunner后，调用ExecutorRunner的start方法，开始启动 CoarseGrainedExecutorBackend对象。<br>9.Executor启动后向DriverActor进行反向注册。<br>10.与DriverActor注册成功后，创建一个线程池（ThreadPool），用来执行任务。<br>11.当所有的Executor注册完成后，意味着作业环境准备好了，Driver端会结束与SparkContext对象的初始化。<br>12.当Driver初始化完成后（创建了sc实例），会继续执行我们提交的App的代码，当触发了Action的RDD算子时，就触发了一个job，这时就会调用DAGScheduler对象进行Stage划分。<br>13.DAGScheduler开始进行Stage划分。<br>14.将划分好的Stage按照区域生成一个一个的task，并且封装到TaskSet对象，然后TaskSet提交到TaskScheduler。<br>15.TaskScheduler接收到提交过来的TaskSet，拿到一个序列化器，对TaskSet序列化，将序列化好的TaskSet封装到LaunchExecutor并提交到DriverActor。<br>16.把LaunchExecutor发送到Executor上。<br>17.Executor接收到DriverActor发送过来的任务（LaunchExecutor），会将其封装成TaskRunner，然后从线程池中获取线程来执行TaskRunner。<br>18.TaskRunner拿到反序列化器，反序列化TaskSet，然后执行App代码，也就是对RDD分区上执行的算子和自定义函数。</p>
+<h2 id="a-example-about-SparkContext-amp-SparkConf"><a href="#a-example-about-SparkContext-amp-SparkConf" class="headerlink" title="a example about SparkContext&amp;SparkConf"></a>a example about SparkContext&amp;SparkConf</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark <span class="keyword">import</span> SparkConf,SparkContext</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建SparkConf：设置的是Spark相关的参数信息</span></span><br><span class="line">conf = SparkConf().setMaster(<span class="string">"local[2]"</span>).setAppName(<span class="string">"spark0301"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建SparkContext</span></span><br><span class="line">sc = SparkContext(conf=conf)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 业务逻辑</span></span><br><span class="line">data = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">distData = sc.parallelize(data)  <span class="comment"># parallelize的目的是为了把data转换成RDD</span></span><br><span class="line">print(distData.collect())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 好的习惯</span></span><br><span class="line">sc.stop()</span><br></pre></td></tr></table></figure>
 
-<h1 id="RDD编程"><a href="#RDD编程" class="headerlink" title="RDD编程"></a>RDD编程</h1><p>RDD Operation<br>    transformations: create a new dataset from an existing one<br>        RDDA —transformation–&gt; RDDB</p>
+<h1 id="RDD编程"><a href="#RDD编程" class="headerlink" title="RDD编程"></a>RDD编程</h1><h2 id="官网参考文件"><a href="#官网参考文件" class="headerlink" title="官网参考文件"></a>官网参考文件</h2><p><a href="http://spark.apache.org/docs/latest/rdd-programming-guide.html" target="_blank" rel="noopener">http://spark.apache.org/docs/latest/rdd-programming-guide.html</a>  RDD Programming Guide</p>
+<p>RDD Operation<br>    transformations: create a new dataset from an existing one<br>        RDDA —transformation–&gt; RDDB</p>
 <pre><code>    y = f(x)
     rddb = rdda.map(....)
 
@@ -532,17 +549,141 @@ actions:
 
 1) transformation are lazy, nothing actually happens until an action is called;
 2) action triggers the computation;
-3) action returns values to driver or writes data to external storage;</code></pre><p><strong>map</strong>:<br>    map(func)<br>    将func函数作用到数据集的每一个元素上，生成一个新的分布式的数据集返回</p>
-<pre><code>word =&gt; (word,1)</code></pre><p>filter:<br>    filter(func)<br>    选出所有func返回值为true的元素，生成一个新的分布式的数据集返回</p>
-<p>flatMap<br>    flatMap(func)<br>    输入的item能够被map到0或者多个items输出，返回值是一个Sequence</p>
-<p>groupByKey：把相同的key的数据分发到一起<br>    [‘hello’, ‘spark’, ‘hello’, ‘world’, ‘hello’, ‘world’]<br>    (‘hello’,1) (‘spark’,1)……..</p>
-<p>reduceByKey: 把相同的key的数据分发到一起并进行相应的计算<br>     mapRdd.reduceByKey(lambda a,b:a+b)<br>     [1,1]  1+1<br>     [1,1,1]  1+1=2+1=3<br>     [1]    1</p>
-<p>需求: 请按wc结果中出现的次数降序排列  sortByKey<br>    (‘hello’, 3), (‘world’, 2),  (‘spark’, 1)</p>
-<p>union：</p>
-<p>join：<br>    inner join<br>    outer join:left/right/full</p>
-<p>词频案例:wc<br>    1) input: 1/n文件  文件夹  后缀名<br>        hello spark<br>        hello hadoop<br>        hello welcome<br>    2) 开发步骤分析<br>        文本内容的每一行转成一个个的单词 : flatMap<br>        单词 ==&gt; (单词, 1):  map<br>        把所有相同单词的计数相加得到最终的结果: reduceByKey</p>
-<p>TopN<br>    1) input : 1/n文件  文件夹  后缀名<br>    2) 求某个维度的topn<br>    3）开发步骤分析<br>        文本内容的每一行根据需求提取出你所需要的字段： map<br>        单词 ==&gt; (单词, 1):  map<br>        把所有相同单词的计数相加得到最终的结果: reduceByKey<br>        取最多出现次数的降序： sortByKey</p>
+3) action returns values to driver or writes data to external storage;</code></pre><h2 id="常用的RDD函数"><a href="#常用的RDD函数" class="headerlink" title="常用的RDD函数"></a>常用的RDD函数</h2><p><strong>map</strong>:<br>    map(func)<br>    将func函数作用到数据集的每一个元素上，生成一个新的分布式的数据集返回</p>
+<pre><code>word =&gt; (word,1)</code></pre><p><code>map()是将传入的函数依次作用到序列的每个元素，每个元素都是独自被函数“作用”一次 。
+reduce()是将传人的函数作用在序列的第一个元素得到结果后，把这个结果继续与下一个元素作用（累积计算）。</code></p>
+<p><code>简单说，map是对每个元素进行操作-返回一个列表；reduce是所有元素操作-返回一个结果。</code></p>
+<p><strong>filter:</strong><br>    filter(func)<br>    选出所有func返回值为true的元素，生成一个新的分布式的数据集返回</p>
+<p><strong>flatMap</strong>  —-&gt;(压扁以后做map 先拆成多个部分)<br>    flatMap(func)<br>    输入的item能够被map到0或者多个items输出，返回值是一个Sequence</p>
+<p><strong>groupByKey：</strong></p>
+<p>​    把相同的key的数据分发到一起<br>​    [‘hello’, ‘spark’, ‘hello’, ‘world’, ‘hello’, ‘world’]<br>​    (‘hello’,1) (‘spark’,1)……..</p>
+<p>*<em>reduceByKey: *</em>  </p>
+<p>​    reduceByKey的作用对像是(key, value)形式的rdd，而reduce有减少、压缩之意，reduceByKey的作用就是对相同key的数据进行处理，最终每个key只保留一条记录。</p>
+<p>​    把相同的key的数据分发到一起并进行相应的计算<br>​     mapRdd.reduceByKey(lambda a,b:a+b)<br>​     [1,1]  1+1<br>​     [1,1,1]  1+1=2+1=3<br>​     [1]    1</p>
+<p>​    需求: 请按wc结果中出现的次数降序排列  sortByKey 按照Key进行排序<br>​        (‘hello’, 3), (‘world’, 2),  (‘spark’, 1)</p>
+<p><strong>答</strong>：完成上面的方法就是key和value交换 即<code>lambda x：x[1],x[0]</code> 后进行sortByKey， 最后再做一步map再交换回来</p>
+<p><strong>union：</strong></p>
+<p>*<em>join： *</em><br>    inner join<br>    outer join:left/right/full</p>
+<p><strong>action:</strong></p>
+<p>rdd.take(3) 显示前3个</p>
+<p>rdd.sum()求和</p>
+<p>rdd.max()最大值</p>
+<p>rdd.count()计数</p>
+<p>saveAsTextFile()以文件的形式保存</p>
+<h2 id="如何在本地运行spark-不用IDE，提交到本地-，并写到文件系统中"><a href="#如何在本地运行spark-不用IDE，提交到本地-，并写到文件系统中" class="headerlink" title="如何在本地运行spark(不用IDE，提交到本地)，并写到文件系统中"></a>如何在本地运行spark(不用IDE，提交到本地)，并写到文件系统中</h2><blockquote>
+<p>1.把在IDE中已经测试好的代码建立 .py（/mycode）</p>
+<p>2.在到./spark中 执行—&gt;此时可以在控制台上显示</p>
+<p><code>./spark-submit --master local[2] --name spark04cp /home/hadoop/mycode/spark04cp.py(执行文件) file:///home/hadoop/data/hello.txt(要处理的数据)</code></p>
+<p>3.在代码中加入 saveAsTextFile(sys.argv[2])</p>
+<p>在执行是最后再加入第三个参数，即为保存的目录</p>
+<p><code>./spark-submit --master local[2] --name spark04cp /home/hadoop/mycode/spark04cp.py(执行程序) file:///home/hadoop/data/hello*.txt(要处理的数据) file:///home/hadoop/data/tmp/wc(保存的处理后数据的位置)</code></p>
+</blockquote>
+<h2 id="算子综合实例："><a href="#算子综合实例：" class="headerlink" title="算子综合实例："></a>算子综合实例：</h2><p>一、词频案例:wc<br>    1) input: 1/n文件  文件夹  后缀名<br>        hello spark<br>        hello hadoop<br>        hello welcome<br>    2) 开发步骤分析<br>        文本内容的每一行转成一个个的单词 : flatMap<br>        单词 ==&gt; (单词, 1):  map<br>        把所有相同单词的计数相加得到最终的结果: reduceByKey<br>        最后按照个数的升序排列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark <span class="keyword">import</span> SparkConf, SparkContext</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">if</span> len(sys.argv) != <span class="number">3</span>:  <span class="comment"># 等于1代表只有这个.py运行了，没有别的外部参数</span></span><br><span class="line">        print(<span class="string">'Usage:wordcount &lt;input&gt;'</span>, file=sys.stderr)</span><br><span class="line"></span><br><span class="line">        sys.exit(<span class="number">-1</span>) <span class="comment"># 如果没有文件输入就直接退出</span></span><br><span class="line"></span><br><span class="line">    conf = SparkConf()</span><br><span class="line">    sc = SparkContext(conf=conf)</span><br><span class="line">    <span class="comment"># sys.argv[0] 代表运行的本程序名称 sys.argv[1]代表输入</span></span><br><span class="line">    print(sys.argv[<span class="number">0</span>])</span><br><span class="line">    print(sys.argv[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">printResult</span><span class="params">()</span>:</span></span><br><span class="line">        counts = sc.textFile(sys.argv[<span class="number">1</span>]) \</span><br><span class="line">            .flatMap(<span class="keyword">lambda</span> line: line.split(<span class="string">"\t"</span>)) \</span><br><span class="line">            .map(<span class="keyword">lambda</span> x: (x, <span class="number">1</span>)) \</span><br><span class="line">            .reduceByKey(<span class="keyword">lambda</span> a, b: (a + b))\</span><br><span class="line">            .map(<span class="keyword">lambda</span> x: (x[<span class="number">1</span>], x[<span class="number">0</span>]))\</span><br><span class="line">            .sortByKey()\</span><br><span class="line">            .map(<span class="keyword">lambda</span> x: (x[<span class="number">1</span>], x[<span class="number">0</span>])).saveAsTextFile(sys.argv[<span class="number">2</span>]) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    printResult()</span><br><span class="line"></span><br><span class="line">    sc.stop()</span><br></pre></td></tr></table></figure>
+
+<p>二、TopN<br>    1) input : 1/n文件  文件夹  后缀名<br>    2) 求某个维度的topn<br>    3）开发步骤分析<br>        文本内容的每一行根据需求提取出你所需要的字段： map<br>        单词 ==&gt; (单词, 1):  map<br>        把所有相同单词的计数相加得到最终的结果: reduceByKey<br>        取最多出现次数的降序： sortByKey</p>
 <p>平均数：统计平均年龄<br>id age<br>3 96<br>4 44<br>5 67<br>6 4<br>7 98<br>    开发步骤分析：<br>    1) 取出年龄  map<br>    2）计算年龄综合 reduce<br>    3）计算记录总数 count<br>    4）求平均数  </p>
+<h2 id="spark运行模式"><a href="#spark运行模式" class="headerlink" title="spark运行模式"></a>spark运行模式</h2><p> Local模式：<br>    开发</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--master </span><br><span class="line">--name  # 应用程序名称</span><br><span class="line">--py-files  # 上传文件</span><br></pre></td></tr></table></figure>
+
+<p><code>./spark-submit --master local[2] --name spark-local /home/hadoop/script/spark0402.py file:///home/hadoop/data/hello.txt file:///home/hadoop/wc/output</code></p>
+<p>standalone<br>    hdfs: NameNode  DataNode<br>    yarn: ResourceManager NodeManager</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">master: (主)</span><br><span class="line">worker:	(从)</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span>SPARK_HOME/conf/slaves</span><br><span class="line">	hadoop000</span><br><span class="line"></span><br><span class="line">	假设你有5台机器，就应该进行如下slaves的配置</span><br><span class="line">	hadoop000</span><br><span class="line">	hadoop001</span><br><span class="line">	hadoop002</span><br><span class="line">	hadoop003</span><br><span class="line">	hadoop004</span><br><span class="line">	如果是多台机器，那么每台机器都在相同的路径下部署spark</span><br><span class="line"></span><br><span class="line">启动spark集群</span><br><span class="line"><span class="meta">	$</span>SPARK_HOME/sbin/start-all.sh</span><br><span class="line">	ps: 要在spark-env.sh中添加JAVA_HOME，否则会报错</span><br><span class="line">	检查： </span><br><span class="line">		jps： Master和Worker进程，就说明我们的standalone模式安装成功</span><br><span class="line">		webui：</span><br></pre></td></tr></table></figure>
+
+<p><code>./spark-submit --master spark://hadoop000:7077 --name spark-standalone /home/hadoop/script/spark0402.py hdfs://hadoop000:8020/wc.txt hdfs://hadoop000:8020/wc/output</code></p>
+<pre><code>如果使用standalone模式，而且你的节点个数大于1的时候，如果你使用本地文件测试，必须要保证每个节点上都有本地测试文件  (或者选择在hdfs内的文件)</code></pre><p>yarn<br>    mapreduce yarn<br>    spark on yarn 70%<br>    spark作为客户端而已，他需要做的事情就是提交作业到yarn上去执行<br>    yarn vs standalone<br>        yarn： 你只需要一个节点，然后提交作业即可   这个是不需要spark集群的（不需要启动master和worker的）<br>        standalone：你的spark集群上每个节点都需要部署spark，然后需要启动spark集群（需要master和worker）</p>
+<p><code>./spark-submit --master yarn --name spark-yarn /home/hadoop/script/spark0402.py hdfs://hadoop000:8020/wc.txt hdfs://hadoop000:8020/wc/output</code></p>
+<p>When running with master ‘yarn’ either HADOOP_CONF_DIR or YARN_CONF_DIR must be set in the environment</p>
+<p>作业：试想：为什么需要指定HADOOP_CONF_DIR或者YARN_CONF_DIR</p>
+<p>如何使得这个信息规避掉<br>Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME</p>
+<p>yarn支持client和cluster模式：driver运行在哪里<br>    client：提交作业的进程是不能停止的，否则作业就挂了<br>    cluster：提交完作业，那么提交作业端就可以断开了，因为driver是运行在am里面的</p>
+<p>Error: Cluster deploy mode is not applicable to Spark shells</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pyspark/spark-shell : 交互式运行程序  client</span><br><span class="line">spark-sql</span><br></pre></td></tr></table></figure>
+
+<p>如何查看已经运行完的yarn的日志信息： yarn logs -applicationId <applicationid> (此ID在hadoop000:8088/cluster中可以查看)<br>Log aggregation has not completed or is not enabled.<br>参见：<a href="https://coding.imooc.com/class/chapter/128.html#Anchor" target="_blank" rel="noopener">https://coding.imooc.com/class/chapter/128.html#Anchor</a>  JobHistory使用</applicationid></p>
+<p>不管你的spark应用程序运行在哪里，你的spark代码都是一样的，不需要做任何的修改和调整，所以spark使用起来是非常方便的！！！！！！</p>
+<p>##spark core 进阶</p>
+<p>Spark核心概述</p>
+<p>​    <img src="https://s2.ax1x.com/2020/01/06/lyCVbT.png" alt="Spark 架构图"></p>
+<p>​        用户提交Job后会生成SparkContext对象，SparkContext向Cluster Manager（在Standalone模式下是Spark Master）申请Executor资源，并将Job分解成一系列可并行处理的task，然后将task分发到不同的Executor上运行，Executor在task执行完后将结果返回到SparkContext。</p>
+<p>(上图SparkContext 与 executor为什么是双向的是因为 当连接的时候， SparkContext acquires <em>executors</em> on nodes in the cluster, which are processes that run computations and store data for your application，同时 executor返回心跳信息，当一个exceutor挂掉的时候可以开启另外一个exceutor</p>
+<p><a href="http://spark.apache.org/docs/latest/cluster-overview.html" target="_blank" rel="noopener">http://spark.apache.org/docs/latest/cluster-overview.html</a>)</p>
+<p><strong>1.Application</strong>    ：基于Spark的应用程序 =  1 driver + executors<br>        User program built on Spark.<br>        Consists of a driver program and executors on the cluster.<br>        spark0402.py （这就是一个应用程序）<br>        pyspark/spark-shell（这也是）</p>
+<p><strong>2.Driver program</strong><br>        The process running the main() function of the application<br>        creating the SparkContext    </p>
+<p><strong>3.Cluster manager</strong><br>        An external service for acquiring resources on the cluster (e.g. standalone manager, Mesos, YARN)<br>        spark-submit –master local[2]/spark://hadoop000:7077/yarn(后面这些东西就是集群管理)</p>
+<p><strong>4.Deploy mode</strong><br>        Distinguishes where the driver process runs.<br>            In “cluster” mode, the framework launches the driver inside of the cluster.<br>            In “client” mode, the submitter launches the driver outside of the cluster.<br>            <a href="https://www.cnblogs.com/bonelee/p/11032262.html" target="_blank" rel="noopener">Yarn-cluster VS Yarn-client</a><br>*<em>5.Worker node    *</em><br>        Any node that can run application code in the cluster<br>        standalone: slave节点 slaves配置文件<br>        yarn: nodemanager</p>
+<p>*<em>6.Executor    *</em><br>        A process launched for an application on a worker node<br>        runs tasks<br>        keeps data in memory or disk storage across them<br>        Each application has its own executors.    </p>
+<p>*<em>7.Task    *</em><br>        A unit of work that will be sent to one executor    </p>
+<p><strong>8.Job    **<br>        A parallel computation consisting of multiple tasks that<br>        gets spawned in response to a Spark action (e.g. save, collect);<br>        you’ll see this term used in the driver’s logs.<br>        //一个action对应一个job，</strong>理解：job里面多个task，运行在executor里**//</p>
+<p><strong>9.Stage</strong><br>        Each job gets divided into smaller sets of tasks called stages<br>        that depend on each other<br>        (similar to the map and reduce stages in MapReduce);<br>        you’ll see this term used in the driver’s logs.<br>        一个stage的边界往往是从某个地方取数据开始，到shuffle的结束</p>
+<p><strong>另外的解释方式</strong></p>
+<ol>
+<li>job定义：<pre><code>我们都知道，在spark rdd中，有action、transform操作，当真正触发action时，才真正执行计算，此时产生一个job任务。</code></pre></li>
+<li>stage定义：<pre><code>以shuffle为界，当在一个job任务中涉及shuffle操作时，会进行stage划分，产生一个或多个stage。</code></pre></li>
+<li>task定义：<br>   一个stage可能包含一个或者多个task任务，task任务与partition、executor息息相关，即并行度。</li>
+<li>partition定义：<br>  partition个数即rdd的分区数，不同的数据源读进来的数据分区数默认不同，可以通过repartition进行重分区操作。</li>
+<li>executor定义：<br>  executor运行在work上，一个work可以运行一个或多个executor，一个executor可以运行一个或者多个task（取决于executor的core个数，默认是一个task占用一个core，即有多少个core就可以启动多少个task任务）</li>
+<li>各个之间的关系图：</li>
+</ol>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRXHAS.png" alt="lRXHAS.png"></p>
+<p>​        一个work有一个或多个executor<br>​        一个executor有一个或者多个task（取决于executor的core个数）<br>​        一个task对应一个partition分区，即并行度（官网推荐partition分区数设置是task个数的2~3倍，充分利用资源）<br>​        一个stage有一个或多个task任务<br>​        一个job有一个或多个stage</p>
+<p><strong>理解：job里面多个task，运行在executor里</strong></p>
+<p><strong>hadoop与spark对比</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/09/lRO7W9.png" alt="lRO7W9.png"></p>
+<p><strong>10.Spark Cache</strong><br>        rdd.cache(): StorageLevel</p>
+<p>​        cache它和tranformation: lazy   没有遇到action是不会提交作业到spark上运行的<br><img src="https://s2.ax1x.com/2020/01/12/lTA7NT.png" alt="lTA7NT.png"><br>​    如果一个RDD在后续的计算中可能会被使用到，那么建议cache<br>​<br>​        cache底层调用的是persist方法，传入的参数是：StorageLevel.MEMORY_ONLY<br>​        cache=persist<br>​<br>​        unpersist: 立即执行的</p>
+<p><strong>11.Spark Lineage</strong>    </p>
+<p><img src="https://s2.ax1x.com/2020/01/15/lOxDKA.png" alt="lOxDKA.png"></p>
+<p>​        是一种RDD之间的依赖关系，可以有效的帮助容错。(当一个里面的RDD内的paritition丢失时，因为Lineage记录paritition的血缘关系)</p>
+<p><strong>12.Spark Dependency(依赖)</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/15/lOxHaV.png" alt="lOxHaV.png"></p>
+<p>​        窄依赖：一个父RDD的partition至多被子RDD的某个partition使用一次    (<a href="https://blog.csdn.net/modefrog/article/details/79581176" target="_blank" rel="noopener">pipiline流水线</a>)</p>
+<p>​        宽依赖：一个父RDD的partition会被子RDD的partition使用多次，有<a href="http://spark.apache.org/docs/latest/rdd-programming-guide.html#shuffle-operations" target="_blank" rel="noopener">shuffle</a> (宽依赖的容错效果更差)</p>
+<pre><code>hello,1
+hello,1       hello(相同的放在一起处理)
+world,1
+
+hello,1       world
+world,1</code></pre><p><strong>RDD的shuffle以及依赖关系</strong></p>
+<p><img src="https://s2.ax1x.com/2020/01/15/lXPCCV.png" alt="lXPCCV.png"></p>
+<p>正如上图，hdfs在三台机器上运行，左边前3个操作都是窄依赖(lines、words、pairs), 当遇到reduceByKey(宽依赖)时，会进行shuffle操作，同时也会变成两个stage。</p>
+<p>sc.textFile(“file:///home/hadoop/data/hello.txt”).flatMap(lambda line: line.split(“\t”)).map(lambda x: (x, 1)).reduceByKey(lambda a, b: a + b).collect()</p>
+<p><img src="https://s2.ax1x.com/2020/01/15/lXmn54.png" alt="lXmn54.png"></p>
+<h2 id="Spark-Core调优"><a href="#Spark-Core调优" class="headerlink" title="Spark Core调优"></a>Spark Core调优</h2><h3 id="HistorySever-优化"><a href="#HistorySever-优化" class="headerlink" title="HistorySever 优化"></a>HistorySever 优化</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>SPARK_HOME/sbin/</span><br><span class="line">./start-history-server.sh</span><br></pre></td></tr></table></figure>
+
+<p>可以在./start-history-server.sh参看历史信息</p>
+<h3 id="序列化优化"><a href="#序列化优化" class="headerlink" title="序列化优化"></a>序列化优化</h3><p>1.java 速度慢，简单，默认</p>
+<p>2.kryo速度快，麻烦</p>
+<h3 id="内存管理优化"><a href="#内存管理优化" class="headerlink" title="内存管理优化"></a>内存管理优化</h3><p>两大类：执行和存储 (一般各占一半)</p>
+<h3 id="广播变量优化"><a href="#广播变量优化" class="headerlink" title="广播变量优化"></a>广播变量优化</h3><p>一个机器一个副本，可以减小副本的大小</p>
+<p>###数据本地性优化</p>
+<p>如果数据和节点在同一台机器上时，运行速度最快</p>
+<p><strong>移动计算而不是移动数据！！</strong></p>
+<h2 id="Spark-SQL"><a href="#Spark-SQL" class="headerlink" title="Spark SQL"></a>Spark SQL</h2><p>Spark SQL<br>    SQL:  MySQL、Oracle、DB2、SQLServer<br>    很多小伙伴熟悉SQL语言<br>    数据量越来越大 ==&gt; 大数据(Hive、Spark Core-基于RDD)<br>    直接使用SQL语句来对大数据进行分析：这是大家所追逐的梦想</p>
+<pre><code>person.txt ==&gt; 存放在HDFS
+1,zhangsan,30
+2,lisi,31
+3,wangwu,32
+
+hive表：person
+    id:int   name:string  age:int
+导入数据：
+    load .....
+统计分析：
+    select ... from person    </code></pre><p>SQL on Hadoop<br>    Hive<br>    Impala: Cloudera<br>    Presto<br>    Drill<br>    …..</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Hive: on MapReduce (性能差)</span><br><span class="line">	SQL =(翻译)=&gt; MapReduce =(提交到)=&gt; Hadoop Cluster</span><br><span class="line"></span><br><span class="line">Spark SQL: on Spark</span><br><span class="line"></span><br><span class="line">Hive on Spark (与上面的不同)</span><br><span class="line"></span><br><span class="line">共同点： metastore  mysql</span><br></pre></td></tr></table></figure>
+
+<p>Spark SQL不仅仅是SQL这么简单的事情，它还能做更多的事情<br>    Hive: SQL<br>    Spark SQL: SQL</p>
+<p>Spark SQL提供的操作数据的方式<br>    SQL<br>    DataFrame API<br>    Dataset API</p>
+<p>===&gt; 一个用于处理结构化数据的Spark组件，强调的是“结构化数据”，而非“SQL”</p>
+<p>Spark RDD  VS  MapReduce<br>R/Pandas :  one machine  (单机的)<br>    ==&gt; DataFrame：让小伙伴们感觉像开发单机版应用程序一样来开发分布式应用程序</p>
+<p>A DataFrame is a Dataset organized into named columns (可以简单的把DataFrame理解成关系型数据库中的一个表，这是表层，底层其实做了更深的优化)<br>以列(列名、列类型、列值)的形式构成分布式的数据集</p>
+<p><strong>面试题：RDD与DataFrame的区别</strong>12345</p>
+<p>schema: 在SQL环境下，schema就是数据库对象的集合</p>
+<h3 id="RDD与DataFrame"><a href="#RDD与DataFrame" class="headerlink" title="RDD与DataFrame"></a>RDD与DataFrame</h3><p><strong>方法一：</strong></p>
+<p><a href="http://spark.apache.org/docs/2.3.0/sql-programming-guide.html#inferring-the-schema-using-reflection" target="_blank" rel="noopener">Inferring the Schema Using Reflection</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> Row</span><br><span class="line"></span><br><span class="line">sc = spark.sparkContext</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load a text file and convert each line to a Row.</span></span><br><span class="line">lines = sc.textFile(<span class="string">"examples/src/main/resources/people.txt"</span>)</span><br><span class="line">parts = lines.map(<span class="keyword">lambda</span> l: l.split(<span class="string">","</span>))</span><br><span class="line">people = parts.map(<span class="keyword">lambda</span> p: Row(name=p[<span class="number">0</span>], age=int(p[<span class="number">1</span>])))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Infer the schema, and register the DataFrame as a table.</span></span><br><span class="line">schemaPeople = spark.createDataFrame(people)</span><br><span class="line">schemaPeople.createOrReplaceTempView(<span class="string">"people"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># SQL can be run over DataFrames that have been registered as a table.</span></span><br><span class="line">teenagers = spark.sql(<span class="string">"SELECT name FROM people WHERE age &gt;= 13 AND age &lt;= 19"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The results of SQL queries are Dataframe objects.</span></span><br><span class="line"><span class="comment"># rdd returns the content as an :class:`pyspark.RDD` of :class:`Row`.</span></span><br><span class="line">teenNames = teenagers.rdd.map(<span class="keyword">lambda</span> p: <span class="string">"Name: "</span> + p.name).collect()</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> teenNames:</span><br><span class="line">    print(name)</span><br><span class="line"><span class="comment"># Name: Justin</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -586,6 +727,10 @@ actions:
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/01/leetcode刷题/" rel="prev" title="leetcode刷题">
+                leetcode刷题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -657,7 +802,7 @@ actions:
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -716,7 +861,11 @@ actions:
         
           
         
-        <span class="site-state-item-count">20</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -777,7 +926,7 @@ actions:
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spark的运行"><span class="nav-number">1.</span> <span class="nav-text">spark的运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spark-core核心-RDD"><span class="nav-number">2.</span> <span class="nav-text">spark core核心 RDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是RDD"><span class="nav-number">2.1.</span> <span class="nav-text">什么是RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解RDD"><span class="nav-number">2.2.</span> <span class="nav-text">图解RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SparkContext-amp-SparkConf"><span class="nav-number">2.3.</span> <span class="nav-text">SparkContext&amp;SparkConf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE开发"><span class="nav-number">2.4.</span> <span class="nav-text">IDE开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-example-about-SparkContext-amp-SparkConf"><span class="nav-number">2.5.</span> <span class="nav-text">a example about SparkContext&amp;SparkConf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RDD编程"><span class="nav-number">3.</span> <span class="nav-text">RDD编程</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spark的运行"><span class="nav-number">1.</span> <span class="nav-text">spark的运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spark-core核心-RDD"><span class="nav-number">2.</span> <span class="nav-text">spark core核心 RDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是RDD"><span class="nav-number">2.1.</span> <span class="nav-text">什么是RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解RDD"><span class="nav-number">2.2.</span> <span class="nav-text">图解RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SparkContext-amp-SparkConf"><span class="nav-number">2.3.</span> <span class="nav-text">SparkContext&amp;SparkConf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE开发"><span class="nav-number">2.4.</span> <span class="nav-text">IDE开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-example-about-SparkContext-amp-SparkConf"><span class="nav-number">2.5.</span> <span class="nav-text">a example about SparkContext&amp;SparkConf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RDD编程"><span class="nav-number">3.</span> <span class="nav-text">RDD编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网参考文件"><span class="nav-number">3.1.</span> <span class="nav-text">官网参考文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的RDD函数"><span class="nav-number">3.2.</span> <span class="nav-text">常用的RDD函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在本地运行spark-不用IDE，提交到本地-，并写到文件系统中"><span class="nav-number">3.3.</span> <span class="nav-text">如何在本地运行spark(不用IDE，提交到本地)，并写到文件系统中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子综合实例："><span class="nav-number">3.4.</span> <span class="nav-text">算子综合实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark运行模式"><span class="nav-number">3.5.</span> <span class="nav-text">spark运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-Core调优"><span class="nav-number">3.6.</span> <span class="nav-text">Spark Core调优</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HistorySever-优化"><span class="nav-number">3.6.1.</span> <span class="nav-text">HistorySever 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化优化"><span class="nav-number">3.6.2.</span> <span class="nav-text">序列化优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理优化"><span class="nav-number">3.6.3.</span> <span class="nav-text">内存管理优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播变量优化"><span class="nav-number">3.6.4.</span> <span class="nav-text">广播变量优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-SQL"><span class="nav-number">3.7.</span> <span class="nav-text">Spark SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RDD与DataFrame"><span class="nav-number">3.7.1.</span> <span class="nav-text">RDD与DataFrame</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -798,7 +947,7 @@ actions:
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-heart"></i>
   </span>
@@ -812,7 +961,7 @@ actions:
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">127k</span>
+    <span title="站点总字数">193k</span>
   
 
   
@@ -823,7 +972,7 @@ actions:
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">1:55</span>
+    <span title="站点阅读时长">2:55</span>
   
 </div>
 

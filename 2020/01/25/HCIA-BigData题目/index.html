@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/faviconY.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="HDFSHDFS： QUESTION 10-m Hadoop 的 HDFS 是一种分布式文件系统，适合以下哪种应用场景的数据存储和管理？ A. 大量小文件存储 B. 高容错、高吞吐量 C. 低延迟读取 D. 流式数据访问 QUESTION 15 华为 FusionInsight HD 系统中关于 HDFS 的 DataNode 的说法正确的是？ A. 不会检查数据的有效性 B. 周期性地将本节点的">
+<meta name="keywords" content="HCIA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HCIA-BigData题目">
+<meta property="og:url" content="http://yoursite.com/2020/01/25/HCIA-BigData题目/index.html">
+<meta property="og:site_name" content="颜">
+<meta property="og:description" content="HDFSHDFS： QUESTION 10-m Hadoop 的 HDFS 是一种分布式文件系统，适合以下哪种应用场景的数据存储和管理？ A. 大量小文件存储 B. 高容错、高吞吐量 C. 低延迟读取 D. 流式数据访问 QUESTION 15 华为 FusionInsight HD 系统中关于 HDFS 的 DataNode 的说法正确的是？ A. 不会检查数据的有效性 B. 周期性地将本节点的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-02-07T02:45:31.962Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HCIA-BigData题目">
+<meta name="twitter:description" content="HDFSHDFS： QUESTION 10-m Hadoop 的 HDFS 是一种分布式文件系统，适合以下哪种应用场景的数据存储和管理？ A. 大量小文件存储 B. 高容错、高吞吐量 C. 低延迟读取 D. 流式数据访问 QUESTION 15 华为 FusionInsight HD 系统中关于 HDFS 的 DataNode 的说法正确的是？ A. 不会检查数据的有效性 B. 周期性地将本节点的">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/01/25/HCIA-BigData题目/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>HCIA-BigData题目 | 颜</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">颜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">控制、PMSM、Python、...</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/25/HCIA-BigData题目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shiwei-Yan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HCIA-BigData题目
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-01-25 00:00:00" itemprop="dateCreated datePublished" datetime="2020-01-25T00:00:00+08:00">2020-01-25</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-02-07 10:45:31" itemprop="dateModified" datetime="2020-02-07T10:45:31+08:00">2020-02-07</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">12k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">11 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h1><p>HDFS：</p>
+<p>QUESTION 10-m</p>
+<p>Hadoop 的 HDFS 是一种分布式文件系统，适合以下哪种应用场景的数据存储和管理？</p>
+<p>A. 大量小文件存储</p>
+<p>B. 高容错、高吞吐量</p>
+<p>C. 低延迟读取</p>
+<p>D. 流式数据访问</p>
+<p>QUESTION 15</p>
+<p>华为 FusionInsight HD 系统中关于 HDFS 的 DataNode 的说法正确的是？</p>
+<p>A. 不会检查数据的有效性</p>
+<p>B. 周期性地将本节点的 Block 相关信息发送给 NameNode</p>
+<p>C. 不同的 DataNode 存储的 Block 一定是不同的</p>
+<p>D. 一个 DataNode 上的 Block 可以是相同的</p>
+<p>QUESTION 39<br>HDFS 机制中 NameNode 负责管理元数据， Client 端每次读请求都需要从 NameNode 的元数<br>据磁盘中读取元数据信息，以此获取所读文件在 DataNode 中的位置。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 47<br>HDFS 的 Client 写入文件时，数据的第一副本写入位置由 NameNode 确定，其他副本的写<br>入位置由 DataNode 确定。<br>A. 对<br>B. 错</p>
+<p>QUESTION 53<br>下列哪条 HDFS 命令可用于检测数据块的完整性？<br>A. hdfs fsck /<br>B. hdfs fsck – delete<br>C. hdfs dfsadmin – report<br>D. hdfs balancer – threshold 1 </p>
+<p>QUESTION 65-m<br>HDFS 系统中对备用 NameNode 的作用的描述正确的有？<br>A. 主 NameNode 的热备<br>B. 备 NameNode 对内存没有要求<br>C. 帮助主 NameNode 合并 编辑日志，减少主 NameNode 的启动时间<br>D. 备 NameNode 应与主 NameNode 部署到一个节点 </p>
+<p>QUESTION 76<br>FusionInsight HD 系统中 HDFS 默认 Block Size 是多少？<br>A. 32M<br>B. 64M<br>C. 128M </p>
+<p>QUESTION 84-m<br>FusionInsight HD 集群中包含多种服务，每种服务又由若干角色组成，下面哪些是服务<br>的角色？<br>A. HDFS<br>B. NameNode<br>C. DataNode<br>D. HBase </p>
+<p>QUESTION 96<br>HDFS 的 NameNode 节点主备状态管理及元数据文件合并分别由哪两个角色负责?<br>A. ZKFC 和备 NameNode<br>B. 主 NameNode 和备 NameNode<br>C. ZKFC 和主 NameNode<br>D. 主 NameNode 和 JournalNode </p>
+<p>QUESTION 100<br>Hadoop 系统中关于客户端向 HDFS 文件系统上传文件说法正确的是？<br>A. 客户端的文件数据经过 NameNode 传递给 DataNode<br>B. 客户端将文件划分为多个 Block,根据 DataNode 的地址信息，按顺序写入每一个<br>DataNode 中<br>C. 客户端根据 DataNode 的地址信息，按顺序将整个文件写入每一个 DataNode 中，然<br>后由 DataNode 将文件划分为多个 Block<br>D. 客户端只上传数据到一个 DataNode ，然后由 NameNode 负责 Block 复制 </p>
+<p>QUESTION 106<br>HDFS 支持大文件存储，同时支持多个用户对同一文件的写操作，以及在文件任意位置进<br>行修改。<br>A. 正确<br>B. 错误 </p>
+<p>QUESTION 117<br>Fusionlnsight HD 系统中 HDFS 的 Block 默认保存几份？<br>A. 3 份<br>B. 2 份<br>C. 1 份<br>D. 不确定 </p>
+<p>QUESTION 128<br>华为 Fusionlnsight HD 系统中关于 HDFS 的 DataNode 说法正确的是？<br>A. 不会检查数据的有效性<br>B. 周期性的将本节点的 Block 发送给 NameNode<br>C. 不同的 DataNode 存储的 Block 一定是不同的<br>D. 一个 DataNode 上的的 Block 可以是相同的 </p>
+<p>QUESTION 151<br>HDFS 的 Client 写入文件时，数据的第一副本写入位置是由 NameNode 确定，其他副<br>本的写入位置由 DataNode 确定<br>A. 正确<br>B. 错误 </p>
+<p>QUESTION 156<br>Hadoop 中哪个模块负责 HDFS 的数据存储？<br>A. NameNode<br>B. DataNode<br>C. ZooKeeper<br>D. JobTraoker </p>
+<p>QUESTION 186-m<br>安全模式下安装 Fusionlnsight HD 集群时，哪些组件是必须安装的？<br>A. Zookeeper<br>B. LDAPServer<br>C. KrbServer<br>D. HDFS </p>
+<p>QUESTION 223<br>HDFS 机制中， NameNode 负责管理元数据， Client 端每次请求都需要从 NameNode 的元数<br>据盘中读取元数据信息以此获取所读文件在 DataNode 的位置<br>A. 正确<br>B. 错误 </p>
+<p>QUESTION 224-m<br>以下关于 Hadoop 分布式文件系统 HDFS 联邦描述正确的有？<br>A. 一个 Namespace 使用一个 block pool 管理数据块<br>B. 一个 Namespace 可使用多个 block pool 管理数据库<br>C. 每个 block pool 的磁盘空间是物理共享的，逻辑空间是隔离的<br>D. 支持 NameNode/NameSpace 水平扩展 </p>
+<p>QUESTION 259-m<br>Fusionlnsight HD 系统中，关于 Solt 索引的存储部署策略，以下说正确的有？（多选）<br>A. 利用 HDFS 数据存储可靠性和易于扩容的特点优先选择索引存储于 HDFS<br>B. 不论 Solt 索引存储在 HDFS 上还是存储在本地磁盘，在同一节点上部署 5 个 Solt 实<br>例，根据 IP 和不同的端口号来区分不同的 Solt 实例<br>C. 当对实时索引录入速度要求较高时，可选择索引存放于本地磁盘<br>D. 当索引数据存放在 HDFS 上时， SolrServer 实例与 DataNode 实例部署在同一节点上。 </p>
+<p>QUESTION 279<br>Fusionlnsight HD 系统部署时，如果 Solr 索引默认存放在 HDFS 上时，以下理解正确的<br>有？<br>A. 不需要考虑各 SolrServer 实例上创建了多少 Shared<br>B. 为保证数据可靠性，创建索引时必须创建 Replica<br>C. 通过 HDFS 读取索引时占用磁盘 IO，因此不建议 Solr 实例与 DataNode 部署在同一节<br>点上<br>D. 当 Solr 服务参考 INDEX_ON_HDFS 值为 HDFS 时，创建 Collection 的索引默认存储在<br>HDFS 上。 </p>
+<p>QUESTION 284-m<br>以下关于 Hadoop 的 HDFS 描述正确的有？（多选）<br>A. HDFS 由 NameNode， DataNode， Client 组成<br>B. HDFS 备 NameNode 上的元数据是由主 NameNode 同步过去的<br>C. HDFS 采用就近的机架节点进行数据的第一副本存储<br>D. HDFS 适合一次写入，多次读取的读写任务 </p>
+<p>QUESTION 286<br>客户 IT 系统中 Fusionlnsight HD 集群有 150 个节点，每个节点 12 块磁盘（不包括 OS<br>盘），每块磁盘大小 IT,只安装 HDFS，按照默认配置最大可存储多少数据？<br>A. 1764TB<br>B. 1800TB<br>C. 600TB<br>D. 588TB </p>
+<h1 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h1><p>QUESTION 34<br>Hadoop 中 MapReduce 组件擅长处理哪种场景的计算任务？<br>A. 迭代计算<br>B. 离线计算<br>C. 实时交互计算<br>D. 流式计算 </p>
+<p>QUESTION 35<br>Hadoop 系统中，如果 HDFS 文件系统的备份因子是 3，那么 MapReduce 每次运行 Task 都要<br>从 3 个有副本的机器上传输需要处理的文件段。<br>A. 对<br>B. 错</p>
+<p> QUESTION 62<br>Hadoop 系 统 中 YARN 分 配 给 Container 的 内 存 大 小 ， 可 以 通 过 参 数<br>yarn.app.mapreduce.am.resource.mb 来设置<br>A. 对<br>B. 错</p>
+<p>QUESTION 80<br>以下哪个不属于 Hadoop 中 MapReduce 组件的特点？<br>A. 易于编程<br>B. 良好的拓展性<br>C. 实时计算<br>D. 高容错性 </p>
+<p>QUESTION 246<br>Hadoop 中 MapReduce 组件擅长处理哪种场景的计算任务？<br>A. 迭代计算<br>B. 离线计算<br>C. 实时交互计算<br>D. 流式计算 </p>
+<h1 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a>Yarn</h1><p><strong>关于loader的都不是很懂</strong></p>
+<p>QUESTION 20-m<br>YARN 服务中，如果要给队列 QuqueA 设置容量为 30%，应该配置哪个参数？<br>A. yarn.scheduler.capacity.root.QueueA.user-limit-factor<br>B. yarn.scheduler.capacity.root.QueueA.minimum-user-limit-percent<br>C. yarn.scheduler.capacity.root.QueueA.capacity<br>D. yarn.scheduler.capacity.root.QueueA.state </p>
+<p>QUESTION 36<br>YARN 调度器分配资源的顺序，下面哪一个描述是正确的？<br>A. 任意机器 -&gt; 同机架 -&gt; 本地资源<br>B. 任意机器 -&gt; 本地资源 -&gt; 同机架<br>C. 本地资源 -&gt; 同机架 -&gt; 任意机器<br>D. 同机架 -&gt; 任意机器 -&gt; 本地资源 </p>
+<p>QUESTION 45<br>如果 YARN 集群中只有 Default、 QueueA 和 QueueB 子队列，那么允许将他们的容量<br>分别设置为 60%、 25%、 22%。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 63-m<br>YARN 通过 ResourceManager 对集群资源进行管理，它的主要功能有？<br>A. 集群资源调度<br>B. 应用程序管理<br>C. 日志管理<br>D. 以上说法都不对</p>
+<p>QUESTION 88<br>YARN 上有两个同级队列 Q1 与 Q2，容量都是 50%， Q1 上已经有 10 个任务共占用了 40 的容<br>量， Q2 上有两个任务共占用了 30 的容量，那么由于 Q1 的任务数多，调度器会优先将资<br>源分配给 Q1。<br>A. 对<br>B. 错  </p>
+<p>QUESTION 91<br>FusionInsight HD 中 Loader 作业提交到 YARN 后，作业不能手动停止。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 97<br>Hadoop 平台中启用 YARN 组件的日志聚集功能，需要配置哪个参数？<br>A. yarn.nodemanager.local-dir<br>B. yarn.nodemanager.log-dirs<br>C. yarn.acl.enable<br>D. yarn.log-aggregation-enable</p>
+<p>QUESTION 104<br>YARN 中设置队列 QueueA 最大使用资源量，需要配置哪个参数？<br>A. yarn,scheduler.capacity.root,QueueA.user-limit-factor<br>B. yarn,scheduler.capacity.root,QueueA.minimum-user-limit-fpercent<br>C. yarn,scheduler.capacity.root,QueueA.state<br>D. yarn,scheduler.capacity.root,QueueA.maximum-capacity </p>
+<p>QUESTION 124<br>Fusionlnsight HD Loader 作业前后，需要哪些节点与外部数据源通讯？<br>A. loader 服务主节点<br>B. 运行 Yarn 服务作业的节点<br>C. 前面两个都需要<br>D. 前面两个都不需要</p>
+<p>QUESTION 143-m<br>Fusionlnsight HD LLD 配置规划工具可以生成哪些配置文件？<br>A. 监控告警阈值配置文件<br>B. 集群的安装模板文件<br>C. HDFS 和 YARN 的配置文件<br>D. 执行 Precheck 所需要的配置文件 CheckNodes.Config </p>
+<p>QUESTION 153<br>Fusionlnsight HD 系统中 ，下列哪个方法不能查看到 Loader 作业执行的结果？<br>A. 通过 Yarn 任务管理查看<br>B. 通过 Loader UI 界面查看<br>C. 通过 Manager 的告警查看<br>D. 通过 NodeManager 查看 </p>
+<p>QUESTION 169<br>关于 Fusionlnsight HD 中 Loader 作业描述正确的是？<br>A. Loader 将作业提交到 Yarn 执行后，如果此时 Loader 服务异常，则此作业执行失败。<br>B. Loader 将作业提交到 Yarn 执行后，如果某个 Mapper 任务执行失败，能够自动进行重<br>试<br>C. Loader 将作业执行失败后将会产生垃圾数据，需要用户手动清除<br>D. Loader 将一个作业提交至 Yarn 执行后，该作业执行完成前，不能再提交其他作业 </p>
+<p>QUESTION 254<br>Hadoop 平台中，要查看 YARN 服务中的一个 application 信息，通常需要使用什么命令？<br>A. container<br>B. applicationatternpt<br>C. iar<br>D. application </p>
+<p>QUESTION 261-m<br>Hadoop 系统中， YARN 支持哪些资源类型的管理？（多选）<br>A. 内存<br>B. CPU<br>C. 网络<br>D. 磁盘空间 </p>
+<p>#Spark</p>
+<p> QUESTION 9</p>
+<p>Spark On Yarn 模式下的 driver 只能运行在客户端。<br>A. 对<br>B. 错 Spark</p>
+<p>QUESTION 21<br>Spark 和 Hadoop 都不适用于迭代计算的场景。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 37<br>Spark SQL 表中，经常会存在很多小文件（大小远小于 HDFS 块大小），在这种情况下，<br>Spark 会启动更多的 Task 来处理这些小文件，当 SQL 逻辑中存在 Shuffle 操作时，会大<br>大增加 hash 分桶数，从而严重影响性能。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 40<br>Spark 应用运行时，如果某个 Task 运行失败则导致整个 app 运行失败。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 54<br>Spark On YARN 模式下，没有部署 NodeManager 的节点不能启动 executor 执行 Task<br>A. 对<br>B. 错 </p>
+<p>QUESTION 79<br>Spark 是基于内存的计算引擎，所有 Spark 程序运行过程中，的数据只能存储在内存中<br>A. 对<br>B. 错 </p>
+<p>QUESTION 95<br>Spark 应用在运行时， Stage 划分的依据是什么？<br>A. task<br>B. taskSet<br>C. action<br>D. shuffle </p>
+<p>QUESTION 98<br>Spark 任务的一个 Executor 同时可以运行多个 task<br>A. 对<br>B. 错 </p>
+<p>QUESTION 101<br>Fusionlnsight Manager 不能够管理哪个对象？<br>A. Spark<br>B. 主机 OS<br>C. YARN<br>D. HDFS </p>
+<p>QUESTION 121<br>Spark 任务的每个 stage 可划分为 job, 划分的标记是 shuffle<br>A. 正确<br>B. 错误 </p>
+<p>QUESTION 147<br>下列哪些是 Spark 可以提供的功能？<br>A. 分布式内存计算引擎<br>B. 分布式文件系统<br>C. 集群资源的统一调度<br>D. 流处理功能 </p>
+<p>QUESTION 238<br>Spark 组建中哪个选项不属于 transformation 操作？<br>A. join<br>B. distinct<br>C. reduceBykey<br>D. reduce </p>
+<p>QUESTION 278<br>以下哪些是 Spark 服务的常驻进程？（多选）<br>A. JobHistory<br>B. JDBCServer<br>C. SparkResource<br>D. Nodemanager </p>
+<p>QUESTION 299<br>华为 Fusionlnsight HD 集群中， Spark 服务可以从以下哪些服务读取数据？（多选）<br>A. YARN<br>B. HDFS<br>C. Hive<br>D. HBase </p>
+<h1 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h1><p>QUESTION 3-m<br>HBase 集群定时执行 Compaction 的目的是什么？<br>A. 减少同一 Region，同一 ColumnFamily 下的文件数目<br>B. 提升数据读取性能<br>C. 减少同一 ColumnFamily 的文件数据<br>D. 减少同一 Region 的文件数目 </p>
+<p>QUESTION 8<br>FusionInsight HD HBase 默认使用什么作为其底层文件存储系统？<br>A. HDFS<br>B. Hadoop<br>C. Memory<br>D. MapReduce </p>
+<p>QUESTION 14-m<br>HBase 的主要特点有哪些？<br>A. 高可靠性<br>B. 高性能<br>C. 面向列<br>D. 可伸缩 </p>
+<p>QUESTION 18<br>下列哪些组件必须依赖于 Zookeeper 才能运行？<br>A. HDFS<br>B. HBase<br>C. Spark<br>D. YARN </p>
+<p>QUESTION 24<br>HBase 中 Region 的物理存储单元是什么<br>A. Region<br>B. ColumnFamily<br>C. Column<br>D. Row </p>
+<p>QUESTION 32<br>FusionInsight HD 中使用 HBase 进行数据<strong>读取</strong>服务时需要连接 HMaster<br>A. 对<br>B. 错 </p>
+<p>QUESTION 33<br>HBase 中一个 Region 进行 Split 操作时，将一个 HFile 文件真正分开到两个 Region 的过<br>程发生在以下什么阶段？<br>A. Split 过程中<br>B. Flush 过程中<br>C. Compaction 过程中<br>D. HFile 分开过程中 </p>
+<p>QUESTION 43-m<br>HBase 的数据文件 HFile 中一个 KeyValue 格式包含哪些信息？<br>A. Key<br>B. Value<br>C. Timestamp<br>D. KeyType </p>
+<p>QUESTION 48<br>HBase 的某张表的 RowKey 划分 SplitKey 为 9， E， a， z，请问该表有几个 Region？<br>A. 3<br>B. 4<br>C. 5<br>D. 6 </p>
+<p>QUESTION 52<br>FusionInsight HD 平台中， HBase 暂不支持二级索引<br>A. 对<br>B. 错 </p>
+<p>QUESTION 56<br>下列关于 HBase 的 BloomFilter 特性理解正确的是？<br>A. 用来过滤数据<br>B. 用来优化随机读取的性能<br>C. 会增加存储的消耗<br>D. 可以准确判断某条数据不存在 </p>
+<p>QUESTION 60<br>Loader 仅支持关系型数据库与 HBase 之间的数据导入导出。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 71<br>HBase 的最小处理单元是 Region， User Region 和 Region Server 之间的路由信息是保存<br>在哪里的？<br>A. Zookeeper<br>B. HDFS<br>C. Master<br>D. meta 表 </p>
+<p>QUESTION 83<br>HBase 元数据 Meta Region 路由信息保存在哪里？<br>A. Root 表<br>B. Zookeeper<br>C. HMaster<br>D. Meta 表 </p>
+<p>QUESTION 87<br>执行 HBase 数据读取业务时，需要读取哪几部分数据？<br>A. HFile<br>B. HLog<br>C. MemStore<br>D. HMaster </p>
+<p>QUESTION 89<br>FusionInsight HD 的 HBase 服务包含哪些进程？<br>A. HMaster<br>B. Slave<br>C. HRegionServer<br>D. DataNode </p>
+<p>QUESTION 92<br>HBase 的主 Master 是如何选举的？<br>A. 随机选取<br>B. 由 RegionServer 进行裁决<br>C. 通过 Zookeeper 进行裁决<br>D. HMaster 为双主模式，不需要进行裁 </p>
+<p>QUESTION 109<br>Fusionlnsight HD HBase 的管理进程是如何选择主节点的？<br>A. 随机选取<br>B. 由 RegionServer 进行裁决<br>C. 通过 ZooKeeper 进行裁决<br>D. HMaster 为双主模式，不需要进行裁决 </p>
+<p>QUESTION 142<br>Fusionlnsight HD 系统中 HBase 元数据 Meta region 路由信息保存在哪？<br>A. Root 表<br>B. ZooKeeper<br>C. HMaster<br>D. Mata 表 </p>
+<p>QUESTION 155<br>Fusionlnsight HD 中,如果需要查看当前登录 HBase 的用户和权限组，可以在 HBase shell<br>中执行什么命令？<br>A. use-permission<br>B. whoami<br>C. who<br>D. get-user </p>
+<p>QUESTION 162<br>Hadoop 的 HBase 不适合哪些数据类型的应用场景？<br>A. 大文件应用场景<br>B. 海量数据应用场景<br>C. 高吞吐率应用场景<br>D. 半结构化数据应用场景 </p>
+<p>QUESTION 165<br>Hadoop 平台中 HBase 的 Region 是由哪个服务进程来管理？<br>A. HMaster<br>B. Datanode<br>C. RegionServer<br>D. Zookeeper </p>
+<p>QUESTION 173-m<br>基于 Hadoop 开源大数据平台主要提供了针对数据分布式计算和存储能力，如下属于分布<br>式存储组件的有？（多选）<br>A. MR<br>B. Spark<br>C. HDFS<br>D. HBase </p>
+<p>QUESTION 190<br>Fusionlnsight HD 使用 HBase 客户端批量写入 10 条数据，某个 RegionServer 节点上<br>包含该表的 2 个 Region，分别 A 和 B， 10 条数据中有两条属于 A， 4 条属于 B，请问写入<br>这 10 条数据需要向该 RegionServer 发送几次 RPC 请求？<br>A. 1<br>B. 2<br>C. 3<br>D. 4 </p>
+<p>QUESTION 210<br>Fusionlnsight HD 中使用 HBase 进行数据读写服务时，需要连接 HManager。<br>A. 正确<br>B. 错误 </p>
+<p>QUESTION 214<br>Fusionlnsight HD 系统中，以下选项哪一个不是 HBase 写数据流程涉及的角色或服务？<br>A. Zookeeper<br>B. HDFS<br>C. HMaster<br>D. RegionServer </p>
+<p>QUESTION 225<br>关于 HBase 中 HFile 的描述不正确的是？<br>A. 一个 HFile 属于一个 Region<br>B. 一个 HFile 包含多个列族的数据<br>C. 一个 HFile 包含多列数据<br>D. 一个 HFile 包含多行数据 </p>
+<p>QUESTION 252<br>Fusionlnsight HD 的 HBase 中会保存一张用户信息表 meg-table,Rowkey 为用户 ID ,<br>其 中 一 列 为 用 户 昵 称 ， 现 在 按 先 后 顺 序 往 这 列 写 入 三 个<br>KeyValue:001:Li,001:Mary,001:Lily，请问 scan’meg-table’,{ERSIONS=&gt;2}会返回哪几<br>条数据？<br>A. 001:Li<br>B. 001:Lily<br>C. 001:Li,001:Mary,001:Lily<br>D. 001:Mary,001:Lily </p>
+<p>QUESTION 253<br>关于 HBase 的 Region 分裂流程 Split 的描述不正确的是？<br>A. Split 过程中并没有真正的将文件分开，仅仅是创建了引用文件<br>B. Split 为了减少 Region 中数据大小，从而将一个 Region 分裂成两个 Region<br>C. Split 过程中该表会暂停服务<br>D. Split 过程中分裂的 Region 会暂停服务 </p>
+<p>QUESTION 255<br>Fusionlnsight HD 系统中执行 HBase 写数据时候，数据被写入内存 Memstore、日志 HLog<br>和 HDP 中，请问哪一步写入成功后才会最终返回客户端写数据成功？<br>A. Memstore<br>B. HLog<br>C. HDFS<br>D. Menmory </p>
+<p>QUESTION 265<br>HBase 的物理存储单元是什么？<br>A. Region<br>B. ColumnFamily<br>C. Column<br>D. ROW </p>
+<p>QUESTION 270<br>HBase 中数据存储的文件格式是什么？<br>A. Flie<br>B. SequenceFile<br>C. Log<br>D. TXTflie </p>
+<p>QUESTION 292<br>Fusionlnsight HD 系统中 HBase 支持动态扩展列。<br>A. 正确<br>B. 错误 </p>
+<h1 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h1><p>QUESTION 4-m<br>FusionInsight HD 系统中 Hive 支持的存储格式包括？<br>A. HFile<br>B. TextFile<br>C. SequenceFile<br>D. RCFile </p>
+<p>QUESTION 6-m<br>FusionInsight Manager 界面显示 Hive 服务状态为 Bad 时，可能原因有哪些？<br>A. DBService 不可用<br>B. HDFS 服务不可用<br>C. MetaStore 实例不可用<br>D. HBase 服务不可用 </p>
+<p>QUESTION 31<br>在 FusionInsight HD 中，以下哪一项不属于 Hive 的流控特性<br>A. 支持对已建立的总连接数做阈值控制<br>B. 支持对每个用户已经建立的连接数做阈值控制<br>C. 支持对某个特定用户已建立的连接数做阈值控制<br>D. 支持对单位时间内所建立的连接数做阈值控制 </p>
+<p>QUESTION 50<br>关于 Hive 中普通表和外部表的描述不正确的是？<br>A. 默认创建普通表<br>B. 外部表实质是将已经存在 HDFS 上的文件路径跟表关联起来<br>C. 删除普通表时，元数据和数据同时被删除<br>D. 删除外部表时，只删除外部表数据而不删除元数据</p>
+<p>QUESTION 68<br>关于 Hive 建表的基本操作，描述正确的是？<br>A. 创建外部表的时需要指定 external 关键字<br>B. 一旦表创建好，不可再修改表名<br>C. 一旦表创建好，不可再修改列名<br>D. 一旦表创建好，不可再增加新列  </p>
+<p>QUESTION 137<br>加载数据到 Hive 表，哪种方式不正确？<br>A. 直接将本地路径的文件 load 到 Hive 表中<br>B. 将 HDFS 上的额文件 load 到 Hive 表中<br>C. Hive 支持 insert into 单条记录的方法，所以可以直接在命令行插入单条记录<br>D. 将其他表的结果集 insert into 到 Hive 表中 </p>
+<p>QUESTION 185<br>Fusionlnsight HD Manager 界面 Hive 日志收集，哪个选项不正确？<br>A. 可指定实例进行日志收集，比如指定单独收集 MetaStore 的日志<br>B. 可指定时间段进行日志收集，比如只收集 2016-1-10 的日志<br>C. 可指定节点 IP 进行日志收集，例如仅下载某个 IP 的日志<br>D. 可指定特定用户进行日志收集，例如仅下载 userA 用户产生的日志 </p>
+<p>QUESTION 202<br>关于 Hive 与 Hadoop 其他组件的关系，以下描述错误的是？<br>A. Hive 最终将数据存储在 HDFS 中<br>B. Hive SQL 其本质是执行 MapReduce 任务<br>C. Hive 是 Hadoop 平台的数据仓库工具<br>D. Hive 对 HBase 有强依赖 </p>
+<p>QUESTION 297<br>关于 Hive 在 Fusionlnsight HD 中的架构描述错误的是？<br>A. 只要有一个 HiveServer 不可用，整个 Hive 集群便不可用<br>B. Hiveserver 负责接受客户端请求、解析、执行 HQL 命令并返回查询结果<br>C. MetaStore 用于提供数据服务，依赖于 DBServer<br>D. 在同一个时间点 Hiveserve 只有一个处于 Active 状态，另一个则处于 Standby 状态 </p>
+<h1 id="Streaming"><a href="#Streaming" class="headerlink" title="Streaming"></a>Streaming</h1><p>QUESTION 2<br>FusionInsight HD 的 Streaming 对于 Zookeeper 弱依赖，即使 Zookeeper 故障 Streaming<br>可以正常提供服务。<br>A. 对<br>B. 错 </p>
+<p>QUESTION 28<br>关于 FusionInsight HD Streaming 的 Supervisor 描述正确的是？<br>A. Supervisor 负责资源的分配和任务的调度<br>B. Supervisor 负责接受 Nimbus 分配的任务，启动停止属于自己管理的 Worker 进程<br>C. Supervisor 是运行具体处理逻辑的进程<br>D. Supervisor 是在 Topology 中接收数据然后执行处理的组件 </p>
+<p>QUESTION 74-m<br>FusionInsight HD 系统中使用 Streaming 客户端 Shell 命令查看拓扑或提交拓扑失败，<br>以下哪些定位手段是正确的？<br>A. 查看客户端异常堆栈，判断是否客户端使用问题<br>B. 查看主 Nimbus 的运行日志，判断是否 Nimbus 服务端异常<br>C. 查看 Supervisor 运行日志，判断是否 Supervisor 异常<br>D. 查看 Worker 运行日志 </p>
+<p>QUESTION 207-m<br>Fusionlnsight HD 系统中 使用 Streaming 客户端 Shell 命令提交了拓扑之后，使用<br>Storm UI 查看发现该拓扑长时间没有处理数据，可能原因有？<br>A. 拓扑结构过于复杂或者并发太大，导致 worker 启动时间过长，超过 supervisor 的等<br>待时间<br>B. supervisor 的 slots 资源被耗尽，拓扑提交上去后分不到 slot 去启动 worker 进程<br>C. 拓扑业务存在扩及错误，提交之后无法正常运行<br>D. 当数据量较大时，拓扑处理速度较慢</p>
+<p>QUESTION 263<br>安装 Fusionlnsight HD 的 Streaming 组件时， Nimbus 角色要求安装几个节点？<br>A. 1<br>B. 2<br>C. 3<br>D. 4 </p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/HCIA/" rel="tag"><i class="fa fa-tag"></i> HCIA</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/06/hadoop各组件URL/" rel="next" title="hadoop各组件URL">
+                <i class="fa fa-chevron-left"></i> hadoop各组件URL
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/08/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Shiwei-Yan">
+  
+  <p class="site-author-name" itemprop="name">Shiwei-Yan</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Yanin-dpdt" title="GitHub &rarr; https://github.com/Yanin-dpdt" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:Yanin-dpdt@foxmail.com" title="E-Mail &rarr; mailto:Yanin-dpdt@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HDFS"><span class="nav-number">1.</span> <span class="nav-text">HDFS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapReduce"><span class="nav-number">2.</span> <span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Yarn"><span class="nav-number">3.</span> <span class="nav-text">Yarn</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-number">4.</span> <span class="nav-text">HBase</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hive"><span class="nav-number">5.</span> <span class="nav-text">Hive</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Streaming"><span class="nav-number">6.</span> <span class="nav-text">Streaming</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shiwei-Yan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">193k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">2:55</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+
+
+
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("07/23/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </footer></div>
+    
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
+
+
+
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
