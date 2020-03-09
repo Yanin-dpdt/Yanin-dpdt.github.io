@@ -163,14 +163,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[关于加入站内搜索]]></title>
-    <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
-    <content type="text"><![CDATA[今天按照网上的加入本站搜索功能 无论如何都加不进去，后来在查看 NEXT给的官方解读中看到解决方法网址如下，查看Local Search方法 https://theme-next.org/docs/third-party-services/search-services]]></content>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[关于DSP平台双UDE 参数调试]]></title>
     <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E5%8F%8CUDE%E8%B0%83%E8%AF%95%2F</url>
     <content type="text"><![CDATA[1.挑选了几组典型数据画图，这里面的滤波器参数都是随意设置的（因为现在还无法确定kp和alpha之间的关系） 2.xx_xxx3.fig 中红色为实际数值 蓝色为指令，绿色为经过滤波器的输出结果(画图程序在最后)。 3.图中的时间 10000点 = 5s 4.Main_twoloop190801.c为源程序。 5.文件夹中 01-07为电流环调试过程, 08-11为速度环调试过程, 12 给了一个比较极端的速度环滤波器参数。 数据对应参数： spd_Factor spd_kp spd_ki iq_Factor iq_kp iq_ki 01参数 0.1667 0.8 0.0015 0.007 1.0 0.0025 05参数 0.1667 0.8 0.0015 0.007 2.1 0.0025 06参数 0.1667 0.8 0.0015 0.007 2.5 0.0025 10参数 0.1667 3.0 0.0015 0.007 2.5 0.0025 12参数 0.0007 0.8 0.0015 0.007 2.5 0.0025 6.画图函数 1234567891011121314figure(1)plot(t,spd,'r','LineWidth',1)hold onplot(t,spdr-5,'g','LineWidth',1)hold onplot(t,spdc-5,'b','LineWidth',1)grid onfigure(2)plot(t,iq,'r','LineWidth',1)hold onplot(t,iqr,'g','LineWidth',1)hold onplot(t,iqc,'b','LineWidth',1)grid on]]></content>
@@ -178,6 +170,14 @@
         <tag>DSP平台</tag>
         <tag>PMSM</tag>
         <tag>UDE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于加入站内搜索]]></title>
+    <url>%2F2019%2F08%2F02%2F%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%85%A5%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2%2F</url>
+    <content type="text"><![CDATA[今天按照网上的加入本站搜索功能 无论如何都加不进去，后来在查看 NEXT给的官方解读中看到解决方法网址如下，查看Local Search方法 https://theme-next.org/docs/third-party-services/search-services]]></content>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -206,11 +206,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[my first generage blog]]></title>
-    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[关于dsp平台电流环解耦]]></title>
     <url>%2F2019%2F07%2F23%2F%E5%85%B3%E4%BA%8EDSP%E5%B9%B3%E5%8F%B0%E7%94%B5%E6%B5%81%E7%8E%AF%E8%A7%A3%E8%80%A6%2F</url>
     <content type="text"><![CDATA[120V电压 400rpm的给定电流 应该加的补偿值 ​ttt = 0.00105 \* \_IQmpy(pi_id.Fbk,pi_spd.Fbk) \* 4500 \* 9 /(volt1.DcBusVolt\*409.9) + 0.065 \* pi_spd.Fbk \* 4500 /(volt1.DcBusVolt\*409.9); 下面是解耦后应该的公式. ​ipark1.Qs = pi_iq.Out + ttt;​ 在未解耦的时候，测得ipark1.Qs = 0.515 . 换算成真实的电压值为(乘当前的电流值) 0.515 * 120 V=61.8V 测得ttt = 0.22 . 换算成真实的电压值为26.4V. ttt的主要成份是反电势 ​flux\*we=0.1552\*400\*4\*3.14/30=26.0V​ 所以证明电流环解耦 程序是正确的. 实验结果 （右为解耦）]]></content>
@@ -218,5 +213,10 @@
         <tag>DSP平台</tag>
         <tag>PMSM</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[my first generage blog]]></title>
+    <url>%2F2019%2F07%2F23%2F%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[第一个博客 杠杠滴]]></content>
   </entry>
 </search>
