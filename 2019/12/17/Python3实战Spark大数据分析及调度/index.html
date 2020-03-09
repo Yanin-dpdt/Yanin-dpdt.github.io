@@ -112,7 +112,9 @@
 <meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lOxHaV.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lXPCCV.png">
 <meta property="og:image" content="https://s2.ax1x.com/2020/01/15/lXmn54.png">
-<meta property="og:updated_time" content="2020-01-16T03:25:09.373Z">
+<meta property="og:image" content="https://s2.ax1x.com/2020/03/09/89yWY4.png">
+<meta property="og:image" content="https://s2.ax1x.com/2020/03/09/89yH0K.png">
+<meta property="og:updated_time" content="2020-03-09T13:08:46.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python3实战Spark大数据分析及调度">
 <meta name="twitter:description" content="spark的运行1.启动hadoop (要在root用户下运行) 123cd app/hadoopxxxxxxx/sbinstart-dfs.sh**可在 http://localhost:50070/ 中查看自己上传的文件**  2.启动spark 12cd app/sparkxxxxxxx/bin./spark-shell  spark core核心 RDDSpark源码所在的地方：https">
@@ -417,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-16 11:25:09" itemprop="dateModified" datetime="2020-01-16T11:25:09+08:00">2020-01-16</time>
+                <time title="修改时间：2020-03-09 21:08:46" itemprop="dateModified" datetime="2020-03-09T21:08:46+08:00">2020-03-09</time>
               </span>
             
           
@@ -453,7 +455,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">16k</span>
+              <span title="本文字数">19k</span>
             </span>
           
 
@@ -465,7 +467,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">15 分钟</span>
+              <span title="阅读时长">18 分钟</span>
             </span>
           
 
@@ -499,21 +501,16 @@
 <p>弹性：遇到故障以后可以进行修复或者跟踪</p>
 <p>Represents an<br>    immutable：<strong>不可变</strong>(RDD不可变)<br>    partitioned collection of elements ：分区<br>        Array(1,2,3,4,5,6,7,8,9,10)  3个分区： (1,2,3) (4,5,6) (7,8,9,10)<br>    that can be operated on in <strong>parallel</strong>： 并行计算的问题</p>
 <p>单机存储/计算==&gt;分布式存储/计算<br>1）数据的存储: 切割    HDFS的Block<br>2）数据的计算: 切割(分布式并行计算)   MapReduce/Spark<br>3）存储+计算 :   HDFS/S3+MapReduce/Spark</p>
-<pre><code>==&gt; OK </code></pre><p>##RDD的五大特性：</p>
-<p>Internally, each RDD is characterized by five main properties:</p>
+<pre><code>==&gt; OK </code></pre><h2 id="RDD的五大特性："><a href="#RDD的五大特性：" class="headerlink" title="RDD的五大特性："></a>RDD的五大特性：</h2><p>Internally, each RDD is characterized by five main properties:</p>
 <p>*<em>1. *</em>A list of partitions<br>   一系列的分区/分片</p>
 <p>*<em>2. *</em>A function for computing each split(切片)/partition<br>   y = f(x)<br>   rdd.map(_+1)  :对RDD进行函数就是对RDD里所有的分区进行一个函数</p>
 <p><strong>3.</strong> A list of dependencies on other RDDs<br>   rdd1 ==&gt; rdd2 ==&gt; rdd3 ==&gt; rdd4  存在依赖关系(依赖其他RDD)<br>   dependencies:*<em>\</em>*</p>
 <p>   rdda = 5个partition<br>   ==&gt;map操作<br>   rddb = 5个partition</p>
 <p>   当遇到rdda内第三个分区丢失时，spark会通过dependency重新计算数据(从源文件重新读取)</p>
-<ol start="4">
-<li><p>Optionally(可选的), a Partitioner for key-value RDDs (e.g. to say that the RDD is hash-partitioned)</p>
-</li>
-<li><p>Optionally, a list of preferred locations(最佳的位置) to compute each split on (e.g.<br>block locations for an HDFS file)</p>
-<p>数据在哪，优先把作业调度到数据所在的节点进行计算：<strong>移动数据不如移动计算</strong><br>为什么location有s？</p>
-<p>答: spark会尽可能地将任务分配到数据块所存储的位置。Hadoop中读取数据生成RDD时，preferredLocation[s]返回每一个数据块所在的机器名或者IP地址，如果每一块数据是多份存储的，那么就会返回多个机器地址,以便后续调度的程序根据这个地址更加有效地分配任务.</p>
-</li>
-</ol>
+<p>*<em>4. *</em>Optionally(可选的), a Partitioner for key-value RDDs (e.g. to say that the RDD is hash-partitioned)</p>
+<p>*<em>5. *</em>Optionally, a list of preferred locations(最佳的位置) to compute each split on (e.g.<br>   block locations for an HDFS file)</p>
+<p>   数据在哪，优先把作业调度到数据所在的节点进行计算：<strong>移动数据不如移动计算</strong><br>   为什么location有s？</p>
+<p>   答: spark会尽可能地将任务分配到数据块所存储的位置。Hadoop中读取数据生成RDD时，preferredLocation[s]返回每一个数据块所在的机器名或者IP地址，如果每一块数据是多份存储的，那么就会返回多个机器地址,以便后续调度的程序根据这个地址更加有效地分配任务.</p>
 <p>五大特性源码体现：<br>def compute(split: Partition, context: TaskContext): Iterator[T] 特性二<br>def getPartitions: Array[Partition]  特性一<br>def getDependencies: Seq[Dependency[_]] = deps  特性三<br>def getPreferredLocations(split: Partition): Seq[String] = Nil  特性五<br>val partitioner: Option[Partitioner] = None  特性四</p>
 <h2 id="图解RDD"><a href="#图解RDD" class="headerlink" title="图解RDD"></a>图解RDD</h2><p><img src="https://s2.ax1x.com/2019/12/18/Q7nJ0O.png" alt="Q7nJ0O.png"></p>
 <h2 id="SparkContext-amp-SparkConf"><a href="#SparkContext-amp-SparkConf" class="headerlink" title="SparkContext&amp;SparkConf"></a>SparkContext&amp;SparkConf</h2><p>第一要务：创建SparkContext<br>    连接到Spark“集群”：local、standalone、yarn、mesos<br>    通过SparkContext来创建RDD、广播变量到集群</p>
@@ -680,10 +677,34 @@ hive表：person
 <p>A DataFrame is a Dataset organized into named columns (可以简单的把DataFrame理解成关系型数据库中的一个表，这是表层，底层其实做了更深的优化)<br>以列(列名、列类型、列值)的形式构成分布式的数据集</p>
 <p><strong>面试题：RDD与DataFrame的区别</strong>12345</p>
 <p>schema: 在SQL环境下，schema就是数据库对象的集合</p>
+<p><a href="https://zhuanlan.zhihu.com/p/61631248" target="_blank" rel="noopener">区别</a></p>
 <h3 id="RDD与DataFrame"><a href="#RDD与DataFrame" class="headerlink" title="RDD与DataFrame"></a>RDD与DataFrame</h3><p><strong>方法一：</strong></p>
 <p><a href="http://spark.apache.org/docs/2.3.0/sql-programming-guide.html#inferring-the-schema-using-reflection" target="_blank" rel="noopener">Inferring the Schema Using Reflection</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> Row</span><br><span class="line"></span><br><span class="line">sc = spark.sparkContext</span><br><span class="line"></span><br><span class="line"><span class="comment"># Load a text file and convert each line to a Row.</span></span><br><span class="line">lines = sc.textFile(<span class="string">"examples/src/main/resources/people.txt"</span>)</span><br><span class="line">parts = lines.map(<span class="keyword">lambda</span> l: l.split(<span class="string">","</span>))</span><br><span class="line">people = parts.map(<span class="keyword">lambda</span> p: Row(name=p[<span class="number">0</span>], age=int(p[<span class="number">1</span>])))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Infer the schema, and register the DataFrame as a table.</span></span><br><span class="line">schemaPeople = spark.createDataFrame(people)</span><br><span class="line">schemaPeople.createOrReplaceTempView(<span class="string">"people"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># SQL can be run over DataFrames that have been registered as a table.</span></span><br><span class="line">teenagers = spark.sql(<span class="string">"SELECT name FROM people WHERE age &gt;= 13 AND age &lt;= 19"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The results of SQL queries are Dataframe objects.</span></span><br><span class="line"><span class="comment"># rdd returns the content as an :class:`pyspark.RDD` of :class:`Row`.</span></span><br><span class="line">teenNames = teenagers.rdd.map(<span class="keyword">lambda</span> p: <span class="string">"Name: "</span> + p.name).collect()</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> teenNames:</span><br><span class="line">    print(name)</span><br><span class="line"><span class="comment"># Name: Justin</span></span><br></pre></td></tr></table></figure>
+<p>方法二：</p>
+<p>下面的已运行过 8_8.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Import data types</span></span><br><span class="line"><span class="keyword">from</span> pyspark.sql.types <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> SparkSession</span><br><span class="line"></span><br><span class="line">spark = SparkSession.builder.appName(<span class="string">'spark0801'</span>).getOrCreate()</span><br><span class="line">sc = spark.sparkContext</span><br><span class="line"><span class="comment"># Load a text file and convert each line to a Row.</span></span><br><span class="line">lines = sc.textFile(<span class="string">"file:///home/hadoop/app/spark-2.3.0-bin-2.6.0-cdh5.7.0/examples/src/main/resources/people.txt"</span>)</span><br><span class="line">parts = lines.map(<span class="keyword">lambda</span> l: l.split(<span class="string">","</span>))</span><br><span class="line"><span class="comment"># Each line is converted to a tuple.</span></span><br><span class="line">people = parts.map(<span class="keyword">lambda</span> p: (p[<span class="number">0</span>], p[<span class="number">1</span>].strip()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># The schema is encoded in a string.</span></span><br><span class="line">schemaString = <span class="string">"name age"</span></span><br><span class="line"></span><br><span class="line">fields = [StructField(field_name, StringType(), <span class="literal">True</span>) <span class="keyword">for</span> field_name <span class="keyword">in</span> schemaString.split()]</span><br><span class="line">schema = StructType(fields)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply the schema to the RDD.</span></span><br><span class="line">schemaPeople = spark.createDataFrame(people, schema)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Creates a temporary view using the DataFrame</span></span><br><span class="line">schemaPeople.createOrReplaceTempView(<span class="string">"people"</span>)</span><br><span class="line">print(schemaPeople.printSchema())</span><br><span class="line"><span class="comment"># SQL can be run over DataFrames that have been registered as a table.</span></span><br><span class="line"><span class="comment"># results = spark.sql("SELECT name FROM people")</span></span><br><span class="line"></span><br><span class="line">print(schemaPeople.show())</span><br><span class="line">sc.stop()</span><br><span class="line"><span class="comment"># +-------+</span></span><br><span class="line"><span class="comment"># |   name|</span></span><br><span class="line"><span class="comment"># +-------+</span></span><br><span class="line"><span class="comment"># |Michael|</span></span><br><span class="line"><span class="comment"># |   Andy|</span></span><br><span class="line"><span class="comment"># | Justin|</span></span><br><span class="line"><span class="comment"># +-------+</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Spark-Streaming"><a href="#Spark-Streaming" class="headerlink" title="Spark Streaming"></a><a href="http://spark.apache.org/docs/2.3.0/streaming-programming-guide.html" target="_blank" rel="noopener">Spark Streaming</a></h2><pre><code>is an extension of the core Spark API 
+enables scalable, high-throughput, fault-tolerant 
+stream processing of live data streams</code></pre><p>流： Java SE  IO<br>    输入: 山沟沟、下水道…    Kafka, Flume, Kinesis, or TCP sockets<br>    // TODO…  业务逻辑处理<br>    输出: 痛、瓶子….   filesystems, databases, and live dashboards</p>
+<p>在线机器学习</p>
+<p>Q:安装完Spark之后能否直接使用Spark Streaming?<br>A:YES</p>
+<p>常用实时流处理框架对比<br>    Storm：真正的实时流处理  Tuple   Java<br>    Spark Streaming：并不是真正的实时流处理，而是一个mini batch操作(批处理)<br>        Scala、Java、Python  使用Spark一栈式解决问题<br>    Flink: 底层是流处理，可以做到批处理(和spark相反)<br>    Kafka Stream</p>
+<p><img src="https://s2.ax1x.com/2020/03/09/89yWY4.png" alt="89yWY4.png"></p>
+<p>Spark Streaming它的职责所在<br>    receives live input data streams<br>    divides the data into batches<br>    batches are then processed by the Spark engine<br>    to generate the final stream of results in batches.</p>
+<p><img src="https://s2.ax1x.com/2020/03/09/89yH0K.png" alt="89yH0K.png"></p>
+<p>Spark Core的核心抽象叫做：RDD  5大特性、对应源码中的5个方法是什么<br>Spark Streaming的核心抽象叫做：DStream<br>    represents a continuous stream of data<br>    DStreams can be created either from input data streams from sources such as Kafka, Flume, and Kinesis<br>    or by applying high-level operations on other DStreams.<br>    Internally, a DStream is represented as a sequence of RDDs.</p>
+<h2 id="Azkaban基础篇-工作流插件"><a href="#Azkaban基础篇-工作流插件" class="headerlink" title="Azkaban基础篇(工作流插件)"></a>Azkaban基础篇(工作流插件)</h2><p>工作流概述<br>    请假  OA<br>        1 ：部门经理审批<br>        3 ：部门经理审批 ==&gt; HR<br>        5 ：部门经理审批 ==&gt; HR ==&gt; 老大<br>        10：…..<br>    借款： 涉及金额</p>
+<p>Spark SQL/Hadoop用于做离线统计处理<br>ETL(<em>ETL</em>，是英文Extract-Transform-Load的缩写，用来描述将数据从来源端经过抽取（extract）、转换（transform）、加载（load）至目的端的过程。)<br>1) 数据抽取：<br>    Sqoop把RDBMS中的数据抽取到Hadoop<br>    Flume进行日志、文本数据的采集，采集到Hadoop<br>2) 数据处理<br>    Hive/MapReduce/Spark/……<br>3) 统计结果入库<br>    数据就存放到HDFS(Hive/Spark SQL/文件)<br>        启动一个Server: HiveServer2 / ThriftServer<br>        jdbc的方式去访问统计结果<br>    使用Sqoop把结果导出到RDBMS中</p>
+<p>这些作业之间是存在<strong>时间先后依赖</strong>关系的<br>Step A ==&gt; Step B ==&gt; Step C </p>
+<p>crontab定时调度<br>为了更好的组织起这样的复杂执行计算的关系===&gt; 这就需要一个工作流调度系统来进行依赖关系作业的调度</p>
+<p>Linux crontab + shell<br>    优点：简单、易用<br>    缺点：<br>        维护<br>        依赖<br>            step a:  01:30  30分钟<br>            step b:  02:10  30分钟<br>            step c:  02:50  30分钟<br>            …..<br>            资源利用率<br>            集群在0130压力非常大，资源没有申请到</p>
+<p>常用的调度框架<br>    Azkaban：轻量级<br>    Oozie：重量级<br>        cm hue<br>        xml<br>    宙斯(Zeus)</p>
+<p>Azkaban概述<br>    Open-source Workflow Manager<br>    批处理工作流，用于跑Hadoop的job<br>    提供了一个易于使用的用户界面来维护和跟踪你的工作流程</p>
+<p>Azkaban架构<br>    Relational Database (MySQL)<br>    AzkabanWebServer<br>    AzkabanExecutorServer</p>
+<p>Azkaban运行模式<br>    solo-server<br>        数据信息存储在H2==&gt;MySQL<br>        webserver和execserver是运行在同一个进程中婢女<br>    the heavier weight two server mode<br>        数据信息存储在MySQL，在生产上一定要做主备<br>        webserver和execserver是运行在不同的进程中的<br>    distributed multiple-executor mode</p>
+<p>Azkaban编译：万世开头难，务必要保证你的网络速度不错(这里的编译是在对源码进行修改以后进行的)<br>    1） 去github上下载源码包<br>    2） ./gradlew build installDist<br>    3） 建议搭建先去下载gradle-4.1-all.zip 然后整合azkaban源码中来，避免在编译的过程中去网络上下载，导致编译速度非常慢<br>    4） 编译成功之后，去对应的目录下找到对应模式的安装包即可</p>
+<p>Azkaban环境搭建<br>    1) 解压编译后的安装包到~/app<br>    2）启动azkaban   $AZKABAN_HOME/bin/azkaban-solo-start.sh<br>        验证：jps  AzkabanSingleServer<br>        ip:8081</p>
 
       
     </div>
@@ -926,7 +947,7 @@ hive表：person
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spark的运行"><span class="nav-number">1.</span> <span class="nav-text">spark的运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spark-core核心-RDD"><span class="nav-number">2.</span> <span class="nav-text">spark core核心 RDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是RDD"><span class="nav-number">2.1.</span> <span class="nav-text">什么是RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解RDD"><span class="nav-number">2.2.</span> <span class="nav-text">图解RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SparkContext-amp-SparkConf"><span class="nav-number">2.3.</span> <span class="nav-text">SparkContext&amp;SparkConf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE开发"><span class="nav-number">2.4.</span> <span class="nav-text">IDE开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-example-about-SparkContext-amp-SparkConf"><span class="nav-number">2.5.</span> <span class="nav-text">a example about SparkContext&amp;SparkConf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RDD编程"><span class="nav-number">3.</span> <span class="nav-text">RDD编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网参考文件"><span class="nav-number">3.1.</span> <span class="nav-text">官网参考文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的RDD函数"><span class="nav-number">3.2.</span> <span class="nav-text">常用的RDD函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在本地运行spark-不用IDE，提交到本地-，并写到文件系统中"><span class="nav-number">3.3.</span> <span class="nav-text">如何在本地运行spark(不用IDE，提交到本地)，并写到文件系统中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子综合实例："><span class="nav-number">3.4.</span> <span class="nav-text">算子综合实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark运行模式"><span class="nav-number">3.5.</span> <span class="nav-text">spark运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-Core调优"><span class="nav-number">3.6.</span> <span class="nav-text">Spark Core调优</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HistorySever-优化"><span class="nav-number">3.6.1.</span> <span class="nav-text">HistorySever 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化优化"><span class="nav-number">3.6.2.</span> <span class="nav-text">序列化优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理优化"><span class="nav-number">3.6.3.</span> <span class="nav-text">内存管理优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播变量优化"><span class="nav-number">3.6.4.</span> <span class="nav-text">广播变量优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-SQL"><span class="nav-number">3.7.</span> <span class="nav-text">Spark SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RDD与DataFrame"><span class="nav-number">3.7.1.</span> <span class="nav-text">RDD与DataFrame</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spark的运行"><span class="nav-number">1.</span> <span class="nav-text">spark的运行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#spark-core核心-RDD"><span class="nav-number">2.</span> <span class="nav-text">spark core核心 RDD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是RDD"><span class="nav-number">2.1.</span> <span class="nav-text">什么是RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RDD的五大特性："><span class="nav-number">2.2.</span> <span class="nav-text">RDD的五大特性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图解RDD"><span class="nav-number">2.3.</span> <span class="nav-text">图解RDD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SparkContext-amp-SparkConf"><span class="nav-number">2.4.</span> <span class="nav-text">SparkContext&amp;SparkConf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE开发"><span class="nav-number">2.5.</span> <span class="nav-text">IDE开发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a-example-about-SparkContext-amp-SparkConf"><span class="nav-number">2.6.</span> <span class="nav-text">a example about SparkContext&amp;SparkConf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RDD编程"><span class="nav-number">3.</span> <span class="nav-text">RDD编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#官网参考文件"><span class="nav-number">3.1.</span> <span class="nav-text">官网参考文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的RDD函数"><span class="nav-number">3.2.</span> <span class="nav-text">常用的RDD函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何在本地运行spark-不用IDE，提交到本地-，并写到文件系统中"><span class="nav-number">3.3.</span> <span class="nav-text">如何在本地运行spark(不用IDE，提交到本地)，并写到文件系统中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算子综合实例："><span class="nav-number">3.4.</span> <span class="nav-text">算子综合实例：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark运行模式"><span class="nav-number">3.5.</span> <span class="nav-text">spark运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-Core调优"><span class="nav-number">3.6.</span> <span class="nav-text">Spark Core调优</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HistorySever-优化"><span class="nav-number">3.6.1.</span> <span class="nav-text">HistorySever 优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序列化优化"><span class="nav-number">3.6.2.</span> <span class="nav-text">序列化优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存管理优化"><span class="nav-number">3.6.3.</span> <span class="nav-text">内存管理优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广播变量优化"><span class="nav-number">3.6.4.</span> <span class="nav-text">广播变量优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-SQL"><span class="nav-number">3.7.</span> <span class="nav-text">Spark SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RDD与DataFrame"><span class="nav-number">3.7.1.</span> <span class="nav-text">RDD与DataFrame</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-Streaming"><span class="nav-number">3.8.</span> <span class="nav-text">Spark Streaming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Azkaban基础篇-工作流插件"><span class="nav-number">3.9.</span> <span class="nav-text">Azkaban基础篇(工作流插件)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -961,7 +982,7 @@ hive表：person
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">193k</span>
+    <span title="站点总字数">196k</span>
   
 
   
@@ -972,7 +993,7 @@ hive表：person
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">2:55</span>
+    <span title="站点阅读时长">2:58</span>
   
 </div>
 
