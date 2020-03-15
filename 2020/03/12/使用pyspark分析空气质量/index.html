@@ -94,17 +94,22 @@
   };
 </script>
 
-  <meta name="description" content="1、HDFS页面：50070 2、YARN的管理界面：8088 3、HistoryServer的管理界面：19888 4、Zookeeper的服务端口号：2181 5、Mysql的服务端口号：3306 6、Hive.server1=10000 7、Kafka的服务端口号：9092 8、azkaban界面：8443 9、Hbase界面：16010,60010 10、Spark的界面：8080 11、">
+  <meta name="description" content="项目概述1. 数据来源: http://stateair.net/web/historical/1/1.html2. 根据北京的数据进行统计分析   空气质量指数(PM2.5) 健康建议    0-50 健康   51-100 中等   101-150 对敏感人群不健康   151-200 危险   201-300 非常不健康   301-500 危险   501-~ 报表   3.  数据分析–">
+<meta name="keywords" content="python,spark">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hadoop各组件URL">
-<meta property="og:url" content="http://yoursite.com/2020/01/06/hadoop各组件URL/index.html">
+<meta property="og:title" content="使用PySpark分析空气质量">
+<meta property="og:url" content="http://yoursite.com/2020/03/12/使用pyspark分析空气质量/index.html">
 <meta property="og:site_name" content="颜">
-<meta property="og:description" content="1、HDFS页面：50070 2、YARN的管理界面：8088 3、HistoryServer的管理界面：19888 4、Zookeeper的服务端口号：2181 5、Mysql的服务端口号：3306 6、Hive.server1=10000 7、Kafka的服务端口号：9092 8、azkaban界面：8443 9、Hbase界面：16010,60010 10、Spark的界面：8080 11、">
+<meta property="og:description" content="项目概述1. 数据来源: http://stateair.net/web/historical/1/1.html2. 根据北京的数据进行统计分析   空气质量指数(PM2.5) 健康建议    0-50 健康   51-100 中等   101-150 对敏感人群不健康   151-200 危险   201-300 非常不健康   301-500 危险   501-~ 报表   3.  数据分析–">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-06T12:25:36.143Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/15/88Vb1H.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/15/88VzAf.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/15/88QFit.png">
+<meta property="og:updated_time" content="2020-03-15T13:10:35.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hadoop各组件URL">
-<meta name="twitter:description" content="1、HDFS页面：50070 2、YARN的管理界面：8088 3、HistoryServer的管理界面：19888 4、Zookeeper的服务端口号：2181 5、Mysql的服务端口号：3306 6、Hive.server1=10000 7、Kafka的服务端口号：9092 8、azkaban界面：8443 9、Hbase界面：16010,60010 10、Spark的界面：8080 11、">
+<meta name="twitter:title" content="使用PySpark分析空气质量">
+<meta name="twitter:description" content="项目概述1. 数据来源: http://stateair.net/web/historical/1/1.html2. 根据北京的数据进行统计分析   空气质量指数(PM2.5) 健康建议    0-50 健康   51-100 中等   101-150 对敏感人群不健康   151-200 危险   201-300 非常不健康   301-500 危险   501-~ 报表   3.  数据分析–">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/03/15/88Vb1H.png">
 
 
 
@@ -112,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/01/06/hadoop各组件URL/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/12/使用pyspark分析空气质量/">
 
 
 
@@ -123,7 +128,7 @@
 </script>
 
   
-  <title>hadoop各组件URL | 颜</title>
+  <title>使用PySpark分析空气质量 | 颜</title>
   
 
 
@@ -347,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/06/hadoop各组件URL/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/12/使用pyspark分析空气质量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shiwei-Yan">
@@ -364,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hadoop各组件URL
+          <h1 class="post-title" itemprop="name headline">使用PySpark分析空气质量
 
               
             
@@ -390,13 +395,23 @@
                 
               
 
-              <time title="创建时间：2020-01-06 00:00:00 / 修改时间：20:25:36" itemprop="dateCreated datePublished" datetime="2020-01-06T00:00:00+08:00">2020-01-06</time>
+              <time title="创建时间：2020-03-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-12T00:00:00+08:00">2020-03-12</time>
             </span>
           
 
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-15 21:10:35" itemprop="dateModified" datetime="2020-03-15T21:10:35+08:00">2020-03-15</time>
+              </span>
             
           
 
@@ -431,7 +446,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">215</span>
+              <span title="本文字数">5.4k</span>
             </span>
           
 
@@ -443,7 +458,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">5 分钟</span>
             </span>
           
 
@@ -462,17 +477,76 @@
       
 
       
-        <p>1、HDFS页面：50070</p>
-<p>2、YARN的管理界面：8088</p>
-<p>3、HistoryServer的管理界面：19888</p>
-<p>4、Zookeeper的服务端口号：2181</p>
-<p>5、Mysql的服务端口号：3306</p>
-<p>6、Hive.server1=10000</p>
-<p>7、Kafka的服务端口号：9092</p>
-<p>8、azkaban界面：8443</p>
-<p>9、Hbase界面：16010,60010</p>
-<p>10、Spark的界面：8080</p>
-<p>11、Spark的URL：7077</p>
+        <h2 id="项目概述"><a href="#项目概述" class="headerlink" title="项目概述"></a>项目概述</h2><h3 id="1-数据来源-http-stateair-net-web-historical-1-1-html"><a href="#1-数据来源-http-stateair-net-web-historical-1-1-html" class="headerlink" title="1. 数据来源: http://stateair.net/web/historical/1/1.html"></a>1. 数据来源: <a href="http://stateair.net/web/historical/1/1.html" target="_blank" rel="noopener">http://stateair.net/web/historical/1/1.html</a></h3><h3 id="2-根据北京的数据进行统计分析"><a href="#2-根据北京的数据进行统计分析" class="headerlink" title="2. 根据北京的数据进行统计分析"></a>2. 根据北京的数据进行统计分析</h3><table>
+<thead>
+<tr>
+<th align="right">空气质量指数(PM2.5)</th>
+<th align="left">健康建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="right">0-50</td>
+<td align="left">健康</td>
+</tr>
+<tr>
+<td align="right">51-100</td>
+<td align="left">中等</td>
+</tr>
+<tr>
+<td align="right">101-150</td>
+<td align="left">对敏感人群不健康</td>
+</tr>
+<tr>
+<td align="right">151-200</td>
+<td align="left">危险</td>
+</tr>
+<tr>
+<td align="right">201-300</td>
+<td align="left">非常不健康</td>
+</tr>
+<tr>
+<td align="right">301-500</td>
+<td align="left">危险</td>
+</tr>
+<tr>
+<td align="right">501-~</td>
+<td align="left">报表</td>
+</tr>
+</tbody></table>
+<h3 id="3-数据分析–-gt-es–-gt-kibana"><a href="#3-数据分析–-gt-es–-gt-kibana" class="headerlink" title="3.  数据分析–&gt;es–&gt;kibana"></a>3.  数据分析–&gt;es–&gt;kibana</h3><p>先进行数据分析:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> SparkSession</span><br><span class="line"><span class="keyword">from</span> pyspark.sql.types <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pyspark.sql.functions <span class="keyword">import</span> udf</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_grade</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> value &lt;= <span class="number">50</span> <span class="keyword">and</span> value &gt;= <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"中等"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">150</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"对敏感人群不健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"不健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">300</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"非常不健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">500</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"危险"</span></span><br><span class="line">    <span class="keyword">elif</span> value &gt; <span class="number">500</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"爆表"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    spark = SparkSession.builder.appName(<span class="string">"project"</span>).getOrCreate()</span><br><span class="line">    data2017 = spark.read.format(<span class="string">"csv"</span>).option(<span class="string">"header"</span>,<span class="string">"true"</span>).option(<span class="string">"inferSchema"</span>,<span class="string">"true"</span>).load(<span class="string">"file:///home/hadoop/data/Beijing_2017_HourlyPM25_created20170803.csv"</span>).select(<span class="string">"Year"</span>,<span class="string">"Month"</span>,<span class="string">"Day"</span>,<span class="string">"Hour"</span>,<span class="string">"Value"</span>,<span class="string">"QC Name"</span>)</span><br><span class="line">    data2016 = spark.read.format(<span class="string">"csv"</span>).option(<span class="string">"header"</span>,<span class="string">"true"</span>).option(<span class="string">"inferSchema"</span>,<span class="string">"true"</span>).load(<span class="string">"file:///home/hadoop/data/Beijing_2016_HourlyPM25_created20170201.csv"</span>).select(<span class="string">"Year"</span>,<span class="string">"Month"</span>,<span class="string">"Day"</span>,<span class="string">"Hour"</span>,<span class="string">"Value"</span>,<span class="string">"QC Name"</span>)</span><br><span class="line">    data2015 = spark.read.format(<span class="string">"csv"</span>).option(<span class="string">"header"</span>,<span class="string">"true"</span>).option(<span class="string">"inferSchema"</span>,<span class="string">"true"</span>).load(<span class="string">"file:///home/hadoop/data/Beijing_2015_HourlyPM25_created20160201.csv"</span>).select(<span class="string">"Year"</span>,<span class="string">"Month"</span>,<span class="string">"Day"</span>,<span class="string">"Hour"</span>,<span class="string">"Value"</span>,<span class="string">"QC Name"</span>)</span><br><span class="line"></span><br><span class="line">    data2017.show()</span><br><span class="line">    data2016.show()</span><br><span class="line">    data2015.show()</span><br><span class="line"></span><br><span class="line">    grade_function_udf = udf(get_grade,StringType())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 进来一个Value，出去一个Grade</span></span><br><span class="line">    group2017 = data2017.withColumn(<span class="string">"Grade"</span>,grade_function_udf(data2017[<span class="string">'Value'</span>])).groupBy(<span class="string">"Grade"</span>).count()</span><br><span class="line">    group2016 = data2016.withColumn(<span class="string">"Grade"</span>,grade_function_udf(data2016[<span class="string">'Value'</span>])).groupBy(<span class="string">"Grade"</span>).count()</span><br><span class="line">    group2015 = data2015.withColumn(<span class="string">"Grade"</span>,grade_function_udf(data2015[<span class="string">'Value'</span>])).groupBy(<span class="string">"Grade"</span>).count()</span><br><span class="line"></span><br><span class="line">    group2015.select(<span class="string">"Grade"</span>, <span class="string">"count"</span>, group2015[<span class="string">'count'</span>] / data2015.count()).show()</span><br><span class="line">    group2016.select(<span class="string">"Grade"</span>, <span class="string">"count"</span>, group2016[<span class="string">'count'</span>] / data2016.count()).show()</span><br><span class="line">    group2017.select(<span class="string">"Grade"</span>, <span class="string">"count"</span>, group2017[<span class="string">'count'</span>] / data2017.count()).show()</span><br><span class="line"></span><br><span class="line">    group2017.show()</span><br><span class="line">    group2016.show()</span><br><span class="line">    group2015.show()</span><br><span class="line">    spark.stop()</span><br></pre></td></tr></table></figure>
+
+<p>得到:</p>
+<p><img src="https://s1.ax1x.com/2020/03/15/88Vb1H.png" alt="88Vb1H.png"></p>
+<p>并在yarn上运行</p>
+<ol>
+<li>先在hadoop集群中创建新文件夹</li>
+</ol>
+<p><code>hadoop fs -mkdir -p /data/</code>（若已经有请删除<code>hadoop fs -rmr /data</code>）</p>
+<ol start="2">
+<li>把2017、16、15 年的数据上传至hadoop</li>
+</ol>
+<p><code>hadoop fs -put Beijing* /data/</code>（参看是否上传成功<code>hadoop fs -ls /data</code>）</p>
+<ol start="3">
+<li>把pycharm中的程序改成yarn中的程序</li>
+</ol>
+<p>再执行 <code>./spark-submit --master yarn ~/script/sparky.py</code></p>
+<p>得到和上面一样的结果:</p>
+<p><img src="https://s1.ax1x.com/2020/03/15/88VzAf.png" alt="88VzAf.png"></p>
+<h3 id="es使用举例"><a href="#es使用举例" class="headerlink" title="es使用举例"></a>es使用举例</h3><p>先es中创建目录</p>
+<p><code>curl -XPUT &#39;http://192.168.211.4:9200/imooc_es&#39;</code></p>
+<p>查看数据</p>
+<p><code>curl -XGET &#39;http://192.168.211.4:9200/_search&#39;</code></p>
+<p>创建一个索引</p>
+<p><code>curl -XPOST &#39;http://hadoop000:9200/imooc_es/student/1&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+&quot;name&quot;:&quot;imooc&quot;,
+&quot;age&quot;:5,
+&quot;interests&quot;:[&quot;Spark&quot;,&quot;Hadoop&quot;]    
+}&#39;</code></p>
+<h3 id="es–-gt-kibana-注意这两个启动都在bin目录下"><a href="#es–-gt-kibana-注意这两个启动都在bin目录下" class="headerlink" title="es–&gt;kibana(注意这两个启动都在bin目录下)"></a>es–&gt;kibana(注意这两个启动都在bin目录下)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark.sql <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pyspark.sql.functions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> pyspark.sql.types <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_grade</span><span class="params">(value)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> value &lt;= <span class="number">50</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">100</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"中等"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">150</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"对敏感人群不健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"不健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">300</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"非常不健康"</span></span><br><span class="line">    <span class="keyword">elif</span> value &lt;= <span class="number">500</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"危险"</span></span><br><span class="line">    <span class="keyword">elif</span> value &gt; <span class="number">500</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"爆表"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    spark = SparkSession.builder.appName(<span class="string">"project"</span>).getOrCreate()</span><br><span class="line"></span><br><span class="line">    data2017 = spark.read.format(<span class="string">"csv"</span>).option(<span class="string">"header"</span>,<span class="string">"true"</span>).option(<span class="string">"inferSchema"</span>,<span class="string">"true"</span>).load(<span class="string">"/data/Beijing_2017_HourlyPM25_created20170803.csv"</span>).select(<span class="string">"Year"</span>,<span class="string">"Month"</span>,<span class="string">"Day"</span>,<span class="string">"Hour"</span>,<span class="string">"Value"</span>,<span class="string">"QC Name"</span>)</span><br><span class="line">    data2016 = spark.read.format(<span class="string">"csv"</span>).option(<span class="string">"header"</span>,<span class="string">"true"</span>).option(<span class="string">"inferSchema"</span>,<span class="string">"true"</span>).load(<span class="string">"/data/Beijing_2016_HourlyPM25_created20170201.csv"</span>).select(<span class="string">"Year"</span>,<span class="string">"Month"</span>,<span class="string">"Day"</span>,<span class="string">"Hour"</span>,<span class="string">"Value"</span>,<span class="string">"QC Name"</span>)</span><br><span class="line">    data2015 = spark.read.format(<span class="string">"csv"</span>).option(<span class="string">"header"</span>,<span class="string">"true"</span>).option(<span class="string">"inferSchema"</span>,<span class="string">"true"</span>).load(<span class="string">"/data/Beijing_2015_HourlyPM25_created20160201.csv"</span>).select(<span class="string">"Year"</span>,<span class="string">"Month"</span>,<span class="string">"Day"</span>,<span class="string">"Hour"</span>,<span class="string">"Value"</span>,<span class="string">"QC Name"</span>)</span><br><span class="line"></span><br><span class="line">    grade_function_udf = udf(get_grade, StringType())</span><br><span class="line"></span><br><span class="line">    group2017 = data2017.withColumn(<span class="string">"Grade"</span>, grade_function_udf(data2017[<span class="string">'Value'</span>])).groupBy(<span class="string">"Grade"</span>).count()</span><br><span class="line">    group2016 = data2016.withColumn(<span class="string">"Grade"</span>, grade_function_udf(data2016[<span class="string">'Value'</span>])).groupBy(<span class="string">"Grade"</span>).count()</span><br><span class="line">    group2015 = data2015.withColumn(<span class="string">"Grade"</span>, grade_function_udf(data2015[<span class="string">'Value'</span>])).groupBy(<span class="string">"Grade"</span>).count()</span><br><span class="line"></span><br><span class="line">    result2017 = group2017.select(<span class="string">"Grade"</span>, <span class="string">"count"</span>).withColumn(<span class="string">"precent"</span>,group2017[<span class="string">'count'</span>] / data2017.count()*<span class="number">100</span>)</span><br><span class="line">    result2016 = group2016.select(<span class="string">"Grade"</span>, <span class="string">"count"</span>).withColumn(<span class="string">"precent"</span>,group2016[<span class="string">'count'</span>] / data2016.count()*<span class="number">100</span>)</span><br><span class="line">    result2015 = group2015.select(<span class="string">"Grade"</span>, <span class="string">"count"</span>).withColumn(<span class="string">"precent"</span>,group2015[<span class="string">'count'</span>] / data2015.count()*<span class="number">100</span>)</span><br><span class="line"><span class="comment"># 将数据写入到es中</span></span><br><span class="line">    result2017.selectExpr(<span class="string">"Grade"</span>, <span class="string">"count"</span>, <span class="string">"precent"</span>).write.format(<span class="string">"org.elasticsearch.spark.sql"</span>).option(<span class="string">"es.nodes"</span>,<span class="string">"192.168.211.4:9200"</span>).mode(<span class="string">"overwrite"</span>).save(<span class="string">"weather2017/pm"</span>)</span><br><span class="line">    result2016.selectExpr(<span class="string">"Grade"</span>, <span class="string">"count"</span>, <span class="string">"precent"</span>).write.format(<span class="string">"org.elasticsearch.spark.sql"</span>).option(<span class="string">"es.nodes"</span>,<span class="string">"192.168.211.4:9200"</span>).mode(<span class="string">"overwrite"</span>).save(<span class="string">"weather2016/pm"</span>)</span><br><span class="line">    result2015.selectExpr(<span class="string">"Grade"</span>, <span class="string">"count"</span>, <span class="string">"precent"</span>).write.format(<span class="string">"org.elasticsearch.spark.sql"</span>).option(<span class="string">"es.nodes"</span>,<span class="string">"192.168.211.4:9200"</span>).mode(<span class="string">"overwrite"</span>).save(<span class="string">"weather2015/pm"</span>)</span><br><span class="line"></span><br><span class="line">    spark.stop()</span><br></pre></td></tr></table></figure>
+
+<p>然后再到192.168.211.4:5601里面查看es的数据是否导进来，再利用kibanna进行可视化</p>
+<p><img src="https://s1.ax1x.com/2020/03/15/88QFit.png" alt="88QFit.png"></p>
 
       
     </div>
@@ -498,6 +572,17 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/spark/" rel="tag"><i class="fa fa-tag"></i> spark</a>
+          
+        </div>
+      
 
       
       
@@ -507,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/leetcode刷题/" rel="next" title="leetcode刷题">
-                <i class="fa fa-chevron-left"></i> leetcode刷题
+              <a href="/2020/03/08/hexo新电脑的设置/" rel="next" title="hexo新电脑的设置">
+                <i class="fa fa-chevron-left"></i> hexo新电脑的设置
               </a>
             
           </div>
@@ -517,8 +602,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/25/HCIA-BigData题目/" rel="prev" title="HCIA-BigData题目">
-                HCIA-BigData题目 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/14/centos硬盘扩容到根目录/" rel="prev" title="centos硬盘扩容到根目录">
+                centos硬盘扩容到根目录 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -563,8 +648,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -697,6 +791,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目概述"><span class="nav-number">1.</span> <span class="nav-text">项目概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-数据来源-http-stateair-net-web-historical-1-1-html"><span class="nav-number">1.1.</span> <span class="nav-text">1. 数据来源: http://stateair.net/web/historical/1/1.html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-根据北京的数据进行统计分析"><span class="nav-number">1.2.</span> <span class="nav-text">2. 根据北京的数据进行统计分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-数据分析–-gt-es–-gt-kibana"><span class="nav-number">1.3.</span> <span class="nav-text">3.  数据分析–&gt;es–&gt;kibana</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es使用举例"><span class="nav-number">1.4.</span> <span class="nav-text">es使用举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#es–-gt-kibana-注意这两个启动都在bin目录下"><span class="nav-number">1.5.</span> <span class="nav-text">es–&gt;kibana(注意这两个启动都在bin目录下)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
