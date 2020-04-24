@@ -94,13 +94,39 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="颜">
-<meta property="og:url" content="http://yoursite.com/archives/2019/09/index.html">
+  <meta name="description" content="算法常见的评估指标分类算法常见的评估指标如下： 对于二类分类器/分类算法，评价指标主要有accuracy， [Precision，Recall，F-score，Pr曲线]，ROC-AUC曲线。 对于多类分类器/分类算法，评价指标主要有accuracy， [宏平均和微平均，F-score]。     预测（横） 实际（纵） + -    + tp fn   - fp tn   tp tn 代表预测正">
+<meta name="keywords" content="python,ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二手车交易价格预测">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/天池/index.html">
 <meta property="og:site_name" content="颜">
+<meta property="og:description" content="算法常见的评估指标分类算法常见的评估指标如下： 对于二类分类器/分类算法，评价指标主要有accuracy， [Precision，Recall，F-score，Pr曲线]，ROC-AUC曲线。 对于多类分类器/分类算法，评价指标主要有accuracy， [宏平均和微平均，F-score]。     预测（横） 实际（纵） + -    + tp fn   - fp tn   tp tn 代表预测正">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=accuracy%3D%5Cfrac%7Btp%2Btn%7D%7Btp%2Bfp%2Btn%2Bfn%7D">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=precision%3D%5Cfrac%7Btp%7D%7Btp%2Bfp%7D%EF%BC%8Crecall%3D%5Cfrac%7Btp%7D%7Btp%2Bfn%7D">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=f1-score%3D%5Cfrac%7B2%7D%7B%5Cfrac%7B1%7D%7BP%7D%2B%5Cfrac%7B1%7D%7BR%7D%7D%3D%5Cfrac%7B2PR%7D%7BP%2BR%7D">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=%5Cbegin%7Baligned%7Dsensitivity%26%3Drecall%3Dtrue%5C%20positive%5C%20rate%5C%5C%20%26%3D%5Cfrac%7Btp%7D%7Btp%2Bfn%7D%5C%5C%20%26%3DP(%5Chat%7By%7D%3D1%7Cy%3D1)%5Cend%7Baligned%7D">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=%5Cbegin%7Baligned%7Dspecifity%26%3D1-false%5C%20positive%5C%20rate%5C%5C%20%26%3D%5Cfrac%7Btn%7D%7Bfp%2Btn%7D%5C%5C%20%26%3DP(%5Chat%7By%7D%3D0%7Cy%3D0)%5Cend%7Baligned%7D">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=y">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=precision%3DP(y%3D1%7C%5Chat%7By%7D%3D1)">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=x">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=y">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=y%3Dx">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=P_1">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=P_0">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=P_1%3EP_0">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=y">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=x">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=%5Cfrac%7B1%7D%7B%5Clambda%20%5Cfrac%7B1%7D%7BP%7D%2B(1-%5Clambda)%5Cfrac%7B1%7D%7BR%7D%7D">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=AP%3D%5Cint_0%5E1%20p(r)d(r)">
+<meta property="og:image" content="https://math.jianshu.com/math?formula=AAP%3D%5Csum_%7Bk%3D1%7D%5E%7BN%7Dp(k)%5CDelta%20r(k)">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/30/Guu8it.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/03/30/Gunx2T.png">
+<meta property="og:updated_time" content="2020-03-30T14:04:00.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="颜">
+<meta name="twitter:title" content="二手车交易价格预测">
+<meta name="twitter:description" content="算法常见的评估指标分类算法常见的评估指标如下： 对于二类分类器/分类算法，评价指标主要有accuracy， [Precision，Recall，F-score，Pr曲线]，ROC-AUC曲线。 对于多类分类器/分类算法，评价指标主要有accuracy， [宏平均和微平均，F-score]。     预测（横） 实际（纵） + -    + tp fn   - fp tn   tp tn 代表预测正">
+<meta name="twitter:image" content="https://math.jianshu.com/math?formula=accuracy%3D%5Cfrac%7Btp%2Btn%7D%7Btp%2Bfp%2Btn%2Bfn%7D">
 
 
 
@@ -108,7 +134,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/archives/2019/09/">
+  <link rel="canonical" href="http://yoursite.com/2020/03/30/天池/">
 
 
 
@@ -119,7 +145,7 @@
 </script>
 
   
-  <title>归档 | 颜</title>
+  <title>二手车交易价格预测 | 颜</title>
   
 
 
@@ -167,7 +193,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,7 +283,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -323,170 +349,266 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/天池/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shiwei-Yan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">二手车交易价格预测
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-30 00:00:00 / 修改时间：22:04:00" itemprop="dateCreated datePublished" datetime="2020-03-30T00:00:00+08:00">2020-03-30</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">2.9k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">3 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        还行! 目前共计 32 篇日志。 继续努力。
-      </span>
       
 
       
+        <h1 id="算法常见的评估指标"><a href="#算法常见的评估指标" class="headerlink" title="算法常见的评估指标"></a>算法常见的评估指标</h1><h2 id="分类算法常见的评估指标如下："><a href="#分类算法常见的评估指标如下：" class="headerlink" title="分类算法常见的评估指标如下："></a>分类算法常见的评估指标如下：</h2><ul>
+<li>对于二类分类器/分类算法，评价指标主要有accuracy， [Precision，Recall，F-score，Pr曲线]，ROC-AUC曲线。</li>
+<li>对于多类分类器/分类算法，评价指标主要有accuracy， [宏平均和微平均，F-score]。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>预测（横） 实际（纵）</th>
+<th>+</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>+</td>
+<td>tp</td>
+<td>fn</td>
+</tr>
+<tr>
+<td>-</td>
+<td>fp</td>
+<td>tn</td>
+</tr>
+</tbody></table>
+<p>tp tn 代表预测正确</p>
+<ul>
+<li>准确率(Accuracy)<br><img src="https://math.jianshu.com/math?formula=accuracy%3D%5Cfrac%7Btp%2Btn%7D%7Btp%2Bfp%2Btn%2Bfn%7D" alt="accuracy=\frac{tp+tn}{tp+fp+tn+fn}"><br> accuracy是最常见也是最基本的评价指标。但是，在二分类且正负样本不平衡的情况下，尤其是对于较少数样本类感兴趣时，accuracy基本无参考价值。如欺诈检测、癌症检测等，100个样例中，99个负例，1个正例。模型将任意样本都分为负例，accuracy值为0.99。但是，拿这个模型去检测新样本，一个正例也分不出来。</li>
+<li>精确率(Precision)、召回率(Recall)<br> <img src="https://math.jianshu.com/math?formula=precision%3D%5Cfrac%7Btp%7D%7Btp%2Bfp%7D%EF%BC%8Crecall%3D%5Cfrac%7Btp%7D%7Btp%2Bfn%7D" alt="precision=\frac{tp}{tp+fp}，recall=\frac{tp}{tp+fn}"><br> precision是相对于模型预测而言的，可以理解为模型做出新预测时的自信度得分是多少或做出这个预测是对的可能性是多少。自信度。<br> recall是相对于真实标签而言的，可以理解为模型预测出的正例占实际正例的比例。覆盖率。<br> 如果模型很贪婪，想要覆盖更多的样本，那么它就有可能会犯错。这个时候的recall值常很高，precision常很低。如果模型很保守，只对很确定的样本做出预测，则precision值常很高，recall值常很低。我们可以选择只看我们感兴趣的样本类，也就是较少数样本类的precision和recall来评价模型的好坏。<br> 疾病检测、反垃圾等，是在保证精确率的条件下提升召回率；搜索等是在保证召回率的情况下提升精确率。</li>
+<li>F1值(F1-score)<br> <img src="https://math.jianshu.com/math?formula=f1-score%3D%5Cfrac%7B2%7D%7B%5Cfrac%7B1%7D%7BP%7D%2B%5Cfrac%7B1%7D%7BR%7D%7D%3D%5Cfrac%7B2PR%7D%7BP%2BR%7D" alt="f1-score=\frac{2}{\frac{1}{P}+\frac{1}{R}}=\frac{2PR}{P+R}"><br> F1值是个综合考虑precision值和recall值的指标。<br> 多类别分类时，有宏平均(macro-average)和微平均(micro-average)两种。<br> 宏平均是指先对每个类别单独计算F1值。取这些值的算术平均值作为全局指标。这种方式平等地对待每个类别，所以其值主要受稀有类别的影响，更能体现模型在稀有类别上的表现。<br> 微平均是指先累加各个类别的tp、fp、tn、fn值，再由这些值来计算F1值。这种方式平等地对待每个样本，所以其值主要受到常见类别的影响。</li>
+<li>ROC-AUC<br> <img src="https://math.jianshu.com/math?formula=%5Cbegin%7Baligned%7Dsensitivity%26%3Drecall%3Dtrue%5C%20positive%5C%20rate%5C%5C%20%26%3D%5Cfrac%7Btp%7D%7Btp%2Bfn%7D%5C%5C%20%26%3DP(%5Chat%7By%7D%3D1%7Cy%3D1)%5Cend%7Baligned%7D" alt="\begin{aligned}sensitivity&amp;=recall=true\ positive\ rate\\ &amp;=\frac{tp}{tp+fn}\\ &amp;=P(\hat{y}=1|y=1)\end{aligned}"><br> <img src="https://math.jianshu.com/math?formula=%5Cbegin%7Baligned%7Dspecifity%26%3D1-false%5C%20positive%5C%20rate%5C%5C%20%26%3D%5Cfrac%7Btn%7D%7Bfp%2Btn%7D%5C%5C%20%26%3DP(%5Chat%7By%7D%3D0%7Cy%3D0)%5Cend%7Baligned%7D" alt="\begin{aligned}specifity&amp;=1-false\ positive\ rate\\ &amp;=\frac{tn}{fp+tn}\\ &amp;=P(\hat{y}=0|y=0)\end{aligned}"><br> 无论<img src="https://math.jianshu.com/math?formula=y" alt="y">的真实概率是多少，都不会影响sensitivity和specificity。也就是说，这两个指标是不会受到不平衡数据的影响的。而<img src="https://math.jianshu.com/math?formula=precision%3DP(y%3D1%7C%5Chat%7By%7D%3D1)" alt="precision=P(y=1|\hat{y}=1)">是会受到数据集中正负比例的影响的。<br> ROC曲线(Receiver Operating Characteristic Curve)是一个以fpr为<img src="https://math.jianshu.com/math?formula=x" alt="x">轴，tpr为<img src="https://math.jianshu.com/math?formula=y" alt="y">轴，取不同的score threshold画出来的。<br> 基本上，ROC曲线下面积即AUC越大，或者说曲线越接近于左上角(fpr=0, tpr=1)，那么模型的分类效果就越好。一般来说，最优score threshold就是ROC曲线离<img src="https://math.jianshu.com/math?formula=y%3Dx" alt="y=x">基准线最远的一点或者说是ROC曲线离左上角最近的一点对应的阈值，再或者是根据用户自定义的cost function来决定的。<br> AUC就是从所有正例样本中随机选择出一个样本，在所有负例样本中随机选择出一个样本，使用分类器进行预测。将正例样本预测为正的概率记作<img src="https://math.jianshu.com/math?formula=P_1" alt="P_1">，将负例样本预测为负的概率记作<img src="https://math.jianshu.com/math?formula=P_0" alt="P_0">，<img src="https://math.jianshu.com/math?formula=P_1%3EP_0" alt="P_1&gt;P_0">的概率就等于AUC值。因此，AUC反映的是分类器对于样本的排序能力。根据这个解释，如果我们完全随机地对样本进行分类，那么AUC应该接近于0.5。另外，AUC值对于样本类别是否均衡并不敏感，这也是不均衡样本通常使用AUC评价分类器性能的一个原因。通常使用AUC的目的，一是为了比较不同模型性能的好坏，二是为了找到得到最佳指标值的那个阈值点。</li>
+<li>PR-AUC<br> PR曲线，是以P为<img src="https://math.jianshu.com/math?formula=y" alt="y">轴，以R为<img src="https://math.jianshu.com/math?formula=x" alt="x">轴，取不同的概率阈值得到不同的(p,r)点后画成的线。<br> 为了解决P、R、F-Measure(即<img src="https://math.jianshu.com/math?formula=%5Cfrac%7B1%7D%7B%5Clambda%20%5Cfrac%7B1%7D%7BP%7D%2B(1-%5Clambda)%5Cfrac%7B1%7D%7BR%7D%7D" alt="\frac{1}{\lambda \frac{1}{P}+(1-\lambda)\frac{1}{R}}">)的单点局限性，得到一个能够反映全局的指标，使用PR-AUC/AP。同样地，PR-AUC值越大，或者说曲线越接近右上角(p=1, r=1)，那么模型就越理想、越好。<br> <img src="https://math.jianshu.com/math?formula=AP%3D%5Cint_0%5E1%20p(r)d(r)" alt="AP=\int_0^1 p(r)d(r)"><ul>
+<li>AAP(Approximated Average Precision)<br> AAP将PR-AUC面积分割成不同的长方形然后求面积和。<br> <img src="https://math.jianshu.com/math?formula=AAP%3D%5Csum_%7Bk%3D1%7D%5E%7BN%7Dp(k)%5CDelta%20r(k)" alt="AAP=\sum_{k=1}^{N}p(k)\Delta r(k)"></li>
+<li>IAP(Interpolated Average Precision)<br> 如果存在r’&gt;r且p’&gt;p，使用p’代替p参与面积计算。AAP会比IAP离实际的PR-AUC更近，面积也会小点。<br> PASCAL VOC中使用IAP作为AP值，认为这一方法能够有效地减少PR曲线中的抖动。然后对于多类别进行AP取平均操作后得mAP值。</li>
+</ul>
+</li>
+</ul>
+<p>算法倾向如果是“宁可错杀一千，不可放过一个”，可以设定在合理的precision值下，最高的recall值作为最优点，找到这个点对应的阈值。总之，我们可以根据具体的应用或者是偏好，在曲线上找到最优的点，去调整模型的阈值，从而得到一个符合具体应用的模型。</p>
+<h2 id="对于回归预测类常见的评估指标如下"><a href="#对于回归预测类常见的评估指标如下" class="headerlink" title="对于回归预测类常见的评估指标如下:"></a>对于回归预测类常见的评估指标如下:</h2><ul>
+<li>平均绝对误差（Mean Absolute Error，MAE），均方误差（Mean Squared Error，MSE），平均绝对百分误差（Mean Absolute Percentage Error，MAPE），均方根误差（Root Mean Squared Error）， R2（R-Square）</li>
+</ul>
+<p><strong>平均绝对误差</strong> <strong>平均绝对误差（Mean Absolute Error，MAE）</strong>:平均绝对误差，其能更好地反映预测值与真实值误差的实际情况，其计算公式如下：<br>$$<br>MAE=\frac{1}{N} \sum_{i=1}^{N}\left|y_{i}-\hat{y}<em>{i}\right|<br>$$<br><strong>均方误差</strong> <strong>均方误差（Mean Squared Error，MSE）</strong>,均方误差,其计算公式为：<br>$$<br>MSE=1NN∑i=1(yi−^yi)2MSE=1N∑i=1N(yi−y^i)2<br>$$<br><strong>R2（R-Square）的公式为</strong>： 残差平方和：<br>$$<br>SSres=∑(yi−^yi)2SSres=∑(yi−y^i)2<br>$$<br>总平均值:<br>$$<br>SStot=∑(yi−¯¯¯yi)2SStot=∑(yi−y¯i)2<br>$$<br>其中¯¯¯yy¯表示yy的平均值 得到R2R2表达式为：<br>$$<br>R^{2}=1-\frac{SS</em>{res}}{SS_{tot}}=1-\frac{\sum\left(y_{i}-\hat{y}<em>{i}\right)^{2}}{\sum\left(y</em>{i}-\overline{y}\right)^{2}}<br>$$<br>R2用于度量因变量的变异中可由自变量解释部分所占的比例，取值范围是 0~1，R2越接近1,表明回归平方和占总平方和的比例越大,回归线与各观测点越接近，用x的变化来解释y值变化的部分就越多,回归的拟合程度就越好。所以R2也称为拟合优度（Goodness of Fit）的统计量。</p>
+<p>yi表示真实值，^yi表示预测值，¯yii表示样本均值。得分越高拟合效果越好。</p>
+<h2 id="偏度和峰度"><a href="#偏度和峰度" class="headerlink" title="偏度和峰度"></a>偏度和峰度</h2><p><img src="https://s1.ax1x.com/2020/03/30/Guu8it.png" alt="Guu8it.png"></p>
+<p><img src="https://s1.ax1x.com/2020/03/30/Gunx2T.png" alt="Gunx2T.png"></p>
 
-        
-        
-        
+      
+    </div>
 
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
         
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+        
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/ML/" rel="tag"><i class="fa fa-tag"></i> ML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/30/天池-饿了么/" rel="next" title="天池-饿了么智慧物流">
+                <i class="fa fa-chevron-left"></i> 天池-饿了么智慧物流
+              </a>
+            
           </div>
-        
-        
 
-        
+          <span class="post-nav-divider"></span>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/15/数据结构python-题目/" itemprop="url">
+          <div class="post-nav-prev post-nav-item">
             
-              <span itemprop="name">数据结构与算法题目python版</span>
+              <a href="/2020/03/30/天池 - 二手车交易价格预测/" rel="prev" title="天池-二手车交易价格预测">
+                天池-二手车交易价格预测 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-15T00:00:00+08:00" content="2019-09-15">
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/15/数据结构python/" itemprop="url">
-            
-              <span itemprop="name">数据结构与算法python版</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-15T00:00:00+08:00" content="2019-09-15">
-          09-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/09/05/matplotlib/" itemprop="url">
-            
-              <span itemprop="name">matplotlib</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-09-05T00:00:00+08:00" content="2019-09-05">
-          09-05
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-    </div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -506,8 +628,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -640,6 +771,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#算法常见的评估指标"><span class="nav-number">1.</span> <span class="nav-text">算法常见的评估指标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分类算法常见的评估指标如下："><span class="nav-number">1.1.</span> <span class="nav-text">分类算法常见的评估指标如下：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于回归预测类常见的评估指标如下"><span class="nav-number">1.2.</span> <span class="nav-text">对于回归预测类常见的评估指标如下:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#偏度和峰度"><span class="nav-number">1.3.</span> <span class="nav-text">偏度和峰度</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -851,6 +999,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   <script src="/js/next-boot.js?v=7.2.0"></script>
 
@@ -868,6 +1020,46 @@
   
 
   
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
 
 
 
@@ -878,6 +1070,8 @@
 
 
 
+
+  
 
 
 

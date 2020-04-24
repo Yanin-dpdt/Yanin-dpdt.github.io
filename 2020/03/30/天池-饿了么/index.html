@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/faviconY.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="top 5% 1.feature 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596">
+<meta name="keywords" content="python,ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="天池-饿了么智慧物流">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/天池-饿了么/index.html">
+<meta property="og:site_name" content="颜">
+<meta property="og:description" content="top 5% 1.feature 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/24/Jrp4pj.jpg">
+<meta property="og:image" content="https://s1.ax1x.com/2020/04/24/JrpfhQ.jpg">
+<meta property="og:updated_time" content="2020-04-24T13:32:43.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="天池-饿了么智慧物流">
+<meta name="twitter:description" content="top 5% 1.feature 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/04/24/Jrp4pj.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2020/03/30/天池-饿了么/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>天池-饿了么智慧物流 | 颜</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">颜</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">控制、PMSM、Python、...</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/30/天池-饿了么/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shiwei-Yan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/touxiang.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="颜">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">天池-饿了么智慧物流
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-03-30 00:00:00" itemprop="dateCreated datePublished" datetime="2020-03-30T00:00:00+08:00">2020-03-30</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-04-24 21:32:43" itemprop="dateModified" datetime="2020-04-24T21:32:43+08:00">2020-04-24</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">34k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">31 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="top-5"><a href="#top-5" class="headerlink" title="top 5%"></a>top 5%</h1><p><img src="https://s1.ax1x.com/2020/04/24/Jrp4pj.jpg" alt="Jrp4pj.jpg"><br><img src="https://s1.ax1x.com/2020/04/24/JrpfhQ.jpg" alt="JrpfhQ.jpg"></p>
+<p>1.feature</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> sklearn.utils <span class="keyword">import</span> shuffle</span><br><span class="line">pd.set_option(<span class="string">'display.max_columns'</span>, <span class="literal">None</span>)</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task1_featuretask</span><span class="params">(train_path,test_path)</span>:</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------文件读取----------------------'</span>)</span><br><span class="line">    <span class="comment"># 读取数据并加入date列</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">read_datafile</span><span class="params">(rootpath, selct)</span>:</span></span><br><span class="line">        file_path = rootpath + selct + <span class="string">'/'</span></span><br><span class="line">        data_list = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> f <span class="keyword">in</span> os.listdir(file_path):</span><br><span class="line">            date = f.split(<span class="string">'.'</span>)[<span class="number">0</span>].split(<span class="string">'_'</span>)[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> selct == <span class="string">'action'</span>:</span><br><span class="line">                df = pd.read_csv(file_path + f, converters=&#123;<span class="string">'tracking_id'</span>: str&#125;)</span><br><span class="line">            <span class="keyword">elif</span> selct == <span class="string">'order'</span>:</span><br><span class="line">                df = pd.read_csv(file_path + f, converters=&#123;<span class="string">'tracking_id'</span>: str&#125;)</span><br><span class="line">            <span class="keyword">elif</span> selct == <span class="string">'courier'</span>:</span><br><span class="line">                df = pd.read_csv(file_path + f)</span><br><span class="line">            <span class="keyword">elif</span> selct == <span class="string">'distance'</span>:</span><br><span class="line">                df = pd.read_csv(file_path + f, converters=&#123;<span class="string">'tracking_id'</span>: str, <span class="string">'target_tracking_id'</span>: str&#125;)</span><br><span class="line">            df[<span class="string">'date'</span>] = date</span><br><span class="line">            data_list.append(df)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pd.concat(data_list)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">majorid</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'majorid'</span>] = df[<span class="string">'date'</span>].map(str) + df[<span class="string">'courier_id'</span>].map(str) + <span class="string">'_'</span> + df[<span class="string">'wave_index'</span>].map(str)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dropdate</span><span class="params">(df)</span>:</span></span><br><span class="line">        df.drop([<span class="string">'date'</span>, <span class="string">'courier_id'</span>, <span class="string">'wave_index'</span>], axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line">    print(<span class="string">'----------------------TASK1~特征工程----------------------'</span>)</span><br><span class="line">    print(<span class="string">'----------------------action的操作(1/4)----------------------'</span>)</span><br><span class="line">    <span class="comment">## action的操作</span></span><br><span class="line">    <span class="comment"># courier_id                      骑士id</span></span><br><span class="line">    <span class="comment"># wave_index                      波次index</span></span><br><span class="line">    <span class="comment"># tracking_id                     订单id</span></span><br><span class="line">    <span class="comment"># courier_wave_start_lng          波次起始时刻骑士位置</span></span><br><span class="line">    <span class="comment"># courier_wave_start_lat          波次起始时刻骑士位置</span></span><br><span class="line">    <span class="comment"># action_type                     行为类型</span></span><br><span class="line">    <span class="comment"># expect_time                     行为对应时刻</span></span><br><span class="line"></span><br><span class="line">    action_train = read_datafile(train_path, <span class="string">'action'</span>)</span><br><span class="line">    action_test = read_datafile(test_path, <span class="string">'action'</span>)</span><br><span class="line"></span><br><span class="line">    action_train = majorid(action_train)</span><br><span class="line">    action_test = majorid(action_test)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">action_train_group</span><span class="params">(df)</span>:</span></span><br><span class="line">        groups = df.groupby([<span class="string">'majorid'</span>])</span><br><span class="line">        df_future = []</span><br><span class="line">        df_last = []</span><br><span class="line">        <span class="keyword">for</span> name, group <span class="keyword">in</span> tqdm(groups):</span><br><span class="line">            <span class="comment"># future_data代表后面55%个</span></span><br><span class="line">            future_data = group.tail(int(group.shape[<span class="number">0</span>] * <span class="number">0.55</span>))</span><br><span class="line">            last_data = group.drop(future_data.index)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># last操作</span></span><br><span class="line">            last_data = last_data.tail(<span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 此时last_data 为最后一组数</span></span><br><span class="line">            last_data.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 对future处理:把第一个样本标记为正样本</span></span><br><span class="line">            <span class="comment"># (一般是把(二分类)任务中要查找(识别)出来的类别称做正类)</span></span><br><span class="line">            future_data[<span class="string">'label'</span>] = <span class="number">0</span></span><br><span class="line">            future_data.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">            future_data.loc[<span class="number">0</span>, <span class="string">'label'</span>] = <span class="number">1</span>  <span class="comment"># 标记正负样本</span></span><br><span class="line"></span><br><span class="line">            df_future.append(future_data)</span><br><span class="line">            df_last.append(last_data)</span><br><span class="line">        return_last = pd.concat(df_last)</span><br><span class="line">        return_future = pd.concat(df_future)</span><br><span class="line">        return_last.rename(&#123;<span class="string">'expect_time'</span>: <span class="string">'last_time'</span>&#125;, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)  <span class="comment"># 把expecttime列重命名</span></span><br><span class="line">        return_future = shuffle(return_future)  <span class="comment"># 随机打乱顺序</span></span><br><span class="line">        <span class="keyword">return</span> return_last, return_future</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">action_test_group</span><span class="params">(df)</span>:</span></span><br><span class="line">        groups = df.groupby([<span class="string">'majorid'</span>])</span><br><span class="line">        df_future = []</span><br><span class="line">        df_last = []</span><br><span class="line">        <span class="keyword">for</span> name, group <span class="keyword">in</span> tqdm(groups):</span><br><span class="line">            future_data = group[group[<span class="string">'expect_time'</span>] == <span class="number">0</span>]</span><br><span class="line">            last_data = group.drop(future_data.index)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># last操作</span></span><br><span class="line">            last_data = last_data.tail(<span class="number">1</span>)</span><br><span class="line">            last_data.reset_index(drop=<span class="literal">True</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># future操作</span></span><br><span class="line">            future_data[<span class="string">'label'</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">            df_future.append(future_data)</span><br><span class="line">            df_last.append(last_data)</span><br><span class="line">        return_last = pd.concat(df_last)</span><br><span class="line">        return_future = pd.concat(df_future)</span><br><span class="line">        return_last.rename(&#123;<span class="string">'expect_time'</span>: <span class="string">'last_time'</span>&#125;, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> return_last, return_future</span><br><span class="line"></span><br><span class="line">    action_train_last, action_train_future = action_train_group(action_train)</span><br><span class="line">    action_test_last, action_test_future = action_test_group(action_test)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------distance操作(2/4)----------------------'</span>)</span><br><span class="line">    <span class="comment"># ## distance操作</span></span><br><span class="line">    <span class="comment"># courier_id          骑士id</span></span><br><span class="line">    <span class="comment"># wave_index          波次id</span></span><br><span class="line">    <span class="comment"># tracking_id         源订单id</span></span><br><span class="line">    <span class="comment"># source_type         源点类型（Assign/PickFood/DeliverFood）</span></span><br><span class="line">    <span class="comment"># source_lng          源点经度</span></span><br><span class="line">    <span class="comment"># source_lat          源点纬度</span></span><br><span class="line">    <span class="comment"># target_tracking_id  目标订单id</span></span><br><span class="line">    <span class="comment"># target_type         目标点类型（Assign/PickFood/DeliverFood）</span></span><br><span class="line">    <span class="comment"># target_lng          目标点经度</span></span><br><span class="line">    <span class="comment"># target_lat          目标点纬度</span></span><br><span class="line">    <span class="comment"># grid_distance       源点与目标点的高德距离</span></span><br><span class="line"></span><br><span class="line">    distance_train = read_datafile(train_path, <span class="string">'distance'</span>)</span><br><span class="line">    distance_test = read_datafile(test_path, <span class="string">'distance'</span>)</span><br><span class="line"></span><br><span class="line">    distance_train = majorid(distance_train)</span><br><span class="line">    distance_test = majorid(distance_test)</span><br><span class="line"></span><br><span class="line">    distance_train = dropdate(distance_train)</span><br><span class="line">    distance_test = dropdate(distance_test)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算曼哈顿距离</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tanlism_distance</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'target_tan'</span>] = (df[<span class="string">'source_lat'</span>] - df[<span class="string">'target_lat'</span>]) / (</span><br><span class="line">                df[<span class="string">'source_lng'</span>] - df[<span class="string">'target_lng'</span>])  <span class="comment"># df会自动处理出正无穷和负无穷，很秀</span></span><br><span class="line">        df[<span class="string">'target_tan'</span>] = np.arctan(df[<span class="string">'target_tan'</span>])</span><br><span class="line">        df[<span class="string">'target_tan'</span>] = np.degrees(df[<span class="string">'target_tan'</span>])</span><br><span class="line">        df[<span class="string">'target_MHD'</span>] = abs(df[<span class="string">'source_lat'</span>] - df[<span class="string">'target_lat'</span>]) + abs(</span><br><span class="line">            df[<span class="string">'source_lng'</span>] - df[<span class="string">'target_lng'</span>])  <span class="comment"># 加入曼哈顿距离</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    distance_train = tanlism_distance(distance_train)</span><br><span class="line">    distance_test = tanlism_distance(distance_test)</span><br><span class="line"></span><br><span class="line">    rename_rule = &#123;<span class="string">'source_type'</span>: <span class="string">'action_type'</span>&#125;</span><br><span class="line"></span><br><span class="line">    distance_test.rename(rename_rule, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">    distance_train.rename(rename_rule, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    feature_train = pd.merge(left=action_train_last, right=distance_train,</span><br><span class="line">                             on=[<span class="string">'majorid'</span>, <span class="string">'tracking_id'</span>, <span class="string">'action_type'</span>],</span><br><span class="line">                             how=<span class="string">'left'</span>)</span><br><span class="line">    feature_test = pd.merge(left=action_test_last, right=distance_test, on=[<span class="string">'majorid'</span>, <span class="string">'tracking_id'</span>, <span class="string">'action_type'</span>],</span><br><span class="line">                            how=<span class="string">'left'</span>)</span><br><span class="line"></span><br><span class="line">    rename_rule = &#123;<span class="string">'tracking_id'</span>: <span class="string">'last_tracking_id'</span>, <span class="string">'action_type'</span>: <span class="string">'last_action_type'</span>,</span><br><span class="line">                   <span class="string">'target_tracking_id'</span>: <span class="string">'tracking_id'</span>, <span class="string">'target_type'</span>: <span class="string">'action_type'</span>&#125;</span><br><span class="line"></span><br><span class="line">    feature_test.rename(rename_rule, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">    feature_train.rename(rename_rule, axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    feature_test.drop([<span class="string">'courier_wave_start_lng'</span>, <span class="string">'courier_wave_start_lat'</span>], axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">    feature_train.drop([<span class="string">'courier_wave_start_lng'</span>, <span class="string">'courier_wave_start_lat'</span>], axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">    feature_train = dropdate(feature_train)</span><br><span class="line">    feature_test = dropdate(feature_test)</span><br><span class="line"></span><br><span class="line">    feature_train = pd.merge(left=action_train_future, right=feature_train,</span><br><span class="line">                             on=[<span class="string">'majorid'</span>, <span class="string">'tracking_id'</span>, <span class="string">'action_type'</span>],</span><br><span class="line">                             how=<span class="string">'left'</span>)</span><br><span class="line">    feature_test = pd.merge(left=action_test_future, right=feature_test, on=[<span class="string">'majorid'</span>, <span class="string">'tracking_id'</span>, <span class="string">'action_type'</span>],</span><br><span class="line">                            how=<span class="string">'left'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">del</span> action_test, action_test_future, action_test_last</span><br><span class="line">    <span class="keyword">del</span> action_train, action_train_future, action_train_last</span><br><span class="line">    <span class="keyword">del</span> distance_test, distance_train</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------order操作(3/4)----------------------'</span>)</span><br><span class="line">    <span class="comment"># ## order操作</span></span><br><span class="line">    <span class="comment"># courier_id           骑士id</span></span><br><span class="line">    <span class="comment"># wave_index           波次id</span></span><br><span class="line">    <span class="comment"># tracking_id          订单id</span></span><br><span class="line">    <span class="comment"># weather_grade        天气状况(正常天气/轻微恶劣天气/恶劣天气/极恶劣天气/罕见恶劣天气)</span></span><br><span class="line">    <span class="comment"># pick_lng             取餐经度</span></span><br><span class="line">    <span class="comment"># pick_lat             取餐纬度</span></span><br><span class="line">    <span class="comment"># deliver_lng          送餐经度</span></span><br><span class="line">    <span class="comment"># deliver_lat          送餐纬度</span></span><br><span class="line">    <span class="comment"># create_time          订单创建时间</span></span><br><span class="line">    <span class="comment"># confirm_time         订单确认时间</span></span><br><span class="line">    <span class="comment"># assigned_time        订单分配时间</span></span><br><span class="line">    <span class="comment"># time                 时间戳</span></span><br><span class="line">    <span class="comment"># promise_deliver_time 承诺送达时间</span></span><br><span class="line">    <span class="comment"># estimate_pick_time   预计取餐时间</span></span><br><span class="line">    <span class="comment"># aoi_id               送餐点所在aoi id，aoi_id是可以唯一标识一个小区，写字楼园区，学校，医院等</span></span><br><span class="line">    <span class="comment"># shop_id              商户id，可以唯一标识一个商户</span></span><br><span class="line"></span><br><span class="line">    order_train = read_datafile(train_path, <span class="string">'order'</span>)</span><br><span class="line">    order_test = read_datafile(test_path, <span class="string">'order'</span>)</span><br><span class="line"></span><br><span class="line">    order_test = majorid(order_test)</span><br><span class="line">    order_train = majorid(order_train)</span><br><span class="line"></span><br><span class="line">    order_test = dropdate(order_test)</span><br><span class="line">    order_train = dropdate(order_train)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tanlism_order</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'delivery_tan'</span>] = (df[<span class="string">'deliver_lat'</span>] - df[<span class="string">'pick_lat'</span>]) / (df[<span class="string">'deliver_lng'</span>] - df[<span class="string">'pick_lng'</span>])</span><br><span class="line">        df[<span class="string">'delivery_tan'</span>] = np.arctan(df[<span class="string">'delivery_tan'</span>])</span><br><span class="line">        df[<span class="string">'delivery_tan'</span>] = np.degrees(df[<span class="string">'delivery_tan'</span>])</span><br><span class="line">        df[<span class="string">'delivery_MHD'</span>] = abs(df[<span class="string">'deliver_lat'</span>] - df[<span class="string">'pick_lat'</span>]) + abs(</span><br><span class="line">            df[<span class="string">'deliver_lng'</span>] - df[<span class="string">'pick_lng'</span>])  <span class="comment"># 加入曼哈顿距离</span></span><br><span class="line"></span><br><span class="line">        df.drop([<span class="string">'deliver_lat'</span>, <span class="string">'pick_lat'</span>, <span class="string">'deliver_lng'</span>, <span class="string">'pick_lng'</span>], axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    order_test = tanlism_order(order_test)</span><br><span class="line">    order_train = tanlism_order(order_train)</span><br><span class="line"></span><br><span class="line">    feature_test = pd.merge(left=feature_test, right=order_test, on=[<span class="string">'majorid'</span>, <span class="string">'tracking_id'</span>], how=<span class="string">'left'</span>)</span><br><span class="line">    feature_train = pd.merge(left=feature_train, right=order_train, on=[<span class="string">'majorid'</span>, <span class="string">'tracking_id'</span>], how=<span class="string">'left'</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------courier操作(4/4)----------------------'</span>)</span><br><span class="line">    <span class="comment"># ## courier操作</span></span><br><span class="line">    <span class="comment"># courier_id 骑士id</span></span><br><span class="line">    <span class="comment"># level      新老骑士</span></span><br><span class="line">    <span class="comment"># speed      骑士速度</span></span><br><span class="line">    <span class="comment"># max_load   背单能力</span></span><br><span class="line"></span><br><span class="line">    courier_train = read_datafile(train_path, <span class="string">'courier'</span>)</span><br><span class="line">    courier_test = read_datafile(test_path, <span class="string">'courier'</span>)</span><br><span class="line"></span><br><span class="line">    feature_test = pd.merge(left=feature_test, right=courier_test, on=[<span class="string">'courier_id'</span>, <span class="string">'date'</span>], how=<span class="string">'left'</span>)</span><br><span class="line">    feature_train = pd.merge(left=feature_train, right=courier_train, on=[<span class="string">'courier_id'</span>, <span class="string">'date'</span>], how=<span class="string">'left'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 加入新的特征：id, rush和road</span></span><br><span class="line">    feature_train[<span class="string">'id'</span>] = range(feature_train.shape[<span class="number">0</span>])</span><br><span class="line">    feature_test[<span class="string">'id'</span>] = range(feature_test.shape[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_rush</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'rush'</span>] = (df[<span class="string">'last_time'</span>] - df[<span class="string">'create_time'</span>]) / (df[<span class="string">'promise_deliver_time'</span>] - df[<span class="string">'create_time'</span>])</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    feature_train = add_rush(feature_train)</span><br><span class="line">    feature_test = add_rush(feature_test)</span><br><span class="line"></span><br><span class="line">    a = time.strftime(<span class="string">'%a_%H'</span>, time.localtime(<span class="number">1582094246</span>))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 根据日期转化 分为  工作日/周末   高峰/非高峰</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_road</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'now'</span>] = df[<span class="string">'last_time'</span>].apply(<span class="keyword">lambda</span> x: time.strftime(<span class="string">'%a_%H'</span>, time.localtime(x)))  <span class="comment"># 格式化时间戳为本地的时间</span></span><br><span class="line">        df[<span class="string">'is_holiday'</span>] = df[<span class="string">'now'</span>].apply(<span class="keyword">lambda</span> x: <span class="number">1</span> <span class="keyword">if</span> x.split(<span class="string">'_'</span>)[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">'Sat'</span>, <span class="string">'Sun'</span>] <span class="keyword">else</span> <span class="number">0</span>)</span><br><span class="line">        busytime = [<span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'11'</span>, <span class="string">'12'</span>, <span class="string">'17'</span>, <span class="string">'18'</span>]</span><br><span class="line">        normtime = [<span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'9'</span>, <span class="string">'10'</span>, <span class="string">'13'</span>, <span class="string">'14'</span>, <span class="string">'15'</span>, <span class="string">'16'</span>, <span class="string">'19'</span>, <span class="string">'20'</span>, <span class="string">'21'</span>, <span class="string">'22'</span>]</span><br><span class="line">        df[<span class="string">'road'</span>] = df[<span class="string">'now'</span>].apply(</span><br><span class="line">            <span class="keyword">lambda</span> x: <span class="number">1</span> <span class="keyword">if</span> x.split(<span class="string">'_'</span>)[<span class="number">1</span>] <span class="keyword">in</span> busytime <span class="keyword">else</span> <span class="number">2</span> <span class="keyword">if</span> x.split(<span class="string">'_'</span>)[<span class="number">1</span>] <span class="keyword">in</span> normtime <span class="keyword">else</span> <span class="number">3</span>)</span><br><span class="line">        df.drop([<span class="string">'now'</span>], axis=<span class="number">1</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    feature_test = add_road(feature_test)</span><br><span class="line">    feature_train = add_road(feature_train)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># weather_grade转化为特征</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">weather</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> x == <span class="string">'正常天气'</span>:</span><br><span class="line">            x = <span class="number">4</span></span><br><span class="line">        <span class="keyword">elif</span> x == <span class="string">'轻微恶劣天气'</span>:</span><br><span class="line">            x = <span class="number">3</span></span><br><span class="line">        <span class="keyword">elif</span> x == <span class="string">'恶劣天气'</span>:</span><br><span class="line">            x = <span class="number">2</span></span><br><span class="line">        <span class="keyword">elif</span> x == <span class="string">'极恶劣天气'</span>:</span><br><span class="line">            x = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            x = <span class="number">0</span></span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">    feature_train[<span class="string">'weather_grade'</span>] = feature_train[<span class="string">'weather_grade'</span>].apply(<span class="keyword">lambda</span> x: weather(x))</span><br><span class="line">    feature_test[<span class="string">'weather_grade'</span>] = feature_test[<span class="string">'weather_grade'</span>].apply(<span class="keyword">lambda</span> x: weather(x))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 加入expect_time-create_time和promise_deliver_time-expect_time作为预测的目标值</span></span><br><span class="line">    <span class="comment"># 一个时间是 从 下订单 到 这一action 之间的时间--&gt;已花费时间</span></span><br><span class="line">    <span class="comment"># 另一方  是 从 这一action 到 承诺送达的时间--&gt;剩余时间</span></span><br><span class="line">    <span class="comment"># expect_time就相当于当前时间</span></span><br><span class="line">    feature_train[<span class="string">'expect_used_time'</span>] = feature_train[<span class="string">'expect_time'</span>] - feature_train[<span class="string">'create_time'</span>]</span><br><span class="line">    feature_train[<span class="string">'will_residue_time'</span>] = feature_train[<span class="string">'promise_deliver_time'</span>] - feature_train[<span class="string">'expect_time'</span>]</span><br><span class="line">    feature_test[<span class="string">'expect_used_time'</span>] = <span class="number">0</span></span><br><span class="line">    feature_test[<span class="string">'will_residue_time'</span>] = <span class="number">0</span></span><br><span class="line">    <span class="comment"># feature_train.info()</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------异常值处理----------------------'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># # 异常值处理</span></span><br><span class="line">    <span class="comment"># 重新包装了一个异常值处理函数，把异常值清洗设为50%中位数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deal_outliers</span><span class="params">(df, col)</span>:</span></span><br><span class="line">        <span class="comment"># df = feature_train</span></span><br><span class="line">        <span class="comment"># col = 'expect_used_time'</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">Box_outliers</span><span class="params">(data_ser)</span>:</span></span><br><span class="line">            iqr = <span class="number">3</span> * (data_ser.quantile(<span class="number">0.75</span>) - data_ser.quantile(<span class="number">0.25</span>))</span><br><span class="line">            val_low = data_ser.quantile(<span class="number">0.25</span>) - iqr</span><br><span class="line">            val_up = data_ser.quantile(<span class="number">0.75</span>) + iqr</span><br><span class="line">            <span class="keyword">return</span> val_low, val_up</span><br><span class="line"></span><br><span class="line">        data_ser = df[col]</span><br><span class="line">        val_low, val_up = Box_outliers(df[col])</span><br><span class="line">        std_data = df[col].quantile(<span class="number">0.5</span>)</span><br><span class="line">        df[col] = df[col].apply(<span class="keyword">lambda</span> x: std_data <span class="keyword">if</span> x &lt; val_low <span class="keyword">else</span> std_data <span class="keyword">if</span> x &gt; val_up <span class="keyword">else</span> x)</span><br><span class="line"></span><br><span class="line">        sns.boxplot(y=df[col], data=df, palette=<span class="string">"Set1"</span>)</span><br><span class="line">        <span class="keyword">return</span> df[col]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 下边是实际需要运行的</span></span><br><span class="line">    feature_train[<span class="string">'expect_used_time'</span>] = deal_outliers(feature_train, <span class="string">'expect_used_time'</span>)</span><br><span class="line">    feature_train[<span class="string">'will_residue_time'</span>] = deal_outliers(feature_train, <span class="string">'will_residue_time'</span>)</span><br><span class="line"></span><br><span class="line">    feature_train[<span class="string">'expect_used_time'</span>].describe()</span><br><span class="line"></span><br><span class="line">    feature_test.to_pickle(<span class="string">'../user_data/feature_test_reg.pkl'</span>)</span><br><span class="line">    feature_train.to_pickle(<span class="string">'../user_data/feature_train_reg.pkl'</span>)</span><br><span class="line">    print(<span class="string">'******************特征工程完毕******************'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    train_path = <span class="string">'../data/eleme_round1_train_20200313/'</span></span><br><span class="line">    test_path = <span class="string">'../data/eleme_round1_testB_20200413/'</span></span><br><span class="line">    task1_featuretask(train_path,test_path)</span><br></pre></td></tr></table></figure>
+
+<p>2.model</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> metrics</span><br><span class="line"><span class="keyword">from</span> sklearn.externals <span class="keyword">import</span> joblib</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GroupKFold, KFold</span><br><span class="line"><span class="keyword">import</span> gc</span><br><span class="line"><span class="keyword">import</span> lightgbm <span class="keyword">as</span> lgb</span><br><span class="line">pd.set_option(<span class="string">'display.max_columns'</span>, <span class="literal">None</span>)</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task2_regressortask</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'----------------------TASK2~回归问题12----------------------'</span>)</span><br><span class="line">    feature_test = pd.read_pickle(<span class="string">'../user_data/feature_test_reg.pkl'</span>)</span><br><span class="line">    feature_train = pd.read_pickle(<span class="string">'../user_data/feature_train_reg.pkl'</span>)</span><br><span class="line"></span><br><span class="line">    reg_prediction = feature_test</span><br><span class="line">    reg_prediction[<span class="string">'expect_time'</span>] = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 注意这边的 'expect_time'</span></span><br><span class="line">    <span class="comment"># 为什么是0，是因为expect_time 早已变成last_time</span></span><br><span class="line">    reg_prediction[<span class="string">'expect_used_time'</span>] = <span class="number">0</span></span><br><span class="line">    reg_prediction[<span class="string">'will_residue_time'</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------回归问题1预测expect_used_time----------------------'</span>)</span><br><span class="line">    <span class="comment"># # 建立时间预测的回归任务1</span></span><br><span class="line">    <span class="comment"># print('----------------------回归1调参----------------------')</span></span><br><span class="line">    <span class="comment"># y_col = 'expect_used_time'</span></span><br><span class="line">    <span class="comment"># # x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'target_tan', 'delivery_tan', 'delivery_MHD', 'target_MHD']# 加入expect_used_time和will_residue_time之后的x_col</span></span><br><span class="line">    <span class="comment"># x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'delivery_MHD', 'target_MHD']</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># t0 = time.time()</span></span><br><span class="line">    <span class="comment"># X_train, X_val, Y_train, Y_val = train_test_split(feature_train[x_col], feature_train[y_col], test_size=0.25)</span></span><br><span class="line">    <span class="comment"># def find_best_param(model):</span></span><br><span class="line">    <span class="comment">#     lgb_param_test = &#123;</span></span><br><span class="line">    <span class="comment">#         'n_estimators': [10000],</span></span><br><span class="line">    <span class="comment">#         'learning_rate': [0.05],</span></span><br><span class="line">    <span class="comment">#         'min_child_weight': [0],</span></span><br><span class="line">    <span class="comment">#         'max_delta_step': [1],</span></span><br><span class="line">    <span class="comment">#         'colsample_bytree': [0.5,0.8],</span></span><br><span class="line">    <span class="comment">#         'reg_alpha': [0.8,1,1.2],</span></span><br><span class="line">    <span class="comment">#         'reg_lambda': [0.8,1,1.2],</span></span><br><span class="line">    <span class="comment">#         'scale_pos_weight': [0.8,1,1.2],</span></span><br><span class="line">    <span class="comment">#         'num_leaves': [340,350,400],</span></span><br><span class="line">    <span class="comment">#         'max_depth': [90,100,130],</span></span><br><span class="line">    <span class="comment">#         'subsample': [ 0.1,0.12,0.14],</span></span><br><span class="line">    <span class="comment">#         'min_child_samples': [1,2,4,3],</span></span><br><span class="line">    <span class="comment">#     &#125;</span></span><br><span class="line">    <span class="comment"># #</span></span><br><span class="line">    <span class="comment"># # 注意RandomizedSearchCV跟GridSearchCV的参数 param_distributions跟param_grid作用相同，但名字不同</span></span><br><span class="line">    <span class="comment">#     grid_search = RandomizedSearchCV(estimator=model, param_distributions=lgb_param_test, scoring='mean_squared_error', cv=3)</span></span><br><span class="line">    <span class="comment"># #     grid_search = GridSearchCV(estimator=model, param_grid=xgb_param_test, scoring='mean_squared_error', cv=5)</span></span><br><span class="line">    <span class="comment">#     grid_search.fit(X_train,Y_train,</span></span><br><span class="line">    <span class="comment">#                     eval_names=['train', 'valid'],</span></span><br><span class="line">    <span class="comment">#                     eval_set=[(X_train, Y_train), (X_val, Y_val)],</span></span><br><span class="line">    <span class="comment">#                     verbose=500,</span></span><br><span class="line">    <span class="comment">#                     eval_metric='mae',</span></span><br><span class="line">    <span class="comment">#                     early_stopping_rounds=100)</span></span><br><span class="line">    <span class="comment">#     print(grid_search.best_params_)</span></span><br><span class="line">    <span class="comment"># #</span></span><br><span class="line">    <span class="comment"># lgbreg = lgb.LGBMRegressor(objective = 'regression_l1',metric = 'mae')</span></span><br><span class="line">    <span class="comment"># find_best_param(lgbreg)</span></span><br><span class="line">    <span class="comment"># gc.collect()</span></span><br><span class="line">    <span class="comment"># t1 = time.time()</span></span><br><span class="line">    <span class="comment"># print('end train, use&#123;&#125; second'.format(t1-t0))</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 建立时间预测的回归任务1</span></span><br><span class="line">    y_col = <span class="string">'expect_used_time'</span></span><br><span class="line">    <span class="comment"># x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'target_tan', 'delivery_tan', 'delivery_MHD', 'target_MHD']# 加入expect_used_time和will_residue_time之后的x_col</span></span><br><span class="line">    x_col = [<span class="string">'weather_grade'</span>, <span class="string">'level'</span>, <span class="string">'speed'</span>, <span class="string">'max_load'</span>, <span class="string">'is_holiday'</span>, <span class="string">'rush'</span>, <span class="string">'road'</span>, <span class="string">'grid_distance'</span>,</span><br><span class="line">             <span class="string">'delivery_MHD'</span>,</span><br><span class="line">             <span class="string">'target_MHD'</span>]</span><br><span class="line"></span><br><span class="line">    t0 = time.time()</span><br><span class="line">    model = lgb.LGBMRegressor(objective=<span class="string">'regression_l1'</span>, metric=<span class="string">'mae'</span>,</span><br><span class="line">                              subsample=<span class="number">0.14</span>, scale_pos_weight=<span class="number">1</span>,</span><br><span class="line">                              reg_lambda=<span class="number">1.2</span>, reg_alpha=<span class="number">1</span>, num_leaves=<span class="number">400</span>,</span><br><span class="line">                              n_estimators=<span class="number">10000</span>, min_child_weight=<span class="number">0</span>,</span><br><span class="line">                              min_child_samples=<span class="number">2</span>, max_depth=<span class="number">130</span>,</span><br><span class="line">                              max_delta_step=<span class="number">1</span>, learning_rate=<span class="number">0.05</span>,</span><br><span class="line">                              colsample_bytree=<span class="number">0.5</span></span><br><span class="line">                              )</span><br><span class="line"></span><br><span class="line">    valueK = <span class="number">10</span></span><br><span class="line">    oof = []</span><br><span class="line">    df_importance_list = []</span><br><span class="line"></span><br><span class="line">    kfold = KFold(n_splits=valueK, shuffle=<span class="literal">True</span>, random_state=<span class="number">2020</span>)</span><br><span class="line">    <span class="keyword">for</span> fold_id, (trn_idx, val_idx) <span class="keyword">in</span> enumerate(kfold.split(feature_train[x_col], feature_train[y_col])):</span><br><span class="line">        X_train = feature_train.iloc[trn_idx][x_col]</span><br><span class="line">        Y_train = feature_train.iloc[trn_idx][y_col]</span><br><span class="line"></span><br><span class="line">        X_val = feature_train.iloc[val_idx][x_col]</span><br><span class="line">        Y_val = feature_train.iloc[val_idx][y_col]</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'\nFold&#123;&#125; Training ======================================\n'</span>.format(fold_id + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">        lgb_model = model.fit(</span><br><span class="line">            X_train,</span><br><span class="line">            Y_train,</span><br><span class="line">            eval_names=[<span class="string">'train'</span>, <span class="string">'valid'</span>],</span><br><span class="line">            eval_set=[(X_train, Y_train), (X_val, Y_val)],</span><br><span class="line">            verbose=<span class="number">500</span>,</span><br><span class="line">            eval_metric=<span class="string">'mae'</span>,</span><br><span class="line">            early_stopping_rounds=<span class="number">100</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        pred_val = lgb_model.predict(X_val, num_iteration=lgb_model.best_iteration_)</span><br><span class="line">        df_oof = feature_train.iloc[val_idx][[<span class="string">'id'</span>, y_col]].copy()</span><br><span class="line">        df_oof[<span class="string">'pred'</span>] = pred_val</span><br><span class="line">        oof.append(df_oof)</span><br><span class="line"></span><br><span class="line">        pred_test = lgb_model.predict(feature_test[x_col], num_iteration=lgb_model.best_iteration_)</span><br><span class="line">        reg_prediction[<span class="string">'expect_used_time'</span>] += (pred_test / valueK)</span><br><span class="line"></span><br><span class="line">        df_importance = pd.DataFrame(&#123;</span><br><span class="line">            <span class="string">'column'</span>: x_col,</span><br><span class="line">            <span class="string">'importance'</span>: lgb_model.feature_importances_</span><br><span class="line">        &#125;)</span><br><span class="line">        df_importance_list.append(df_importance)</span><br><span class="line">        <span class="comment"># break</span></span><br><span class="line">        joblib.dump(lgb_model, <span class="string">'../user_data/model_data/model1&#123;&#125;.dat'</span>.format(fold_id))</span><br><span class="line">        <span class="comment">#     del lgb_model, pred_val, pred_test, X_train, Y_train, X_val, Y_val</span></span><br><span class="line">        gc.collect()</span><br><span class="line">    t1 = time.time()</span><br><span class="line">    print(<span class="string">'end train, use&#123;&#125; second'</span>.format(t1 - t0))</span><br><span class="line"></span><br><span class="line">    df_oof = pd.concat(oof)</span><br><span class="line">    mae = metrics.mean_absolute_error(df_oof[y_col], df_oof[<span class="string">'pred'</span>])</span><br><span class="line">    print(<span class="string">'mae:'</span>, mae)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------回归问题2预测will_residue_time----------------------'</span>)</span><br><span class="line">    <span class="comment"># # 建立时间预测的回归任务2</span></span><br><span class="line">    <span class="comment"># print('----------------------回归2调参----------------------')</span></span><br><span class="line">    <span class="comment"># y_col = 'will_residue_time'</span></span><br><span class="line">    <span class="comment"># # x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'target_tan', 'delivery_tan', 'delivery_MHD', 'target_MHD']# 加入expect_used_time和will_residue_time之后的x_col</span></span><br><span class="line">    <span class="comment"># x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'delivery_MHD', 'target_MHD']</span></span><br><span class="line">    <span class="comment"># # x_col = ['speed', 'rush', 'grid_distance', 'delivery_MHD', 'target_MHD']</span></span><br><span class="line">    <span class="comment"># t0 = time.time()</span></span><br><span class="line">    <span class="comment"># X_train, X_val, Y_train, Y_val = train_test_split(feature_train[x_col], feature_train[y_col], test_size=0.25)</span></span><br><span class="line">    <span class="comment"># def find_best_param(model):</span></span><br><span class="line">    <span class="comment">#     lgb_param_test = &#123;'n_estimators':[10000],</span></span><br><span class="line">    <span class="comment">#     'num_leaves':[300],</span></span><br><span class="line">    <span class="comment">#     'max_depth':[10,20],</span></span><br><span class="line">    <span class="comment">#     'learning_rate': [0.05],</span></span><br><span class="line">    <span class="comment"># #     'bagging_fraction': [0.5,0.8,1],</span></span><br><span class="line">    <span class="comment"># #     'feature_fraction': [0.8],</span></span><br><span class="line">    <span class="comment">#     'reg_alpha' : [0,0.2,0.5],</span></span><br><span class="line">    <span class="comment">#     'reg_lambda' : [0,0.2,0.5]</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#     &#125;</span></span><br><span class="line">    <span class="comment"># #</span></span><br><span class="line">    <span class="comment"># # 注意RandomizedSearchCV跟GridSearchCV的参数 param_distributions跟param_grid作用相同，但名字不同</span></span><br><span class="line">    <span class="comment">#     grid_search = RandomizedSearchCV(estimator=model, param_distributions=lgb_param_test, scoring='mean_squared_error', cv=3)</span></span><br><span class="line">    <span class="comment"># #     grid_search = GridSearchCV(estimator=model, param_grid=xgb_param_test, scoring='mean_squared_error', cv=5)</span></span><br><span class="line">    <span class="comment">#     grid_search.fit(X_train,Y_train,</span></span><br><span class="line">    <span class="comment">#                     eval_names=['train', 'valid'],</span></span><br><span class="line">    <span class="comment">#                     eval_set=[(X_train, Y_train), (X_val, Y_val)],</span></span><br><span class="line">    <span class="comment">#                     verbose=500,</span></span><br><span class="line">    <span class="comment">#                     eval_metric='mae',</span></span><br><span class="line">    <span class="comment">#                     early_stopping_rounds=100)</span></span><br><span class="line">    <span class="comment">#     print(grid_search.best_params_)</span></span><br><span class="line">    <span class="comment"># #</span></span><br><span class="line">    <span class="comment"># lgbreg = lgb.LGBMRegressor(objective = 'regression_l1',metric = 'mae')</span></span><br><span class="line">    <span class="comment"># find_best_param(lgbreg)</span></span><br><span class="line">    <span class="comment"># gc.collect()</span></span><br><span class="line">    <span class="comment"># t1 = time.time()</span></span><br><span class="line">    <span class="comment"># print('end train, use&#123;&#125; second'.format(t1-t0))</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 建立时间预测的回归任务2</span></span><br><span class="line">    y_col = <span class="string">'will_residue_time'</span></span><br><span class="line">    <span class="comment"># x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'target_tan', 'delivery_tan', 'delivery_MHD', 'target_MHD']# 加入expect_used_time和will_residue_time之后的x_col</span></span><br><span class="line">    <span class="comment"># x_col = ['weather_grade', 'level', 'speed', 'max_load', 'is_holiday', 'rush', 'road', 'grid_distance', 'delivery_MHD',</span></span><br><span class="line">    <span class="comment">#          'target_MHD']</span></span><br><span class="line">    x_col = [<span class="string">'speed'</span>, <span class="string">'rush'</span>, <span class="string">'grid_distance'</span>, <span class="string">'delivery_MHD'</span>, <span class="string">'target_MHD'</span>]</span><br><span class="line"></span><br><span class="line">    t0 = time.time()</span><br><span class="line">    model = lgb.LGBMRegressor(</span><br><span class="line">        metric=<span class="string">'mae'</span>,</span><br><span class="line">        num_leaves=<span class="number">64</span>,</span><br><span class="line">        max_depth=<span class="number">7</span>,</span><br><span class="line">        n_estimators=<span class="number">300</span>,</span><br><span class="line">        learning_rate=<span class="number">0.05</span>,</span><br><span class="line">        bagging_fraction=<span class="number">1</span>,</span><br><span class="line">        feature_fraction=<span class="number">0.8</span>,</span><br><span class="line">        reg_alpha=<span class="number">0</span>,</span><br><span class="line">        reg_lambda=<span class="number">0</span></span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    valueK = <span class="number">10</span></span><br><span class="line">    oof = []</span><br><span class="line">    df_importance_list = []</span><br><span class="line"></span><br><span class="line">    kfold = KFold(n_splits=valueK, shuffle=<span class="literal">True</span>, random_state=<span class="number">2020</span>)</span><br><span class="line">    <span class="keyword">for</span> fold_id, (trn_idx, val_idx) <span class="keyword">in</span> enumerate(kfold.split(feature_train[x_col], feature_train[y_col])):</span><br><span class="line">        X_train = feature_train.iloc[trn_idx][x_col]</span><br><span class="line">        Y_train = feature_train.iloc[trn_idx][y_col]</span><br><span class="line"></span><br><span class="line">        X_val = feature_train.iloc[val_idx][x_col]</span><br><span class="line">        Y_val = feature_train.iloc[val_idx][y_col]</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'\nFold&#123;&#125; Training ======================================\n'</span>.format(fold_id + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">        lgb_model = model.fit(</span><br><span class="line">            X_train,</span><br><span class="line">            Y_train,</span><br><span class="line">            eval_names=[<span class="string">'train'</span>, <span class="string">'valid'</span>],</span><br><span class="line">            eval_set=[(X_train, Y_train), (X_val, Y_val)],</span><br><span class="line">            verbose=<span class="number">500</span>,</span><br><span class="line">            eval_metric=<span class="string">'mae'</span>,</span><br><span class="line">            early_stopping_rounds=<span class="number">100</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        pred_val = lgb_model.predict(X_val, num_iteration=lgb_model.best_iteration_)</span><br><span class="line">        df_oof = feature_train.iloc[val_idx][[<span class="string">'id'</span>, y_col]].copy()</span><br><span class="line">        df_oof[<span class="string">'pred'</span>] = pred_val</span><br><span class="line">        oof.append(df_oof)</span><br><span class="line"></span><br><span class="line">        pred_test = lgb_model.predict(feature_test[x_col], num_iteration=lgb_model.best_iteration_)</span><br><span class="line">        reg_prediction[<span class="string">'will_residue_time'</span>] += (pred_test / valueK)</span><br><span class="line"></span><br><span class="line">        df_importance = pd.DataFrame(&#123;</span><br><span class="line">            <span class="string">'column'</span>: x_col,</span><br><span class="line">            <span class="string">'importance'</span>: lgb_model.feature_importances_</span><br><span class="line">        &#125;)</span><br><span class="line">        df_importance_list.append(df_importance)</span><br><span class="line">        <span class="comment"># break</span></span><br><span class="line">        joblib.dump(lgb_model, <span class="string">'../user_data/model_data/model2&#123;&#125;.dat'</span>.format(fold_id))</span><br><span class="line">        <span class="comment"># del lgb_model, pred_val, pred_test, X_train, Y_train, X_val, Y_val</span></span><br><span class="line">        <span class="comment"># gc.collect()</span></span><br><span class="line">    t1 = time.time()</span><br><span class="line">    print(<span class="string">'end train, use&#123;&#125; second'</span>.format(t1 - t0))</span><br><span class="line"></span><br><span class="line">    df_oof = pd.concat(oof)</span><br><span class="line">    mae = metrics.mean_absolute_error(df_oof[y_col], df_oof[<span class="string">'pred'</span>])</span><br><span class="line">    print(<span class="string">'mae:'</span>, mae)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'----------------------计算expect_time----------------------'</span>)</span><br><span class="line">    <span class="comment"># 还原expect_time</span></span><br><span class="line">    reg_prediction[<span class="string">'expect_time'</span>] = reg_prediction[<span class="string">'promise_deliver_time'</span>] - reg_prediction[</span><br><span class="line">        <span class="string">'will_residue_time'</span>]  <span class="comment"># 只使用后一个</span></span><br><span class="line"></span><br><span class="line">    feature_train.to_pickle(<span class="string">'../user_data/regfuture_train_regend.pkl'</span>)</span><br><span class="line">    reg_prediction.to_pickle(<span class="string">'../user_data/regfuture_test_regend.pkl'</span>)</span><br><span class="line">    print(<span class="string">'******************回归问题完毕******************'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">task3_classifiertask</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'----------------------TASK3~分类问题----------------------'</span>)</span><br><span class="line">    feature_train = pd.read_pickle(<span class="string">'../user_data/regfuture_train_regend.pkl'</span>)</span><br><span class="line">    feature_test = pd.read_pickle(<span class="string">'../user_data/regfuture_test_regend.pkl'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 特征 deadline--&gt;还剩下的时间</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deadLine</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'deadline'</span>] = df[<span class="string">'promise_deliver_time'</span>] - df[<span class="string">'expect_time'</span>]</span><br><span class="line">        df[<span class="string">'need_speed'</span>] = df[<span class="string">'grid_distance'</span>] / df[<span class="string">'deadline'</span>]</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    feature_train = deadLine(feature_train)</span><br><span class="line">    feature_test = deadLine(feature_test)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 重新包装了一个异常值处理函数，把异常值清洗设为50%中位数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deal_outliers</span><span class="params">(df, col)</span>:</span></span><br><span class="line">        <span class="comment"># df = feature_train</span></span><br><span class="line">        <span class="comment"># col = 'expect_used_time'</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">Box_outliers</span><span class="params">(data_ser)</span>:</span></span><br><span class="line">            iqr = <span class="number">3</span> * (data_ser.quantile(<span class="number">0.75</span>) - data_ser.quantile(<span class="number">0.25</span>))</span><br><span class="line">            val_low = data_ser.quantile(<span class="number">0.25</span>) - iqr</span><br><span class="line">            val_up = data_ser.quantile(<span class="number">0.75</span>) + iqr</span><br><span class="line">            <span class="keyword">return</span> val_low, val_up</span><br><span class="line"></span><br><span class="line">        data_ser = df[col]</span><br><span class="line">        val_low, val_up = Box_outliers(df[col])</span><br><span class="line">        std_data = df[col].quantile(<span class="number">0.5</span>)</span><br><span class="line">        df[col] = df[col].apply(<span class="keyword">lambda</span> x: std_data <span class="keyword">if</span> x &lt; val_low <span class="keyword">else</span> std_data <span class="keyword">if</span> x &gt; val_up <span class="keyword">else</span> x)</span><br><span class="line"></span><br><span class="line">        sns.boxplot(y=df[col], data=df, palette=<span class="string">"Set1"</span>)</span><br><span class="line">        <span class="keyword">return</span> df[col]</span><br><span class="line"></span><br><span class="line">    feature_train[<span class="string">'need_speed'</span>] = deal_outliers(feature_train, <span class="string">'need_speed'</span>)</span><br><span class="line"></span><br><span class="line">    feature_train[<span class="string">'deadline'</span>] = deal_outliers(feature_train, <span class="string">'deadline'</span>)</span><br><span class="line"></span><br><span class="line">    feature_train[<span class="string">'deadline'</span>].plot.hist()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_Picked</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'is_picked'</span>] = df[<span class="string">'last_time'</span>] - df[<span class="string">'estimate_pick_time'</span>]</span><br><span class="line">        df[<span class="string">'is_picked'</span>] = df[<span class="string">'is_picked'</span>].apply(<span class="keyword">lambda</span> x: <span class="number">0</span> <span class="keyword">if</span> x &lt; <span class="number">0</span> <span class="keyword">else</span> <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    feature_test = is_Picked(feature_test)</span><br><span class="line">    feature_train = is_Picked(feature_train)</span><br><span class="line"></span><br><span class="line">    feature_train.to_pickle(<span class="string">'../user_data/future_train_clf.pkl'</span>)</span><br><span class="line">    feature_test.to_pickle(<span class="string">'../user_data/future_test_clf.pkl'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># # 分类模型</span></span><br><span class="line">    <span class="comment"># 目标：提高回归任务的mae，以提高expect_time预测精准度。</span></span><br><span class="line"></span><br><span class="line">    feature_train = pd.read_pickle(<span class="string">'../user_data/future_train_clf.pkl'</span>)</span><br><span class="line">    feature_test = pd.read_pickle(<span class="string">'../user_data/future_test_clf.pkl'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 临时特征工程</span></span><br><span class="line">    feature_test[<span class="string">'label'</span>] = <span class="number">0</span></span><br><span class="line">    feature_train[<span class="string">'train'</span>] = <span class="number">1</span></span><br><span class="line">    feature_test[<span class="string">'train'</span>] = <span class="number">0</span></span><br><span class="line">    feature = feature_train.append(feature_test)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将送餐点和商户的信息 标签编码LabelEncoder</span></span><br><span class="line">    <span class="keyword">for</span> f <span class="keyword">in</span> [<span class="string">'aoi_id'</span>, <span class="string">'shop_id'</span>]:</span><br><span class="line">        print(f)</span><br><span class="line">        lbl = LabelEncoder()</span><br><span class="line">        feature[f] = lbl.fit_transform(feature[f].astype(str))</span><br><span class="line"></span><br><span class="line">    feature_train = feature[feature[<span class="string">'train'</span>] == <span class="number">1</span>].copy()</span><br><span class="line">    feature_test = feature[feature[<span class="string">'train'</span>] == <span class="number">0</span>].copy()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">total_Residue_Time</span><span class="params">(df)</span>:</span></span><br><span class="line">        df[<span class="string">'total_residue_time'</span>] = df[<span class="string">'promise_deliver_time'</span>] - df[<span class="string">'estimate_pick_time'</span>]</span><br><span class="line">        <span class="keyword">return</span> df</span><br><span class="line"></span><br><span class="line">    feature_train = total_Residue_Time(feature_train)</span><br><span class="line">    feature_test = total_Residue_Time(feature_test)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 回到模型</span></span><br><span class="line">    prediction = feature_test[</span><br><span class="line">        [<span class="string">'courier_id'</span>, <span class="string">'wave_index'</span>, <span class="string">'tracking_id'</span>, <span class="string">'courier_wave_start_lng'</span>, <span class="string">'courier_wave_start_lat'</span>, <span class="string">'action_type'</span>,</span><br><span class="line">         <span class="string">'expect_time'</span>, <span class="string">'date'</span>, <span class="string">'id'</span>, <span class="string">'majorid'</span>, <span class="string">'label'</span>]]</span><br><span class="line">    prediction[<span class="string">'label'</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># print('----------------------分类调参----------------------')</span></span><br><span class="line">    <span class="comment"># y_col = 'label'</span></span><br><span class="line">    <span class="comment"># # x_col = ['grid_distance', 'target_tan', 'target_MHD', 'weather_grade', 'aoi_id', 'shop_id', 'delivery_tan', 'delivery_MHD', 'level', 'speed', 'max_load', 'rush', 'road', 'expect_used_time', 'will_residue_time', 'deadline', 'need_speed', 'is_picked']</span></span><br><span class="line">    <span class="comment"># # x_col = ['grid_distance', 'target_tan', 'target_MHD', 'weather_grade', 'delivery_tan', 'delivery_MHD', 'level', 'speed', 'max_load', 'rush', 'road', 'expect_used_time', 'will_residue_time', 'deadline', 'need_speed', 'is_picked']# 939-911</span></span><br><span class="line">    <span class="comment"># x_col = ['grid_distance', 'target_MHD', 'weather_grade', 'delivery_MHD', 'level', 'speed', 'max_load', 'rush', 'road', 'deadline', 'need_speed', 'is_picked']#</span></span><br><span class="line">    <span class="comment"># # x_col = ['rush', 'target_MHD', 'delivery_MHD', 'grid_distance', 'max_load', 'is_picked']# 783-772-718</span></span><br><span class="line">    <span class="comment"># # x_col = ['rush', 'target_MHD', 'delivery_MHD', 'grid_distance', 'max_load', 'is_picked', 'aoi_id', 'shop_id', 'courier_id']# 797-767-716</span></span><br><span class="line">    <span class="comment"># t0 = time.time()</span></span><br><span class="line">    <span class="comment"># X_train, X_val, Y_train, Y_val = train_test_split(feature_train[x_col], feature_train[y_col], test_size=0.25)</span></span><br><span class="line">    <span class="comment"># def find_best_param(model):</span></span><br><span class="line">    <span class="comment">#     lgb_param_test = &#123;</span></span><br><span class="line">    <span class="comment">#         'n_estimators': [10000],</span></span><br><span class="line">    <span class="comment">#         'learning_rate': [0.1],</span></span><br><span class="line">    <span class="comment">#         'num_leaves': [10,6,7],</span></span><br><span class="line">    <span class="comment">#         'max_depth': [300,32,64,128],</span></span><br><span class="line">    <span class="comment">#         'subsample': [0.5,0.8,1],</span></span><br><span class="line">    <span class="comment">#         'reg_alpha': [0.8,1,0,0.5],</span></span><br><span class="line">    <span class="comment">#         'reg_lambda': [0.8,1,0,0.5],</span></span><br><span class="line">    <span class="comment">#         'feature_fraction': [0.5,0.8,1],</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#     &#125;</span></span><br><span class="line">    <span class="comment"># #</span></span><br><span class="line">    <span class="comment"># # 注意RandomizedSearchCV跟GridSearchCV的参数 param_distributions跟param_grid作用相同，但名字不同</span></span><br><span class="line">    <span class="comment">#     grid_search = RandomizedSearchCV(estimator=model, param_distributions=lgb_param_test, scoring='accuracy', cv=3)</span></span><br><span class="line">    <span class="comment"># #     grid_search = GridSearchCV(estimator=model, param_grid=lgb_param_test, scoring='accuracy', cv=5)</span></span><br><span class="line">    <span class="comment">#     grid_search.fit(X_train,Y_train,</span></span><br><span class="line">    <span class="comment">#                     eval_names=['train', 'valid'],</span></span><br><span class="line">    <span class="comment">#                     eval_set=[(X_train, Y_train), (X_val, Y_val)],</span></span><br><span class="line">    <span class="comment">#                     verbose=500,</span></span><br><span class="line">    <span class="comment">#                     eval_metric='auc',</span></span><br><span class="line">    <span class="comment">#                     early_stopping_rounds=100)</span></span><br><span class="line">    <span class="comment">#     print(grid_search.best_params_)</span></span><br><span class="line">    <span class="comment"># #</span></span><br><span class="line">    <span class="comment"># lgbreg = lgb.LGBMClassifier(metric = 'auc')</span></span><br><span class="line">    <span class="comment"># find_best_param(lgbreg)</span></span><br><span class="line">    <span class="comment"># gc.collect()</span></span><br><span class="line">    <span class="comment"># t1 = time.time()</span></span><br><span class="line">    <span class="comment"># print('end train, use&#123;&#125; second'.format(t1-t0))</span></span><br><span class="line"></span><br><span class="line">    y_col = <span class="string">'label'</span></span><br><span class="line">    <span class="comment"># x_col = ['grid_distance', 'target_tan', 'target_MHD', 'weather_grade', 'aoi_id', 'shop_id', 'delivery_tan', 'delivery_MHD', 'level', 'speed', 'max_load', 'rush', 'road', 'expect_used_time', 'will_residue_time', 'deadline', 'need_speed', 'is_picked']</span></span><br><span class="line">    <span class="comment"># x_col = ['grid_distance', 'target_tan', 'target_MHD', 'weather_grade', 'delivery_tan', 'delivery_MHD', 'level', 'speed', 'max_load', 'rush', 'road', 'expect_used_time', 'will_residue_time', 'deadline', 'need_speed', 'is_picked']# 939-911</span></span><br><span class="line">    <span class="comment"># x_col = ['grid_distance', 'target_MHD', 'weather_grade', 'delivery_MHD', 'level', 'speed', 'max_load', 'r# 783-772-718</span></span><br><span class="line">    x_col = [<span class="string">'rush'</span>, <span class="string">'target_MHD'</span>, <span class="string">'delivery_MHD'</span>, <span class="string">'grid_distance'</span>, <span class="string">'max_load'</span>, <span class="string">'is_picked'</span>, <span class="string">'aoi_id'</span>, <span class="string">'shop_id'</span>,</span><br><span class="line">             <span class="string">'courier_id'</span>]</span><br><span class="line"></span><br><span class="line">    model = lgb.LGBMClassifier(metric=<span class="string">'auc'</span>,</span><br><span class="line">                               num_leaves=<span class="number">7</span>,</span><br><span class="line">                               max_depth=<span class="number">128</span>,</span><br><span class="line">                               learning_rate=<span class="number">0.05</span>,</span><br><span class="line">                               n_estimators=<span class="number">10000</span>,</span><br><span class="line">                               subsample=<span class="number">0.8</span>,</span><br><span class="line">                               feature_fraction=<span class="number">0.8</span>,</span><br><span class="line">                               reg_alpha=<span class="number">1</span>,</span><br><span class="line">                               reg_lambda=<span class="number">0.5</span>,</span><br><span class="line">                               )</span><br><span class="line"></span><br><span class="line">    oof = []</span><br><span class="line">    df_importance_list = []</span><br><span class="line"></span><br><span class="line">    kfold = GroupKFold(n_splits=<span class="number">10</span>)</span><br><span class="line">    <span class="keyword">for</span> fold_id, (trn_idx, val_idx) <span class="keyword">in</span> enumerate(</span><br><span class="line">            kfold.split(feature_train[x_col], feature_train[y_col], feature_train[<span class="string">'majorid'</span>])):</span><br><span class="line">        X_train = feature_train.iloc[trn_idx][x_col]</span><br><span class="line">        Y_train = feature_train.iloc[trn_idx][y_col]</span><br><span class="line"></span><br><span class="line">        X_val = feature_train.iloc[val_idx][x_col]</span><br><span class="line">        Y_val = feature_train.iloc[val_idx][y_col]</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'\nFold_&#123;&#125; Training ================================\n'</span>.format(fold_id + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">        lgb_model = model.fit(</span><br><span class="line">            X_train,</span><br><span class="line">            Y_train,</span><br><span class="line">            eval_names=[<span class="string">'train'</span>, <span class="string">'valid'</span>],</span><br><span class="line">            eval_set=[(X_train, Y_train), (X_val, Y_val)],</span><br><span class="line">            verbose=<span class="number">500</span>,</span><br><span class="line">            eval_metric=<span class="string">'auc'</span>,</span><br><span class="line">            early_stopping_rounds=<span class="number">100</span></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">        pred_val = lgb_model.predict_proba(X_val, num_iteration=lgb_model.best_iteration_)[:, <span class="number">1</span>]</span><br><span class="line">        df_oof = feature_train.iloc[val_idx][[<span class="string">'id'</span>, <span class="string">'majorid'</span>, y_col]].copy()</span><br><span class="line">        df_oof[<span class="string">'pred'</span>] = pred_val</span><br><span class="line">        oof.append(df_oof)</span><br><span class="line"></span><br><span class="line">        pred_test = lgb_model.predict_proba(feature_test[x_col], num_iteration=lgb_model.best_iteration_)[:, <span class="number">1</span>]</span><br><span class="line">        prediction[<span class="string">'label'</span>] += pred_test / <span class="number">10</span></span><br><span class="line"></span><br><span class="line">        df_importance = pd.DataFrame(&#123;</span><br><span class="line">            <span class="string">'column'</span>: x_col,</span><br><span class="line">            <span class="string">'importance'</span>: lgb_model.feature_importances_,</span><br><span class="line">        &#125;)</span><br><span class="line">        df_importance_list.append(df_importance)</span><br><span class="line">        joblib.dump(lgb_model, <span class="string">'../user_data/model_data/model3&#123;&#125;.dat'</span>.format(fold_id))</span><br><span class="line">    <span class="comment"># 验证recall，对feature_train 和 oof</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">result_func</span><span class="params">(majorid)</span>:</span></span><br><span class="line">        majorid = majorid.values.tolist()</span><br><span class="line">        max_index = majorid.index(max(majorid))</span><br><span class="line">        result = np.zeros(len(majorid))</span><br><span class="line">        result[max_index] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Acc</span><span class="params">(df)</span>:</span></span><br><span class="line">        TP = df[(df[<span class="string">'label'</span>] == <span class="number">1</span>) &amp; (df[<span class="string">'result'</span>] == <span class="number">1</span>)].shape[<span class="number">0</span>]  <span class="comment"># 预测正确，预测的值为真</span></span><br><span class="line">        TN = df[(df[<span class="string">'label'</span>] == <span class="number">0</span>) &amp; (df[<span class="string">'result'</span>] == <span class="number">0</span>)].shape[<span class="number">0</span>]  <span class="comment"># 预测正确，预测的值为假</span></span><br><span class="line">        FP = df[(df[<span class="string">'label'</span>] == <span class="number">0</span>) &amp; (df[<span class="string">'result'</span>] == <span class="number">1</span>)].shape[<span class="number">0</span>]  <span class="comment"># 预测错误，预测的值为真</span></span><br><span class="line">        FN = df[(df[<span class="string">'label'</span>] == <span class="number">1</span>) &amp; (df[<span class="string">'result'</span>] == <span class="number">0</span>)].shape[<span class="number">0</span>]  <span class="comment"># 预测错误，预测的值为假</span></span><br><span class="line">        TP_FN = df[df[<span class="string">'label'</span>] == <span class="number">1</span>].shape[<span class="number">0</span>]</span><br><span class="line">        TP_FP = df[df[<span class="string">'result'</span>] == <span class="number">1</span>].shape[<span class="number">0</span>]</span><br><span class="line">        print(<span class="string">'recall:&#123;&#125;'</span>.format(TP / TP_FN))</span><br><span class="line">        print(<span class="string">'acc:&#123;&#125;'</span>.format(TP / TP_FP))</span><br><span class="line"></span><br><span class="line">    feature_train[<span class="string">'pred_val'</span>] = lgb_model.predict_proba(feature_train[x_col], num_iteration=lgb_model.best_iteration_)[</span><br><span class="line">                                :, <span class="number">1</span>]</span><br><span class="line">    feature_train[<span class="string">'result'</span>] = feature_train.groupby([<span class="string">'majorid'</span>])[<span class="string">'pred_val'</span>].transform(result_func)</span><br><span class="line">    Acc(feature_train)</span><br><span class="line">    print(<span class="string">'******************分类问题完毕******************'</span>)</span><br><span class="line">    print(<span class="string">'----------------------zip输出----------------------'</span>)</span><br><span class="line">    <span class="comment"># 输出</span></span><br><span class="line">    prediction[<span class="string">'rusult'</span>] = prediction.groupby([<span class="string">'majorid'</span>])[<span class="string">'label'</span>].transform(result_func)</span><br><span class="line">    subfile = prediction[prediction[<span class="string">'rusult'</span>] == <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    result = subfile[</span><br><span class="line">        [<span class="string">'courier_id'</span>, <span class="string">'wave_index'</span>, <span class="string">'tracking_id'</span>, <span class="string">'courier_wave_start_lng'</span>, <span class="string">'courier_wave_start_lat'</span>, <span class="string">'action_type'</span>,</span><br><span class="line">         <span class="string">'expect_time'</span>, <span class="string">'date'</span>]]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> zipfile</span><br><span class="line">    os.makedirs(<span class="string">'../action_predict'</span>, exist_ok=<span class="literal">True</span>)</span><br><span class="line">    <span class="comment"># f = zipfile.ZipFile('./action_predict/&#123;&#125;.zip'.format('result'), 'w', zipfile.ZIP_DEFLATED)</span></span><br><span class="line">    <span class="keyword">for</span> date <span class="keyword">in</span> result[<span class="string">'date'</span>].unique():</span><br><span class="line">        df_temp = result[result[<span class="string">'date'</span>] == date]</span><br><span class="line">        <span class="keyword">del</span> df_temp[<span class="string">'date'</span>]</span><br><span class="line">        df_temp.to_csv(<span class="string">'../action_predict/action_&#123;&#125;.txt'</span>.format(date), index=<span class="literal">False</span>)</span><br><span class="line">        <span class="comment"># f.write('./action_predict/action_&#123;&#125;.txt'.format(date), 'action_&#123;&#125;.txt'.format(date))</span></span><br><span class="line">    <span class="comment"># f.close()</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    task2_regressortask()</span><br><span class="line">    task3_classifiertask()</span><br></pre></td></tr></table></figure>
+
+<p>3.main</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> feature.feature <span class="keyword">import</span> task1_featuretask</span><br><span class="line"><span class="keyword">from</span> model.model <span class="keyword">import</span> task2_regressortask,task3_classifiertask</span><br><span class="line"></span><br><span class="line">train_path = <span class="string">'../data/eleme_round1_train_20200313/'</span></span><br><span class="line">test_path = <span class="string">'../data/eleme_round1_testB_20200413/'</span></span><br><span class="line">task1_featuretask(train_path,test_path)</span><br><span class="line">task2_regressortask()</span><br><span class="line">task3_classifiertask()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
+          
+            <a href="/tags/ML/" rel="tag"><i class="fa fa-tag"></i> ML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/16/推荐系统/" rel="next" title="推荐系统知识学习">
+                <i class="fa fa-chevron-left"></i> 推荐系统知识学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/30/天池/" rel="prev" title="二手车交易价格预测">
+                二手车交易价格预测 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="/images/touxiang.jpg" alt="Shiwei-Yan">
+  
+  <p class="site-author-name" itemprop="name">Shiwei-Yan</p>
+  <div class="site-description motion-element" itemprop="description"></div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/Yanin-dpdt" title="GitHub &rarr; https://github.com/Yanin-dpdt" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="mailto:Yanin-dpdt@foxmail.com" title="E-Mail &rarr; mailto:Yanin-dpdt@foxmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#top-5"><span class="nav-number">1.</span> <span class="nav-text">top 5%</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shiwei-Yan</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">316k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">4:48</span>
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.2.0</div>
+
+
+
+
+<div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+
+
+
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("07/23/2019 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </footer></div>
+    
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+
+  
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// GET RESPONSIVE HEIGHT PASSED FROM IFRAME
+
+window.addEventListener("message", function(e) {
+  var data = e.data;
+  if ((typeof data === 'string') && (data.indexOf('ciu_embed') > -1)) {
+    var featureID = data.split(':')[1];
+    var height = data.split(':')[2];
+    $(`iframe[data-feature=${featureID}]`).height(parseInt(height) + 30);
+  }
+}, false);
+</script>
+
+
+
+
+
+
+
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
