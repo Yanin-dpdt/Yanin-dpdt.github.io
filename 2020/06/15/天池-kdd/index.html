@@ -94,21 +94,21 @@
   };
 </script>
 
-  <meta name="description" content="机缘巧合的参加了这次比赛，每次比赛都学会了很多知识。知识是无穷的，唯有一点一点的去学习。 很幸运的拿到了 TOP 5%  赛题理解通过先观察测试集发现，要预测两部分：  一是，接下来骑手在这一波中会执行哪一个ActionStep(expect_time有多个为0，先挑选出来哪个为下一步行为) 二是，预测上面选择行为的expect_time(对应时刻)  获取数据本竞赛提供了4种文件  action">
-<meta name="keywords" content="python,ML，天池">
+  <meta name="description" content="赛题指标介绍先来简单理解一下指标NDCG，经常用在搜索和推荐算法。  先来介绍一下参数CG，它是相关性和位置乘积 累加的结果，  再来说一下DCG，因为CG参数对排在后的惩罚不明显，所以DCG参数是对CG参数排名靠后的结果”打折处理“  DCG是没有考虑用户之间不同的，所以引入了NDCG参数   应该大概都懂了吧，我们先求CG（累计增益）——累加推荐列表的相关性得分，然后求DCG（折损CG）——对">
+<meta name="keywords" content="python,ML,天池">
 <meta property="og:type" content="article">
-<meta property="og:title" content="天池-饿了么智慧物流">
-<meta property="og:url" content="http://yoursite.com/2020/06/12/天池-饿了么/index.html">
+<meta property="og:title" content="天池-KDDCUP2020:Debiasing">
+<meta property="og:url" content="http://yoursite.com/2020/06/15/天池-kdd/index.html">
 <meta property="og:site_name" content="颜">
-<meta property="og:description" content="机缘巧合的参加了这次比赛，每次比赛都学会了很多知识。知识是无穷的，唯有一点一点的去学习。 很幸运的拿到了 TOP 5%  赛题理解通过先观察测试集发现，要预测两部分：  一是，接下来骑手在这一波中会执行哪一个ActionStep(expect_time有多个为0，先挑选出来哪个为下一步行为) 二是，预测上面选择行为的expect_time(对应时刻)  获取数据本竞赛提供了4种文件  action">
+<meta property="og:description" content="赛题指标介绍先来简单理解一下指标NDCG，经常用在搜索和推荐算法。  先来介绍一下参数CG，它是相关性和位置乘积 累加的结果，  再来说一下DCG，因为CG参数对排在后的惩罚不明显，所以DCG参数是对CG参数排名靠后的结果”打折处理“  DCG是没有考虑用户之间不同的，所以引入了NDCG参数   应该大概都懂了吧，我们先求CG（累计增益）——累加推荐列表的相关性得分，然后求DCG（折损CG）——对">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s1.ax1x.com/2020/06/14/txHSTH.jpg">
-<meta property="og:image" content="https://s1.ax1x.com/2020/06/14/tzpI0I.jpg">
-<meta property="og:updated_time" content="2020-06-15T02:31:50.366Z">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/16/NkAgzQ.png">
+<meta property="og:image" content="https://s1.ax1x.com/2020/06/16/NkZxwn.png">
+<meta property="og:updated_time" content="2020-06-21T02:41:18.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="天池-饿了么智慧物流">
-<meta name="twitter:description" content="机缘巧合的参加了这次比赛，每次比赛都学会了很多知识。知识是无穷的，唯有一点一点的去学习。 很幸运的拿到了 TOP 5%  赛题理解通过先观察测试集发现，要预测两部分：  一是，接下来骑手在这一波中会执行哪一个ActionStep(expect_time有多个为0，先挑选出来哪个为下一步行为) 二是，预测上面选择行为的expect_time(对应时刻)  获取数据本竞赛提供了4种文件  action">
-<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/14/txHSTH.jpg">
+<meta name="twitter:title" content="天池-KDDCUP2020:Debiasing">
+<meta name="twitter:description" content="赛题指标介绍先来简单理解一下指标NDCG，经常用在搜索和推荐算法。  先来介绍一下参数CG，它是相关性和位置乘积 累加的结果，  再来说一下DCG，因为CG参数对排在后的惩罚不明显，所以DCG参数是对CG参数排名靠后的结果”打折处理“  DCG是没有考虑用户之间不同的，所以引入了NDCG参数   应该大概都懂了吧，我们先求CG（累计增益）——累加推荐列表的相关性得分，然后求DCG（折损CG）——对">
+<meta name="twitter:image" content="https://s1.ax1x.com/2020/06/16/NkAgzQ.png">
 
 
 
@@ -116,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2020/06/12/天池-饿了么/">
+  <link rel="canonical" href="http://yoursite.com/2020/06/15/天池-kdd/">
 
 
 
@@ -127,7 +127,7 @@
 </script>
 
   
-  <title>天池-饿了么智慧物流 | 颜</title>
+  <title>天池-KDDCUP2020:Debiasing | 颜</title>
   
 
 
@@ -351,7 +351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/12/天池-饿了么/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/15/天池-kdd/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shiwei-Yan">
@@ -368,7 +368,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">天池-饿了么智慧物流
+          <h1 class="post-title" itemprop="name headline">天池-KDDCUP2020:Debiasing
 
               
             
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2020-06-12 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-12T00:00:00+08:00">2020-06-12</time>
+              <time title="创建时间：2020-06-15 00:00:00" itemprop="dateCreated datePublished" datetime="2020-06-15T00:00:00+08:00">2020-06-15</time>
             </span>
           
 
@@ -409,7 +409,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-15 10:31:50" itemprop="dateModified" datetime="2020-06-15T10:31:50+08:00">2020-06-15</time>
+                <time title="修改时间：2020-06-21 10:41:18" itemprop="dateModified" datetime="2020-06-21T10:41:18+08:00">2020-06-21</time>
               </span>
             
           
@@ -445,7 +445,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.6k</span>
+              <span title="本文字数">1.7k</span>
             </span>
           
 
@@ -476,98 +476,67 @@
       
 
       
-        <p>机缘巧合的参加了这次比赛，每次比赛都学会了很多知识。知识是无穷的，唯有一点一点的去学习。</p>
-<p>很幸运的拿到了 <strong>TOP 5%</strong></p>
-<p><img src="https://s1.ax1x.com/2020/06/14/txHSTH.jpg" alt="txHSTH.jpg"></p>
-<h3 id="赛题理解"><a href="#赛题理解" class="headerlink" title="赛题理解"></a>赛题理解</h3><p>通过<strong>先观察测试集</strong>发现，要预测两部分：</p>
+        <h2 id="赛题指标介绍"><a href="#赛题指标介绍" class="headerlink" title="赛题指标介绍"></a>赛题指标介绍</h2><p>先来简单理解一下指标<strong>NDCG</strong>，经常用在搜索和推荐算法。</p>
 <ul>
-<li>一是，接下来骑手在这一波中会执行哪一个<code>ActionStep</code>(<code>expect_time</code>有多个为0，先挑选出来哪个为下一步行为)</li>
-<li>二是，预测上面选择行为的<code>expect_time</code>(对应时刻)</li>
-</ul>
-<h3 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h3><p>本竞赛提供了4种文件</p>
-<ul>
-<li><p><code>action</code>  –骑士行为数据<br>courier_id                      骑士id<br>wave_index                      波次index<br>tracking_id                     订单id<br>courier_wave_start_lng          波次起始时刻骑士位置<br>courier_wave_start_lat          波次起始时刻骑士位置<br>action_type                     行为类型<br>expect_time                     行为对应时刻</p>
+<li><p>先来介绍一下参数<strong>CG</strong>，它是相关性和位置乘积 累加的结果，</p>
 </li>
-<li><p><code>distance</code> –订单取送点之间的导航数据</p>
-<p>courier_id     骑士id</p>
-<p>wave_index     波次id</p>
-<p>tracking_id     源订单id</p>
-<p>source_type     源点类型（Assign/PickFood/DeliverFood）</p>
-<p>source_lng     源点经度</p>
-<p>source_lat     源点纬度</p>
-<p>target_tracking_id 目标订单id</p>
-<p>target_type     目标点类型（Assign/PickFood/DeliverFood）</p>
-<p>target_lng     目标点经度</p>
-<p>target_lat     目标点纬度</p>
-<p>grid_distance    源点与目标点的高德距离</p>
+<li><p>再来说一下<strong>DCG</strong>，因为CG参数对排在后的惩罚不明显，所以DCG参数是对CG参数排名靠后的结果”打折处理“</p>
 </li>
-<li><p><code>order</code>–服务数据</p>
-<p>courier_id      骑士id</p>
-<p>wave_index      波次id</p>
-<p>tracking_id     订单id</p>
-<p>weather_grade    天气状况(正常天气/轻微恶劣天气/恶劣天气/极恶劣天气/罕见恶劣天气)</p>
-<p>pick_lng       取餐经度</p>
-<p>pick_lat       取餐纬度</p>
-<p>deliver_lng     送餐经度</p>
-<p>deliver_lat     送餐纬度</p>
-<p>create_time     订单创建时间</p>
-<p>confirm_time     订单确认时间</p>
-<p>assigned_time    订单分配时间</p>
-<p>time         时间戳</p>
-<p>promise_deliver_time 承诺送达时间</p>
-<p>estimate_pick_time  预计取餐时间</p>
-<p>aoi_id        送餐点所在aoi id，aoi_id是可以唯一标识一个小区，写字楼园区，学校，医院等</p>
-<p>shop_id       商户id，可以唯一标识一个商户</p>
-</li>
-<li><p><code>courier</code> –骑士画像数据</p>
-<p>courier_id 骑士id</p>
-<p>level   新老骑士</p>
-<p>speed   骑士速度</p>
-<p>max_load  背单能力</p>
+<li><p>DCG是没有考虑用户之间不同的，所以引入了<strong>NDCG</strong>参数</p>
 </li>
 </ul>
-<h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><h3 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h3><ul>
-<li><code>action</code></li>
-</ul>
-<p>通俗是理解就是，本赛题主要有两个任务，1是预测下一波的行为(这个问题可以转换成一个分类问题)；2是预测下一个问题所花费的时间，此问题为一个回归问题。</p>
-<p>测试集 action 表中，候选行为平均越占整个波次所有行为的55%。所以在训练集 action 表，将后55%的行为数据作为未知的待候选行为，因为 action 表是按时间排好序的，所以训练集中的候选行为的第一条为真实的下一条行为，将其二分类 label 设置为1，波次中的其他候选行为label设置为0。这样我们就可以很方便得将行为预测任务转换成一个二分类任务。–<code>df.tail(1)</code></p>
-<p><img src="https://s1.ax1x.com/2020/06/14/tzpI0I.jpg" alt="tzpI0I.jpg"></p>
-<p>对<code>expect_time</code>进行处理，把label=1之前的数据的<code>expect_time</code>定义为<code>last_time</code>，接下来预测的时候是预测<code>need_time</code>。这样最后的<code>expect_time</code> = <code>last_time</code> + <code>need_time</code></p>
+<p>应该大概都懂了吧，我们先求CG（累计增益）——累加推荐列表的相关性得分，然后求DCG（折损CG）——对CG进行排序，并对得分低的相关性做折扣处理，最后就是求NDCG（归一化DCG）——归一化不同的用户的推荐列表的评估分数。</p>
+<h2 id="赛题理解"><a href="#赛题理解" class="headerlink" title="赛题理解"></a>赛题理解</h2><p>任务：推荐过去较少曝光的商品，以对抗在推荐系统中常遇到的马太效应</p>
+<h2 id="一些概念介绍"><a href="#一些概念介绍" class="headerlink" title="一些概念介绍"></a>一些概念介绍</h2><h3 id="基于物品的协同过滤和基于商品的协同过滤"><a href="#基于物品的协同过滤和基于商品的协同过滤" class="headerlink" title="基于物品的协同过滤和基于商品的协同过滤"></a>基于物品的协同过滤和基于商品的协同过滤</h3><p>UserCF –&gt; 当一个用户需要个性化推荐时，可以先找到和他有相似兴趣的其他用户，然后再把那些用户喜欢的、而用户没有听说过的物品推荐给用户。(就是找到差不多的用户，把别人看过的推荐给你) ==&gt; 需要用户之间的相似度</p>
+<p>ItemCF –&gt; 给用户推荐那些和他们之前喜欢的物品相似的物品。  (之前的商品和什么相似，就把相似的物品推荐给你)  ==&gt; 需要物品之间的相似度</p>
+<p><img src="https://s1.ax1x.com/2020/06/16/NkAgzQ.png" alt="NkAgzQ.png"></p>
+<p>优缺点比较：</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">UserCF</th>
+<th align="left">ItemCF</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">性能</td>
+<td align="left">适用于用户较少的场合，如果用户很多，计算用户相似度矩阵代价很大</td>
+<td align="left">适用于物品数明显小于用户数的场合，如果物品很多（网页），计算物品相似度矩阵代价很大</td>
+</tr>
+<tr>
+<td align="left">领域</td>
+<td align="left">时效性较强，用户个性化兴趣不太明显的领域</td>
+<td align="left">长尾物品丰富，<strong>用户个性化需求强烈的领域</strong></td>
+</tr>
+<tr>
+<td align="left">推荐理由</td>
+<td align="left">很难提供令用户信服的推荐解释</td>
+<td align="left"><strong>利用用户的历史行为给用户做推荐</strong>解释，可以令用户比较信服</td>
+</tr>
+</tbody></table>
+<h3 id="用户—物品倒排表"><a href="#用户—物品倒排表" class="headerlink" title="用户—物品倒排表"></a><strong>用户—物品倒排表</strong></h3><p>即 对每个用户建立一个包含他喜欢的物品的列表</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>单阶段中，训练集用户和测试集用户不交叉。原始数据集只给出了测试集的 qtime ，为了获取稳定的线下验证，需要我们自己构造有标签的训练集 qtime。基于题设，我们抽出每个阶段训练集用户的最后一条 click 数据作为训练集 qtime 数据，用于线下验证，形式化表示如图下所示。<img src="https://s1.ax1x.com/2020/06/16/NkZxwn.png" alt="NkZxwn.png"></p>
+<h3 id="召回阶段：改进版-itemcf"><a href="#召回阶段：改进版-itemcf" class="headerlink" title="召回阶段：改进版 itemcf"></a>召回阶段：改进版 itemcf</h3><p>原始的 itemcf 将用户点击过的商品看做一个无序的集合，但在实际应用中，应该考虑到点击次序和时间带来的影响。在计算同一序列中两个商品的相似度时，不仅需要考虑其共现次数，也需要考虑两个商品之间的次序关系和时间关系。同一点击序列中两个商品位置越远或者点击时间间隔越大，相关性应该减小。</p>
+<p>这里在原有基础上考虑了两点因素，关联位置因素和关联时间因素。强关联的发生是有向的、有位置的和有时间的。</p>
 <ul>
-<li><code>distance</code></li>
+<li>比如我们先买了手机，那下一次买手机壳的关联，和先买手机壳再买手机的关联，这两种很明显，A到B大于B到A，这是有向性；</li>
+<li>我先买了手机，然后买了手机壳，又买了耳机，很明显，手机和手机壳的关联性大于手机与耳机的关联性，这是位置性；</li>
+<li>那么如果再加上时间这层因素，时间相隔越远的关联性肯定是不高的。</li>
 </ul>
-<p>通过 目标点(Assign/PickFood/DeliverFood)的经纬和源点(Assign/PickFood/DeliverFood)的经纬便可以计算出  目标订单和源订单的曼哈顿距离。(任意两个状态的距离)</p>
-<ul>
-<li><code>order</code></li>
-</ul>
-<p>通过 取餐的经纬和送餐的经纬便可以计算出  店家到用户的曼哈顿距离。(用户到店家的距离，和上面的距离不一样)</p>
-<p>通过将天气的文字信息 进行标签编码。</p>
-<ul>
-<li><code>courier</code> </li>
-</ul>
-<p>可以根据 实际送达时间与创建订单的差 / 期望时间与创建时间的差 的比值来</p>
-<p>还可以挖掘时间 定义早晚用餐高峰</p>
-<h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><p>预测的任务主要分成两部分</p>
-<ul>
-<li><p>一、分类</p>
-<ul>
-<li>选择合适的特征(训练完后，可使用<code>lgb_model.feature_importances_</code>挑选特征 –&gt; 目的:抛掉不相关的特征，从而减少了模型整体的复杂度)， 目标值为<code>label</code></li>
-<li>在五折划分验证集的时候，需要使用 groupfold，保证同一个波次的行为不会既出现在训练集又出现在验证集。这样做一方面是符合实际情况，另一方面也是为了避免“泄露”。假如不这样做，当训练集某个波次已经有一个行为是1了，那在验证集中这个波次的其他行为就没有预测意义了，必然是0。<a href="https://blog.csdn.net/qq_16761099/article/details/106091354" target="_blank" rel="noopener">GroupKFold 和Kfold区别</a></li>
-<li>另外在将训练集喂给模型之前需要将数据打乱，前面说过训练集的 action 是按时间排序的，假如不打乱，就直接暴露每个波次的第一个候选行为就是真实的下一次行为，导致模型本地效果过好，与线上验证产生较大的gap。<code>from sklearn.utils import shuffle</code></li>
-<li><strong>ACC</strong>  –&gt;  train’s auc: 0.840812    valid’s auc: 0.782653</li>
-</ul>
+<p>这三点因素就可以组成我们的优化思路，有向性打分位置打分时间打分，得到最终关联打分。</p>
+<h3 id="排序阶段"><a href="#排序阶段" class="headerlink" title="排序阶段"></a>排序阶段</h3><ul>
+<li><p>标签构造：由于缺少可供训练的样本标签，将用户最后一次点击行为与召回得到的商品作为排序模型的训练集，正例为召回预测正确的，反例为未击中的预测。</p>
 </li>
-<li><p>二、回归</p>
-<ul>
-<li>选择合适的特征，目标值为<code>need_time</code></li>
-<li><code>expect_time</code> = <code>last_time</code> + <code>need_time</code><ul>
-<li><strong>MAE</strong>  –&gt;  train’s l1: 120.266    valid’s l1: 144.934</li>
-</ul>
+<li><p>特征构造：特征工程分为二大类：用户属性(原始数据)，用户-商品交互属性。</p>
+<p>商品属性的获取我们可以使用序列学习模型 Word2Vec 将商品向量化。将用户的商品点击序列作为句子喂到 Word2Vec 模型，然后用商品向量求平均得到用户向量。再计算用户向量与商品向量的交叉特征，生成特征。向量学习使用 gensim 库的 Word2Vec 实现。</p>
+</li>
+<li><p>模型训练：利用LightGBM, XGBoost 对推荐出的商品进行训练并简单算数融合，最后挑选前50个作为最终推荐商品。</p>
 </li>
 </ul>
-</li>
-</ul>
-<p>最后利用<code>RandomizedSearchCV</code>进行调参。</p>
+<p>几个参数和指标：</p>
+<p>训练集样本总数：25w</p>
+<p>召回阶段 <strong>RECALL</strong>：0.15</p>
 
       
     </div>
@@ -600,7 +569,9 @@
           
             <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           
-            <a href="/tags/ML，天池/" rel="tag"><i class="fa fa-tag"></i> ML，天池</a>
+            <a href="/tags/ML/" rel="tag"><i class="fa fa-tag"></i> ML</a>
+          
+            <a href="/tags/天池/" rel="tag"><i class="fa fa-tag"></i> 天池</a>
           
         </div>
       
@@ -613,8 +584,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/31/一千行MySQL学习笔记/" rel="next" title="MySQL语句复习">
-                <i class="fa fa-chevron-left"></i> MySQL语句复习
+              <a href="/2020/06/12/天池-饿了么/" rel="next" title="天池-饿了么智慧物流">
+                <i class="fa fa-chevron-left"></i> 天池-饿了么智慧物流
               </a>
             
           </div>
@@ -622,10 +593,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/06/15/天池-kdd/" rel="prev" title="天池-KDDCUP2020:Debiasing">
-                天池-KDDCUP2020:Debiasing <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -831,7 +798,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#赛题理解"><span class="nav-number">1.</span> <span class="nav-text">赛题理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取数据"><span class="nav-number">2.</span> <span class="nav-text">获取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据处理"><span class="nav-number">3.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征工程"><span class="nav-number">4.</span> <span class="nav-text">特征工程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习"><span class="nav-number">5.</span> <span class="nav-text">机器学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#赛题指标介绍"><span class="nav-number">1.</span> <span class="nav-text">赛题指标介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赛题理解"><span class="nav-number">2.</span> <span class="nav-text">赛题理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些概念介绍"><span class="nav-number">3.</span> <span class="nav-text">一些概念介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于物品的协同过滤和基于商品的协同过滤"><span class="nav-number">3.1.</span> <span class="nav-text">基于物品的协同过滤和基于商品的协同过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户—物品倒排表"><span class="nav-number">3.2.</span> <span class="nav-text">用户—物品倒排表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">4.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#召回阶段：改进版-itemcf"><span class="nav-number">4.1.</span> <span class="nav-text">召回阶段：改进版 itemcf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序阶段"><span class="nav-number">4.2.</span> <span class="nav-text">排序阶段</span></a></li></ol></li></ol></div>
             
 
           </div>
