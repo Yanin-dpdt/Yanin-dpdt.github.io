@@ -104,7 +104,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s1.ax1x.com/2020/06/16/NkAgzQ.png">
 <meta property="og:image" content="https://s1.ax1x.com/2020/06/16/NkZxwn.png">
-<meta property="og:updated_time" content="2020-06-21T02:41:18.321Z">
+<meta property="og:updated_time" content="2020-06-29T03:13:47.781Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="天池-KDDCUP2020:Debiasing">
 <meta name="twitter:description" content="赛题指标介绍先来简单理解一下指标NDCG，经常用在搜索和推荐算法。  先来介绍一下参数CG，它是相关性和位置乘积 累加的结果，  再来说一下DCG，因为CG参数对排在后的惩罚不明显，所以DCG参数是对CG参数排名靠后的结果”打折处理“  DCG是没有考虑用户之间不同的，所以引入了NDCG参数   应该大概都懂了吧，我们先求CG（累计增益）——累加推荐列表的相关性得分，然后求DCG（折损CG）——对">
@@ -409,7 +409,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-06-21 10:41:18" itemprop="dateModified" datetime="2020-06-21T10:41:18+08:00">2020-06-21</time>
+                <time title="修改时间：2020-06-29 11:13:47" itemprop="dateModified" datetime="2020-06-29T11:13:47+08:00">2020-06-29</time>
               </span>
             
           
@@ -445,7 +445,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">1.7k</span>
+              <span title="本文字数">1.6k</span>
             </span>
           
 
@@ -457,7 +457,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span title="阅读时长">1 分钟</span>
             </span>
           
 
@@ -517,19 +517,21 @@
 </tbody></table>
 <h3 id="用户—物品倒排表"><a href="#用户—物品倒排表" class="headerlink" title="用户—物品倒排表"></a><strong>用户—物品倒排表</strong></h3><p>即 对每个用户建立一个包含他喜欢的物品的列表</p>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>单阶段中，训练集用户和测试集用户不交叉。原始数据集只给出了测试集的 qtime ，为了获取稳定的线下验证，需要我们自己构造有标签的训练集 qtime。基于题设，我们抽出每个阶段训练集用户的最后一条 click 数据作为训练集 qtime 数据，用于线下验证，形式化表示如图下所示。<img src="https://s1.ax1x.com/2020/06/16/NkZxwn.png" alt="NkZxwn.png"></p>
-<h3 id="召回阶段：改进版-itemcf"><a href="#召回阶段：改进版-itemcf" class="headerlink" title="召回阶段：改进版 itemcf"></a>召回阶段：改进版 itemcf</h3><p>原始的 itemcf 将用户点击过的商品看做一个无序的集合，但在实际应用中，应该考虑到点击次序和时间带来的影响。在计算同一序列中两个商品的相似度时，不仅需要考虑其共现次数，也需要考虑两个商品之间的次序关系和时间关系。同一点击序列中两个商品位置越远或者点击时间间隔越大，相关性应该减小。</p>
-<p>这里在原有基础上考虑了两点因素，关联位置因素和关联时间因素。强关联的发生是有向的、有位置的和有时间的。</p>
+<h3 id="召回阶段：改进版-itemcf"><a href="#召回阶段：改进版-itemcf" class="headerlink" title="召回阶段：改进版 itemcf"></a>召回阶段：改进版 itemcf</h3><p>普通的ItemCF主要包括两个步骤：</p>
 <ul>
-<li>比如我们先买了手机，那下一次买手机壳的关联，和先买手机壳再买手机的关联，这两种很明显，A到B大于B到A，这是有向性；</li>
-<li>我先买了手机，然后买了手机壳，又买了耳机，很明显，手机和手机壳的关联性大于手机与耳机的关联性，这是位置性；</li>
-<li>那么如果再加上时间这层因素，时间相隔越远的关联性肯定是不高的。</li>
+<li>一是计算物品之间的相似度</li>
+<li>二是根据物品之间的相似度和用户的历史点击情况推荐物品</li>
 </ul>
-<p>这三点因素就可以组成我们的优化思路，有向性打分位置打分时间打分，得到最终关联打分。</p>
+<p>由于本赛题的目的是为了挖掘那些不热门的商品，所以普通的计算相似度的方法肯定是不行的，我们想到两个改进：</p>
+<ul>
+<li>一是本来用户点击商品是一堆无序的序列，现在要考虑其有向性、位置性和时间。比如，有向性是对点击A-&gt;B 和点击 B-&gt;A 选择不同的权重；位置性是对A-&gt;B-&gt;C对AB和AC设置不同的权重，时间性是如果两个商品点击时间间隔进行权重设置(肯定是间隔时间越久，其相似度也差距越大)</li>
+<li>二是计算wij的时候对j的权重进行惩罚</li>
+</ul>
 <h3 id="排序阶段"><a href="#排序阶段" class="headerlink" title="排序阶段"></a>排序阶段</h3><ul>
-<li><p>标签构造：由于缺少可供训练的样本标签，将用户最后一次点击行为与召回得到的商品作为排序模型的训练集，正例为召回预测正确的，反例为未击中的预测。</p>
+<li><p>标签构造：首先要构造的样本标签，我们将用户最后一次点击行为与召回得到的商品作为排序模型的训练集，正例为召回预测正确的，反例为未击中的预测。</p>
 </li>
 <li><p>特征构造：特征工程分为二大类：用户属性(原始数据)，用户-商品交互属性。</p>
-<p>商品属性的获取我们可以使用序列学习模型 Word2Vec 将商品向量化。将用户的商品点击序列作为句子喂到 Word2Vec 模型，然后用商品向量求平均得到用户向量。再计算用户向量与商品向量的交叉特征，生成特征。向量学习使用 gensim 库的 Word2Vec 实现。</p>
+<p>商品属性的获取我们可以使用序列学习模型 Word2Vec 将商品向量化。具体的细节为：将用户的商品点击序列作为句子喂到 Word2Vec 模型，然后用商品向量求平均得到用户向量。再计算用户向量与商品向量的交叉特征，生成特征。向量学习使用 gensim 库的 Word2Vec 实现。</p>
 </li>
 <li><p>模型训练：利用LightGBM, XGBoost 对推荐出的商品进行训练并简单算数融合，最后挑选前50个作为最终推荐商品。</p>
 </li>
@@ -593,6 +595,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/01/Java集合/" rel="prev" title="Java集合">
+                Java集合 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -664,7 +670,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
